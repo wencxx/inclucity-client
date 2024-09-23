@@ -1,0 +1,27 @@
+{
+  "name": "client-pwd",
+  "private": true,
+  "version": "0.0.0",
+  "type": "module",
+  "scripts": {
+    "dev": "vite",
+    "build": "vite build",
+    "preview": "vite preview"
+  },
+  "dependencies": {
+    "all": "^0.0.0",
+    "autoprefixer": "^10.4.20",
+    "axios": "^1.7.7",
+    "html2canvas": "^1.4.1",
+    "pinia": "^2.2.2",
+    "postcss": "^8.4.45",
+    "tailwindcss": "^3.4.11",
+    "vue": "^3.4.37",
+    "vue-router": "^4.4.5"
+  },
+  "devDependencies": {
+    "@iconify/vue": "^4.1.2",
+    "@vitejs/plugin-vue": "^5.1.2",
+    "vite": "^5.4.1"
+  }
+}
