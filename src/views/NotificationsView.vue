@@ -17,6 +17,32 @@
                     <p class="text-xs text-gray-500">{{ convertDate(n.date) }}</p>
                 </div>
             </div>
+            <div v-if="loadingNotif" class="flex items-center justify-between bg-white rounded-md hover:shadow-md cursor-default">
+                <div class="w-1/5 p-2">
+                    <div class="w-full h-20 bg-gray-300 animate-pulse rounded"></div>
+                </div>
+                <div class="w-3/5 pl-3 space-y-2">
+                    <div class="bg-gray-300 w-2/3 h-4 rounded animate-pulse"></div>
+                    <div class="bg-gray-300 w-3/3 h-8 rounded animate-pulse"></div>
+                </div>
+                <div class="w-1/5 flex items-center justify-center">
+                    <div class="w-2/4 bg-gray-300 h-8 animate-pulse rounded"></div>
+                </div>
+            </div>
+        </div>
+        <div v-if="loadingNotif" class="w-full space-y-4">
+            <div v-for="i in 5" :key="i"  class="flex items-center justify-between bg-white rounded-md hover:shadow-md cursor-default">
+                <div class="w-1/5 p-2">
+                    <div class="w-full h-20 bg-gray-300 animate-pulse rounded"></div>
+                </div>
+                <div class="w-3/5 pl-3 space-y-2">
+                    <div class="bg-gray-300 w-2/3 h-4 rounded animate-pulse"></div>
+                    <div class="bg-gray-300 w-3/3 h-8 rounded animate-pulse"></div>
+                </div>
+                <div class="w-1/5 flex items-center justify-center">
+                    <div class="w-2/4 bg-gray-300 h-8 animate-pulse rounded"></div>
+                </div>
+            </div>
         </div>
     </div>
 </template>
@@ -32,13 +58,13 @@ const notifications = ref(null)
 onMounted(() => {
     if(localStorage.getItem('auth')){
         seenAllNotifications()
-        setInterval(() => {
-            getNotifications()
-        }, 3000)
     }
 })
 
+const loadingNotif = ref(false)
+
 const getNotifications = async () => {
+    loadingNotif.value = true
     try {
         const res = await axios.get(`${serverUrl}/get-user-notifications`, {
             headers: {
@@ -51,6 +77,8 @@ const getNotifications = async () => {
         notifications.value = res.data
     } catch (error) {
         console.log(error)
+    }finally{
+        loadingNotif.value = false
     }
 }
 
@@ -73,8 +101,29 @@ const seenAllNotifications = async () => {
 getNotifications()
 
 const convertDate = (date) => {
-    return 'HAHAH'
-}
+    const now = new Date();
+    const pastDate = new Date(date);
+    const secondsAgo = Math.floor((now - pastDate) / 1000);
+
+    const intervals = [
+        { label: 'year', seconds: 31536000 },
+        { label: 'month', seconds: 2592000 },
+        { label: 'week', seconds: 604800 },
+        { label: 'day', seconds: 86400 },
+        { label: 'hour', seconds: 3600 },
+        { label: 'minute', seconds: 60 },
+        { label: 'second', seconds: 1 },
+    ];
+
+    for (const interval of intervals) {
+        const count = Math.floor(secondsAgo / interval.seconds);
+        if (count > 0) {
+            return `${count} ${interval.label}${count > 1 ? 's' : ''} ago`;
+        }
+    }
+
+    return 'just now';
+};
 </script>
 
 <style scoped>

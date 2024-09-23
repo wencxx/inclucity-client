@@ -5,7 +5,7 @@
         </div>
         <div v-if="applicant" class="flex items-center justify-between w-full">
             <div class="flex flex-col items-center">
-                <Icon icon="clarity:form-line"  class="text-5xl text-green-900" :class="{ 'text-green-500': applicant }"/>
+                <Icon icon="clarity:form-line"  class="text-5xl text-green-900" :class="{ '!text-green-500': applicant }"/>
                 <p class="text-sm">Filled out form</p>
             </div>
             <Icon icon="ph:arrow-right"  class="text-5xl text-blue-700"/>
