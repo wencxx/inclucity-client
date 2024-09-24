@@ -10,6 +10,10 @@
                 <Icon icon="material-symbols-light:warning-outline" class="text-2xl" />
                 <span class="mt-1">Email already taken</span>
             </p>
+            <p v-if="errorRegistering" class="text-start bg-red-500 pl-3 text-white py-1 rounded lg:w-2/4 flex items-center gap-x-2">
+                <Icon icon="material-symbols-light:warning-outline" class="text-2xl" />
+                <span class="mt-1">Something went wrong</span>
+            </p>
             <form @submit.prevent="register()" class="flex flex-col lg:grid lg:place-content-center lg:grid-cols-2 lg:w-2/4 items-center gap-x-5 gap-y-5">
                 <div class="flex flex-col gap-y-1 w-3/4 md:w-2/5 lg:w-full">
                     <label class="font-semibold text-lg">Name</label>
@@ -47,7 +51,8 @@
                         <option>Other</option>
                     </select>
                 </div>
-                <button class="bg-custom-primary w-3/4 md:w-2/5 lg:w-3/5 text-white py-2 rounded-xl uppercase mt-5 hover:bg-red-900 lg:col-span-2 place-self-center">Sign Up</button>
+                <button v-if="registering" class="bg-custom-primary w-3/4 md:w-2/5 lg:w-3/5 text-white py-2 rounded-xl uppercase mt-5 hover:bg-red-900 lg:col-span-2 place-self-center animate-pulse" disabled>Registering...</button>
+                <button v-else class="bg-custom-primary w-3/4 md:w-2/5 lg:w-3/5 text-white py-2 rounded-xl uppercase mt-5 hover:bg-red-900 lg:col-span-2 place-self-center">Sign Up</button>
             </form>
             <div class="flex justify-center mt-10 gap-y-4 font-poppins font-semibold">
                 <p>
@@ -91,6 +96,9 @@ const gender = ref('Select Gender')
 
 const existingEmail = ref(false)
 
+const registering = ref(false)
+const errorRegistering = ref(false)
+
 const register = async () => {
     const userData = {
         name: name.value,
@@ -103,6 +111,7 @@ const register = async () => {
     }
     
     try {
+        registering.value = true
         const res = await axios.post(`${serverUrl}/send-otp`, {
             name: name.value,
             email: email.value,
@@ -120,7 +129,9 @@ const register = async () => {
         localStorage.setItem('timerMinutes', 4)
         localStorage.setItem('timerSeconds', 59)
     } catch (error) {
-        console.error(error)
+        errorRegistering.value = false
+    }finally{
+        registering.value = false
     }
 }
 </script>

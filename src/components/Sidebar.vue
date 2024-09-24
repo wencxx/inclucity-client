@@ -20,10 +20,10 @@
                 <Icon icon="fluent:status-32-regular" class="text-3xl" />
                 <span>Application Status</span>
             </router-link>
-            <router-link :to="{ name: 'login' }" class="flex items-center gap-x-2 text-xl hover:bg-white/[0.20] pl-10 py-2">
+            <!-- <router-link :to="{ name: 'login' }" class="flex items-center gap-x-2 text-xl hover:bg-white/[0.20] pl-10 py-2">
                 <Icon icon="carbon:settings" class="text-3xl" />
                 <span>Settings</span>
-            </router-link>
+            </router-link> -->
             <router-link :to="{ name: 'hotlines' }" class="flex items-center gap-x-2 text-xl hover:bg-white/[0.20] pl-10 py-2">
                 <Icon icon="streamline:online-medical-call-service" class="text-3xl" />
                 <span>Medical Hotlines</span>

@@ -11,6 +11,7 @@
                 <p class="font-semibold text-xl">{{ $route.query.email }}</p>
                 <p v-if="invalidOtp" class="text-center uppercase text-red-500 w-3/4">Incorrect OTP</p>
                 <p v-if="expiredOtp" class="text-center uppercase text-red-500 w-3/4">OTP Expired</p>
+                <p v-if="errResending" class="text-center uppercase text-red-500 w-3/4">Something went wrong resending otp. Try again later</p>
                 <div class="flex justify-evenly gap-x-5 w-3/4">
                     <input v-for="(otp, index) in inputtedOtp" :key="index" type="number" maxlength="1" class="border w-1/6 aspect-square lg:w-2/12  text-center" :class="{ 'border-red-500': invalidOtp }" v-model="inputtedOtp[index]" @input="updateOtp(index, $event)">
                 </div>
@@ -43,6 +44,7 @@ const otpVerification = ref(false)
 const inputtedOtp = ref(['', '', '', ''])
 
 const expiredOtp = ref(false)
+const errResending = ref(false)
 
 const userData = localStorage.getItem('userData')
 
@@ -63,19 +65,23 @@ onUnmounted(() => {
 })
 
 const resendOtp = async () => {
+    expiredOtp.value = false
     if(!expiredOtp.value) return alert(`Resend after ${timerMinutes.value} minute(s)`)
 
     try {
+
         const res = await axios.post(`${serverUrl}/send-otp`, JSON.parse(userData))
         
         if(res.status == 201){
             localStorage.setItem('timerMinutes', 4)
             localStorage.setItem('timerSeconds', 59)
             localStorage.setItem('otp', res.data)
+            timerMinutes.value = 4
+            timerSeconds.value = 59
             startOtpTime()
         }
     } catch (error) {
-        console.error(error)
+        errResending.value = true
     }
 }
 
