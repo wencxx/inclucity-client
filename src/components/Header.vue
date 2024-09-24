@@ -4,7 +4,7 @@
         <div class="flex items-center gap-x-2">
             <router-link :to="{ name: 'notifications' }" class="relative">
                 <Icon  icon="mdi:bell-outline" class="text-3xl lg:text-3xl text-black" />
-                <div v-if="!isSeen" class="w-2 lg:w-3 aspect-square rounded-full absolute top-0 right-0 bg-red-500"></div>
+                <div v-if="notifications && !isSeen" class="w-2 lg:w-3 aspect-square rounded-full absolute top-0 right-0 bg-red-500"></div>
             </router-link>
             <router-link :to="{ name: 'profile' }">
                 <Icon icon="ion:person-circle-outline" class="text-3xl lg:text-3xl text-black" />
@@ -59,7 +59,7 @@ const getNotifications = async () => {
             }
         })
 
-        if(res.data === 'no notifications') return 
+        if(res.data === 'no notifications') return isSeen.value = true
         
         notifications.value = res.data
 

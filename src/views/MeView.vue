@@ -271,11 +271,13 @@ const updateProfile = async () => {
             return
         } 
         errUpdatingProfile.value = true
+        console.log(res.data)
     } catch (error) {
         errUpdatingProfile.value = true
         setTimeout(() => {
             errUpdatingProfile.value = false
         }, 3000)
+        console.log(error)
     }finally{
         uploadedImage.value = false
     }

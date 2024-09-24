@@ -5,7 +5,7 @@
         </router-link>
         <h1 class="text-xl font-semibold capitalize self-start">Notifications</h1>
         <div v-if="notifications" class="w-full space-y-4">
-            <div v-for="n in notifications" :key="n.id" class="flex items-center justify-between bg-white rounded-md hover:shadow-md cursor-default">
+            <div v-for="n in notifications" :key="n.id" class="flex items-center justify-between bg-white rounded-md hover:shadow-md cursor-default py-2">
                 <div class="w-1/5">
                     <img src="../assets/logo.png" alt="" class="w-full">
                 </div>
@@ -17,19 +17,8 @@
                     <p class="text-xs text-gray-500">{{ convertDate(n.date) }}</p>
                 </div>
             </div>
-            <div v-if="loadingNotif" class="flex items-center justify-between bg-white rounded-md hover:shadow-md cursor-default">
-                <div class="w-1/5 p-2">
-                    <div class="w-full h-20 bg-gray-300 animate-pulse rounded"></div>
-                </div>
-                <div class="w-3/5 pl-3 space-y-2">
-                    <div class="bg-gray-300 w-2/3 h-4 rounded animate-pulse"></div>
-                    <div class="bg-gray-300 w-3/3 h-8 rounded animate-pulse"></div>
-                </div>
-                <div class="w-1/5 flex items-center justify-center">
-                    <div class="w-2/4 bg-gray-300 h-8 animate-pulse rounded"></div>
-                </div>
-            </div>
         </div>
+        <h1 v-else>No notifications</h1>
         <div v-if="loadingNotif" class="w-full space-y-4">
             <div v-for="i in 5" :key="i"  class="flex items-center justify-between bg-white rounded-md hover:shadow-md cursor-default">
                 <div class="w-1/5 p-2">
