@@ -458,7 +458,7 @@
                 <span>Submit</span>
                 <Icon icon="bi:send-arrow-up" class="text-xl" />
             </button>
-            <button v-else @click="sendApplication()" class="flex items-center justify-center gap-x-2 bg-custom-primary text-white text-xl w-1/2 py-1 pr-1 rounded-md">
+            <button v-if="loadingSubmitting" @click="sendApplication()" class="flex items-center justify-center gap-x-2 bg-custom-primary text-white text-xl w-1/2 py-1 pr-1 rounded-md">
                 <span>Loading...</span>
             </button>
             <button  v-if="currentPage != '14'" @click="next()" class="flex items-center justify-center gap-x-2 bg-custom-primary text-white text-xl w-1/2 py-1 pr-1 rounded-md">
@@ -869,7 +869,15 @@ const sendApplication = async () => {
             })
         }
     } catch (error) {
-        console.error(error)
+        if (error.response) {
+            console.error('Response data:', error.response.data);
+            console.error('Response status:', error.response.status);
+            console.error('Response headers:', error.response.headers);
+        } else if (error.request) {
+            console.error('Request made but no response received:', error.request);
+        } else {
+            console.error('Error', error.message);
+        }
     }finally{
         loadingSubmitting.value = false
     }

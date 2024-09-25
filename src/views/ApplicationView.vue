@@ -1,15 +1,9 @@
 <template>
     <section class="h-[90dvh] flex flex-col md:flex-row gap-x-5 gap-y-5 items-center justify-center">
-        <div v-if="applicant" class="flex flex-col md:flex-row gap-x-5 gap-y-5 items-center justify-center w-full">
-            <button v-if="applicant && applicant.status !== 'rejected'" @click="isApplicant()" class="bg-custom-primary w-1/3 md:w-1/4 lg:w-1/6 py-2 text-center text-white rounded-md border hover:bg-gray-100 hover:border-custom-primary hover:text-custom-primary">New applicant</button>
-            <router-link v-else :to="{ name: 'newApplicant' }" class="bg-custom-primary w-1/3 md:w-1/4 lg:w-1/6 py-2 text-center text-white rounded-md border hover:bg-gray-100 hover:border-custom-primary hover:text-custom-primary">New applicant</router-link>
-            <button v-if="applicant && applicant.status !== 'expired'" @click="isNotExpired()" class="bg-custom-primary w-1/3 md:w-1/4 lg:w-1/6 py-2 text-center text-white rounded-md border hover:bg-gray-100 hover:border-custom-primary hover:text-custom-primary">Renewal</button>
-            <router-link v-else :to="{ name: 'renewal' }" class="bg-custom-primary w-1/3 md:w-1/4 lg:w-1/6 py-2 text-center text-white rounded-md border hover:bg-gray-100 hover:border-custom-primary hover:text-custom-primary">Renewal</router-link>
-        </div>
-        <div v-else class="flex flex-col md:flex-row gap-x-5 gap-y-5 items-center justify-center w-full">
-            <button disabled class="bg-custom-primary w-1/3 md:w-1/4 lg:w-1/6 py-2 text-center text-white rounded-md border hover:bg-gray-100 hover:border-custom-primary hover:text-custom-primary">New applicant</button>
-            <button disabled class="bg-custom-primary w-1/3 md:w-1/4 lg:w-1/6 py-2 text-center text-white rounded-md border hover:bg-gray-100 hover:border-custom-primary hover:text-custom-primary">Renewal</button>
-        </div>
+        <button v-if="applicant && applicant.status !== 'rejected'" @click="isApplicant()" class="bg-custom-primary w-1/3 md:w-1/4 lg:w-1/6 py-2 text-center text-white rounded-md border hover:bg-gray-100 hover:border-custom-primary hover:text-custom-primary">New applicant</button>
+        <router-link v-else :to="{ name: 'newApplicant' }" class="bg-custom-primary w-1/3 md:w-1/4 lg:w-1/6 py-2 text-center text-white rounded-md border hover:bg-gray-100 hover:border-custom-primary hover:text-custom-primary">New applicant</router-link>
+        <button v-if="applicant && applicant.status !== 'expired'" @click="isNotExpired()" class="bg-custom-primary w-1/3 md:w-1/4 lg:w-1/6 py-2 text-center text-white rounded-md border hover:bg-gray-100 hover:border-custom-primary hover:text-custom-primary">Renewal</button>
+        <router-link v-else :to="{ name: 'renewal' }" class="bg-custom-primary w-1/3 md:w-1/4 lg:w-1/6 py-2 text-center text-white rounded-md border hover:bg-gray-100 hover:border-custom-primary hover:text-custom-primary">Renewal</router-link>
 
         <!-- modal -->
         <div v-if="modal" @click.self="isApplicant()" class="h-screen w-screen absolute top-0 flex items-center justify-center">

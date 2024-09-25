@@ -11,7 +11,7 @@
             <p v-if="updatedProfile" class="absolute left-1/2 -translate-x-1/2 top-5 bg-green-500 rounded px-3 text-white font-manrope">Updated profile successfully</p>
             <div class="absolute left-1/2 top-full -translate-x-1/2 -translate-y-1/2 flex flex-col items-center">
                 <div class=" w-[25dvw] md:w-[15dvw] lg:w-[10dvw] rounded-full aspect-square bg-gray-100  flex items-center justify-center relative group">
-                    <img v-if="user?.profile" :src="`${serverUrl}/uploads/profilePic/${user?.profile}`" alt="profice picture" class="w-[24dvw] md:w-[14dvw] lg:w-[9dvw] aspect-square rounded-full">
+                    <img v-if="user?.profile" :src="user?.profile" alt="profice picture" class="w-[24dvw] md:w-[14dvw] lg:w-[9dvw] aspect-square rounded-full">
                     <Icon v-else icon="bi:person-circle" class="text-[24dvw] md:text-[14dvw] lg:text-[9dvw]" />
                     <div class="absolute bottom-0 left-0 h-1/2 w-full bg-black/15 rounded-b-full hidden group-hover:flex hover:bg-black/20 items-center justify-center">
                         <Icon icon="bi:camera" class="text-4xl text-white hover:text-custom-secondary" @click="chooseImage" />
@@ -268,10 +268,10 @@ const updateProfile = async () => {
             setTimeout(() => {
                 updatedProfile.value = false
             }, 3000)
+            console.log(res.data)
             return
         } 
         errUpdatingProfile.value = true
-        console.log(res.data)
     } catch (error) {
         errUpdatingProfile.value = true
         setTimeout(() => {
