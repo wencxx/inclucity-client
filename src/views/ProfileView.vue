@@ -2,7 +2,7 @@
     <section class="h-[90dvh] p-10">
         <!-- profile -->
         <div v-if="user" class="flex items-center justify-between gap-x-5 font-poppins md:w-3/6 lg:w-fit md:mx-auto">
-            <img v-if="user.profile" class="w-[5rem] md:w-24 aspect-square rounded-full" :src="`${serverUrl}/uploads/profilePic/${user.profile}`" alt="profilePic">
+            <img v-if="user.profile" class="w-[5rem] md:w-24 aspect-square rounded-full" :src="user?.profile" alt="profilePic">
             <Icon v-else icon="bi:person-circle" class="text-[5rem] md:text-[10] lg:text-[4dvw]" />
             <div class="w-full">
                 <h1 class="text-black text-xl md:text-2xl font-semibold uppercase text-start">{{ user.name }}</h1>
