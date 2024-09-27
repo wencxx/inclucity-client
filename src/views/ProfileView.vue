@@ -1,7 +1,7 @@
 <template>
     <section class="h-[90dvh] p-10">
         <!-- profile -->
-        <div v-if="user" class="flex items-center justify-between gap-x-5 font-poppins md:w-3/6 lg:w-fit md:mx-auto">
+        <div v-if="user" class="flex items-center justify-between gap-x-5 font-poppins md:w-3/6 xl:w-2/6 md:mx-auto">
             <img v-if="user.profile" class="w-[5rem] md:w-24 aspect-square rounded-full" :src="user?.profile" alt="profilePic">
             <Icon v-else icon="bi:person-circle" class="text-[5rem] md:text-[10] lg:text-[4dvw]" />
             <div class="w-full">
@@ -31,13 +31,13 @@
                 <Icon icon="weui:arrow-outlined" class="text-5xl text-custom-primary" />
             </router-link>
         </div>
-        <div v-else class="flex items-center justify-between py-3 md:w-2/6 xl:w-2/6 md:mx-auto border border-custom-primarygray-300 animate-pulse rounded-full px-4 mt-20">
+        <div v-if="!user && !applicant" class="flex items-center justify-between py-3 md:w-2/6 xl:w-2/6 md:mx-auto border border-custom-primarygray-300 animate-pulse rounded-full px-4 mt-20">
             <div class="h-12 aspect-square bg-gray-300 rounded animate-pulse"></div>
             <div class="h-5 bg-gray-300 w-3/5 animate-pulse"></div>
             <div class="bg-gray-300 h-6 rounded aspect-square animate-pulse"></div>
         </div>
-        <div v-if="user && !applicant" class="flex items-center gap-x-5 justify-between md:w-3/6 lg:w-2/6 md:mx-auto px-6 py-2 mt-20">
-            Loading...
+        <div v-if="user && !applicant" class="text-center gap-x-5 justify-between md:w-3/6 lg:w-2/6 md:mx-auto px-6 py-2 mt-20">
+            No Receipt to show
         </div>
     </section>
 </template>

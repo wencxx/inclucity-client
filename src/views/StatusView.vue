@@ -1,7 +1,7 @@
 <template>
     <div class="container md:w-2/3 lg:w-2/5 p-10 font-poppins flex flex-col items-center gap-y-14 mx-auto">
         <div v-if="!applicant" class="w-full">
-            <h1 class="text-center font-medium uppercase text-xl">No application data</h1>
+            <h1 class="text-center font-medium uppercase text-xl">haven't applied for application yet</h1>
         </div>
         <div v-if="applicant" class="flex items-center justify-between w-full">
             <div class="flex flex-col items-center">

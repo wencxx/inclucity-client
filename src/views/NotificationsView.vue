@@ -4,7 +4,7 @@
             <Icon icon="material-symbols-light:arrow-back" class="text-4xl text-gray-500" />
         </router-link>
         <h1 class="text-xl font-semibold capitalize self-start">Notifications</h1>
-        <div v-if="notifications" class="w-full space-y-4">
+        <div v-if="notifications && !loadingNotif" class="w-full space-y-4">
             <div v-for="n in notifications" :key="n.id" class="flex items-center justify-between bg-white rounded-md hover:shadow-md cursor-default py-2">
                 <div class="w-1/5">
                     <img src="../assets/logo.png" alt="" class="w-full">
@@ -18,7 +18,7 @@
                 </div>
             </div>
         </div>
-        <h1 v-else>No notifications</h1>
+        <h1 v-if="!notifications && !loadingNotif">No notifications to show</h1>
         <div v-if="loadingNotif" class="w-full space-y-4">
             <div v-for="i in 5" :key="i"  class="flex items-center justify-between bg-white rounded-md hover:shadow-md cursor-default">
                 <div class="w-1/5 p-2">

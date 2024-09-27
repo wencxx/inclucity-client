@@ -31,7 +31,7 @@
         </div>
         <div v-else class="lg:w-1/4 mx-auto flex flex-col items-center gap-y-5 mt-20">
             <Icon icon="tabler:news-off" class="text-6xl" />
-            <h1 class="text-center uppercase font-poppins font-medium tracking-wide">No news available</h1> 
+            <h1 class="text-center uppercase font-poppins font-medium tracking-wide">No news to show</h1> 
         </div>
         <div v-if="err" class="lg:w-1/4 mx-auto flex flex-col items-center gap-y-5 mt-20">
             <Icon  icon="iconoir:db-error" class="text-6xl" />
