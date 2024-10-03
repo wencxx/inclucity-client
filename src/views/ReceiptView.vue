@@ -9,7 +9,7 @@
             <p>Date issued: {{ dateApplied.toLocaleDateString('en-US', { year: 'numeric', month: 'long', day: 'numeric' }) }} </p>
             <p>Time: {{ dateApplied.toLocaleDateString('en-US', { hour: '2-digit', minute: '2-digit' }).split(', ')[1] }} </p>
             <p>Address: {{ applicant.houseNoAndStreet }} {{ applicant.barangay }}, {{ applicant.municipalityCity }}, {{ applicant.province }}</p>
-            <p>Type of Disability: <span v-for="t in applicant.typeOfDisability" :key="t" class="capitalize">{{ t }}<span v-if="applicant.typeOfDisability.length != 1">, </span></span></p>
+            <p class="capitalize">Type of Disability: {{ applicant.typeOfDisability }}</p>
             <p></p>
             <p v-if="applicant.status == 'pending'">Application Status: Your application is currently under review by the admin. Please allow some time for the review process. You will be notified once a decision has been made.</p>
             <p v-if="applicant.status == 'approved'">Application Status:Your application has been reviewed and unfortunately, it has been rejected due to unmet requirements. Please address the specified issues and resubmit your application for consideration. If you need further clarification, feel free to contact the municipality.</p>

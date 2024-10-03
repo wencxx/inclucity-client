@@ -73,43 +73,43 @@
             <h1 class="text-black font-semibold text-xl uppercase">Type of disability</h1>
             <div class="grid md:grid-cols-2 gap-x-10 gap-y-5">
                 <div class="flex items-center gap-x-2 border-2 border-gray-200 rounded-full w-fit py-2 px-5">
-                    <input type="checkbox" class="h-6 aspect-square border pl-2 rounded" value="deaf/hard of hearing" v-model="typeOfDisability">
+                    <input type="checkbox" class="h-6 aspect-square border pl-2 rounded" value="deaf/hard of hearing" true-value="deaf/hard of hearing" false-value="" v-model="typeOfDisability">
                     <label class="font-semibold">Deaf/Hard of hearing</label>
                 </div>
                 <div class="flex items-center gap-x-2 border-2 border-gray-200 rounded-full w-fit py-2 px-5" >
-                    <input type="checkbox" class="h-6 aspect-square border pl-2 rounded" value="intellectual disability" v-model="typeOfDisability">
+                    <input type="checkbox" class="h-6 aspect-square border pl-2 rounded" value="intellectual disability" true-value="intellectual disability" false-value="" v-model="typeOfDisability">
                     <label class="font-semibold">Intellectual Disablity</label>
                 </div>
                 <div class="flex items-center gap-x-2 border-2 border-gray-200 rounded-full w-fit py-2 px-5">
-                    <input type="checkbox" class="h-6 aspect-square border pl-2 rounded" value="Learning disability" v-model="typeOfDisability">
+                    <input type="checkbox" class="h-6 aspect-square border pl-2 rounded" value="Learning disability" true-value="Learning disability" false-value="" v-model="typeOfDisability">
                     <label class="font-semibold">Learning Disablity</label>
                 </div>
                 <div class="flex items-center gap-x-2 border-2 border-gray-200 rounded-full w-fit py-2 px-5">
-                    <input type="checkbox" class="h-6 aspect-square border pl-2 rounded" value="mental disability" v-model="typeOfDisability">
+                    <input type="checkbox" class="h-6 aspect-square border pl-2 rounded" value="mental disability" true-value="mental disability" false-value="" v-model="typeOfDisability">
                     <label class="font-semibold">Mental Disablity</label>
                 </div>
                 <div class="flex items-center gap-x-2 border-2 border-gray-200 rounded-full w-fit py-2 px-5">
-                    <input type="checkbox" class="h-6 aspect-square border pl-2 rounded" value="physical disability(Orthopedic)" v-model="typeOfDisability">
+                    <input type="checkbox" class="h-6 aspect-square border pl-2 rounded" value="physical disability(Orthopedic)" true-value="physical disability(Orthopedic)" false-value="" v-model="typeOfDisability">
                     <label class="font-semibold">Physical Disablity(Orthopedic)</label>
                 </div>
                 <div class="flex items-center gap-x-2 border-2 border-gray-200 rounded-full w-fit py-2 px-5">
-                    <input type="checkbox" class="h-6 aspect-square border pl-2 rounded" value="psychosicial disability" v-model="typeOfDisability">
+                    <input type="checkbox" class="h-6 aspect-square border pl-2 rounded" value="psychosicial disability" true-value="psychosicial disability" false-value="" v-model="typeOfDisability">
                     <label class="font-semibold">Psychosocial Disability</label>
                 </div>
                 <div class="flex items-center gap-x-2 border-2 border-gray-200 rounded-full w-fit py-2 px-5">
-                    <input type="checkbox" class="h-6 aspect-square border pl-2 rounded" value="speech and language impairment" v-model="typeOfDisability">
+                    <input type="checkbox" class="h-6 aspect-square border pl-2 rounded" value="speech and language impairment" true-value="speech and language impairment" false-value="" v-model="typeOfDisability">
                     <label class="font-semibold">Speech and Language Impairment</label>
                 </div>
                 <div class="flex items-center gap-x-2 border-2 border-gray-200 rounded-full w-fit py-2 px-5">
-                    <input type="checkbox" class="h-6 aspect-square border pl-2 rounded" value="visual disability" v-model="typeOfDisability">
+                    <input type="checkbox" class="h-6 aspect-square border pl-2 rounded" value="visual disability" true-value="visual disability" false-value="" v-model="typeOfDisability">
                     <label class="font-semibold">Visual Disability</label>
                 </div>
                 <div class="flex items-center gap-x-2 border-2 border-gray-200 rounded-full w-fit py-2 px-5">
-                    <input type="checkbox" class="h-6 aspect-square border pl-2 rounded" value="cancer" v-model="typeOfDisability">
+                    <input type="checkbox" class="h-6 aspect-square border pl-2 rounded" value="cancer" true-value="cancer" false-value="" v-model="typeOfDisability">
                     <label class="font-semibold">Cancer (RA11215)</label>
                 </div>
                 <div class="flex items-center gap-x-2 border-2 border-gray-200 rounded-full w-fit py-2 px-5">
-                    <input type="checkbox" class="h-6 aspect-square border pl-2 rounded" value="rare disease" v-model="typeOfDisability">
+                    <input type="checkbox" class="h-6 aspect-square border pl-2 rounded" value="rare disease" true-value="rare disease" false-value="" v-model="typeOfDisability">
                     <label class="font-semibold">Rare Disease (RA107747)</label>
                 </div>
             </div>
@@ -494,7 +494,7 @@ const gender = ref('Select Gender')
 const civilStatus = ref('Select Civil Status')
 
 // type of disablity
-const typeOfDisability = ref([])
+const typeOfDisability = ref('')
 
 // cause of disablity
 const causeOfDisability = ref('')
@@ -606,7 +606,7 @@ const setDataToLocalStorage = () => {
     localStorage.setItem('dateOfBirth', dateOfBirth.value)
     localStorage.setItem('gender', gender.value)
     localStorage.setItem('civilStatus', civilStatus.value)
-    localStorage.setItem('typeOfDisability', JSON.stringify(typeOfDisability.value))
+    localStorage.setItem('typeOfDisability', typeOfDisability.value)
     localStorage.setItem('causeOfDisability', causeOfDisability.value)
     localStorage.setItem('otherCauseOfDisability', otherCauseOfDisability.value)
     localStorage.setItem('houseNoAndStreet', houseNoAndStreet.value)
@@ -658,7 +658,7 @@ const getDataFromLocalStorage = () => {
     dateOfBirth.value = localStorage.getItem('dateOfBirth') || ''
     gender.value = localStorage.getItem('gender') || 'Select Gender'
     civilStatus.value = localStorage.getItem('civilStatus') || 'Select Civil Status'
-    typeOfDisability.value = JSON.parse(localStorage.getItem('typeOfDisability')) || []
+    typeOfDisability.value = localStorage.getItem('typeOfDisability')
     causeOfDisability.value = localStorage.getItem('causeOfDisability') || ''
     otherCauseOfDisability.value = localStorage.getItem('otherCauseOfDisability') || ''
     houseNoAndStreet.value = localStorage.getItem('houseNoAndStreet') || ''
@@ -742,7 +742,7 @@ const removeDataFromLocalStorage = () => {
     localStorage.removeItem('mothersLname')
     localStorage.removeItem('mothersFname')
     localStorage.removeItem('mothersMname')
-     localStorage.removeItem('guardiansLname')
+    localStorage.removeItem('guardiansLname')
     localStorage.removeItem('guardiansFname')
     localStorage.removeItem('guardiansMname')
     localStorage.removeItem('accomplishedBy')
@@ -802,7 +802,7 @@ const sendApplication = async () => {
     applicationData.append('dateOfBirth', dateOfBirth.value);
     applicationData.append('gender', gender.value);
     applicationData.append('civilStatus', civilStatus.value);
-    applicationData.append('typeOfDisability', JSON.stringify(typeOfDisability.value));
+    applicationData.append('typeOfDisability', typeOfDisability.value);
     applicationData.append('causeOfDisability', causeOfDisability.value);
     applicationData.append('otherCauseOfDisability', otherCauseOfDisability.value);
     applicationData.append('houseNoAndStreet', houseNoAndStreet.value);

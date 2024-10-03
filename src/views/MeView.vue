@@ -20,7 +20,7 @@
                 </div>
                 <h1 class="text-center font-bold text-2xl">{{ user?.name }}</h1>
                 <div class="flex flex-wrap justify-center w-[100dvw] gap-x-1">
-                    <p class="text-center font-semibold capitalize" :class="{ 'text-sm': user?.typeOfDisability.length != 1, 'text-md': user?.typeOfDisability.length === 1}" v-for="(disablity, index) in user?.typeOfDisability" :key="index">{{ disablity }}<span v-if="user?.typeOfDisability.length != 0" :class="{ 'hidden': user?.typeOfDisability.length == index + 1 }"> -</span></p>
+                    <p class="text-center font-semibold capitalize">{{ application.typeOfDisability }}</p>
                 </div>
             </div>
 
