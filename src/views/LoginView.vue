@@ -49,11 +49,12 @@
 <script setup>
 const serverUrl = import.meta.env.VITE_SERVER_URL
 import { onMounted, onUnmounted, ref } from "vue";
-import { useAuthStore } from '../store'
+import { useAuthStore, useApplicationStore } from '../store'
 import { useRouter } from 'vue-router'
 import axios from "axios";
 
 const authStore = useAuthStore()
+const appStore = useApplicationStore()
 const router = useRouter()
 
 const loadingScreen = ref(false)
@@ -113,7 +114,8 @@ const login = async () => {
         if(res.data === 'invalid credentials' || res.data.role !== 'user') return invalidCredentials.value = true
         if(res.data === 'invalid password') return invalidPassword.value = true
 
-        authStore.login(res.data.token)    
+        authStore.login(res.data.token)  
+        appStore.getApplication()  
         router.push('/news')
     } catch (error) {
         console.error(error)

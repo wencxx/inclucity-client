@@ -74,7 +74,7 @@
                 <div class="flex flex-col gap-y-2 w-full py-2">
                     <label class="font-semibold">Select type of disability *</label>
                     <select class="h-10 border pl-2 rounded" v-model="typeOfDisability" required>
-                        <option :value="typeOfDisability" disabled>Select Type of Disability</option>
+                        <option disabled>Select Type of Disability</option>
                         <option>Deaf/Hard of hearing</option>
                         <option>Intellectual Disability</option>
                         <option>Learning Disability</option>
@@ -90,7 +90,7 @@
                 <div class="flex flex-col gap-y-2 w-full py-2">
                     <label class="font-semibold">Select Cause of Disability *</label>
                     <select class="h-10 border pl-2 rounded" v-model="causeOfDisability" required>
-                        <option :value="causeOfDisability" disabled>Select cause of disability</option>
+                        <option disabled>Select cause of disability</option>
                         <option class="font-semibold" disabled>*Congential/Inborn</option>
                         <option>Autism</option>
                         <option>ADHD</option>
@@ -112,7 +112,7 @@
                 <div class="flex flex-col gap-y-1">
                     <label class="font-semibold">Select Barangay *</label>
                     <select class="h-10 border pl-2 rounded" v-model="barangay">
-                        <option :value="barangay" disabled>Select Barangay</option>
+                        <option disabled>Select Barangay</option>
                         <option value="Anilao">Anilao</option>
                         <option value="Atlag">Atlag</option>
                         <option value="Babatnin">Babatnin</option>
@@ -178,7 +178,7 @@
                 <div class="flex flex-col gap-y-2 w-full py-2">
                     <label class="font-semibold">Select Educational Attainment *</label>
                     <select class="h-10 border pl-2 rounded" v-model="educationalAttainment" required>
-                        <option :value="educationalAttainment" disabled>Select educational attainment</option>
+                        <option disabled>Select educational attainment</option>
                         <option>None</option>
                         <option>Kindergarten</option>
                         <option>Elementary</option>
@@ -198,7 +198,7 @@
                 <div class="flex flex-col gap-y-2 w-full py-2">
                     <label class="font-semibold">Select Status of Employment *</label>
                     <select class="h-10 border pl-2 rounded" v-model="statusOfEmployment" required>
-                        <option :value="statusOfEmployment" disabled>Select status of employment</option>
+                        <option disabled>Select status of employment</option>
                         <option value="employed">Employed</option>
                         <option value="unemployed">Unemployed</option>
                         <option value="self-employed">Self-employed</option>
@@ -207,7 +207,7 @@
                 <div class="flex flex-col gap-y-2 w-full py-2" v-if="statusOfEmployment == 'employed' || statusOfEmployment == 'self-employed'">
                     <label class="font-semibold">a. Category of Employment *</label>
                     <select class="h-10 border pl-2 rounded" v-model="categoryOfEmployment" required>
-                        <option :value="categoryOfEmployment" disabled>Select category of employment</option>
+                        <option disabled>Select category of employment</option>
                         <option value="government">Government</option>
                         <option value="private">Private</option>
                     </select>
@@ -215,7 +215,7 @@
                 <div class="flex flex-col gap-y-2 w-full py-2" v-if="statusOfEmployment == 'employed' || statusOfEmployment == 'self-employed'">
                     <label class="font-semibold">b. Type of Employment *</label>
                     <select class="h-10 border pl-2 rounded" v-model="typeOfEmployment" required>
-                        <option :value="typeOfEmployment" disabled>Select type of employment</option>
+                        <option disabled>Select type of employment</option>
                         <option value="permanent/regular">Permanent/Regular</option>
                         <option value="seasonal">Seasonal</option>
                         <option value="casual">Casual</option>
@@ -231,7 +231,7 @@
                 <div class="flex flex-col gap-y-2 w-full py-2">
                     <label class="font-semibold">Select Occupation *</label>
                     <select class="h-10 border pl-2 rounded" v-model="occupation" @change="changeOccupation('select')" required>
-                        <option :value="occupation" disabled>Select occupation</option>
+                        <option disabled>Select occupation</option>
                         <option>Managers</option>
                         <option>Professionals</option>
                         <option>Technicians and Associate Professionals</option>
@@ -389,13 +389,75 @@
 </template>
 
 <script setup>
-import axios from "axios";
-import { onMounted, onUnmounted, ref, watch } from "vue";
+import axios from "axios"
+import { onMounted, onUnmounted, ref, watch } from "vue"
 import { useRoute, useRouter } from 'vue-router'
 const serverUrl = import.meta.env.VITE_SERVER_URL
 
 const route = useRoute()
 const router = useRouter()
+
+// get application
+const getUserApplication = async () => {
+    try {
+        const res = await axios.get(`${serverUrl}/get-user-application`, {
+            headers: {
+                Authorization: `Bearer ${localStorage.getItem('token')}`
+            }
+        })
+
+        if(res.data){
+            lastName.value = res.data.lastName
+            firstName.value = res.data.firstName
+            middleName.value = res.data.middleName
+            suffix.value = res.data.suffix
+            dateOfBirth.value = res.data.dateOfBirth
+            gender.value = res.data.gender
+            civilStatus.value = res.data.civilStatus
+            typeOfDisability.value = res.data.typeOfDisability
+            causeOfDisability.value = res.data.causeOfDisability
+            houseNoAndStreet.value = res.data.houseNoAndStreet
+            barangay.value = res.data.barangay
+            landlineNo.value = res.data.landlineNo
+            mobileNo.value = res.data.mobileNo
+            emailAddress.value = res.data.emailAddress
+            educationalAttainment.value = res.data.educationalAttainment
+            statusOfEmployment.value = res.data.statusOfEmployment
+            categoryOfEmployment.value = res.data.categoryOfEmployment
+            typeOfEmployment.value = res.data.typeOfEmployment
+            occupation.value = res.data.occupation
+            otherOccupation.value = res.data.otherOccupation
+            organizationAffiliated.value = res.data.organizationAffiliated
+            contactInformation.value = res.data.contactInformation
+            officeAddress.value = res.data.officeAddress
+            telNo.value = res.data.telNo
+            sssNo.value = res.data.sssNo
+            gsisNo.value = res.data.gsisNo
+            pagibigNo.value = res.data.pagibigNo
+            psnNo.value = res.data.psnNo
+            philhealthNo.value = res.data.philhealthNo
+            fathersLname.value = res.data.fathersLname
+            fathersFname.value = res.data.fathersFname
+            fathersMname.value = res.data.fathersMname
+            mothersLname.value = res.data.mothersLname
+            mothersFname.value = res.data.mothersFname
+            mothersMname.value = res.data.mothersMname
+            guardiansLname.value = res.data.guardiansLname
+            guardiansFname.value = res.data.guardiansFname
+            guardiansMname.value = res.data.guardiansMname
+            accomplishedBy.value = res.data.accomplishedBy
+            accomplishedByLname.value = res.data.accomplishedByLname
+            accomplishedByFname.value = res.data.accomplishedByFname
+            accomplishedByMname.value = res.data.accomplishedByMname
+            physicianByLname.value = res.data.physicianByLname
+            physicianByFname.value = res.data.physicianByFname
+            physicianByMname.value = res.data.physicianByMname
+        }
+        console.log(res.data)
+    } catch (error) {
+        console.log(error)
+    }
+}
 
 // personal information
 const lastName = ref('')
@@ -417,7 +479,7 @@ const causeOfDisability = ref('')
 const houseNoAndStreet = ref('')
 const barangay = ref('')
 
-// contact details
+// contact detail
 const landlineNo = ref('')
 const mobileNo = ref('')
 const emailAddress = ref('')
@@ -486,171 +548,18 @@ const handleImageUpload = (imageType, event) => {
 // page refresh logic
 const currentPage = ref(parseInt(route.query.page) || 1)
 
-onMounted(() => {
-    getDataFromLocalStorage()
-})
-
 watch(() => route.query.page, (newPage) => {
     currentPage.value = parseInt(newPage) || 1
 })
 
 const next = () => {
-    setDataToLocalStorage()
     router.push({ query : { page: currentPage.value + 1 }})
 }
 
 const prev = () => {
-    setDataToLocalStorage()
     if(currentPage.value > 1){
         router.push({ query: { page: currentPage.value - 1 } })
     }
-}
-
-const setDataToLocalStorage = () => {
-    localStorage.setItem('lastName', lastName.value)
-    localStorage.setItem('firstName', firstName.value)
-    localStorage.setItem('middleName', middleName.value)
-    localStorage.setItem('suffix', suffix.value)
-    localStorage.setItem('dateOfBirth', dateOfBirth.value)
-    localStorage.setItem('gender', gender.value)
-    localStorage.setItem('civilStatus', civilStatus.value)
-    localStorage.setItem('typeOfDisability', typeOfDisability.value)
-    localStorage.setItem('causeOfDisability', causeOfDisability.value)
-    // localStorage.setItem('otherCauseOfDisability', otherCauseOfDisability.value)
-    localStorage.setItem('houseNoAndStreet', houseNoAndStreet.value)
-    localStorage.setItem('barangay', barangay.value)
-    localStorage.setItem('landlineNo', landlineNo.value)
-    localStorage.setItem('mobileNo', mobileNo.value)
-    localStorage.setItem('emailAddress', emailAddress.value)
-    localStorage.setItem('educationalAttainment', educationalAttainment.value)
-    localStorage.setItem('statusOfEmployment', statusOfEmployment.value)
-    localStorage.setItem('categoryOfEmployment', categoryOfEmployment.value)
-    localStorage.setItem('typeOfEmployment', typeOfEmployment.value)
-    localStorage.setItem('occupation', occupation.value)
-    localStorage.setItem('otherOccupation', otherOccupation.value)
-    localStorage.setItem('organizationAffiliated', organizationAffiliated.value)
-    localStorage.setItem('contactInformation', contactInformation.value)
-    localStorage.setItem('officeAddress', officeAddress.value)
-    localStorage.setItem('telNo', telNo.value)
-    localStorage.setItem('sssNo', sssNo.value)
-    localStorage.setItem('gsisNo', gsisNo.value)
-    localStorage.setItem('pagibigNo', pagibigNo.value)
-    localStorage.setItem('psnNo', psnNo.value)
-    localStorage.setItem('philhealthNo', philhealthNo.value)
-    localStorage.setItem('fathersLname', fathersLname.value)
-    localStorage.setItem('fathersFname', fathersFname.value)
-    localStorage.setItem('fathersMname', fathersMname.value)
-    localStorage.setItem('mothersLname', mothersLname.value)
-    localStorage.setItem('mothersFname', mothersFname.value)
-    localStorage.setItem('mothersMname', mothersMname.value)
-    localStorage.setItem('guardiansLname', guardiansLname.value)
-    localStorage.setItem('guardiansFname', guardiansFname.value)
-    localStorage.setItem('guardiansMname', guardiansMname.value)
-    localStorage.setItem('accomplishedBy', accomplishedBy.value)
-    localStorage.setItem('accomplishedByLname', accomplishedByLname.value)
-    localStorage.setItem('accomplishedByFname', accomplishedByFname.value)
-    localStorage.setItem('accomplishedByMname', accomplishedByMname.value)
-    localStorage.setItem('physicianByLname', physicianByLname.value)
-    localStorage.setItem('physicianByFname', physicianByFname.value)
-    localStorage.setItem('physicianByMname', physicianByMname.value)
-}
-
-const getDataFromLocalStorage = () => {
-    lastName.value = localStorage.getItem('lastName') || ''
-    firstName.value = localStorage.getItem('firstName') || ''
-    middleName.value = localStorage.getItem('middleName') || ''
-    suffix.value = localStorage.getItem('suffix') || ''
-    dateOfBirth.value = localStorage.getItem('dateOfBirth') || ''
-    gender.value = localStorage.getItem('gender') || 'Select Gender'
-    civilStatus.value = localStorage.getItem('civilStatus') || 'Select Civil Status'
-    typeOfDisability.value = localStorage.getItem('typeOfDisability')
-    causeOfDisability.value = localStorage.getItem('causeOfDisability') || ''
-    // otherCauseOfDisability.value = localStorage.getItem('otherCauseOfDisability') || ''
-    houseNoAndStreet.value = localStorage.getItem('houseNoAndStreet') || ''
-    barangay.value = localStorage.getItem('barangay') || ''
-    landlineNo.value = localStorage.getItem('landlineNo') || ''
-    mobileNo.value = localStorage.getItem('mobileNo') || ''
-    emailAddress.value = localStorage.getItem('emailAddress') || ''
-    educationalAttainment.value = localStorage.getItem('educationalAttainment') || ''
-    statusOfEmployment.value = localStorage.getItem('statusOfEmployment') || ''
-    categoryOfEmployment.value = localStorage.getItem('categoryOfEmployment') || ''
-    typeOfEmployment.value = localStorage.getItem('typeOfEmployment') || ''
-    occupation.value = localStorage.getItem('occupation') || ''
-    otherOccupation.value = localStorage.getItem('otherOccupation') || ''
-    organizationAffiliated.value = localStorage.getItem('organizationAffiliated') || ''
-    contactInformation.value = localStorage.getItem('contactInformation') || ''
-    officeAddress.value = localStorage.getItem('officeAddress') || ''
-    telNo.value = localStorage.getItem('telNo') || ''
-    sssNo.value = localStorage.getItem('sssNo') || ''
-    gsisNo.value = localStorage.getItem('gsisNo') || ''
-    pagibigNo.value = localStorage.getItem('pagibigNo') || ''
-    psnNo.value = localStorage.getItem('psnNo') || ''
-    philhealthNo.value = localStorage.getItem('philhealthNo') || ''
-    fathersLname.value = localStorage.getItem('fathersLname') || ''
-    fathersFname.value = localStorage.getItem('fathersFname') || ''
-    fathersMname.value = localStorage.getItem('fathersMname') || ''
-    mothersLname.value = localStorage.getItem('mothersLname') || ''
-    mothersFname.value = localStorage.getItem('mothersFname') || ''
-    mothersMname.value = localStorage.getItem('mothersMname') || ''
-    guardiansLname.value =  localStorage.getItem('guardiansLname') || ''
-    guardiansFname.value = localStorage.getItem('guardiansFname') || ''
-    guardiansMname.value = localStorage.getItem('guardiansMname') || ''
-    accomplishedBy.value = localStorage.getItem('accomplishedBy') || ''
-    accomplishedByLname.value = localStorage.getItem('accomplishedByLname') || ''
-    accomplishedByFname.value = localStorage.getItem('accomplishedByFname') || ''
-    accomplishedByMname.value = localStorage.getItem('accomplishedByMname') || ''
-    physicianByLname.value = localStorage.getItem('physicianByLname') || ''
-    physicianByFname.value = localStorage.getItem('physicianByFname') || ''
-    physicianByMname.value = localStorage.getItem('physicianByMname') || ''
-}
-
-const removeDataFromLocalStorage = () => {
-    localStorage.removeItem('lastName')
-    localStorage.removeItem('firstName')
-    localStorage.removeItem('middleName')
-    localStorage.removeItem('suffix')
-    localStorage.removeItem('dateOfBirth')
-    localStorage.removeItem('gender')
-    localStorage.removeItem('civilStatus')
-    localStorage.removeItem('typeOfDisability')
-    localStorage.removeItem('causeOfDisability')
-    localStorage.removeItem('otherCauseOfDisability')
-    localStorage.removeItem('houseNoAndStreet')
-    localStorage.removeItem('barangay')
-    localStorage.removeItem('landlineNo')
-    localStorage.removeItem('mobileNo')
-    localStorage.removeItem('emailAddress')
-    localStorage.removeItem('educationalAttainment')
-    localStorage.removeItem('statusOfEmployment')
-    localStorage.removeItem('categoryOfEmployment')
-    localStorage.removeItem('typeOfEmployment')
-    localStorage.removeItem('occupation')
-    localStorage.removeItem('otherOccupation')
-    localStorage.removeItem('organizationAffiliated')
-    localStorage.removeItem('contactInformation')
-    localStorage.removeItem('officeAddress')
-    localStorage.removeItem('telNo')
-    localStorage.removeItem('sssNo')
-    localStorage.removeItem('gsisNo')
-    localStorage.removeItem('pagibigNo')
-    localStorage.removeItem('psnNo')
-    localStorage.removeItem('philhealthNo')
-    localStorage.removeItem('fathersLname')
-    localStorage.removeItem('fathersFname')
-    localStorage.removeItem('fathersMname')
-    localStorage.removeItem('mothersLname')
-    localStorage.removeItem('mothersFname')
-    localStorage.removeItem('mothersMname')
-    localStorage.removeItem('guardiansLname')
-    localStorage.removeItem('guardiansFname')
-    localStorage.removeItem('guardiansMname')
-    localStorage.removeItem('accomplishedBy')
-    localStorage.removeItem('accomplishedByLname')
-    localStorage.removeItem('accomplishedByFname')
-    localStorage.removeItem('accomplishedByMname')
-    localStorage.removeItem('physicianByLname')
-    localStorage.removeItem('physicianByFname')
-    localStorage.removeItem('physicianByMname')
 }
 
 const changeAccomplisedBy = () => {
@@ -750,7 +659,6 @@ const sendApplication = async () => {
         if(res.data === 'already submitted') return alreadySubmitted.value = true
 
         if(res.data.status === 'created'){
-            removeDataFromLocalStorage()
             router.push({
                 path: '/successful',
                 query: {
@@ -773,6 +681,10 @@ const sendApplication = async () => {
         loadingSubmitting.value = false
     }
 }
+
+onMounted(() => {
+    getUserApplication()
+})
 </script>
 
 <style scoped>

@@ -1,7 +1,7 @@
 <template>
     <div class="container p-10 font-poppins flex flex-col items-center gap-y-5 mx-auto">
         <h1 class="text-xl font-semibold capitalize self-start">My receipt</h1>
-        <div v-if="applicant" ref="captureDiv" class="bg-red-300 w-full p-5 space-y-4" >
+        <div v-if="applicant && applicant.status === 'approved'" ref="captureDiv" class="bg-red-300 w-full p-5 space-y-4" >
             <p>Application #{{ convertApplicationNum(applicant.applicationNumber) }}</p>
             <p>{{ date.toLocaleDateString('en-US', { year: 'numeric', month: 'long', day: 'numeric', weekday: 'long' }) }}</p>
             <hr class="border-black">
@@ -11,9 +11,7 @@
             <p>Address: {{ applicant.houseNoAndStreet }} {{ applicant.barangay }}, {{ applicant.municipalityCity }}, {{ applicant.province }}</p>
             <p class="capitalize">Type of Disability: {{ applicant.typeOfDisability }}</p>
             <p></p>
-            <p v-if="applicant.status == 'pending'">Application Status: Your application is currently under review by the admin. Please allow some time for the review process. You will be notified once a decision has been made.</p>
-            <p v-if="applicant.status == 'approved'">Application Status:Your application has been reviewed and unfortunately, it has been rejected due to unmet requirements. Please address the specified issues and resubmit your application for consideration. If you need further clarification, feel free to contact the municipality.</p>
-            <p v-if="applicant.status == 'rejected'">Application Status: Your application is currently under review by the admin. Please allow some time for the review process. You will be notified once a decision has been made.</p>
+            <p>Application Status: Your application has been approved by the admin. You can now collect your ID at the municipality hall. Further instructions will be provided upon collection.</p>
         </div>
         <div v-else class="bg-red-300 w-full p-5 space-y-4" >
             <p class="text-center uppercase">Receipt unavailable</p>

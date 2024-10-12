@@ -22,7 +22,9 @@
         <!-- news -->
         <div v-if="!noNews" class="mt-2 lg:mt-5 grid md:grid-cols-2 lg:grid-cols-3 md:gap-x-5 lg:gap-x-10 gap-y-5">
             <div v-for="( n, index ) in news" :key="index" class="flex flex-col gap-y-2 font-poppins bg-white p-3 rounded-md shadow cursor-default hover:shadow-md">
-                <img :src="`https://raw.githubusercontent.com/wencxx/inclucity-server/refs/heads/main/uploads/newsPic/${n.image}`" alt="logo" class="w-full rounded">
+                <router-link :to="{ name: 'newsDetails', params: { id: n._id }  }">
+                    <img :src="n.imageName" alt="logo" class="w-full rounded">
+                </router-link>
                 <router-link :to="{ name: 'newsDetails', params: { id: n._id }  }">
                     <p class="capitalize font-medium text-md">{{ n.postTitle }}</p>
                 </router-link>
@@ -60,7 +62,7 @@ const getNews = async () => {
         loadingNews.value = true
         const res = await axios.get(`${serverUrl}/get-news`)
 
-        if(res.data === 'No news available') return noNews.value = true
+        if(res.data.length === 0) return noNews.value = true
         news.value = res.data
     } catch (error) {
         console.error(error)

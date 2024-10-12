@@ -9,13 +9,15 @@
         <div v-if="news" class="mt-2 lg:mt-5 md:w-2/4">
             <h1 class="text-xl md:text-2xl uppercase font-medium mb-3">News</h1>
             <div class="flex flex-col gap-y-5 font-poppins bg-white p-3 rounded-md shadow cursor-default hover:shadow-md">
-                <img :src="`https://raw.githubusercontent.com/wencxx/inclucity-server/refs/heads/main/uploads/newsPic/${news.imageName}`" alt="logo" class="w-full rounded">
+                <img :src="news.imageName" alt="logo" class="w-full rounded">
                 <p class="capitalize font-medium text-md">{{ news.postTitle }}</p>
                 <p class="text-gray-600 italic text-xs">{{ changeDateFormat(news.datePosted) }}</p>
                 <p class="capitalize text-sm px-2 text-gray-600">" {{ news.postDescription }} "</p>
-                <div v-if="news.postUrl">
+                <div v-if="news.postUrl.length > 0">
                     <p class="text-gray-600 text-sm">Read more:</p>
-                    <p v-for="url in news.postUrl" :key="url" class="text-blue-500 text-sm hover:underline hover:text-blue-700">{{ url }}</p>
+                    <div class="w-1/3">
+                        <a v-for="url in news.postUrl" :key="url" :href="formatUrl(url)" target="_blank" class="text-blue-500 text-sm hover:underline hover:text-blue-700">{{ url }}</a>
+                    </div>
                 </div>
             </div>
         </div>
@@ -55,6 +57,9 @@ const getNewsDetails = async () => {
 
 getNewsDetails()
 
+const formatUrl = (url) => {
+    return url.startsWith('http') ? url : `https://${url}`;
+}
 
 const changeDateFormat = (date) => {
     // 2024-09-17T04:21:33.947+00:00

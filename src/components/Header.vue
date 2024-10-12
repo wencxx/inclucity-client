@@ -7,7 +7,8 @@
                 <div v-if="notifications && !isSeen" class="w-2 lg:w-3 aspect-square rounded-full absolute top-0 right-0 bg-red-500"></div>
             </router-link>
             <router-link :to="{ name: 'profile' }">
-                <Icon icon="ion:person-circle-outline" class="text-3xl lg:text-3xl text-black" />
+                <img v-if="user && user?.profile" :src="user?.profile" alt="user profile" class="w-7 aspect-square rounded-full">
+                <Icon v-else icon="ion:person-circle-outline" class="text-3xl lg:text-3xl text-black" />
             </router-link>
             <Icon  :icon="menuIcon" class="text-4xl lg:text-4xl" @click="toggleSidebar" />
         </div>
@@ -15,12 +16,14 @@
 </template>
 
 <script setup>
-import { defineEmits, defineProps, onMounted, ref, watch } from 'vue'
+import { defineEmits, defineProps, onMounted, ref, watch, computed } from 'vue'
 import { useAuthStore } from '../store'
 import { useRouter } from 'vue-router'
 
 const authStore = useAuthStore()
 const router = useRouter()
+
+const user = computed(() => authStore.user)
 
 const emit = defineEmits(['toggleSidebar'])
 const props = defineProps({

@@ -4,7 +4,7 @@ const serverUrl = import.meta.env.VITE_SERVER_URL
 
 export const useApplicationStore = defineStore('applicationStore', {
     state: () => ({
-        application: null,
+        application: localStorage.getItem('data') || null,
     }),
     actions: {
         async getApplication(){
@@ -18,6 +18,7 @@ export const useApplicationStore = defineStore('applicationStore', {
                 if(application.data == 'no data') return
 
                 this.application = application.data
+                localStorage.setItem('data', application.data)
             } catch (error) {
                 console.log(error)
             }

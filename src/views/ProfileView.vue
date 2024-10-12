@@ -7,7 +7,7 @@
             <div class="w-full">
                 <h1 class="text-black text-xl md:text-2xl font-semibold uppercase text-start">{{ user.name }}</h1>
                 <div class="flex flex-wrap">
-                    <h1 class="text-black font-medium w-fit capitalize" >{{ applicant.typeOfDisability }}</h1>
+                    <h1 class="text-black font-medium w-fit capitalize" >{{ applicant?.typeOfDisability }}</h1>
                 </div>
             </div>
             <router-link :to="{ name: 'me' }">

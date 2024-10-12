@@ -30,7 +30,7 @@ watch(routePath, () => {
 onMounted(() => {
   if(localStorage.getItem('auth')){
     authStore.getUser()
-    applicationStore.getApplication()
+    // applicationStore.getApplication()
   }
 })
 

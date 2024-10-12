@@ -1,5 +1,5 @@
 <template>
-    <div class="w-3/4 md:w-1/3 lg:w-1/5 h-screen bg-custom-primary absolute top-0 left-0 flex flex-col gap-y-5 z-30">
+    <div class="w-3/4 md:w-2/5 lg:w-1/4 xl:1/5 h-screen bg-custom-primary absolute top-0 left-0 flex flex-col gap-y-5 z-30">
         <div class="h-[10dvh]">
             <img src="../assets/logo.png" alt="logo" class="h-full">
         </div>
@@ -19,6 +19,10 @@
             <router-link :to="{ name: 'status' }" class="flex items-center gap-x-2 text-xl hover:bg-white/[0.20] pl-10 py-2">
                 <Icon icon="fluent:status-32-regular" class="text-3xl" />
                 <span>Application Status</span>
+            </router-link>
+            <router-link :to="{ name: 'requirements' }" class="flex items-center gap-x-2 text-xl hover:bg-white/[0.20] pl-10 py-2">
+                <Icon icon="carbon:document-requirements" class="text-3xl" />
+                <span>ID Requirements</span>
             </router-link>
             <!-- <router-link :to="{ name: 'login' }" class="flex items-center gap-x-2 text-xl hover:bg-white/[0.20] pl-10 py-2">
                 <Icon icon="carbon:settings" class="text-3xl" />

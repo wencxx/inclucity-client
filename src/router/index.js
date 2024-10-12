@@ -7,14 +7,16 @@ import HomeView from '../views/HomeView.vue'
 import NewsDetailsView from '../views/NewsDetailsView.vue'
 import ApplicatonView from '../views/ApplicationView.vue'
 import NewApplicantView from '../views/NewApplicantView.vue'
-import RenewalView from '../views/RenewalView.vue'
+import RenewalView from '../views/RenewalView2.vue'
 import NotificationsView from '../views/NotificationsView.vue'
+import NotificationsDetailsView from '../views/NotificationsDetailsView.vue'
 import ProfileView from '../views/ProfileView.vue'
 import MeView from '../views/MeView.vue'
 import ReceiptView from '../views/ReceiptView.vue'
 import StatusView from '../views/StatusView.vue'
 import SuccessfulView from '../components/Successful.vue'
 import HotlinesView from '../views/HotlinesView.vue'
+import RequirementsView from '../views/Requirements.vue'
 
 const routes = [
     {
@@ -74,6 +76,14 @@ const routes = [
         }
     },
     {
+        path: '/notifications/:id',
+        name: 'notificationsDetails',
+        component: NotificationsDetailsView,
+        meta: {
+            requiresAuth: true
+        }
+    },
+    {
         path: '/application/receipt',
         name: 'receipt',
         component: ReceiptView,
@@ -125,6 +135,14 @@ const routes = [
         path: '/medical-hotlines',
         name: 'hotlines',
         component: HotlinesView,
+        meta: {
+            requiresAuth: true
+        }
+    },
+    {
+        path: '/requirements-example',
+        name: 'requirements',
+        component: RequirementsView,
         meta: {
             requiresAuth: true
         }
