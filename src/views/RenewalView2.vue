@@ -607,7 +607,7 @@ const sendApplication = async () => {
     applicationData.append('civilStatus', civilStatus.value);
     applicationData.append('typeOfDisability', typeOfDisability.value);
     applicationData.append('causeOfDisability', causeOfDisability.value);
-    // applicationData.append('otherCauseOfDisability', otherCauseOfDisability.value);
+    applicationData.append('otherCauseOfDisability', otherCauseOfDisability.value);
     applicationData.append('houseNoAndStreet', houseNoAndStreet.value);
     applicationData.append('barangay', barangay.value);
     applicationData.append('municipalityCity', 'Malolos');
