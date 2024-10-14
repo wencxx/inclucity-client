@@ -1,6 +1,6 @@
 <template>
     <section class="h-[90dvh] flex flex-col md:flex-row gap-x-5 gap-y-5 items-center justify-center">
-        <button v-if="applicant && applicant.status !== 'rejected'" @click="isApplicant()" class="bg-custom-primary w-1/3 md:w-1/4 lg:w-1/6 py-2 text-center text-white rounded-md border hover:bg-gray-100 hover:border-custom-primary hover:text-custom-primary">New applicant</button>
+        <button v-if="applicant && applicant.status !== 'rejected' && applicant.status !== 'expired'" @click="isApplicant()" class="bg-custom-primary w-1/3 md:w-1/4 lg:w-1/6 py-2 text-center text-white rounded-md border hover:bg-gray-100 hover:border-custom-primary hover:text-custom-primary">New applicant</button>
         <router-link v-else :to="{ name: 'newApplicant' }" class="bg-custom-primary w-1/3 md:w-1/4 lg:w-1/6 py-2 text-center text-white rounded-md border hover:bg-gray-100 hover:border-custom-primary hover:text-custom-primary">New applicant</router-link>
         <button v-if="applicant && applicant.status !== 'expired' || !applicant" @click="isNotExpired()" class="bg-custom-primary w-1/3 md:w-1/4 lg:w-1/6 py-2 text-center text-white rounded-md border hover:bg-gray-100 hover:border-custom-primary hover:text-custom-primary">Renewal</button>
         <router-link v-if="applicant && applicant.status === 'expired'" :to="{ name: 'renewal' }" class="bg-custom-primary w-1/3 md:w-1/4 lg:w-1/6 py-2 text-center text-white rounded-md border hover:bg-gray-100 hover:border-custom-primary hover:text-custom-primary">Renewal</router-link>
@@ -40,7 +40,7 @@
 </template>
 
 <script setup>
-import { computed, onUnmounted, ref } from 'vue'
+import { computed, onMounted, onUnmounted, ref } from 'vue'
 import { useApplicationStore } from '../store'
 
 const applicationStore = useApplicationStore()
@@ -48,6 +48,10 @@ const applicant = computed(() => applicationStore.application)
 
 onUnmounted(() => {
     modal.value = false
+})
+
+onMounted(() => {
+    applicationStore.getApplication()
 })
 
 const modal = ref(false)

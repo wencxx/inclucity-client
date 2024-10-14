@@ -1,9 +1,9 @@
 <template>
     <div class="container md:w-2/3 lg:w-2/5 p-10 font-poppins flex flex-col items-center gap-y-14 mx-auto">
-        <div v-if="!applicant" class="w-full">
+        <div v-if="!applicant || applicant && applicant.status === 'expired'" class="w-full">
             <h1 class="text-center font-medium uppercase text-xl">haven't applied for application yet</h1>
         </div>
-        <div v-if="applicant && applicant.status" class="flex items-center justify-between w-full">
+        <div v-if="applicant && applicant.status !== 'expired'" class="flex items-center justify-between w-full">
             <div class="flex flex-col items-center">
                 <Icon icon="clarity:form-line"  class="text-5xl text-green-900" :class="{ '!text-green-500': applicant }"/>
                 <p class="text-sm">Filled out form</p>
@@ -20,7 +20,7 @@
             </div>
         </div>
 
-        <div v-if="applicant" class="border w-full flex flex-col gap-y-3 p-5 rounded-xl shadow">
+        <div v-if="applicant && applicant.status !== 'expired'" class="border w-full flex flex-col gap-y-3 p-5 rounded-xl shadow">
             <h1 class="text-2xl font-semibold capitalize text-center mb-5">Application Status</h1>
             <div class="flex justify-between items-center">
                 <h1 class="font-medium text-xl">Information Details</h1>

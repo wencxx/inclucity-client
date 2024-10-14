@@ -89,8 +89,8 @@
                 </div>
                 <div class="flex flex-col gap-y-2 w-full py-2">
                     <label class="font-semibold">Select Cause of Disability *</label>
-                    <select class="h-10 border pl-2 rounded" v-model="causeOfDisability" required>
-                        <option disabled>Select cause of disability</option>
+                    <select class="h-10 border pl-2 rounded" v-model="causeOfDisability" @change="otherCauseOfDisability = ''" required>
+                        <!-- <option value="" disabled>Select cause of disability</option> -->
                         <option class="font-semibold" disabled>*Congential/Inborn</option>
                         <option>Autism</option>
                         <option>ADHD</option>
@@ -101,6 +101,10 @@
                         <option>Infecations</option>
                         <option>Injury</option>
                     </select>
+                </div>
+                <div class="flex flex-col gap-y-2 py-2">
+                    <label class="font-semibold">Other cause of disability</label>
+                    <input type="text" class="h-10 border pl-2 rounded" @input="causeOfDisability = ''" v-model="otherCauseOfDisability">
                 </div>
             </div>
             <h1 class="text-black font-semibold text-xl uppercase">Residence Address</h1>
@@ -198,7 +202,7 @@
                 <div class="flex flex-col gap-y-2 w-full py-2">
                     <label class="font-semibold">Select Status of Employment *</label>
                     <select class="h-10 border pl-2 rounded" v-model="statusOfEmployment" required>
-                        <option disabled>Select status of employment</option>
+                        <option value="" disabled>Select status of employment</option>
                         <option value="employed">Employed</option>
                         <option value="unemployed">Unemployed</option>
                         <option value="self-employed">Self-employed</option>
@@ -207,7 +211,7 @@
                 <div class="flex flex-col gap-y-2 w-full py-2" v-if="statusOfEmployment == 'employed' || statusOfEmployment == 'self-employed'">
                     <label class="font-semibold">a. Category of Employment *</label>
                     <select class="h-10 border pl-2 rounded" v-model="categoryOfEmployment" required>
-                        <option disabled>Select category of employment</option>
+                        <option value="" disabled>Select category of employment</option>
                         <option value="government">Government</option>
                         <option value="private">Private</option>
                     </select>
@@ -215,7 +219,7 @@
                 <div class="flex flex-col gap-y-2 w-full py-2" v-if="statusOfEmployment == 'employed' || statusOfEmployment == 'self-employed'">
                     <label class="font-semibold">b. Type of Employment *</label>
                     <select class="h-10 border pl-2 rounded" v-model="typeOfEmployment" required>
-                        <option disabled>Select type of employment</option>
+                        <option value="" disabled>Select type of employment</option>
                         <option value="permanent/regular">Permanent/Regular</option>
                         <option value="seasonal">Seasonal</option>
                         <option value="casual">Casual</option>
@@ -473,7 +477,7 @@ const typeOfDisability = ref('')
 
 // cause of disablity
 const causeOfDisability = ref('')
-// const otherCauseOfDisability = ref('')
+const otherCauseOfDisability = ref('')
 
 // residence address
 const houseNoAndStreet = ref('')

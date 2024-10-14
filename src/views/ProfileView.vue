@@ -6,7 +6,7 @@
             <Icon v-else icon="bi:person-circle" class="text-[5rem] md:text-[10] lg:text-[4dvw]" />
             <div class="w-full">
                 <h1 class="text-black text-xl md:text-2xl font-semibold uppercase text-start">{{ user.name }}</h1>
-                <div class="flex flex-wrap">
+                <div class="flex flex-wrap" v-if="application && application?.status !== 'expired'">
                     <h1 class="text-black font-medium w-fit capitalize" >{{ applicant?.typeOfDisability }}</h1>
                 </div>
             </div>

@@ -71,10 +71,10 @@
         <div v-if="currentPage == 3" class="w-full lg:w-1/2 lg:mx-auto flex flex-col gap-y-5 font-manrope">
             <h1 class="text-black font-semibold text-xl uppercase">Type and Cause of Disability</h1>
             <div class="grid md:grid-cols-2 gap-x-10 gap-y-5">
-                <div class="flex flex-col gap-y-2 w-full py-2">
-                    <label class="font-semibold">Select type of disability *</label>
+                <div class="flex flex-col gap-y-2 w-1/2 py-2 col-span-2">
+                    <label class="font-semibold">Select type of disability*</label>
                     <select class="h-10 border pl-2 rounded" v-model="typeOfDisability" required>
-                        <option :value="typeOfDisability" disabled>Select Type of Disability</option>
+                        <!-- <option :value="typeOfDisability" disabled>Select type of disability</option> -->
                         <option>Deaf/Hard of hearing</option>
                         <option>Intellectual Disability</option>
                         <option>Learning Disability</option>
@@ -89,8 +89,8 @@
                 </div>
                 <div class="flex flex-col gap-y-2 w-full py-2">
                     <label class="font-semibold">Select Cause of Disability *</label>
-                    <select class="h-10 border pl-2 rounded" v-model="causeOfDisability" required>
-                        <option :value="causeOfDisability" disabled>Select cause of disability</option>
+                    <select class="h-10 border pl-2 rounded" v-model="causeOfDisability" @change="otherCauseOfDisability = ''" required>
+                        <!-- <option value="" disabled>Select cause of disability</option> -->
                         <option class="font-semibold" disabled>*Congential/Inborn</option>
                         <option>Autism</option>
                         <option>ADHD</option>
@@ -101,6 +101,10 @@
                         <option>Infecations</option>
                         <option>Injury</option>
                     </select>
+                </div>
+                <div class="flex flex-col gap-y-2 py-2">
+                    <label class="font-semibold">Other cause of disability</label>
+                    <input type="text" class="h-10 border pl-2 rounded" @input="causeOfDisability = ''" v-model="otherCauseOfDisability">
                 </div>
             </div>
             <h1 class="text-black font-semibold text-xl uppercase">Residence Address</h1>
@@ -198,7 +202,7 @@
                 <div class="flex flex-col gap-y-2 w-full py-2">
                     <label class="font-semibold">Select Status of Employment *</label>
                     <select class="h-10 border pl-2 rounded" v-model="statusOfEmployment" required>
-                        <option :value="statusOfEmployment" disabled>Select status of employment</option>
+                        <option value="" disabled>Select status of employment</option>
                         <option value="employed">Employed</option>
                         <option value="unemployed">Unemployed</option>
                         <option value="self-employed">Self-employed</option>
@@ -207,7 +211,7 @@
                 <div class="flex flex-col gap-y-2 w-full py-2" v-if="statusOfEmployment == 'employed' || statusOfEmployment == 'self-employed'">
                     <label class="font-semibold">a. Category of Employment *</label>
                     <select class="h-10 border pl-2 rounded" v-model="categoryOfEmployment" required>
-                        <option :value="categoryOfEmployment" disabled>Select category of employment</option>
+                        <option value="" disabled>Select category of employment</option>
                         <option value="government">Government</option>
                         <option value="private">Private</option>
                     </select>
@@ -215,7 +219,7 @@
                 <div class="flex flex-col gap-y-2 w-full py-2" v-if="statusOfEmployment == 'employed' || statusOfEmployment == 'self-employed'">
                     <label class="font-semibold">b. Type of Employment *</label>
                     <select class="h-10 border pl-2 rounded" v-model="typeOfEmployment" required>
-                        <option :value="typeOfEmployment" disabled>Select type of employment</option>
+                        <option value="" disabled>Select type of employment</option>
                         <option value="permanent/regular">Permanent/Regular</option>
                         <option value="seasonal">Seasonal</option>
                         <option value="casual">Casual</option>
@@ -392,7 +396,10 @@
 import axios from "axios";
 import { onMounted, onUnmounted, ref, watch } from "vue";
 import { useRoute, useRouter } from 'vue-router'
+import { useApplicationStore } from '../store'
 const serverUrl = import.meta.env.VITE_SERVER_URL
+
+const appStore = useApplicationStore()
 
 const route = useRoute()
 const router = useRouter()
@@ -411,7 +418,7 @@ const typeOfDisability = ref('')
 
 // cause of disablity
 const causeOfDisability = ref('')
-// const otherCauseOfDisability = ref('')
+const otherCauseOfDisability = ref('')
 
 // residence address
 const houseNoAndStreet = ref('')
@@ -481,8 +488,6 @@ const handleImageUpload = (imageType, event) => {
     }
 };
 
-
-
 // page refresh logic
 const currentPage = ref(parseInt(route.query.page) || 1)
 
@@ -500,7 +505,7 @@ const next = () => {
 }
 
 const prev = () => {
-    setDataToLocalStorage()
+    // setDataToLocalStorage()
     if(currentPage.value > 1){
         router.push({ query: { page: currentPage.value - 1 } })
     }
@@ -516,7 +521,7 @@ const setDataToLocalStorage = () => {
     localStorage.setItem('civilStatus', civilStatus.value)
     localStorage.setItem('typeOfDisability', typeOfDisability.value)
     localStorage.setItem('causeOfDisability', causeOfDisability.value)
-    // localStorage.setItem('otherCauseOfDisability', otherCauseOfDisability.value)
+    localStorage.setItem('otherCauseOfDisability', otherCauseOfDisability.value)
     localStorage.setItem('houseNoAndStreet', houseNoAndStreet.value)
     localStorage.setItem('barangay', barangay.value)
     localStorage.setItem('landlineNo', landlineNo.value)
@@ -751,6 +756,7 @@ const sendApplication = async () => {
 
         if(res.data.status === 'created'){
             removeDataFromLocalStorage()
+            appStore.getApplication()  
             router.push({
                 path: '/successful',
                 query: {

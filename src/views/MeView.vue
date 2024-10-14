@@ -19,8 +19,8 @@
                     </div>
                 </div>
                 <h1 class="text-center font-bold text-2xl">{{ user?.name }}</h1>
-                <div class="flex flex-wrap justify-center w-[100dvw] gap-x-1">
-                    <p class="text-center font-semibold capitalize">{{ application.typeOfDisability }}</p>
+                <div class="flex flex-wrap justify-center w-[100dvw] gap-x-1" v-if="application && appllication?.status !== 'expired'">
+                    <p class="text-center font-semibold capitalize">{{ application?.typeOfDisability }}</p>
                 </div>
             </div>
 
@@ -110,7 +110,7 @@
 
 <script setup>
 import axios from 'axios'
-import { computed, ref, watch } from 'vue'
+import { computed, onMounted, ref, watch } from 'vue'
 import { useAuthStore, useApplicationStore } from '../store'
 import { useRouter } from 'vue-router';
 const serverUrl = import.meta.env.VITE_SERVER_URL
