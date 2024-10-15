@@ -1,5 +1,5 @@
 <template>
-    <section class="container font-poppins p-4 mx-auto flex justify-center">
+    <section class="container font-poppins p-4 mx-auto flex justify-center overflow-auto h-[90dvh]">
         <div v-if="err" class="text-center mt-10">
             <h1 class="text-lg uppercase">server error</h1>
         </div>
@@ -9,7 +9,7 @@
         <div v-if="news" class="mt-2 lg:mt-5 md:w-2/4">
             <h1 class="text-xl md:text-2xl uppercase font-medium mb-3">News</h1>
             <div class="flex flex-col gap-y-5 font-poppins bg-white p-3 rounded-md shadow cursor-default hover:shadow-md">
-                <img :src="news.imageName" alt="logo" class="w-full rounded">
+                <img :src="news.imageName" alt="logo" class="w-full aspect-video rounded">
                 <p class="capitalize font-medium text-md">{{ news.postTitle }}</p>
                 <p class="text-gray-600 italic text-xs">{{ changeDateFormat(news.datePosted) }}</p>
                 <p class="capitalize text-sm px-2 text-gray-600">" {{ news.postDescription }} "</p>
