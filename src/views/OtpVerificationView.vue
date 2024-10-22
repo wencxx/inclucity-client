@@ -134,7 +134,7 @@ const verifyOtp = async () => {
             router.push({
                 path: '/',
                 query: {
-                    userName: res.data
+                    name: res.data
                 }
             })
             localStorage.removeItem('otp')

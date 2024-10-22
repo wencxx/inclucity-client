@@ -23,7 +23,7 @@
         <div v-if="!noNews" class="mt-2 lg:mt-5 grid md:grid-cols-2 lg:grid-cols-3 md:gap-x-5 lg:gap-x-10 gap-y-5">
             <div v-for="( n, index ) in news" :key="index" class="flex flex-col gap-y-2 font-poppins bg-white p-3 rounded-md shadow cursor-default hover:shadow-md">
                 <router-link :to="{ name: 'newsDetails', params: { id: n._id }  }">
-                    <img :src="n.imageName" alt="logo" class="w-full rounded">
+                    <img :src="n.imageName" alt="logo" class="w-full aspect-video rounded">
                 </router-link>
                 <router-link :to="{ name: 'newsDetails', params: { id: n._id }  }">
                     <p class="capitalize font-medium text-md">{{ n.postTitle }}</p>

@@ -21,6 +21,9 @@
             </div>
             <button class="bg-custom-primary rounded-md w-1/3 lg:w-1/5 py-2 text-white mx-auto" @click="next()">Continue</button>
         </div>
+        <div v-if="hasEmptyFields" class="w-full lg:w-1/2 lg:mx-auto flex flex-col gap-y-5 font-manrope">
+            <p class="bg-red-500 text-white pl-2 rounded py-1">Fill out all required fields</p>
+        </div>
         <!-- second step -->
         <div v-if="currentPage == 2" class="w-full lg:w-1/2 lg:mx-auto flex flex-col gap-y-5 font-manrope">
             <h1 class="text-black font-semibold text-xl uppercase">Personal Information</h1>
@@ -61,7 +64,7 @@
                         <option>Single</option>
                         <option>Married</option>
                         <option>Seperated</option>
-                        <option>Cohabitation (Live-in)</option>
+                        <option value="Cohabitation">Cohabitation (Live-in)</option>
                         <option>Widow/er</option>
                     </select>
                 </div>
@@ -71,7 +74,7 @@
         <div v-if="currentPage == 3" class="w-full lg:w-1/2 lg:mx-auto flex flex-col gap-y-5 font-manrope">
             <h1 class="text-black font-semibold text-xl uppercase">Type and Cause of Disability</h1>
             <div class="grid md:grid-cols-2 gap-x-10 gap-y-5">
-                <div class="flex flex-col gap-y-2 w-1/2 py-2 col-span-2">
+                <div class="flex flex-col gap-y-2 py-2">
                     <label class="font-semibold">Select type of disability*</label>
                     <select class="h-10 border pl-2 rounded" v-model="typeOfDisability" required>
                         <!-- <option :value="typeOfDisability" disabled>Select type of disability</option> -->
@@ -87,6 +90,7 @@
                         <option>Rare Disease (RA107747)</option>
                     </select>
                 </div>
+                <div></div>
                 <div class="flex flex-col gap-y-2 w-full py-2">
                     <label class="font-semibold">Select Cause of Disability *</label>
                     <select class="h-10 border pl-2 rounded" v-model="causeOfDisability" @change="otherCauseOfDisability = ''" required>
@@ -156,7 +160,7 @@
                         <option value="Sumapang Bata">Sumapang Bata</option>
                         <option value="Sumapang Matanda">Sumapang Matanda</option>
                         <option value="Tikay">Tikay</option>
-                        </select>
+                    </select>
                 </div>
             </div>
         </div>
@@ -499,9 +503,90 @@ watch(() => route.query.page, (newPage) => {
     currentPage.value = parseInt(newPage) || 1
 })
 
+const hasEmptyFields = ref(false)
+
 const next = () => {
+    if(currentPage.value === 2){
+        const pageData = [
+            lastName.value,
+            firstName.value,
+            middleName.value,
+            dateOfBirth.value,
+        ]
+
+        if (pageData.some(field => !field) || gender.value === 'Select Gender' || civilStatus.value === 'Select Civil Status') {
+            hasEmptyFields.value = true
+            return;
+        }
+        hasEmptyFields.value = false
+        router.push({ query : { page: currentPage.value + 1 }})
+    }else if(currentPage.value === 3){
+        const pageData = [
+            typeOfDisability.value,
+            causeOfDisability.value,
+            houseNoAndStreet.value,
+            barangay.value
+        ]
+
+        if (pageData.some(field => !field)) {
+            hasEmptyFields.value = true
+            return;
+        }
+        hasEmptyFields.value = false
+        router.push({ query : { page: currentPage.value + 1 }})
+    }else if(currentPage.value === 4){
+        const pageData = [
+            landlineNo.value,
+            mobileNo.value,
+            emailAddress.value,
+            educationalAttainment.value
+        ]
+
+        if (pageData.some(field => !field)) {
+            hasEmptyFields.value = true
+            return;
+        }
+        hasEmptyFields.value = false
+        router.push({ query : { page: currentPage.value + 1 }})
+    }else if(currentPage.value === 5){
+        const pageData = [
+            categoryOfEmployment.value,
+            typeOfEmployment.value,
+        ]
+
+        if (!statusOfEmployment.value || statusOfEmployment.value !== 'unemployed' && pageData.some(field => !field)) {
+            hasEmptyFields.value = true
+            return;
+        }
+
+        hasEmptyFields.value = false
+        router.push({ query : { page: currentPage.value + 1 }})
+    }else if(currentPage.value === 6){
+        if (!occupation.value && !otherOccupation.value) {
+            hasEmptyFields.value = true
+            return;
+        }
+
+        hasEmptyFields.value = false
+        router.push({ query : { page: currentPage.value + 1 }})
+    }else if(currentPage.value === 9){
+        const pageData = [
+            physicianByLname.value,
+            physicianByFname.value,
+            physicianByMname.value
+        ]
+
+        if (pageData.some(field => !field)) {
+            hasEmptyFields.value = true
+            return;
+        }
+
+        hasEmptyFields.value = false
+        router.push({ query : { page: currentPage.value + 1 }})
+    }else{
+        router.push({ query : { page: currentPage.value + 1 }})
+    }
     setDataToLocalStorage()
-    router.push({ query : { page: currentPage.value + 1 }})
 }
 
 const prev = () => {
@@ -704,7 +789,7 @@ const sendApplication = async () => {
     applicationData.append('barangay', barangay.value);
     applicationData.append('municipalityCity', 'Malolos');
     applicationData.append('province', 'Bulacan');
-    applicationData.append('region', 'III');
+    applicationData.append('region', 'Central Luzon (Region 3)');
     applicationData.append('landlineNo', landlineNo.value);
     applicationData.append('mobileNo', mobileNo.value);
     applicationData.append('emailAddress', emailAddress.value);
@@ -742,6 +827,7 @@ const sendApplication = async () => {
     applicationData.append('photo1x1', photo1x1.value);
     applicationData.append('medicalCert', medicalCert.value);
     applicationData.append('barangayCert', barangayCert.value);
+    applicationData.append('typeOfApplicant', 'new');
 
     try {
         loadingSubmitting.value = true

@@ -35,6 +35,13 @@
 
 </script>
 
-<style>
-
+<style scoped>
+/* section {
+    background-image: url('../assets/bg4.png');
+    background-size: 50%;
+    background-position-x: 60dvw;
+    background-position-y: 30dvh;
+    background-repeat: no-repeat;
+    background-blend-mode: lighten;
+} */
 </style>

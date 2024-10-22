@@ -10,7 +10,7 @@
             </div>
             <!-- form -->
             <form @submit.prevent="login()" class="flex flex-col items-center gap-y-5">
-                <p v-if="registered" class="w-3/4 md:w-2/5 lg:w-1/5 border bg-green-500 text-white pl-3 py-1 rounded">Welcome to Inclucity <span class="font-semibold">{{ $route.query.userName }}</span></p>
+                <p v-if="registered" class="w-3/4 md:w-2/5 lg:w-1/5 border bg-green-500 text-white pl-3 py-1 rounded">Welcome to Inclucity <span class="font-semibold">{{ $route.query.name }}</span></p>
                 <p v-if="invalidPassword" class="w-3/4 md:w-2/5 lg:w-1/5 border bg-red-500 text-white pl-3 py-1 rounded flex items-center gap-x-2">
                     <Icon icon="ph:warning" class="text-xl animate-pulse" />
                     Invalid Password
