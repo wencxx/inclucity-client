@@ -554,6 +554,12 @@ const next = () => {
             typeOfEmployment.value,
         ]
 
+        if(statusOfEmployment.value === 'unemployed'){
+            hasEmptyFields.value = false
+            router.push({ query : { page: currentPage.value + 2 }})
+            return
+        }
+
         if (!statusOfEmployment.value || statusOfEmployment.value !== 'unemployed' && pageData.some(field => !field)) {
             hasEmptyFields.value = true
             return;
@@ -592,7 +598,12 @@ const next = () => {
 const prev = () => {
     // setDataToLocalStorage()
     if(currentPage.value > 1){
-        router.push({ query: { page: currentPage.value - 1 } })
+        if(currentPage.value === 7 && statusOfEmployment.value === 'unemployed'){
+            router.push({ query: { page: currentPage.value - 2 } })
+            hasEmptyFields.value = false
+        }else{
+            router.push({ query: { page: currentPage.value - 1 } })
+        }
     }
 }
 

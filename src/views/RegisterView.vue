@@ -574,8 +574,8 @@ const register = async () => {
 
         emailjs
         .send(
-        'service_jp4qqoo', // Replace with your EmailJS service ID
-        'ytemplate_cguzxjo', // Replace with your EmailJS template ID
+        'service_jp4qqoo',
+        'ytemplate_cguzxjo',
         templateParams,
         )
         .then(
