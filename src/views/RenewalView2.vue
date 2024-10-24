@@ -95,6 +95,7 @@
                         <option>Visual Disability</option>
                         <option>Cancer (RA11215)</option>
                         <option>Rare Disease (RA107747)</option>
+                        <option v-for="(disability, index) in disabilities" :key="index">{{ disability.disability }}</option>
                     </select>
                 </div>
                 <div></div>
@@ -409,6 +410,20 @@ import { onMounted, onUnmounted, ref, watch } from "vue"
 import { useRoute, useRouter } from 'vue-router'
 const serverUrl = import.meta.env.VITE_SERVER_URL
 
+const disabilities = ref([])
+
+const getDisabilities = async () => {
+    try {
+        const res = await axios.get(`${serverUrl}/get-disabilities`)
+
+        if(res.data === 'No disabilities available') return
+
+        disabilities.value = res.data
+    } catch (error) {
+        console.log(error)   
+    }
+}
+
 const route = useRoute()
 const router = useRouter()
 
@@ -711,6 +726,7 @@ const sendApplication = async () => {
 
 onMounted(() => {
     getUserApplication()
+    getDisabilities()
 })
 </script>
 
