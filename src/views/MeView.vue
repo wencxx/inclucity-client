@@ -90,6 +90,17 @@
                         <label class="font-semibold text-md">Age</label>
                         <input type="number" placeholder="Age" class="pl-3 border border-gray-500 h-8 rounded-md" v-model="age">
                     </div>
+                    <div class="flex flex-col gap-y-1 w-3/4 md:w-2/5 lg:w-full">
+                        <label class="font-semibold text-md">Receive Email </label>
+                        <select v-if="receiveEmail == true" v-model="receiveEmail" class="pl-3 border border-gray-500 h-8 rounded-md">
+                            <option :value="receiveEmail">Yes</option>
+                            <option :value="false">No</option>
+                        </select>
+                        <select v-else v-model="receiveEmail" class="pl-3 border border-gray-500 h-8 rounded-md">
+                            <option :value="receiveEmail">No</option>
+                            <option :value="true">Yes</option>
+                        </select>
+                    </div>
                     <button class="bg-custom-primary w-3/4 md:w-2/5 lg:w-3/5 text-white py-2 rounded-xl uppercase mt-5 hover:bg-red-900 lg:col-span-2 place-self-center">Update</button>
                 </form>
             </div>
@@ -177,6 +188,7 @@ const password = ref('')
 const contactNumber = ref('')
 const address = ref('')
 const age = ref('')
+const receiveEmail = ref(false)
 
 watch(user, (newUser) => {
     if (newUser) {
@@ -185,6 +197,7 @@ watch(user, (newUser) => {
         contactNumber.value = newUser.contactNumber || ''
         address.value = newUser.address || ''
         age.value = newUser.age || ''
+        receiveEmail.value = newUser.receiveEmail || ''
     }
 }, { immediate: true })
 
@@ -199,7 +212,8 @@ const update = async () => {
         password: password.value,
         contactNumber: contactNumber.value,
         address: address.value,
-        age: age.value
+        age: age.value,
+        receiveEmail: receiveEmail.value
     }
     
     try {
@@ -209,6 +223,8 @@ const update = async () => {
                 Authorization: `Bearer ${localStorage.getItem('token')}`
             }
         })
+
+        console.log(res.data)
 
         if(res.data === 'updated'){
             authStore.getUser()

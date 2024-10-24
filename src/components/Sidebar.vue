@@ -20,7 +20,7 @@
                 <Icon icon="fluent:status-32-regular" class="text-3xl" />
                 <span>Application Status</span>
             </router-link>
-            <router-link :to="{ name: 'requirements' }" class="flex items-center gap-x-2 text-xl hover:bg-white/[0.20] pl-10 py-2">
+            <router-link :to="{ name: 'tutorial' }" class="flex items-center gap-x-2 text-xl hover:bg-white/[0.20] pl-10 py-2">
                 <Icon icon="mdi:teach" class="text-3xl" />
                 <span>Tutorial</span>
             </router-link>

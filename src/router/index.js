@@ -17,6 +17,7 @@ import StatusView from '../views/StatusView.vue'
 import SuccessfulView from '../components/Successful.vue'
 import HotlinesView from '../views/HotlinesView.vue'
 import RequirementsView from '../views/Requirements.vue'
+import TutorialView from '../views/Tutorial.vue'
 
 const routes = [
     {
@@ -143,6 +144,14 @@ const routes = [
         path: '/requirements-example',
         name: 'requirements',
         component: RequirementsView,
+        meta: {
+            requiresAuth: true
+        }
+    },
+    {
+        path: '/tutorial',
+        name: 'tutorial',
+        component: TutorialView,
         meta: {
             requiresAuth: true
         }

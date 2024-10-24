@@ -27,12 +27,13 @@
 <script setup>
 import { defineEmits, defineProps, onMounted, ref, watch, computed } from 'vue'
 import { useAuthStore } from '../store'
-import { useRouter } from 'vue-router'
+import { useRouter, useRoute } from 'vue-router'
 
 const currentLanguage = ref('Translate')
 
 const authStore = useAuthStore()
 const router = useRouter()
+const route = useRoute()
 
 const user = computed(() => authStore.user)
 
@@ -104,11 +105,27 @@ const googleTranslateElementInit = () => {
 };
 
 const translatePage = (language) => {
-  const googleTranslateDropdown = document.querySelector('.goog-te-combo');
-  if (googleTranslateDropdown) {
-    googleTranslateDropdown.value = language;
-    googleTranslateDropdown.dispatchEvent(new Event('change'));
-  }
+    const googleTranslateDropdown = document.querySelector('.goog-te-combo');
+    if (googleTranslateDropdown) {
+        googleTranslateDropdown.value = language;
+        googleTranslateDropdown.dispatchEvent(new Event('change'));
+    }
+    if(route.name === 'tutorial'){
+        if(language === 'tl'){
+            router.push({
+                query: {
+                    lang: 'tl',
+                    page: route.query.page
+                }
+            })
+        }else{
+            router.push({
+                query: {
+                    page: route.query.page
+                }
+            })
+        }
+    }
 };
 
 getNotifications()
