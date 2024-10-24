@@ -10,6 +10,13 @@
                 <img v-if="user && user?.profile" :src="user?.profile" alt="user profile" class="w-7 aspect-square rounded-full">
                 <Icon v-else icon="ion:person-circle-outline" class="text-3xl lg:text-3xl text-black" />
             </router-link>
+            
+            <select id="language-select" v-model="currentLanguage" @change="translatePage(currentLanguage)">
+                <option :value="currentLanguage">Select Language</option>
+                <option value="en">English</option>
+                <option value="tl">Filipino</option>
+            </select>
+            <div id="google_translate_element"></div>
             <Icon  :icon="menuIcon" class="text-4xl lg:text-4xl" @click="toggleSidebar" />
         </div>
     </header>
@@ -19,6 +26,8 @@
 import { defineEmits, defineProps, onMounted, ref, watch, computed } from 'vue'
 import { useAuthStore } from '../store'
 import { useRouter } from 'vue-router'
+
+const currentLanguage = ref('Translate')
 
 const authStore = useAuthStore()
 const router = useRouter()
@@ -78,17 +87,48 @@ const getNotifications = async () => {
     }
 }
 
+const googleTranslateElementInit = () => {
+  new window.google.translate.TranslateElement(
+    {
+      pageLanguage: 'en', 
+    //   includedLanguages: 'en,tl',
+    //   layout: window.google.translate.TranslateElement.InlineLayout.SIMPLE,
+    },
+    'google_translate_element'
+  );
+};
+
+const translatePage = (language) => {
+  const googleTranslateDropdown = document.querySelector('.goog-te-combo');
+  if (googleTranslateDropdown) {
+    googleTranslateDropdown.value = language;
+    googleTranslateDropdown.dispatchEvent(new Event('change'));
+  }
+};
+
 getNotifications()
 
 onMounted(() => {
     setInterval(() => {
         getNotifications()
     }, 3000)
+
+    const script = document.createElement('script');
+    script.src = "https://translate.google.com/translate_a/element.js?cb=googleTranslateElementInit";
+    document.body.appendChild(script);
+
+    window.googleTranslateElementInit = googleTranslateElementInit;
 })
 </script>
 
 <style scoped>
 .router-link-active {
     color: #7B080E;
+}
+#google_translate_element {
+  display: none;
+}
+.goog-te-banner-frame.skiptranslate {
+  display: none !important;
 }
 </style>

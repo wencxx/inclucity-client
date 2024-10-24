@@ -105,6 +105,7 @@
                         <option>Chroniz Illness</option>
                         <option>Infecations</option>
                         <option>Injury</option>
+                        <option>None</option>
                     </select>
                 </div>
                 <div class="flex flex-col gap-y-2 py-2">
@@ -121,7 +122,7 @@
                 <div class="flex flex-col gap-y-1">
                     <label class="font-semibold">Select Barangay *</label>
                     <select class="h-10 border pl-2 rounded" v-model="barangay">
-                        <option :value="barangay" disabled>Select Barangay</option>
+                        <option value="" disabled>Select Barangay</option>
                         <option value="Anilao">Anilao</option>
                         <option value="Atlag">Atlag</option>
                         <option value="Babatnin">Babatnin</option>
@@ -187,7 +188,7 @@
                 <div class="flex flex-col gap-y-2 w-full py-2">
                     <label class="font-semibold">Select Educational Attainment *</label>
                     <select class="h-10 border pl-2 rounded" v-model="educationalAttainment" required>
-                        <option :value="educationalAttainment" disabled>Select educational attainment</option>
+                        <option value="" disabled>Select educational attainment</option>
                         <option>None</option>
                         <option>Kindergarten</option>
                         <option>Elementary</option>
@@ -251,6 +252,7 @@
                         <option>Plant and Machine Operators and Assemblers</option>
                         <option>Elementary Occupation</option>
                         <option>Armed Forces Occupation</option>
+                        <option>None</option>
                     </select>
                 </div>
                 <div class="flex flex-col gap-y-2 w-4/5 py-2 px-5">
@@ -551,14 +553,7 @@ const next = () => {
         hasEmptyFields.value = false
         router.push({ query : { page: currentPage.value + 1 }})
     }else if(currentPage.value === 4){
-        const pageData = [
-            landlineNo.value,
-            mobileNo.value,
-            emailAddress.value,
-            educationalAttainment.value
-        ]
-
-        if (pageData.some(field => !field)) {
+        if (!educationalAttainment.value) {
             hasEmptyFields.value = true
             return;
         }
@@ -682,7 +677,7 @@ const getDataFromLocalStorage = () => {
     civilStatus.value = localStorage.getItem('civilStatus') || 'Select Civil Status'
     typeOfDisability.value = localStorage.getItem('typeOfDisability')
     causeOfDisability.value = localStorage.getItem('causeOfDisability') || ''
-    // otherCauseOfDisability.value = localStorage.getItem('otherCauseOfDisability') || ''
+    otherCauseOfDisability.value = localStorage.getItem('otherCauseOfDisability') || ''
     houseNoAndStreet.value = localStorage.getItem('houseNoAndStreet') || ''
     barangay.value = localStorage.getItem('barangay') || ''
     landlineNo.value = localStorage.getItem('landlineNo') || ''

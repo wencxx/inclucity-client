@@ -10,6 +10,10 @@
                 <Icon icon="material-symbols-light:warning-outline" class="text-2xl" />
                 <span class="mt-1">Email already taken</span>
             </p>
+            <p v-if="invalidNumber" class="text-start bg-red-500 pl-3 text-white py-1 rounded lg:w-2/4 flex items-center gap-x-2">
+                <Icon icon="material-symbols-light:warning-outline" class="text-2xl" />
+                <span class="mt-1">Invalid Contact Number</span>
+            </p>
             <p v-if="errorRegistering" class="text-start bg-red-500 pl-3 text-white py-1 rounded lg:w-2/4 flex items-center gap-x-2">
                 <Icon icon="material-symbols-light:warning-outline" class="text-2xl" />
                 <span class="mt-1">Something went wrong</span>
@@ -530,11 +534,18 @@ const age = ref('')
 const gender = ref('Select Gender')
 
 const existingEmail = ref(false)
+const invalidNumber = ref(false)
 
 const registering = ref(false)
 const errorRegistering = ref(false)
 
 const register = async () => {
+    invalidNumber.value = false
+    existingEmail.value = false
+    if(!String(contactNumber.value).startsWith('639')){
+        return invalidNumber.value = true
+    }
+
     const userData = {
         name: `${firstName.value} ${middleName.value} ${lastName.value}`,
         email: email.value,

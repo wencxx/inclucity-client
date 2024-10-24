@@ -112,6 +112,7 @@
                         <option>Chroniz Illness</option>
                         <option>Infecations</option>
                         <option>Injury</option>
+                        <option>None</option>
                     </select>
                 </div>
                 <div class="flex flex-col gap-y-2 py-2">
@@ -128,7 +129,7 @@
                 <div class="flex flex-col gap-y-1">
                     <label class="font-semibold">Select Barangay *</label>
                     <select class="h-10 border pl-2 rounded" v-model="barangay">
-                        <option disabled>Select Barangay</option>
+                        <option value="" disabled>Select Barangay</option>
                         <option value="Anilao">Anilao</option>
                         <option value="Atlag">Atlag</option>
                         <option value="Babatnin">Babatnin</option>
@@ -194,7 +195,7 @@
                 <div class="flex flex-col gap-y-2 w-full py-2">
                     <label class="font-semibold">Select Educational Attainment *</label>
                     <select class="h-10 border pl-2 rounded" v-model="educationalAttainment" required>
-                        <option disabled>Select educational attainment</option>
+                        <option value="" disabled>Select educational attainment</option>
                         <option>None</option>
                         <option>Kindergarten</option>
                         <option>Elementary</option>
@@ -258,6 +259,7 @@
                         <option>Plant and Machine Operators and Assemblers</option>
                         <option>Elementary Occupation</option>
                         <option>Armed Forces Occupation</option>
+                        <option>None</option>
                     </select>
                 </div>
                 <div class="flex flex-col gap-y-2 w-4/5 py-2 px-5">
@@ -587,18 +589,111 @@ watch(() => route.query.page, (newPage) => {
 
 const noOldId = ref(false)
 
+// const next = () => {
+//     if(oldID.value === null){
+//         noOldId.value = true
+//         return
+//     }
+//     noOldId.value = false
+//     router.push({ query : { page: currentPage.value + 1 }})
+// }
 const next = () => {
-    if(oldID.value === null){
-        noOldId.value = true
-        return
+    if(currentPage.value === 2){
+        const pageData = [
+            lastName.value,
+            firstName.value,
+            middleName.value,
+            dateOfBirth.value,
+        ]
+
+        if (pageData.some(field => !field) || gender.value === 'Select Gender' || civilStatus.value === 'Select Civil Status') {
+            hasEmptyFields.value = true
+            return;
+        }
+        hasEmptyFields.value = false
+        router.push({ query : { page: currentPage.value + 1 }})
+    }else if(currentPage.value === 3){
+        const pageData = [
+            typeOfDisability.value,
+            causeOfDisability.value,
+            houseNoAndStreet.value,
+            barangay.value
+        ]
+
+        if (pageData.some(field => !field)) {
+            hasEmptyFields.value = true
+            return;
+        }
+        hasEmptyFields.value = false
+        router.push({ query : { page: currentPage.value + 1 }})
+    }else if(currentPage.value === 4){
+        if (!educationalAttainment.value) {
+            hasEmptyFields.value = true
+            return;
+        }
+        hasEmptyFields.value = false
+        router.push({ query : { page: currentPage.value + 1 }})
+    }else if(currentPage.value === 5){
+        const pageData = [
+            categoryOfEmployment.value,
+            typeOfEmployment.value,
+        ]
+
+        if(statusOfEmployment.value === 'unemployed'){
+            hasEmptyFields.value = false
+            router.push({ query : { page: currentPage.value + 2 }})
+            return
+        }
+
+        if (!statusOfEmployment.value || statusOfEmployment.value !== 'unemployed' && pageData.some(field => !field)) {
+            hasEmptyFields.value = true
+            return;
+        }
+
+        hasEmptyFields.value = false
+        router.push({ query : { page: currentPage.value + 1 }})
+    }else if(currentPage.value === 6){
+        if (!occupation.value && !otherOccupation.value) {
+            hasEmptyFields.value = true
+            return;
+        }
+
+        hasEmptyFields.value = false
+        router.push({ query : { page: currentPage.value + 1 }})
+    }else if(currentPage.value === 9){
+        const pageData = [
+            physicianByLname.value,
+            physicianByFname.value,
+            physicianByMname.value
+        ]
+
+        if (pageData.some(field => !field)) {
+            hasEmptyFields.value = true
+            return;
+        }
+
+        hasEmptyFields.value = false
+        router.push({ query : { page: currentPage.value + 1 }})
+    }else{
+        router.push({ query : { page: currentPage.value + 1 }})
     }
-    noOldId.value = false
-    router.push({ query : { page: currentPage.value + 1 }})
+    setDataToLocalStorage()
 }
 
+// const prev = () => {
+//     if(currentPage.value > 1){
+//         router.push({ query: { page: currentPage.value - 1 } })
+//     }
+// }
 const prev = () => {
+    // setDataToLocalStorage()
     if(currentPage.value > 1){
-        router.push({ query: { page: currentPage.value - 1 } })
+        if(currentPage.value === 7 && statusOfEmployment.value === 'unemployed'){
+            router.push({ query: { page: currentPage.value - 2 } })
+            hasEmptyFields.value = false
+        }else{
+            router.push({ query: { page: currentPage.value - 1 } })
+        }
     }
 }
 
