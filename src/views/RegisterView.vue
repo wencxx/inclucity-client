@@ -21,7 +21,7 @@
                 </div>
                 <div class="flex flex-col gap-y-1 w-3/4 md:w-2/5 lg:w-full">
                     <label class="font-semibold text-lg">Middle Name</label>
-                    <input type="text" placeholder="Middlename" class="pl-3 border border-gray-500 h-10 rounded-md" v-model="middleName" required>
+                    <input type="text" placeholder="Middlename" class="pl-3 border border-gray-500 h-10 rounded-md" v-model="middleName">
                 </div>
                 <div class="flex flex-col gap-y-1 w-3/4 md:w-2/5 lg:w-full">
                     <label class="font-semibold text-lg">Last Name</label>
@@ -44,8 +44,8 @@
                 </div>
                 <div class="flex flex-col gap-y-1 w-3/4 md:w-2/5 lg:w-full">
                     <label class="font-semibold text-lg">Address</label>
-                    <!-- <input type="text" placeholder="Address" class="pl-3 border border-gray-500 h-10 rounded-md" v-model="address" required> -->
-                     <select id="cityBarangay" class="pl-3 border border-gray-500 h-10 rounded-md" v-model="address" required>
+                    <input type="text" placeholder="Address" class="pl-3 border border-gray-500 h-10 rounded-md" v-model="address" required>
+                     <!-- <select id="cityBarangay" class="pl-3 border border-gray-500 h-10 rounded-md" v-model="address" required>
                         <option value="">Select Barangay</option>
                         <optgroup label="Angat">
                             <option value="Banaban">Banaban</option>
@@ -468,7 +468,7 @@
                             <option value="Silangan">Silangan</option>
                             <option value="Tumana">Tumana</option>
                         </optgroup>
-                    </select>
+                    </select> -->
                 </div>
                 <div class="flex flex-col gap-y-1 w-3/4 md:w-2/5 lg:w-full">
                     <label class="font-semibold text-lg">Age</label>
