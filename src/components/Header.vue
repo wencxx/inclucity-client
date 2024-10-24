@@ -4,7 +4,9 @@
         <div class="flex items-center gap-x-2">
             <router-link :to="{ name: 'notifications' }" class="relative">
                 <Icon  icon="mdi:bell-outline" class="text-3xl lg:text-3xl text-black" />
-                <div v-if="notifications && !isSeen" class="w-2 lg:w-3 aspect-square rounded-full absolute top-0 right-0 bg-red-500"></div>
+                <div v-if="notifications && !isSeen" class="w-2 lg:w-3 aspect-square px-2 rounded-full absolute top-0 right-0 bg-red-500 flex items-center justify-center">
+                    <p class="text-white text-[.5rem]">{{ notifCount.length }}</p>
+                </div>
             </router-link>
             <router-link :to="{ name: 'profile' }">
                 <img v-if="user && user?.profile" :src="user?.profile" alt="user profile" class="w-7 aspect-square rounded-full">
@@ -63,6 +65,8 @@ const serverUrl = import.meta.env.VITE_SERVER_URL
 const notifications = ref(null)
 
 const isSeen = ref(false)
+const notifCount = ref(0)
+
 const getNotifications = async () => {
     try {
         const res = await axios.get(`${serverUrl}/get-user-notifications`, {
@@ -76,6 +80,7 @@ const getNotifications = async () => {
         notifications.value = res.data
 
         const notSeen = res.data.some(notif => notif.isSeen === false)
+        notifCount.value = res.data.filter(notif => notif.isSeen === false)
 
         if(notSeen){
             isSeen.value = false
@@ -127,8 +132,5 @@ onMounted(() => {
 }
 #google_translate_element {
   display: none;
-}
-.goog-te-banner-frame.skiptranslate {
-  display: none !important;
 }
 </style>

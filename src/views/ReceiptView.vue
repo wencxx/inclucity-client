@@ -18,7 +18,7 @@
         </div>
         <p class="text-center font-manrope">Kindly present this receipt to the officer</p>
         <h1 v-if="saved" class="self-center font-semibold text-gray-700 text-xl">Saved</h1>
-        <button v-else class="bg-custom-primary w-1/2 md:w-1/4 py-2 text-white self-center rounded-md" @click="saveReceipt()">Save</button>
+        <button v-else class="bg-custom-primary w-1/2 md:w-1/4 py-2 text-white self-center rounded-md" @click="saveReceipt()">Save as image</button>
     </div>
 </template>
 
