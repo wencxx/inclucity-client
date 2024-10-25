@@ -35,7 +35,7 @@
             <div class="flex items-center gap-x-2 text-xl hover:bg-white/[0.20] pl-10 py-2">
                 <Icon icon="lucide:sun-moon" class="text-3xl" />
                 <select class="bg-transparent focus:outline-none" v-model="themeSelect" @change="changeTheme">
-                    <option class="text-black" :value="currentLanguage">Select Mode</option>
+                    <option class="text-black" value="" disabled>Select Mode</option>
                     <option class="text-black" value="light">Light</option>
                     <option class="text-black" value="dark">Dark</option>
                 </select>
