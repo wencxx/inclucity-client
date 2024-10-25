@@ -3,6 +3,7 @@
         <Header :routePath="routePath" v-if="isAuthenticated" @toggleSidebar="isSidebarShowing = !isSidebarShowing" />
         <Sidebar v-if="isSidebarShowing" />
         <router-view />
+        <Tutorial v-if="firstLogin" @closeVideo="closeVid()" />
     </section>
 </template>
 
@@ -12,24 +13,55 @@ import { useRoute } from 'vue-router'
 import { useAuthStore, useApplicationStore } from '../src/store'
 import Header from '../src/components/Header.vue'
 import Sidebar from '../src/components/Sidebar.vue'
+import Tutorial from '../src/components/Tutorial.vue'
+import axios from 'axios'
+const serverUrl = import.meta.env.VITE_SERVER_URL
 
 const route = useRoute()
 const authStore = useAuthStore()
 const applicationStore = useApplicationStore()
 
 const isAuthenticated = computed(() => authStore.isAuth)
+const user = computed(() => authStore.user)
 
 const isSidebarShowing = ref(false)
 
 const routePath = computed(() => route.path)
 
+const firstLogin = ref(false)
+
+const checkFirstTimeLogin = () => {
+  if(user.value?.firstLogin === true){
+    firstLogin.value = true
+  }
+}
+
+const closeVid = async () => {
+  firstLogin.value = false
+  try {
+    const data = {
+      firstLogin: false
+    }
+    const res = await axios.patch(`${serverUrl}/update-first-login`, data, {
+      headers: {
+        Authorization: `Bearer ${localStorage.getItem('token')}`
+      }
+    })
+
+    console.log(res.data)
+  } catch (error) {
+    console.log('failed updating')
+  }
+}
+
 watch(routePath, () => {
     isSidebarShowing.value = false
 })
 
-onMounted(() => {
+onMounted(async () => {
   if(localStorage.getItem('auth')){
-    authStore.getUser()
+    await authStore.getUser()
+    checkFirstTimeLogin()
     // applicationStore.getApplication()
   }
 })
