@@ -23,7 +23,7 @@
                 </div>
                 <!-- home -->
                 <div v-if="Number(route.query.page) === 3">
-                    <img v-if="!route.query.lang" src="../assets/Home.png">
+                    <img v-if="!route.query.lang" src="../assets/HOME.png">
                     <img v-else src="../assets/Home (tagalog).png">
                 </div>
                 <!-- application -->
