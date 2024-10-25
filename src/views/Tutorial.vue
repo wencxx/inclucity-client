@@ -8,52 +8,52 @@
             <div class="w-full p-5 flex flex-col gap-y-10 mt-5">
                 <!-- bell -->
                 <div v-if="!route.query.page">
-                    <img v-if="!route.query.lang" src="@assets/tutorial/Notif bell.png">
-                    <img v-else src="@assets/tutorial/Notif bell (tagalog) (3).png">
+                    <img v-if="!route.query.lang" src="../assets/Notif bell.png">
+                    <img v-else src="../assets/Notif bell (tagalog) (3).png">
                 </div>
                 <!-- language -->
                 <div v-if="Number(route.query.page) === 1">
-                    <img v-if="!route.query.lang" src="@assets/tutorial/Language.png">
-                    <img v-else src="@assets/tutorial/Language (tagalog).png">
+                    <img v-if="!route.query.lang" src="../assets/Language.png">
+                    <img v-else src="../assets/Language (tagalog).png">
                 </div>
                 <!-- menu -->
                 <div v-if="Number(route.query.page) === 2">
-                    <img v-if="!route.query.lang" src="@assets/tutorial/Menu.png">
-                    <img v-else src="@assets/tutorial/Language (tagalog) (2).png">
+                    <img v-if="!route.query.lang" src="../assets/Menu.png">
+                    <img v-else src="../assets/Language (tagalog) (2).png">
                 </div>
                 <!-- home -->
                 <div v-if="Number(route.query.page) === 3">
-                    <img v-if="!route.query.lang" src="@assets/tutorial/Home.png">
-                    <img v-else src="@assets/tutorial/Home (tagalog).png">
+                    <img v-if="!route.query.lang" src="../assets/Home.png">
+                    <img v-else src="../assets/Home (tagalog).png">
                 </div>
                 <!-- application -->
                 <div v-if="Number(route.query.page) === 4">
-                    <img v-if="!route.query.lang" src="@assets/tutorial/application  (tagalog).png">
-                    <img v-else src="@assets/tutorial/application  (tagalog) (2).png">
+                    <img v-if="!route.query.lang" src="../assets/application  (tagalog).png">
+                    <img v-else src="../assets/application  (tagalog) (2).png">
                 </div>
                 <!-- receipt -->
                 <div v-if="Number(route.query.page) === 5">
-                    <img v-if="!route.query.lang" src="@assets/tutorial/application  (tagalog) (3).png">
-                    <img v-else src="@assets/tutorial/application  (tagalog) (4).png">
+                    <img v-if="!route.query.lang" src="../assets/application  (tagalog) (3).png">
+                    <img v-else src="../assets/application  (tagalog) (4).png">
                 </div>
                 <!-- status -->
                 <div v-if="Number(route.query.page) === 6">
-                    <img v-if="!route.query.lang" src="@assets/tutorial/application  (tagalog) (5).png">
-                    <img v-else src="@assets/tutorial/application  (tagalog) (6).png">
+                    <img v-if="!route.query.lang" src="../assets/application  (tagalog) (5).png">
+                    <img v-else src="../assets/application  (tagalog) (6).png">
                 </div>
                 <!-- requirements -->
                 <div v-if="Number(route.query.page) === 7">
-                    <img v-if="!route.query.lang" src="@assets/tutorial/application  (tagalog) (7).png">
-                    <img v-else src="@assets/tutorial/application  (tagalog) (8).png">
+                    <img v-if="!route.query.lang" src="../assets/application  (tagalog) (7).png">
+                    <img v-else src="../assets/application  (tagalog) (8).png">
                 </div>
                 <!-- hotlines -->
                 <div v-if="Number(route.query.page) === 8">
-                    <img v-if="!route.query.lang" src="@assets/tutorial/application  (tagalog) (9).png">
-                    <img v-else src="@assets/tutorial/application  (tagalog) (10).png">
+                    <img v-if="!route.query.lang" src="../assets/application  (tagalog) (9).png">
+                    <img v-else src="../assets/application  (tagalog) (10).png">
                 </div>
                 <div v-if="Number(route.query.page) === 9">
-                    <img v-if="!route.query.lang" src="@assets/tutorial/application  (tagalog) (11).png">
-                    <img v-else src="@assets/tutorial/application  (tagalog) (112).png">
+                    <img v-if="!route.query.lang" src="../assets/application  (tagalog) (11).png">
+                    <img v-else src="../assets/application  (tagalog) (112).png">
                 </div>
                 <div class="flex gap-x-5 justify-end">
                     <button class="bg-custom-primary w-1/12 text-white rounded py-1" @click="back" aria-label="Go back">Back</button>

@@ -84,7 +84,7 @@
                         <option>Mental Disability</option>
                         <option>Physical Disability(Orthopedic)</option>
                         <option>Psychosocial Disability</option>
-                        <option>Speach and Language Impairment</option>
+                        <option>Speech and Language Impairment</option>
                         <option>Visual Disability</option>
                         <option>Cancer (RA11215)</option>
                         <option>Rare Disease (RA107747)</option>
@@ -102,8 +102,8 @@
                         <option>Cerebral Palsy</option>
                         <option>Down Syndrome</option>
                         <option class="font-semibold" disabled>*Acquired</option>
-                        <option>Chroniz Illness</option>
-                        <option>Infecations</option>
+                        <option>Chronic Illness</option>
+                        <option>Infections</option>
                         <option>Injury</option>
                         <option>None</option>
                     </select>
