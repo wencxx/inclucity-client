@@ -1,6 +1,6 @@
 <template>
     <section class="h-[90dvh] font-poppins overflow-y-scroll overflow-x-hidden">
-        <div class="bg-custom-primary h-1/5 lg:h-1/3 md:w-3/5 mx-auto relative">
+        <div class="bg-custom-primary dark:bg-neutral-700 h-1/5 lg:h-1/3 md:w-3/5 mx-auto relative">
             <div v-if="!user || updating" class="absolute left-1/2 -translate-x-1/2 top-5 flex flex-row gap-2">
                 <div class="w-3 aspect-square rounded-full bg-white animate-bounce"></div>
                 <div class="w-3 aspect-square rounded-full bg-white animate-bounce [animation-delay:-.3s]"></div>
@@ -12,9 +12,9 @@
             <div class="absolute left-1/2 top-full -translate-x-1/2 -translate-y-1/2 flex flex-col items-center">
                 <div class=" w-[25dvw] md:w-[15dvw] lg:w-[10dvw] rounded-full aspect-square bg-gray-100  flex items-center justify-center relative group">
                     <img v-if="user?.profile" :src="user?.profile" alt="profice picture" class="w-[24dvw] md:w-[14dvw] lg:w-[9dvw] aspect-square rounded-full">
-                    <Icon v-else icon="bi:person-circle" class="text-[24dvw] md:text-[14dvw] lg:text-[9dvw]" />
+                    <Icon v-else icon="bi:person-circle" class="text-[24dvw] md:text-[14dvw] lg:text-[9dvw] dark:text-black" />
                     <div class="absolute bottom-0 left-0 h-1/2 w-full bg-black/15 rounded-b-full hidden group-hover:flex hover:bg-black/20 items-center justify-center">
-                        <Icon icon="bi:camera" class="text-4xl text-white hover:text-custom-secondary" @click="chooseImage" />
+                        <Icon icon="bi:camera" class="text-4xl text-white hover:text-custom-secondary dark:!text-black" @click="chooseImage" />
                         <input type="file" class="hidden" id="imageInput" accept=".jpg, .jpeg, .png" @change="handleImageUpload()" required>
                     </div>
                 </div>
@@ -35,22 +35,22 @@
             </div>
         </div>
         <!-- information -->
-        <div class="bg-white w-4/5 mx-auto py-5 mt-32 lg:mt-40 md:w-3/5 shadow-md rounded-xl flex flex-col items-center gap-y-5">
+        <div class="bg-white dark:bg-neutral-700 w-4/5 mx-auto py-5 mt-32 lg:mt-40 md:w-3/5 shadow-md rounded-xl flex flex-col items-center gap-y-5">
             <div class="text-center">
                 <p class="font-semibold">Person With Disablity Number</p>
-                <p class="text-custom-secondary font-medium">{{ convertApplicationNum(application?.applicationNumber) }}</p>
+                <p class="text-custom-secondary dark:!text-white font-medium">{{ convertApplicationNum(application?.applicationNumber) }}</p>
             </div>
             <div class="text-center">
                 <p class="font-semibold">Nationality</p>
-                <p class="text-custom-secondary font-medium" v-if="application">Filipino</p>
+                <p class="text-custom-secondary dark:!text-white font-medium" v-if="application">Filipino</p>
             </div>
             <div class="text-center">
                 <p class="font-semibold">Email Address</p>
-                <p class="text-custom-secondary font-medium">{{ user?.email }}</p>
+                <p class="text-custom-secondary dark:!text-white font-medium">{{ user?.email }}</p>
             </div>
             <div class="text-center">
                 <p class="font-semibold">Current Address</p>
-                <p class="text-custom-secondary font-medium">{{ user?.address }}</p>
+                <p class="text-custom-secondary dark:!text-white font-medium">{{ user?.address }}</p>
             </div>
         </div>
         <div class="flex flex-col gap-y-5 mt-10 items-center w-4/5 md:w-3/5 mx-auto">
@@ -59,7 +59,7 @@
         </div>
 
         <!-- update account modal -->
-        <div v-if="updateAccount" @click.self="toggleUpdate()" class="h-screen w-screen absolute top-0 left-0 bg-black/15 flex items-center justify-center">
+        <div v-if="updateAccount" @click.self="toggleUpdate()" class="h-screen w-screen absolute top-0 left-0 bg-black/15 dark:!text-black flex items-center justify-center">
             <div class="bg-white w-3/4 md:w-1/2 py-6 rounded-md shadow flex flex-col items-center gap-y-3 font-manrope font-semibold uppercase">
                 <h1>Update account information</h1>
                 <form @submit.prevent="update()" class="flex w-full flex-col lg:grid lg:place-content-center lg:grid-cols-2 lg:w-4/5 items-center gap-x-5 gap-y-2">

@@ -21,15 +21,15 @@
             <form @submit.prevent="register()" class="flex flex-col lg:grid lg:place-content-center lg:grid-cols-2 lg:w-2/4 items-center gap-x-5 gap-y-5">
                 <div class="flex flex-col gap-y-1 w-3/4 md:w-2/5 lg:w-full">
                     <label class="font-semibold text-lg">First Name</label>
-                    <input type="text" placeholder="Firstname" class="pl-3 border border-gray-500 h-10 rounded-md" v-model="firstName" required>
+                    <input type="text" placeholder="Firstname" class="pl-3 border border-gray-500 h-10 rounded-md capitalize" v-model="firstName" required>
                 </div>
                 <div class="flex flex-col gap-y-1 w-3/4 md:w-2/5 lg:w-full">
                     <label class="font-semibold text-lg">Middle Name</label>
-                    <input type="text" placeholder="Middlename" class="pl-3 border border-gray-500 h-10 rounded-md" v-model="middleName">
+                    <input type="text" placeholder="Middlename" class="pl-3 border border-gray-500 h-10 rounded-md capitalize" v-model="middleName">
                 </div>
                 <div class="flex flex-col gap-y-1 w-3/4 md:w-2/5 lg:w-full">
                     <label class="font-semibold text-lg">Last Name</label>
-                    <input type="text" placeholder="Lastname" class="pl-3 border border-gray-500 h-10 rounded-md" v-model="lastName" required>
+                    <input type="text" placeholder="Lastname" class="pl-3 border border-gray-500 h-10 rounded-md capitalize" v-model="lastName" required>
                 </div>
                 <div class="flex flex-col gap-y-1 w-3/4 md:w-2/5 lg:w-full">
                     <label class="font-semibold text-lg">Email</label>

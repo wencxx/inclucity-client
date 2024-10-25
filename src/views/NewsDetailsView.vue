@@ -1,7 +1,7 @@
 <template>
     <section class="container font-poppins p-4 mx-auto flex flex-col items-center overflow-auto h-[90dvh]">
         <router-link :to="{ name: 'home' }" class="mt-2 lg:mt-5 md:w-2/4">
-            <Icon icon="material-symbols-light:arrow-back" class="text-4xl text-gray-500" />
+            <Icon icon="material-symbols-light:arrow-back" class="text-4xl text-gray-500 dark:text-white" />
         </router-link>
         <div v-if="err" class="text-center mt-10">
             <h1 class="text-lg uppercase">server error</h1>
@@ -114,6 +114,8 @@ const changeDateFormat = (date) => {
 
 </script>
 
-<style>
-
+<style scoped>
+.container::-webkit-scrollbar {
+    display: none;
+}
 </style>

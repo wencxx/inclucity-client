@@ -48,7 +48,7 @@
                     <p class="z-20 w-3/4 text-center">You have no application for a PWD ID, so you are not eligible to submit a renewal application.</p>
                 </div>
                 <div class="z-20 w-full flex justify-center gap-x-3 md:gap-x-10">
-                    <button @click="isNotExpired()" class="z-20 bg-transparent text-custom-primary border border-custom-primary hover:bg-custom-primary hover:text-white w-1/4 text-center px-2 text-sm py-2 rounded">Close</button>
+                    <button @click="notApplicant()" class="z-20 bg-transparent text-custom-primary border border-custom-primary hover:bg-custom-primary hover:text-white w-1/4 text-center px-2 text-sm py-2 rounded">Close</button>
                     <router-link :to="{ name: 'home' }" class="z-20 bg-custom-primary text-white w-1/4 text-center border border-transparent hover:bg-transparent hover:text-custom-primary px-2 text-sm py-2 rounded">Back home</router-link>
                 </div>
             </div>

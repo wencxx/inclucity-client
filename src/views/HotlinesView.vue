@@ -8,23 +8,23 @@
             <div class="flex flex-col gap-y-5">
                 <div class="flex flex-col items-center">
                     <h2 class="font-medium text-2xl">Malolos Rescue: </h2>
-                    <p class="text-lg font-medium">0928 226 9801</p>
-                    <p class="text-lg font-medium">0977 640 5828</p>
-                    <p class="text-lg font-medium">(044) 760-5160</p>
+                    <p class="text-lg font-medium" @click="dialNumber('0928 226 9801')">0928 226 9801</p>
+                    <p class="text-lg font-medium" @click="dialNumber('0977 640 5828')">0977 640 5828</p>
+                    <p class="text-lg font-medium" @click="dialNumber('044 760-5160')">(044) 760-5160</p>
                 </div>
                 <div class="flex flex-col items-center">
                     <h2 class="font-medium text-2xl">Bulacan Rescue: </h2>
-                    <p class="text-lg font-medium">911 / (044) 791-0566</p>
+                    <p class="text-lg font-medium" @click="dialNumber('911 791-0566')">911 / (044) 791-0566</p>
                 </div>
                 <div class="flex flex-col items-center">
                     <h2 class="font-medium text-2xl">City Health Office: </h2>
-                    <p class="text-lg font-medium">(044) 931-8888</p>
+                    <p class="text-lg font-medium" @click="dialNumber('044 931-8888')">(044) 931-8888</p>
                 </div>
                 <div class="flex flex-col items-center">
                     <h2 class="font-medium text-2xl">Bulacan Medical Center: </h2>
-                    <p class="text-lg font-medium">0933 350 7791</p>
-                    <p class="text-lg font-medium">0923 449 8262</p>
-                    <p class="text-lg font-medium">0919 853 7331</p>
+                    <p class="text-lg font-medium" @click="dialNumber('0933 350 7791')">0933 350 7791</p>
+                    <p class="text-lg font-medium" @click="dialNumber('0923 449 8262')">0923 449 8262</p>
+                    <p class="text-lg font-medium" @click="dialNumber('0919 853 7331')">0919 853 7331</p>
                 </div>
             </div>
         </div>
@@ -32,7 +32,9 @@
 </template>
 
 <script setup>
-
+function dialNumber(number) {
+  window.location.href = `tel:${number}`;
+}
 </script>
 
 <style scoped>

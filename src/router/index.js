@@ -53,7 +53,7 @@ const routes = [
         }
     },
     {
-        path: '/profile',
+        path: '/as',
         name: 'profile',
         component: ProfileView,
         meta: {
@@ -61,7 +61,7 @@ const routes = [
         }
     },
     {
-        path: '/profile/me',
+        path: '/profile',
         name: 'me',
         component: MeView,
         meta: {

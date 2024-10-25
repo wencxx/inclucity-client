@@ -38,7 +38,7 @@
                 <button v-else class="bg-custom-primary w-3/4 md:w-2/5 lg:w-1/5 text-white py-2 rounded-xl uppercase lg:mt-2 hover:bg-red-900 animate-pulse">Logging in...</button>
             </form>
             <div class="flex flex-col items-center gap-y-4 font-poppins font-semibold">
-                <router-link :to="{ name: 'register' }" class="underline hover:text-custom-primary">Forgot Password?</router-link>
+                <!-- <router-link :to="{ name: 'register' }" class="underline hover:text-custom-primary">Forgot Password?</router-link> -->
                 <p>Do not have account yet?</p>
                 <router-link :to="{ name: 'register' }" class="underline hover:text-custom-primary">Sign Up</router-link>
             </div>

@@ -3,22 +3,15 @@
         <router-link :to="{ name: 'home' }" class="h-full"><img src="../assets/logo.png" alt="logo" class="h-full"></router-link>
         <div class="flex items-center gap-x-2">
             <router-link :to="{ name: 'notifications' }" class="relative">
-                <Icon  icon="mdi:bell-outline" class="text-3xl lg:text-3xl text-black" />
+                <Icon  icon="mdi:bell-outline" class="text-3xl lg:text-3xl text-black dark:text-white" />
                 <div v-if="notifications && !isSeen" class="w-2 lg:w-3 aspect-square px-2 rounded-full absolute top-0 right-0 bg-red-500 flex items-center justify-center">
                     <p class="text-white text-[.5rem]">{{ notifCount.length }}</p>
                 </div>
             </router-link>
-            <router-link :to="{ name: 'profile' }">
+            <router-link :to="{ name: 'me' }">
                 <img v-if="user && user?.profile" :src="user?.profile" alt="user profile" class="w-7 aspect-square rounded-full">
-                <Icon v-else icon="ion:person-circle-outline" class="text-3xl lg:text-3xl text-black" />
+                <Icon v-else icon="ion:person-circle-outline" class="text-3xl lg:text-3xl text-black dark:text-white" />
             </router-link>
-            
-            <select id="language-select" v-model="currentLanguage" @change="translatePage(currentLanguage)">
-                <option :value="currentLanguage">Select Language</option>
-                <option value="en">English</option>
-                <option value="tl">Filipino</option>
-            </select>
-            <div id="google_translate_element"></div>
             <Icon  :icon="menuIcon" class="text-4xl lg:text-4xl" @click="toggleSidebar" />
         </div>
     </header>
@@ -93,61 +86,17 @@ const getNotifications = async () => {
     }
 }
 
-const googleTranslateElementInit = () => {
-  new window.google.translate.TranslateElement(
-    {
-      pageLanguage: 'en', 
-    //   includedLanguages: 'en,tl',
-    //   layout: window.google.translate.TranslateElement.InlineLayout.SIMPLE,
-    },
-    'google_translate_element'
-  );
-};
-
-const translatePage = (language) => {
-    const googleTranslateDropdown = document.querySelector('.goog-te-combo');
-    if (googleTranslateDropdown) {
-        googleTranslateDropdown.value = language;
-        googleTranslateDropdown.dispatchEvent(new Event('change'));
-    }
-    if(route.name === 'tutorial'){
-        if(language === 'tl'){
-            router.push({
-                query: {
-                    lang: 'tl',
-                    page: route.query.page
-                }
-            })
-        }else{
-            router.push({
-                query: {
-                    page: route.query.page
-                }
-            })
-        }
-    }
-};
-
 getNotifications()
 
 onMounted(() => {
     setInterval(() => {
         getNotifications()
     }, 3000)
-
-    const script = document.createElement('script');
-    script.src = "https://translate.google.com/translate_a/element.js?cb=googleTranslateElementInit";
-    document.body.appendChild(script);
-
-    window.googleTranslateElementInit = googleTranslateElementInit;
 })
 </script>
 
 <style scoped>
 .router-link-active {
     color: #7B080E;
-}
-#google_translate_element {
-  display: none;
 }
 </style>

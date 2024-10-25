@@ -1,5 +1,5 @@
 <template>
-    <section :class="{ 'h-screen bg-gray-100': isAuthenticated }" class="relative">
+    <section  class="dark:!bg-neutral-800 dark:!text-white relative" :class="{ 'h-screen bg-gray-100': isAuthenticated }">
         <Header :routePath="routePath" v-if="isAuthenticated" @toggleSidebar="isSidebarShowing = !isSidebarShowing" />
         <Sidebar v-if="isSidebarShowing" />
         <router-view />
