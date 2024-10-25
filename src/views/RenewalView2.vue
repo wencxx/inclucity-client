@@ -101,7 +101,7 @@
                 <div></div>
                 <div class="flex flex-col gap-y-2 w-full py-2">
                     <label class="font-semibold">Select Cause of Disability *</label>
-                    <select class="h-10 border pl-2 rounded" v-model="causeOfDisability" @change="otherCauseOfDisability = ''" required>
+                    <select class="h-10 border pl-2 rounded" v-model="causeOfDisability" @change="changeCausedOfDisability('select')" required>
                         <!-- <option value="" disabled>Select cause of disability</option> -->
                         <option class="font-semibold" disabled>*Congential/Inborn</option>
                         <option>Autism</option>
@@ -112,12 +112,12 @@
                         <option>Chronic Illness</option>
                         <option>Infections</option>
                         <option>Injury</option>
-                        <option>None</option>
+                        <option>Others</option>
                     </select>
                 </div>
                 <div class="flex flex-col gap-y-2 py-2">
                     <label class="font-semibold">Other cause of disability</label>
-                    <input type="text" class="h-10 border pl-2 rounded" @input="causeOfDisability = ''" v-model="otherCauseOfDisability">
+                    <input type="text" class="h-10 border pl-2 rounded" @input="changeCausedOfDisability('input')" v-model="otherCauseOfDisability">
                 </div>
             </div>
             <h1 class="text-black font-semibold text-xl uppercase">Residence Address</h1>
@@ -709,6 +709,14 @@ const changeAccomplisedBy = () => {
     }
 }
 
+const changeCausedOfDisability = (type) => {
+    if(type === 'select'){
+        otherCauseOfDisability.value = '';
+    }else{
+        causeOfDisability.value = 'Others';
+    }
+}
+
 const changeOccupation = (type) => {
 
     if(type === 'select'){
@@ -737,8 +745,13 @@ const sendApplication = async () => {
     applicationData.append('gender', gender.value);
     applicationData.append('civilStatus', civilStatus.value);
     applicationData.append('typeOfDisability', typeOfDisability.value);
-    applicationData.append('causeOfDisability', causeOfDisability.value);
-    applicationData.append('otherCauseOfDisability', otherCauseOfDisability.value);
+    if(causeOfDisability.value === 'Others'){
+        applicationData.append('causeOfDisability','');
+        applicationData.append('otherCauseOfDisability', otherCauseOfDisability.value);
+    }else{
+        applicationData.append('causeOfDisability', causeOfDisability.value);
+        applicationData.append('otherCauseOfDisability', otherCauseOfDisability.value);
+    }
     applicationData.append('houseNoAndStreet', houseNoAndStreet.value);
     applicationData.append('barangay', barangay.value);
     applicationData.append('municipalityCity', 'Malolos');

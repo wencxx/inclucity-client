@@ -17,7 +17,7 @@
                     <p class="text-xs text-gray-500">{{ convertDate(notification.date) }}</p>
                 </div>
             </div>
-            <p class="font-medium text-gray-500/85 font-manrope text-md capitalize p-5">{{ notification.notificationDescription }}</p>
+            <p class="font-medium text-gray-500/85 font-manrope text-md p-5">{{ notification.notificationDescription }}</p>
         </div>
         <h1 v-if="!notification && !loadingNotif">No notifications to show</h1>
         <!-- <div v-if="loadingNotif" class="w-full space-y-4">

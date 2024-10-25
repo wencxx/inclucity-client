@@ -16,7 +16,7 @@
                 <p class="capitalize font-medium text-md">{{ news.postTitle }}</p>
                 <p class="text-gray-600 italic text-xs">{{ changeDateFormat(news.datePosted) }}</p>
                 <p class="capitalize text-sm px-2 text-gray-600">" {{ news.postDescription }} "</p>
-                <div v-if="news.postUrl.length > 0">
+                <div v-if="news.postUrl.length > 1">
                     <p class="text-gray-600 text-sm">Read more:</p>
                     <div class="w-1/3">
                         <a v-for="url in news.postUrl" :key="url" :href="formatUrl(url)" target="_blank" class="text-blue-500 text-sm hover:underline hover:text-blue-700">{{ url }}</a>
