@@ -23,6 +23,7 @@
                 </div>
                 <!-- home -->
                 <div v-if="Number(route.query.page) === 3">
+                    <!-- <img v-if="!route.query.lang" src="../assets/HOME.png"> -->
                     <img v-if="!route.query.lang" src="../assets/HOME.png">
                     <img v-else src="../assets/Home (tagalog).png">
                 </div>
@@ -53,7 +54,7 @@
                 </div>
                 <div v-if="Number(route.query.page) === 9">
                     <img v-if="!route.query.lang" src="../assets/application  (tagalog) (11).png">
-                    <img v-else src="../assets/application  (tagalog) (112).png">
+                    <img v-else src="../assets/application  (tagalog) (12).png">
                 </div>
                 <div class="flex gap-x-5 justify-end">
                     <button class="bg-custom-primary w-1/12 text-white rounded py-1" @click="back" aria-label="Go back">Back</button>
