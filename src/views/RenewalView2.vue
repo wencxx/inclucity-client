@@ -178,15 +178,15 @@
             <h1 class="text-black dark:!text-white font-semibold text-xl uppercase">Contact Details</h1>
             <div class="grid md:grid-cols-2 gap-x-10 gap-y-5">
                 <div class="flex flex-col gap-y-1">
-                    <label class="font-semibold">Landline No.</label>
+                    <label class="font-semibold">Landline No. (optional)</label>
                     <input type="number" placeholder="044-XXXXXX" class="h-10 border pl-2 rounded" v-model="landlineNo">
                 </div>
                 <div class="flex flex-col gap-y-1">
-                    <label class="font-semibold">Mobile No.</label>
+                    <label class="font-semibold">Mobile No. *</label>
                     <input type="number" placeholder="639-XXX-XXX" class="h-10 border pl-2 rounded" v-model="mobileNo">
                 </div>
                 <div class="flex flex-col gap-y-1">
-                    <label class="font-semibold">Email Address</label>
+                    <label class="font-semibold">Email Address (optional)</label>
                     <input type="email" placeholder="xxxxxxxx@gmail.com" class="h-10 border pl-2 rounded" v-model="emailAddress">
                 </div>
             </div>
@@ -270,19 +270,19 @@
             <h1 class="text-black dark:!text-white font-semibold text-xl uppercase">Organization Information</h1>
             <div class="grid md:grid-cols-2 gap-x-10 gap-y-5">
                 <div class="flex flex-col gap-y-1">
-                    <label class="font-semibold">Organization Affiliated</label>
+                    <label class="font-semibold">Organization Affiliated (optional)</label>
                     <input type="number" placeholder="044-XXXXXX" class="h-10 border pl-2 rounded" v-model="organizationAffiliated">
                 </div>
                 <div class="flex flex-col gap-y-1">
-                    <label class="font-semibold">Contact Information</label>
+                    <label class="font-semibold">Contact Information (optional)</label>
                     <input type="number" placeholder="639-XXX-XXX-XXX" class="h-10 border pl-2 rounded" v-model="contactInformation">
                 </div>
                 <div class="flex flex-col gap-y-1">
-                    <label class="font-semibold">Office Address</label>
+                    <label class="font-semibold">Office Address (optional)</label>
                     <input type="text" placeholder="Enter address" class="h-10 border pl-2 rounded" v-model="officeAddress">
                 </div>
                 <div class="flex flex-col gap-y-1">
-                    <label class="font-semibold">Tel. No.</label>
+                    <label class="font-semibold">Tel. No. (optional)</label>
                     <input type="number" placeholder="XXXX-XXXX" class="h-10 border pl-2 rounded" v-model="telNo">
                 </div>
             </div>
@@ -292,23 +292,23 @@
             <h1 class="text-black dark:!text-white font-semibold text-xl uppercase">ID Reference no.</h1>
             <div class="grid md:grid-cols-2 gap-x-10 gap-y-5">
                 <div class="flex flex-col gap-y-1">
-                    <label class="font-semibold">SSS No.</label>
+                    <label class="font-semibold">SSS No. (optional)</label>
                     <input type="number" placeholder="XXXXXXXX" class="h-10 border pl-2 rounded" v-model="sssNo">
                 </div>
                 <div class="flex flex-col gap-y-1">
-                    <label class="font-semibold">GSIS No.</label>
+                    <label class="font-semibold">GSIS No. (optional)</label>
                     <input type="number" placeholder="XXXXXXXX" class="h-10 border pl-2 rounded" v-model="gsisNo">
                 </div>
                 <div class="flex flex-col gap-y-1">
-                    <label class="font-semibold">PAG-IBIG No.</label>
+                    <label class="font-semibold">PAG-IBIG No. (optional)</label>
                     <input type="number" placeholder="XXXXXXXX" class="h-10 border pl-2 rounded" v-model="pagibigNo">
                 </div>
                 <div class="flex flex-col gap-y-1">
-                    <label class="font-semibold">PSN No.</label>
+                    <label class="font-semibold">PSN No. (optional)</label>
                     <input type="number" placeholder="XXXXXXXX" class="h-10 border pl-2 rounded" v-model="psnNo">
                 </div>
                 <div class="flex flex-col gap-y-1">
-                    <label class="font-semibold">PhilHealth No.</label>
+                    <label class="font-semibold">PhilHealth No. (optional)</label>
                     <input type="number" placeholder="XXXXXXXX" class="h-10 border pl-2 rounded" v-model="philhealthNo">
                 </div>
             </div>
@@ -318,19 +318,19 @@
             <h1 class="text-black dark:!text-white font-semibold text-xl uppercase">Family Background</h1>
             <div class="grid md:grid-cols-2 gap-x-10 gap-y-5">
                 <div class="flex flex-col gap-y-1">
-                    <label class="font-semibold">Father's Name</label>
+                    <label class="font-semibold">Father's Name (optional)</label>
                     <input type="text" placeholder="Last name" class="h-10 border pl-2 rounded capitalize" v-model="fathersLname">
                     <input type="text" placeholder="First name" class="h-10 border pl-2 rounded capitalize" v-model="fathersFname">
                     <input type="text" placeholder="Middle name" class="h-10 border pl-2 rounded capitalize" v-model="fathersMname">
                 </div>
                 <div class="flex flex-col gap-y-1">
-                    <label class="font-semibold">Mother's Name</label>
+                    <label class="font-semibold">Mother's Name (optional)</label>
                     <input type="text" placeholder="Last name" class="h-10 border pl-2 rounded capitalize" v-model="mothersLname">
                     <input type="text" placeholder="First name" class="h-10 border pl-2 rounded capitalize" v-model="mothersFname">
                     <input type="text" placeholder="Middle name" class="h-10 border pl-2 rounded capitalize" v-model="mothersMname">
                 </div>
                 <div class="flex flex-col gap-y-1">
-                    <label class="font-semibold">Guardian's Name</label>
+                    <label class="font-semibold">Guardian's Name (optional)</label>
                     <input type="text" placeholder="Last name" class="h-10 border pl-2 rounded capitalize" v-model="guardiansLname">
                     <input type="text" placeholder="First name" class="h-10 border pl-2 rounded capitalize" v-model="guardiansFname">
                     <input type="text" placeholder="Middle name" class="h-10 border pl-2 rounded capitalize" v-model="guardiansMname">
@@ -343,7 +343,7 @@
             <div class="grid md:grid-cols-2 gap-x-10 gap-y-5">
                 <div class="flex flex-col gap-y-1">
                     <select class="h-10 border dark:!text-black pl-2 rounded" v-model="accomplishedBy" @change="changeAccomplisedBy()">
-                        <option disabled selected value="">Accomplished By</option>
+                        <option disabled selected value="">Accomplished By (optional)</option>
                         <option>Applicant</option>
                         <option>Guardian</option>
                         <option>Representative</option>
@@ -627,7 +627,7 @@ const next = () => {
         hasEmptyFields.value = false
         router.push({ query : { page: currentPage.value + 1 }})
     }else if(currentPage.value === 4){
-        if (!educationalAttainment.value) {
+        if (!educationalAttainment.value || !mobileNo.value) {
             hasEmptyFields.value = true
             return;
         }

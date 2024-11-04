@@ -1,11 +1,35 @@
 <template>
     <section class="h-[90dvh] flex flex-col md:flex-row gap-x-5 gap-y-5 items-center justify-center relative">
         <div class="absolute inset-0 bg-white bg-opacity-30"></div>
-        <button v-if="applicant && applicant.status !== 'rejected' && applicant.status !== 'expired'" @click="isApplicant()" class="z-20 bg-custom-primary w-[40dvw] md:w-[20dvw] lg:w-[15dvw] xl:w-[10dvw] p-2 text-center text-white rounded-md border hover:bg-gray-100 hover:border-custom-primary hover:text-custom-primary">New Applicant</button>
-        <router-link v-else :to="{ name: 'newApplicant' }" class="z-20 bg-custom-primary w-[40dvw] md:w-[20dvw] lg:w-[15dvw] xl:w-[10dvw] p-2 text-center text-white rounded-md border hover:bg-gray-100 hover:border-custom-primary hover:text-custom-primary">New Applicant</router-link>
-        <button v-if="applicant && applicant.status !== 'expired'" @click="isNotExpired()" class="z-20 bg-custom-primary w-[40dvw] md:w-[20dvw] lg:w-[15dvw] xl:w-[10dvw] p-2 text-center text-white rounded-md border hover:bg-gray-100 hover:border-custom-primary hover:text-custom-primary">Renewal</button>
-        <button v-if="!applicant" @click="notApplicant()" class="z-20 bg-custom-primary w-[40dvw] md:w-[20dvw] lg:w-[15dvw] xl:w-[10dvw] p-2 text-center text-white rounded-md border hover:bg-gray-100 hover:border-custom-primary hover:text-custom-primary">Renewal</button>
-        <router-link v-if="applicant && applicant.status === 'expired'" :to="{ name: 'renewal' }" class="z-20 bg-custom-primary w-[40dvw] md:w-[20dvw] lg:w-[15dvw] xl:w-[10dvw] p-2 text-center text-white rounded-md border hover:bg-gray-100 hover:border-custom-primary hover:text-custom-primary">Renewal</router-link>
+        <button v-if="applicant && applicant.status !== 'rejected' && applicant.status !== 'expired'" @click="isApplicant()" class="z-20 flex flex-col bg-custom-primary w-[40dvw] md:w-[20dvw] lg:w-[25dvw] xl:w-[15dvw] p-2 text-start text-white rounded-md border hover:bg-gray-100 min-h-36 hover:border-custom-primary hover:text-custom-primary">
+            <Icon icon="fluent:form-new-48-regular" class="text-4xl" />
+            <div>
+                <h2 class="text-lg font-bold">New Application</h2>
+                <p class="text-sm">Start a new PWD ID application. Easy steps to apply for your first ID.</p>
+            </div>
+        </button>
+        <router-link v-else :to="{ name: 'newApplicant' }" class="z-20 flex flex-col bg-custom-primary w-[40dvw] md:w-[20dvw] lg:w-[25dvw] xl:w-[15dvw] p-2 text-start text-white rounded-md border hover:bg-gray-100 min-h-36 hover:border-custom-primary hover:text-custom-primary">
+            <Icon icon="fluent:form-new-48-regular" class="text-4xl" />
+            <div>
+                <h2 class="text-lg font-bold">New Application</h2>
+                <p class="text-sm">Start a new PWD ID application. Easy steps to apply for your first ID.</p>
+            </div>
+        </router-link>
+        <button v-if="applicant && applicant.status !== 'expired'" @click="isNotExpired()" class="z-20 flex flex-col bg-custom-primary w-[40dvw] md:w-[20dvw] lg:w-[25dvw] xl:w-[15dvw] p-2 text-center text-white rounded-md border hover:bg-gray-100 min-h-36 hover:border-custom-primary hover:text-custom-primary">Renewal</button>
+        <button v-if="!applicant" @click="notApplicant()" class="z-20 flex flex-col bg-custom-primary w-[40dvw] md:w-[20dvw] lg:w-[25dvw] xl:w-[15dvw] p-2 text-start text-white rounded-md border hover:bg-gray-100 min-h-36 hover:border-custom-primary hover:text-custom-primary">
+            <Icon icon="fluent:form-new-48-regular" class="text-4xl" />
+            <div>
+                <h2 class="text-lg font-bold">Renewal</h2>
+                <p class="text-sm">Renew your existing PWD ID with updated information.</p>
+            </div>
+        </button>
+        <router-link v-if="applicant && applicant.status === 'expired'" :to="{ name: 'renewal' }" class="z-20 bg-custom-primary w-[40dvw] md:w-[20dvw] lg:w-[15dvw] xl:w-[15dvw] p-2 text-start text-white rounded-md border hover:bg-gray-100 hover:border-custom-primary hover:text-custom-primary">
+            <Icon icon="fluent:form-new-48-regular" class="text-4xl" />
+            <div>
+                <h2 class="text-lg font-bold">New Application</h2>
+                <p class="text-sm">Renew your existing PWD ID with updated information.</p>
+            </div>
+        </router-link>
         <!-- modal -->
         <div v-if="modal" @click.self="isApplicant()" class="z-20 h-screen w-screen fixed top-0 flex items-center justify-center">
             <div class="z-20 bg-white w-3/4 md:w-2/4 lg:w-1/4 h-fit pb-7 overflow-hidden rounded-md shadow flex flex-col items-center gap-y-14 font-manrope font-semibold">

@@ -475,8 +475,8 @@
                     </select> -->
                 </div>
                 <div class="flex flex-col gap-y-1 w-3/4 md:w-2/5 lg:w-full">
-                    <label class="font-semibold text-lg">Age</label>
-                    <input type="number" placeholder="Age" class="pl-3 border border-gray-500 h-10 rounded-md" v-model="age" required>
+                    <label class="font-semibold text-lg">Birthdate</label>
+                    <input type="date" placeholder="Age" class="pl-3 border border-gray-500 h-10 rounded-md" v-model="age" required>
                 </div>
                 <div class="flex flex-col gap-y-1 w-3/4 md:w-2/5 lg:w-full">
                     <label class="font-semibold text-lg">Gender</label>

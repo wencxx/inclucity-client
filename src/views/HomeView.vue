@@ -1,8 +1,8 @@
 <template>
     <section class="h-[90dvh] overflow-auto font-poppins p-10 md:px-16 lg:px-32">
-        <h1 class="font-semibold font-manrope uppercase text-2xl lg:text-3xl">News</h1>
+        <h1 class="font-semibold font-manrope uppercase text-2xl lg:text-3xl w-full xl:w-2/3 mx-auto">News</h1>
         <!-- skeleton loading -->
-        <div v-if="loadingNews" class="mt-2 lg:mt-5 grid md:grid-cols-2 lg:grid-cols-3 md:gap-x-5 lg:gap-x-10 gap-y-5">
+        <div v-if="loadingNews" class="mt-2 lg:mt-5 flex flex-col gap-y-5 w-full xl:w-2/3 mx-auto">
             <div class="flex flex-col gap-y-2 font-poppins bg-white p-3 rounded-md shadow cursor-default hover:shadow-md">
                 <div class="w-full aspect-video bg-gray-200 rounded animate-pulse"></div>
                 <p class="w-3/4 bg-gray-200 h-8 animate-pulse rounded"></p>
@@ -20,15 +20,25 @@
             </div>
         </div>
         <!-- news -->
-        <div v-if="!noNews" class="mt-2 lg:mt-5 grid md:grid-cols-2 lg:grid-cols-3 md:gap-x-5 lg:gap-x-10 gap-y-5">
+        <div v-if="!noNews" class="mt-2 lg:mt-5 flex flex-col gap-y-5 w-full xl:w-2/3 mx-auto">
             <div v-for="( n, index ) in news" :key="index" class="flex flex-col gap-y-2 font-poppins bg-white p-3 rounded-md shadow cursor-default hover:shadow-md">
-                <router-link :to="{ name: 'newsDetails', params: { id: n._id }  }">
-                    <img :src="n.imageName" alt="logo" class="w-full aspect-video rounded">
-                </router-link>
-                <router-link :to="{ name: 'newsDetails', params: { id: n._id }  }">
+                <div class="flex items-center text-lg">
+                    <img src="../assets/logo.png" alt="logot" class="w-20">
+                    <div>
+                        <h1>Inclucity</h1>
+                        <p class="text-gray-600 italic text-xs">{{ changeDateFormat(n.datePosted) }}</p>
+                    </div>
+                </div>
+                <div>
                     <p class="capitalize font-medium text-md">{{ n.postTitle }}</p>
-                </router-link>
-                <p class="text-gray-600 italic text-xs">{{ changeDateFormat(n.datePosted) }}</p>
+                    <p class="text-gray-500 text-md mt-3 text-justify">{{ n.postDescription }}</p>
+                    <div v-if="n.postUrl.length > 1" class="flex flex-col mb-3">
+                        <router-link :to="url" target="_blank" class="text-blue-500 underline" v-for="url in n.postUrl" :key="url">{{ url }}</router-link>
+                    </div>
+                    <div>
+                        <img :src="n.imageName" alt="logo" class="w-full aspect-video object-cover rounded">
+                    </div>
+                </div>
             </div>
         </div>
         <div v-else class="lg:w-1/4 mx-auto flex flex-col items-center gap-y-5 mt-20">
@@ -45,6 +55,7 @@
 <script setup>
 import axios from "axios";
 import { onMounted, ref } from "vue";
+import moment from 'moment'
 const serverUrl = import.meta.env.VITE_SERVER_URL
 
 const loadingNews = ref(false)
@@ -75,49 +86,8 @@ const getNews = async () => {
 const changeDateFormat = (date) => {
     // 2024-09-17T04:21:33.947+00:00
     const newDate = new Date(date)
-    const month = ref('')   
-
-    switch (newDate.getMonth()){
-        case 0:
-            month.value = 'January';
-            break;
-        case 1:
-            month.value = 'February';
-            break;
-        case 2:
-            month.value = 'March';
-            break;
-        case 3:
-            month.value = 'April';
-            break;
-        case 4:
-            month.value = 'May';
-            break;
-        case 5:
-            month.value = 'June';
-            break;
-        case 6:
-            month.value = 'July';
-            break;
-        case 7:
-            month.value = 'August';
-            break;
-        case 8:
-            month.value = 'September';
-            break;
-        case 9:
-            month.value = 'October';
-            break;
-        case 10:
-            month.value = 'November';
-            break;
-        case 11:
-            month.value = 'December';
-            break;
-
-    }
-
-    return `${month.value} ${newDate.getDate()}, ${newDate.getFullYear()} - ${newDate.getHours()}:${newDate.getMinutes()}` 
+    
+    return moment(date).format('llll')
 }
 </script>
 

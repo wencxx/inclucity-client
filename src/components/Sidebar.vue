@@ -4,10 +4,10 @@
             <img src="../assets/logo.png" alt="logo" class="h-full">
         </div>
         <nav class="font-poppins text-white flex flex-col gap-y-1">
-            <router-link :to="{ name: 'me' }" class="flex items-center gap-x-2 text-xl hover:bg-white/[0.20] pl-10 py-2">
+            <!-- <router-link :to="{ name: 'me' }" class="flex items-center gap-x-2 text-xl hover:bg-white/[0.20] pl-10 py-2">
                 <Icon icon="ion:person-circle-outline" class="text-3xl" />
                 <span>Profile</span>
-            </router-link>
+            </router-link> -->
             <router-link :to="{ name: 'home' }" class="flex items-center gap-x-2 text-xl hover:bg-white/[0.20] pl-10 py-2">
                 <Icon icon="carbon:home" class="text-3xl" />
                 <span>Home</span>

@@ -53,7 +53,7 @@
                 <p class="text-custom-secondary dark:!text-white font-medium">{{ user?.address }}</p>
             </div>
         </div>
-        <div class="flex flex-col gap-y-5 mt-10 items-center w-4/5 md:w-3/5 mx-auto">
+        <div class="flex flex-col gap-y-5 mt-10 items-center w-4/5 md:w-3/5 mx-auto mb-5">
             <button class="bg-custom-primary text-white p-2 rounded hover:bg-red-950" @click="toggleUpdate()">Update account information</button>
             <button class="text-red-500 hover:text-red-700" @click="deleteAccountModal = true">Delete account</button>
         </div>
