@@ -5,9 +5,9 @@
             <img v-if="user.profile" class="w-[5rem] md:w-24 aspect-square rounded-full" :src="user?.profile" alt="profilePic">
             <Icon v-else icon="bi:person-circle" class="text-[5rem] md:text-[10] lg:text-[4dvw]" />
             <div class="w-full">
-                <h1 class="text-black text-xl md:text-2xl font-semibold uppercase text-start">{{ user.name }}</h1>
+                <h1 class="text-black dark:!text-white text-xl md:text-2xl font-semibold uppercase text-start">{{ user.name }}</h1>
                 <div class="flex flex-wrap" v-if="application && application?.status !== 'expired'">
-                    <h1 class="text-black font-medium w-fit capitalize" >{{ applicant?.typeOfDisability }}</h1>
+                    <h1 class="text-black font-medium w-fit capitalize dark:!text-white" >{{ applicant?.typeOfDisability }}</h1>
                 </div>
             </div>
             <router-link :to="{ name: 'me' }">
@@ -24,20 +24,22 @@
             <div class="w-1/12 aspect-square bg-gray-300 animate-pulse rounded"></div>
         </div>
         <!-- receipt -->
-        <div v-if="user && applicant" class="flex items-center justify-between md:w-2/6 xl:w-2/6 md:mx-auto border border-custom-primary shadow-inner shadow-red-200 rounded-full px-4 py-1 mt-20">
-            <Icon icon="ph:receipt" class="text-[4rem]" />
-            <h1 class="font-poppins font-semibold text-lg">Application Receipt</h1>
-            <router-link :to="{ name: 'receipt' }">
-                <Icon icon="weui:arrow-outlined" class="text-5xl text-custom-primary" />
-            </router-link>
-        </div>
-        <div v-if="!user && !applicant" class="flex items-center justify-between py-3 md:w-2/6 xl:w-2/6 md:mx-auto border border-custom-primarygray-300 animate-pulse rounded-full px-4 mt-20">
-            <div class="h-12 aspect-square bg-gray-300 rounded animate-pulse"></div>
-            <div class="h-5 bg-gray-300 w-3/5 animate-pulse"></div>
-            <div class="bg-gray-300 h-6 rounded aspect-square animate-pulse"></div>
-        </div>
-        <div v-if="user && !applicant" class="text-center gap-x-5 justify-between md:w-3/6 lg:w-2/6 md:mx-auto px-6 py-2 mt-20">
-            No Receipt to show
+        <div class="md:w-3/6 xl:w-2/6 md:mx-auto mt-10 flex flex-col gap-y-5">
+            <div class="flex items-center gap-x-2 text-xl hover:bg-white/[0.20] p-10 py-2">
+                <select class="bg-transparent focus:outline-none" id="language-select" v-model="currentLanguage" @change="translatePage(currentLanguage)">
+                    <option class="text-black" :value="currentLanguage">Language</option>
+                    <option class="text-black" value="en">English</option>
+                    <option class="text-black" value="tl">Filipino</option>
+                </select>
+                <div id="google_translate_element"></div>
+            </div>
+            <div class="flex items-center gap-x-2 text-xl hover:bg-white/[0.20] p-10 py-2">
+                <select class="bg-transparent focus:outline-none" v-model="themeSelect" @change="changeTheme">
+                    <option class="!text-black" value="" disabled>Dark Mode</option>
+                    <option class="!text-black" value="light">Light</option>
+                    <option class="!text-black" value="dark">Dark</option>
+                </select>
+            </div>
         </div>
     </section>
 </template>
@@ -51,14 +53,76 @@ const serverUrl = import.meta.env.VITE_SERVER_URL
 const authStore = useAuthStore()
 const applicantStore = useApplicationStore()
 
+// darkmode 
+const themeSelect = ref('')
+
+const savedTheme = localStorage.getItem('theme');
+
+if (savedTheme) {
+    document.documentElement.classList.toggle('dark', savedTheme === 'dark');
+    themeSelect.value = savedTheme;
+}
+
+const changeTheme = () => {
+    const selectedTheme = themeSelect.value;
+    document.documentElement.classList.toggle('dark', selectedTheme === 'dark');
+
+    localStorage.setItem('theme', selectedTheme);
+}
+
+// translation
+const googleTranslateElementInit = () => {
+  new window.google.translate.TranslateElement(
+    {
+      pageLanguage: 'en', 
+    //   includedLanguages: 'en,tl',
+    //   layout: window.google.translate.TranslateElement.InlineLayout.SIMPLE,
+    },
+    'google_translate_element'
+  );
+};
+
+const translatePage = (language) => {
+    const googleTranslateDropdown = document.querySelector('.goog-te-combo');
+    if (googleTranslateDropdown) {
+        googleTranslateDropdown.value = language;
+        googleTranslateDropdown.dispatchEvent(new Event('change'));
+    }
+    if(route.name === 'tutorial'){
+        if(language === 'tl'){
+            router.push({
+                query: {
+                    lang: 'tl',
+                    page: route.query.page
+                }
+            })
+        }else{
+            router.push({
+                query: {
+                    page: route.query.page
+                }
+            })
+        }
+    }
+};
+
 onMounted(() => {
     applicantStore.getApplication()
+
+    const script = document.createElement('script');
+    script.src = "https://translate.google.com/translate_a/element.js?cb=googleTranslateElementInit";
+    document.body.appendChild(script);
+
+    window.googleTranslateElementInit = googleTranslateElementInit;
 })
 
 const user = computed(() => authStore.user)
 const applicant = computed(() => applicantStore.application)
 </script>
 
-<style>
+<style scoped>
 /* Your styles here */
+#google_translate_element {
+  display: none;
+}
 </style>

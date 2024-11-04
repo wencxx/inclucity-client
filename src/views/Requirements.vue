@@ -35,6 +35,15 @@
                         <p class="w-3/4 text-center mx-auto mt-5 font-medium">Get a barangay certificate from your local barangay office stating your residency. This certificate confirms your address and may be required for verification purposes.</p>
                     </div>
                 </div>
+                <div>
+                    <div>
+                        <div class="flex items-center gap-x-2">
+                            <Icon icon="prime:download" class="text-4xl text-blue-500" />
+                            <p class="font-poppins font-semibold text-lg">Download PDF for more reference</p>
+                        </div>
+                        <a href="../assets/PWD-ID-REQUIREMENTS.pdf" download class="text-blue-500 underline">PWD-ID-REQUIREMENTS.pdf</a>
+                    </div>
+                </div>
                 <p class="w-3/4 text-center mx-auto mt-5 font-medium">Make sure all documents are clear and legible, and include your name and other relevant details. Keep copies of all documents for your record.</p>
             </div>
         </div>

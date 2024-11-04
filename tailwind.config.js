@@ -1,5 +1,7 @@
 /** @type {import('tailwindcss').Config} */
-export default {
+import withMT from "@material-tailwind/html/utils/withMT"
+
+export default withMT({
   darkMode: 'class',
   content: [
     "./index.html",
@@ -19,5 +21,5 @@ export default {
     },
   },
   plugins: [],
-}
+})
 

@@ -17,6 +17,8 @@ import StatusView from '../views/StatusView.vue'
 import SuccessfulView from '../components/Successful.vue'
 import HotlinesView from '../views/HotlinesView.vue'
 import RequirementsView from '../views/Requirements.vue'
+import BenefitsView from '../views/BenefitsView.vue'
+import FaqsView from '../views/FaqsView.vue'
 import TutorialView from '../views/Tutorial.vue'
 
 const routes = [
@@ -53,7 +55,7 @@ const routes = [
         }
     },
     {
-        path: '/as',
+        path: '/profile',
         name: 'profile',
         component: ProfileView,
         meta: {
@@ -61,7 +63,7 @@ const routes = [
         }
     },
     {
-        path: '/profile',
+        path: '/me',
         name: 'me',
         component: MeView,
         meta: {
@@ -144,6 +146,22 @@ const routes = [
         path: '/requirements-example',
         name: 'requirements',
         component: RequirementsView,
+        meta: {
+            requiresAuth: true
+        }
+    },
+    {
+        path: '/benefits',
+        name: 'benefits',
+        component: BenefitsView,
+        meta: {
+            requiresAuth: true
+        }
+    },
+    {
+        path: '/faqs',
+        name: 'faqs',
+        component: FaqsView,
         meta: {
             requiresAuth: true
         }
