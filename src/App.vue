@@ -3,6 +3,10 @@
         <Header :routePath="routePath" v-if="isAuthenticated" @toggleSidebar="isSidebarShowing = !isSidebarShowing" />
         <Sidebar v-if="isSidebarShowing" />
         <router-view />
+        <!--footer -->
+        <div class="h-[12dvh] bg-custom-primary">
+
+        </div>
         <Tutorial v-if="firstLogin" @closeVideo="closeVid()" />
     </section>
 </template>
