@@ -119,10 +119,10 @@
             <img src="../assets/e8cea15d-1429-4e33-9827-57a7bd1f9ad1.jpg" alt="banner2" class="rounded-xl">'
             <p>The City Social Welfare and Development Office - Community Affairs Division (CSWDO-CAD) of the Municipality of Malolos, Bulacan, focuses on enhancing the quality of life for vulnerable and marginalized groups within the community. This includes providing essential social welfare services, support, and empowerment programs for individuals such as children, senior citizens, women, families, and Persons with Disabilities (PWDs). The office is committed to promoting inclusivity, social protection, and community development, often through partnerships with local organizations, government agencies, and stakeholders.</p>
         </div>
-        <div class="mt-10 px-5 lg:px-20 grid lg:grid-cols-4 gap-10">
+        <div class="mt-10 px-5 lg:px-20 grid lg:grid-cols-4 gap-10 items-stretch">
             <div>
                 <h1 class="text-custom-primary font-semibold text-xl -mb-2 uppercase">Mission</h1>
-                <div class="bg-yellow-800 rounded-xl !h-fit lg:!h-[90dvh] xl:!h-[53dvh] p-5 text-center space-y-4">
+                <div class="bg-yellow-800 rounded-xl !h-full p-5 text-center space-y-4">
                     <h1 class="font-semibold">Local government unit</h1>
                     <p class="font-light">A City of resilient citizenry enjoying a comfortable life.</p>
                     <h1 class="font-semibold">CITY SOCIAL WELFARE AND DEVELOPMENT OFFICE</h1>
@@ -131,7 +131,7 @@
             </div>
             <div class="lg:mt-10">
                 <h1 class="text-custom-primary font-semibold text-xl -mb-2 uppercase">Vision</h1>
-                <div class="bg-yellow-800 rounded-xl !h-fit lg:!h-[90dvh] xl:!h-[53dvh] p-5 text-center space-y-4">
+                <div class="bg-yellow-800 rounded-xl !h-full p-5 text-center space-y-4">
                     <h1 class="font-semibold">Local government unit</h1>
                     <p class="font-light">To uplift the living condition of the people in the City of Malolos. A City of resilient citizenry enjoying a comfortable life.</p>
                     <h1 class="font-semibold">CITY SOCIAL WELFARE AND DEVELOPMENT OFFICE</h1>
@@ -140,7 +140,7 @@
             </div>
             <div class="lg:mt-20">
                 <h1 class="text-custom-primary font-semibold text-xl -mb-2 uppercase">Objectives</h1>
-                <div class="bg-yellow-800 rounded-xl !h-fit lg:!h-[90dvh] xl:!h-[53dvh] p-5 text-center space-y-4">
+                <div class="bg-yellow-800 rounded-xl !h-full p-5 text-center space-y-4">
                     <div class="bg-custom-primary w-fit mx-auto px-4 py-2 text-white rounded-full">
                         <h1 class="font-semibold">1</h1>
                     </div>
@@ -153,7 +153,7 @@
             </div>
             <div class="lg:mt-32">
                 <h1 class="text-custom-primary font-semibold text-xl -mb-2 uppercase">Core values</h1>
-                <div class="bg-yellow-800 rounded-xl !h-fit lg:!h-[90dvh] xl:!h-[53dvh] p-5 text-start space-y-4">
+                <div class="bg-yellow-800 rounded-xl !h-full p-5 text-start space-y-4">
                     <ul class="list-disc list-inside">
                         <li class="font-medium">MALASAKIT (COMPASSION)</li>
                         <p class="pl-5 my-3">Concern and understanding for clients, organization and community</p>
