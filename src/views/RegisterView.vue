@@ -487,6 +487,7 @@
                         <option>Other</option>
                     </select>
                 </div>
+                <p class="col-span-2">When Registering, you agreethat we may use your provided data for the registration and to send you notifications on our products and services. You can unsubscribe from notifications at anytime in your settings.</p>
                 <button v-if="registering" class="bg-custom-primary w-3/4 md:w-2/5 lg:w-3/5 text-white py-2 rounded-xl uppercase mt-5 hover:bg-red-900 lg:col-span-2 place-self-center animate-pulse" disabled>Registering...</button>
                 <button v-else class="bg-custom-primary w-3/4 md:w-2/5 lg:w-3/5 text-white py-2 rounded-xl uppercase mt-5 hover:bg-red-900 lg:col-span-2 place-self-center">Sign Up</button>
             </form>

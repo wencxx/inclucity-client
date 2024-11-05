@@ -2,6 +2,7 @@ import { createRouter, createWebHistory } from "vue-router";
 import { useAuthStore } from "../store/authStore";
 import LoginView from '../views/LoginView.vue'
 import RegistereView from '../views/RegisterView.vue'
+import ForgotPassView from '../views/ForgotPass.vue'
 import OtpVerificationView from '../views/OtpVerificationView.vue'
 import HomeView from '../views/HomeView.vue'
 import NewsDetailsView from '../views/NewsDetailsView.vue'
@@ -38,6 +39,11 @@ const routes = [
         path: '/register',
         name: 'register',
         component: RegistereView
+    },
+    {
+        path: '/forgot-password',
+        name: 'forgotPass',
+        component: ForgotPassView
     },
     {
         path: '/register/otp-verification',
