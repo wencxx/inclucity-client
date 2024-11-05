@@ -1,5 +1,5 @@
 <template>
-    <div class="w-3/4 md:w-2/5 lg:w-1/4 xl:1/5 h-screen absolute top-0 left-0 flex flex-col z-30">
+    <div class="w-3/4 md:w-2/5 lg:w-1/4 xl:1/5 h-screen absolute top-0 left-0 flex flex-col z-[1000]">
         <div class="h-[9.8dvh] bg-custom-primary dark:bg-neutral-900">
             <img src="../assets/logo.png" alt="logo" class="h-full">
         </div>
@@ -16,7 +16,7 @@
                     <Icon icon="mdi:user" class="text-2xl" />
                 </div>
                 <div>
-                    <h1 class="font-medium">{{ currentUser.name }}</h1>
+                    <h1 class="font-medium">{{ currentUser?.name }}</h1>
                     <h1 v-if="application?.typeOfDisability" class="font-medium">{{ application?.typeOfDisability }}</h1>
                 </div>
             </router-link>
@@ -24,7 +24,7 @@
                 <Icon icon="carbon:home" class="text-3xl" />
                 <span>Home</span>
             </router-link>
-            <div @click="toggleApplication = !toggleApplication" class="flex items-center gap-x-2 text-xl hover:bg-white/[0.20] p-10 py-2">
+            <div @click="toggleApplication = !toggleApplication" class="flex items-center cursor-pointer gap-x-2 text-xl hover:bg-white/[0.20] p-10 py-2">
                 <Icon icon="mdi:form-outline" class="text-3xl" />
                 <span>PWD ID Application</span>
                 <Icon icon="ri:arrow-down-s-line" class="text-3xl ml-auto duration-300" :class="{ 'rotate-180': toggleApplication }" />
@@ -59,6 +59,10 @@
                 <Icon icon="mdi:faq" class="text-3xl" />
                 <span>FAQs</span>
             </router-link>
+            <router-link :to="{ name: 'map' }" class="flex items-center gap-x-2 text-xl hover:bg-white/[0.20] p-10 py-2">
+                <Icon icon="tabler:map-2" class="text-3xl" />
+                <span>Map</span>
+            </router-link>
             <!-- <router-link :to="{ name: 'login' }" class="flex items-center gap-x-2 text-xl hover:bg-white/[0.20] p-10 py-2">
                 <Icon icon="carbon:settings" class="text-3xl" />
                 <span>Settings</span>
@@ -66,6 +70,10 @@
             <router-link :to="{ name: 'hotlines' }" class="flex items-center gap-x-2 text-xl hover:bg-white/[0.20] p-10 py-2">
                 <Icon icon="streamline:online-medical-call-service" class="text-3xl" />
                 <span>Emergency Hotlines</span>
+            </router-link>
+            <router-link :to="{ name: 'about' }" class="flex items-center gap-x-2 text-xl hover:bg-white/[0.20] p-10 py-2">
+                <Icon icon="pepicons-pencil:people-circle" class="text-3xl" />
+                <span>About us</span>
             </router-link>
             <hr class="w-4/5 mx-auto my-5">
             <button @click="willLogout = true" class="flex items-center justify-center border gap-x-2 mx-auto w-1/3 py-2 rounded hover:bg-white hover:text-custom-primary hover:border-custom-primary">
@@ -160,24 +168,6 @@ const logout = () => {
     authStore.logout()
     router.push('/')
     removeDataFromLocalStorage()
-}
-
-
-// darkmode 
-const themeSelect = ref('')
-
-const savedTheme = localStorage.getItem('theme');
-
-if (savedTheme) {
-    document.documentElement.classList.toggle('dark', savedTheme === 'dark');
-    themeSelect.value = savedTheme;
-}
-
-const changeTheme = () => {
-    const selectedTheme = themeSelect.value;
-    document.documentElement.classList.toggle('dark', selectedTheme === 'dark');
-
-    localStorage.setItem('theme', selectedTheme);
 }
 </script>
 

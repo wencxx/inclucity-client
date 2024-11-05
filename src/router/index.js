@@ -20,6 +20,9 @@ import RequirementsView from '../views/Requirements.vue'
 import BenefitsView from '../views/BenefitsView.vue'
 import FaqsView from '../views/FaqsView.vue'
 import TutorialView from '../views/Tutorial.vue'
+import MapListsView from '../views/MapLists.vue'
+import MapView from '../views/Map.vue'
+import AboutView from '../views/About.vue'
 
 const routes = [
     {
@@ -135,6 +138,22 @@ const routes = [
         }
     },
     {
+        path: '/map-list',
+        name: 'map',
+        component: MapListsView,
+        meta: {
+            requiresAuth: true
+        }
+    },
+    {
+        path: '/map',
+        name: 'mapView',
+        component: MapView,
+        meta: {
+            requiresAuth: true
+        }
+    },
+    {
         path: '/medical-hotlines',
         name: 'hotlines',
         component: HotlinesView,
@@ -162,6 +181,14 @@ const routes = [
         path: '/faqs',
         name: 'faqs',
         component: FaqsView,
+        meta: {
+            requiresAuth: true
+        }
+    },
+    {
+        path: '/about-us',
+        name: 'about',
+        component: AboutView,
         meta: {
             requiresAuth: true
         }

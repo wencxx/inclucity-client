@@ -84,17 +84,6 @@
                 <div class="flex flex-col gap-y-2 w-full py-2">
                     <label class="font-semibold">Select type of disability *</label>
                     <select class="h-10 border dark:!text-black pl-2 rounded" v-model="typeOfDisability" required>
-                        <option disabled>Select Type of Disability</option>
-                        <option>Deaf/Hard of hearing</option>
-                        <option>Intellectual Disability</option>
-                        <option>Learning Disability</option>
-                        <option>Mental Disability</option>
-                        <option>Physical Disability(Orthopedic)</option>
-                        <option>Psychosocial Disability</option>
-                        <option>Speech and Language Impairment</option>
-                        <option>Visual Disability</option>
-                        <option>Cancer (RA11215)</option>
-                        <option>Rare Disease (RA107747)</option>
                         <option v-for="(disability, index) in disabilities" :key="index">{{ disability.disability }}</option>
                     </select>
                 </div>

@@ -1,33 +1,33 @@
 <template>
     <section class="h-[90dvh] flex flex-col md:flex-row gap-x-5 gap-y-5 items-center justify-center relative">
         <div class="absolute inset-0 bg-white bg-opacity-30"></div>
-        <button v-if="applicant && applicant.status !== 'rejected' && applicant.status !== 'expired'" @click="isApplicant()" class="z-20 flex flex-col bg-custom-primary w-[40dvw] md:w-[20dvw] lg:w-[25dvw] xl:w-[15dvw] p-2 text-start text-white rounded-md border hover:bg-gray-100 min-h-36 hover:border-custom-primary hover:text-custom-primary">
-            <Icon icon="fluent:form-new-48-regular" class="text-4xl" />
+        <button v-if="applicant && applicant.status !== 'rejected' && applicant.status !== 'expired'" @click="isApplicant()" class="z-20 md:h-[40dvh] lg:h-[30dvh] flex flex-col bg-custom-primary w-[40dvw] md:w-[20dvw] lg:w-[25dvw] xl:w-[15dvw] p-2 text-start text-white rounded-md border hover:bg-gray-100 min-h-36 hover:border-custom-primary hover:text-custom-primary">
+            <Icon icon="fluent:form-new-48-regular" class="text-5xl mx-auto" />
             <div>
                 <h2 class="text-lg font-bold">New Application</h2>
-                <p class="text-sm">Start a new PWD ID application. Easy steps to apply for your first ID.</p>
+                <p class="text-sm">For new PWD ID applicants can apply by filling out the online form on our website. The form helps you provide all the needed information and documents for a quick and easy process</p>
             </div>
         </button>
-        <router-link v-else :to="{ name: 'newApplicant' }" class="z-20 flex flex-col bg-custom-primary w-[40dvw] md:w-[20dvw] lg:w-[25dvw] xl:w-[15dvw] p-2 text-start text-white rounded-md border hover:bg-gray-100 min-h-36 hover:border-custom-primary hover:text-custom-primary">
-            <Icon icon="fluent:form-new-48-regular" class="text-4xl" />
+        <router-link v-else :to="{ name: 'newApplicant' }" class="z-20 md:h-[40dvh] lg:h-[30dvh] flex flex-col bg-custom-primary w-[40dvw] md:w-[20dvw] lg:w-[25dvw] xl:w-[15dvw] p-2 text-start text-white rounded-md border hover:bg-gray-100 min-h-36 hover:border-custom-primary hover:text-custom-primary">
+            <Icon icon="fluent:form-new-48-regular" class="text-5xl mx-auto" />
             <div>
-                <h2 class="text-lg font-bold">New Application</h2>
-                <p class="text-sm">Start a new PWD ID application. Easy steps to apply for your first ID.</p>
+                <h2 class="text-lg font-bold">New Applicant</h2>
+                <p class="text-sm">For new PWD ID applicants can apply by filling out the online form on our website. The form helps you provide all the needed information and documents for a quick and easy process</p>
             </div>
         </router-link>
-        <button v-if="applicant && applicant.status !== 'expired'" @click="isNotExpired()" class="z-20 flex flex-col bg-custom-primary w-[40dvw] md:w-[20dvw] lg:w-[25dvw] xl:w-[15dvw] p-2 text-center text-white rounded-md border hover:bg-gray-100 min-h-36 hover:border-custom-primary hover:text-custom-primary">Renewal</button>
-        <button v-if="!applicant" @click="notApplicant()" class="z-20 flex flex-col bg-custom-primary w-[40dvw] md:w-[20dvw] lg:w-[25dvw] xl:w-[15dvw] p-2 text-start text-white rounded-md border hover:bg-gray-100 min-h-36 hover:border-custom-primary hover:text-custom-primary">
-            <Icon icon="fluent:form-new-48-regular" class="text-4xl" />
+        <button v-if="applicant && applicant.status !== 'expired'" @click="isNotExpired()" class="z-20 md:h-[40dvh] lg:h-[30dvh] flex flex-col bg-custom-primary w-[40dvw] md:w-[20dvw] lg:w-[25dvw] xl:w-[15dvw] p-2 text-center text-white rounded-md border hover:bg-gray-100 min-h-36 hover:border-custom-primary hover:text-custom-primary">Renewal</button>
+        <button v-if="!applicant" @click="notApplicant()" class="z-20 md:h-[40dvh] lg:h-[30dvh] flex flex-col bg-custom-primary w-[40dvw] md:w-[20dvw] lg:w-[25dvw] xl:w-[15dvw] p-2 text-start text-white rounded-md border hover:bg-gray-100 min-h-36 hover:border-custom-primary hover:text-custom-primary">
+            <Icon icon="fluent:form-new-48-regular" class="text-5xl mx-auto" />
             <div>
                 <h2 class="text-lg font-bold">Renewal</h2>
-                <p class="text-sm">Renew your existing PWD ID with updated information.</p>
+                <p class="text-sm">For PWD ID holders can renew their IDs by filling out the online renewal form on our website. Just provide the necessary details and any updated documents for a smooth and fast renewal process</p>
             </div>
         </button>
-        <router-link v-if="applicant && applicant.status === 'expired'" :to="{ name: 'renewal' }" class="z-20 bg-custom-primary w-[40dvw] md:w-[20dvw] lg:w-[15dvw] xl:w-[15dvw] p-2 text-start text-white rounded-md border hover:bg-gray-100 hover:border-custom-primary hover:text-custom-primary">
-            <Icon icon="fluent:form-new-48-regular" class="text-4xl" />
+        <router-link v-if="applicant && applicant.status === 'expired'" :to="{ name: 'renewal' }" class="z-20 md:h-[40dvh] lg:h-[30dvh] bg-custom-primary w-[40dvw] md:w-[20dvw] lg:w-[15dvw] xl:w-[15dvw] p-2 text-start text-white rounded-md border hover:bg-gray-100 hover:border-custom-primary hover:text-custom-primary">
+            <Icon icon="fluent:form-new-48-regular" class="text-5xl mx-auto" />
             <div>
                 <h2 class="text-lg font-bold">New Application</h2>
-                <p class="text-sm">Renew your existing PWD ID with updated information.</p>
+                <p class="text-sm">For PWD ID holders can renew their IDs by filling out the online renewal form on our website. Just provide the necessary details and any updated documents for a smooth and fast renewal process</p>
             </div>
         </router-link>
         <!-- modal -->
