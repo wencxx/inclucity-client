@@ -25,7 +25,18 @@
         </div>
         <!-- receipt -->
         <div class="md:w-3/6 xl:w-2/6 md:mx-auto mt-10 flex flex-col gap-y-5">
-            <div class="flex items-center gap-x-2 text-xl hover:bg-white/[0.20] p-10 py-2">
+            <div class="flex items-center justify-between text-xl hover:bg-white/[0.20] p-10 py-2">
+                <label>Email Notifications</label>
+                <label
+                class="relative inline-block h-6 w-14 cursor-pointer rounded-full bg-gray-300 transition [-webkit-tap-highlight-color:_transparent] has-[:checked]:bg-gray-900"
+                >
+                    <input v-model="receiveEmail" class="peer sr-only" @change="update" id="AcceptConditions" type="checkbox" />
+                    <span
+                        class="absolute inset-y-0 start-0 m-1 size-4 rounded-full bg-gray-300 ring-[6px] ring-inset ring-white transition-all peer-checked:start-8 peer-checked:w-2 peer-checked:bg-white peer-checked:ring-transparent"
+                    ></span>
+                </label>
+            </div>
+            <div class="flex items-center gap-x-2 text-xl hover:bg-white/[0.20] p-9 py-2">
                 <select class="bg-transparent focus:outline-none" id="language-select" v-model="currentLanguage" @change="translatePage(currentLanguage)">
                     <option class="text-black" :value="currentLanguage">Language</option>
                     <option class="text-black" value="en">English</option>
@@ -33,12 +44,16 @@
                 </select>
                 <div id="google_translate_element"></div>
             </div>
-            <div class="flex items-center gap-x-2 text-xl hover:bg-white/[0.20] p-10 py-2">
-                <select class="bg-transparent focus:outline-none" v-model="themeSelect" @change="changeTheme">
-                    <option class="!text-black" value="" disabled>Dark Mode</option>
-                    <option class="!text-black" value="light">Light</option>
-                    <option class="!text-black" value="dark">Dark</option>
-                </select>
+            <div class="flex items-center justify-between text-xl hover:bg-white/[0.20] p-10 py-2">
+                <label>Dark Mode</label>
+                <label
+                class="relative inline-block h-6 w-14 cursor-pointer rounded-full bg-gray-300 transition [-webkit-tap-highlight-color:_transparent] has-[:checked]:bg-gray-900"
+                >
+                    <input  v-model="themeSelect" @change="changeTheme" true-value="dark" false-value="light" class="peer sr-only" id="AcceptConditions" type="checkbox" />
+                    <span
+                        class="absolute inset-y-0 start-0 m-1 size-4 rounded-full bg-gray-300 ring-[6px] ring-inset ring-white transition-all peer-checked:start-8 peer-checked:w-2 peer-checked:bg-white peer-checked:ring-transparent"
+                    ></span>
+                </label>
             </div>
         </div>
     </section>
@@ -46,12 +61,46 @@
 
 <script setup>
 import axios from 'axios'
-import { computed, onMounted, ref } from 'vue'
+import { computed, onMounted, ref, watch } from 'vue'
 import { useAuthStore, useApplicationStore } from '../store'
 const serverUrl = import.meta.env.VITE_SERVER_URL
 
 const authStore = useAuthStore()
 const applicantStore = useApplicationStore()
+const currentUser = computed(() => authStore.user)
+
+const receiveEmail = ref(currentUser.value?.receiveEmail)
+
+watch(currentUser, (newUser) => {
+    receiveEmail.value = newUser?.receiveEmail;
+});
+
+const update = async () => {
+    const userData = {
+        name: currentUser.value?.name,
+        email: currentUser.value?.email,
+        contactNumber: currentUser.value?.contactNumber,
+        address: currentUser.value?.address,
+        age: currentUser.value?.age,
+        receiveEmail: receiveEmail.value
+    }
+    
+    try {
+        const res = await axios.put(`${serverUrl}/update-user`, userData, {
+            headers: {
+                Authorization: `Bearer ${localStorage.getItem('token')}`
+            }
+        })
+
+        if(res.data === 'updated'){
+            authStore.getUser()
+        }else{
+            console.log(res.data)
+        }
+    } catch (error) {
+        console.error(error)
+    }
+}
 
 // darkmode 
 const themeSelect = ref('')

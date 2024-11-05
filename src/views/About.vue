@@ -64,9 +64,9 @@
                 </div>
             </div>
         </div>
-        <div class="min-h-[90dvh] grid lg:grid-cols-3 content-center gap-y-10 mt-10">
-            <div class="flex items-center justify-center h-full">
-                <h1 class="text-4xl text-center w-3/4">Administrative Communication and User Engagement</h1>
+        <div class="min-h-[90dvh] grid lg:grid-cols-4 content-center gap-y-10 mt-10">
+            <div class="flex items-center justify-center h-full col-span-2">
+                <h1 class="text-4xl text-center w-3/5">Administrative Communication and User Engagement</h1>
             </div>
             <div class="flex flex-col h-1/2 justify-start items-center gap-y-5 lg:gap-y-5">
                 <div class="bg-custom-primary text-white px-4 py-1 rounded-full">
@@ -122,7 +122,7 @@
         <div class="mt-10 px-5 lg:px-20 grid lg:grid-cols-4 gap-10">
             <div>
                 <h1 class="text-custom-primary font-semibold text-xl -mb-2 uppercase">Mission</h1>
-                <div class="bg-yellow-800 rounded-xl h-fit lg:h-[53dvh] p-5 text-center space-y-4">
+                <div class="bg-yellow-800 rounded-xl !h-fit lg:!h-[90dvh] xl:!h-[53dvh] p-5 text-center space-y-4">
                     <h1 class="font-semibold">Local government unit</h1>
                     <p class="font-light">A City of resilient citizenry enjoying a comfortable life.</p>
                     <h1 class="font-semibold">CITY SOCIAL WELFARE AND DEVELOPMENT OFFICE</h1>
@@ -131,7 +131,7 @@
             </div>
             <div class="lg:mt-10">
                 <h1 class="text-custom-primary font-semibold text-xl -mb-2 uppercase">Vision</h1>
-                <div class="bg-yellow-800 rounded-xl h-fit lg:h-[53dvh] p-5 text-center space-y-4">
+                <div class="bg-yellow-800 rounded-xl !h-fit lg:!h-[90dvh] xl:!h-[53dvh] p-5 text-center space-y-4">
                     <h1 class="font-semibold">Local government unit</h1>
                     <p class="font-light">To uplift the living condition of the people in the City of Malolos. A City of resilient citizenry enjoying a comfortable life.</p>
                     <h1 class="font-semibold">CITY SOCIAL WELFARE AND DEVELOPMENT OFFICE</h1>
@@ -140,7 +140,7 @@
             </div>
             <div class="lg:mt-20">
                 <h1 class="text-custom-primary font-semibold text-xl -mb-2 uppercase">Objectives</h1>
-                <div class="bg-yellow-800 rounded-xl h-fit lg:h-[53dvh] p-5 text-center space-y-4">
+                <div class="bg-yellow-800 rounded-xl !h-fit lg:!h-[90dvh] xl:!h-[53dvh] p-5 text-center space-y-4">
                     <div class="bg-custom-primary w-fit mx-auto px-4 py-2 text-white rounded-full">
                         <h1 class="font-semibold">1</h1>
                     </div>
@@ -153,7 +153,7 @@
             </div>
             <div class="lg:mt-32">
                 <h1 class="text-custom-primary font-semibold text-xl -mb-2 uppercase">Core values</h1>
-                <div class="bg-yellow-800 rounded-xl h-fit lg:h-[53dvh] p-5 text-start space-y-4">
+                <div class="bg-yellow-800 rounded-xl !h-fit lg:!h-[90dvh] xl:!h-[53dvh] p-5 text-start space-y-4">
                     <ul class="list-disc list-inside">
                         <li class="font-medium">MALASAKIT (COMPASSION)</li>
                         <p class="pl-5 my-3">Concern and understanding for clients, organization and community</p>
