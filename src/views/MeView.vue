@@ -37,8 +37,8 @@
         <!-- information -->
         <div class="bg-white dark:bg-neutral-700 w-4/5 mx-auto py-5 mt-32 lg:mt-40 md:w-3/5 shadow-md rounded-xl flex flex-col items-center gap-y-5">
             <div class="text-center">
-                <p class="font-semibold">Person With Disablity Number</p>
-                <p class="text-custom-secondary dark:!text-white font-medium">{{ convertApplicationNum(application?.applicationNumber) || 'N/A' }}</p>
+                <p class="font-semibold">Contact Number</p>
+                <p class="text-custom-secondary dark:!text-white font-medium">{{ user.contactNumber || 'N/A' }}</p>
             </div>
             <div class="text-center">
                 <p class="font-semibold">Nationality</p>
