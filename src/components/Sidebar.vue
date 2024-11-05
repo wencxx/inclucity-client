@@ -3,7 +3,7 @@
         <div class="h-[9.8dvh] bg-custom-primary dark:bg-neutral-900">
             <img src="../assets/logo.png" alt="logo" class="h-full">
         </div>
-        <nav class="font-poppins h-[91dvh] flex flex-col gap-y-1 bg-gray-100 border-r pt-5 overflow-auto pb-5 !text-black">
+        <nav class="font-poppins h-[91dvh] flex flex-col gap-y-1 bg-gray-100 border-r-2 border-black/10 shadow pt-5 overflow-auto pb-5 !text-black">
             <!-- <router-link :to="{ name: 'me' }" class="flex items-center gap-x-2 text-xl hover:bg-white/[0.20] p-10 py-2">
                 <Icon icon="ion:person-circle-outline" class="text-3xl" />
                 <span>Profile</span>

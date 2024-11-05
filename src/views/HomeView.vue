@@ -1,8 +1,8 @@
 <template>
     <section class="h-[90dvh] overflow-auto font-poppins p-10 md:px-16 lg:px-32">
-        <h1 class="font-semibold font-manrope uppercase text-2xl lg:text-3xl w-full xl:w-2/4 mx-auto">News</h1>
+        <h1 class="font-semibold font-manrope uppercase text-2xl lg:text-3xl w-full mx-auto">News</h1>
         <!-- skeleton loading -->
-        <div v-if="loadingNews" class="mt-2 lg:mt-5 flex flex-col gap-y-5 w-full xl:w-2/4 mx-auto">
+        <div v-if="loadingNews" class="mt-2 lg:mt-5 flex flex-col gap-y-5 w-full mx-auto">
             <div class="flex flex-col gap-y-2 font-poppins bg-white p-3 rounded-md shadow cursor-default hover:shadow-md">
                 <div class="w-full aspect-video bg-gray-200 rounded animate-pulse"></div>
                 <p class="w-3/4 bg-gray-200 h-8 animate-pulse rounded"></p>
@@ -21,7 +21,7 @@
         </div>
         <!-- news -->
         <div v-if="!noNews" class="mt-2 lg:mt-5 flex flex-col gap-y-5 w-full mx-auto">
-            <div v-for="( n, index ) in news" :key="index" class="flex flex-col gap-y-2 font-poppins bg-white p-3 rounded-md shadow cursor-default hover:shadow-md lg:px-[10dvw] xl:px-[20dvw]">
+            <div v-for="( n, index ) in news" :key="index" class="flex flex-col gap-y-2 font-poppins bg-white p-3 rounded-md shadow-xl cursor-default hover:shadow-md lg:px-[10dvw] xl:px-[20dvw]">
                 <div class="flex items-center text-lg">
                     <img src="../assets/logo.png" alt="logot" class="w-20 -ml-5">
                     <div>
