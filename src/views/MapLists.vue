@@ -178,7 +178,7 @@
                             <ul class="flex flex-col gap-y-2">
                                 <li class="flex items-center gap-x-2">
                                     <Icon icon="mdi:map-marker" />
-                                    <router-link :to="{ name: 'mapView', query: { lat: '14.843838', lng: '120.811146' } }">Malolos City Hall</router-link>
+                                    <router-link :to="{ name: 'mapView', query: { lat: '14.860861', lng: '120.810176' } }">Malolos City Hall</router-link>
                                 </li>
                                 <li class="flex items-center gap-x-2">
                                     <Icon icon="mdi:map-marker" />
