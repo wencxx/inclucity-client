@@ -15,7 +15,7 @@
             <h1 class="text-center text-2xl text-white">Key Features and Functionalities</h1>
             <div class="grid lg:grid-cols-4 gap-10">
                 <div>
-                    <div class="bg-white h-fit lg:h-[45dvh] w-full rounded-xl shadow flex flex-col items-center p-10 gap-y-5">
+                    <div class="bg-white h-fit lg:h-fit w-full rounded-xl shadow flex flex-col items-center p-10 gap-y-5">
                         <div class="border px-10 py-1 rounded-full">
                             <Icon icon="mage:star-moving" class="text-5xl text-custom-primary" />
                         </div>
@@ -27,7 +27,7 @@
                     <p class="text-center mt-2">Online Platform for PWDs</p>
                 </div>
                 <div>
-                    <div class="bg-white h-fit lg:h-[45dvh] w-full rounded-xl shadow flex flex-col items-center p-10 gap-y-5">
+                    <div class="bg-white h-fit lg:h-fit w-full rounded-xl shadow flex flex-col items-center p-10 gap-y-5">
                         <div class="border px-10 py-1 rounded-full">
                             <Icon icon="fluent:form-20-regular" class="text-5xl text-custom-primary" />
                         </div>
@@ -39,7 +39,7 @@
                     <p class="text-center mt-2">Online Platform for PWDs</p>
                 </div>
                 <div>
-                    <div class="bg-white h-fit lg:h-[45dvh] w-full rounded-xl shadow flex flex-col items-center p-10 gap-y-5">
+                    <div class="bg-white h-fit lg:h-fit w-full rounded-xl shadow flex flex-col items-center p-10 gap-y-5">
                         <div class="border px-10 py-1 rounded-full">
                             <Icon icon="fluent:form-sparkle-20-regular" class="text-5xl text-custom-primary" />
                         </div>
@@ -51,7 +51,7 @@
                     <p class="text-center mt-2">Web-Based Management Information System for CSWDO CAD Office</p>
                 </div>
                 <div>
-                    <div class="bg-white h-fit lg:h-[45dvh] w-full rounded-xl shadow flex flex-col items-center p-10 gap-y-5">
+                    <div class="bg-white h-fit lg:h-fit w-full rounded-xl shadow flex flex-col items-center p-10 gap-y-5">
                         <div class="border px-10 py-1 rounded-full">
                             <Icon icon="guidance:calendar" class="text-5xl text-custom-primary" />
                         </div>

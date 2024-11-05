@@ -20,8 +20,8 @@
             </div>
         </div>
         <!-- news -->
-        <div v-if="!noNews" class="mt-2 lg:mt-5 flex flex-col gap-y-5 w-full xl:w-2/4 mx-auto">
-            <div v-for="( n, index ) in news" :key="index" class="flex flex-col gap-y-2 font-poppins bg-white p-3 rounded-md shadow cursor-default hover:shadow-md">
+        <div v-if="!noNews" class="mt-2 lg:mt-5 flex flex-col gap-y-5 w-full mx-auto">
+            <div v-for="( n, index ) in news" :key="index" class="flex flex-col gap-y-2 font-poppins bg-white p-3 rounded-md shadow cursor-default hover:shadow-md lg:!px-32 xl:!px-96">
                 <div class="flex items-center text-lg">
                     <img src="../assets/logo.png" alt="logot" class="w-20">
                     <div>
