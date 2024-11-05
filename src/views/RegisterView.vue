@@ -567,7 +567,8 @@ const register = async () => {
         router.push({
             path: '/register/otp-verification',
             query: {
-                email: email.value
+                email: email.value,
+                name: firstName.value
             }
         })
 

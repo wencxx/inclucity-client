@@ -33,6 +33,7 @@
 import { onMounted, onUnmounted, ref } from "vue";
 import { useRoute, useRouter } from 'vue-router'
 import axios from 'axios'
+import emailjs from 'emailjs-com';
 const serverUrl = import.meta.env.VITE_SERVER_URL
 
 const route = useRoute()
@@ -65,24 +66,38 @@ onUnmounted(() => {
 })
 
 const resendOtp = async () => {
-    expiredOtp.value = false
-    if(!expiredOtp.value) return alert(`Resend after ${timerMinutes.value} minute(s)`)
+    let otp = ''
 
-    try {
+    while(otp.length < 4){
+        const x = Math.floor(Math.random() * 10)
 
-        const res = await axios.post(`${serverUrl}/send-otp`, JSON.parse(userData))
-        
-        if(res.status == 201){
-            localStorage.setItem('timerMinutes', 4)
-            localStorage.setItem('timerSeconds', 59)
-            localStorage.setItem('otp', res.data)
-            timerMinutes.value = 4
-            timerSeconds.value = 59
-            startOtpTime()
-        }
-    } catch (error) {
-        errResending.value = true
+        otp += x
     }
+
+    localStorage.setItem('otp', otp)
+
+    var templateParams = {
+        to_name: route.query.name,
+        otp: otp,
+        email: route.query.email,
+        from_name: 'Inclucity',
+    };
+
+    emailjs
+    .send(
+    'service_jp4qqoo',
+    'template_cguzxjo',
+    templateParams,
+    'gbTwv7MP-o1veLyLY'
+    )
+    .then(
+    (response) => {
+        console.log('SUCCESS!', response.status, response.text);
+    },
+    (error) => {
+        console.log('FAILED...', error);
+    }
+    );
 }
 
 let intervalId;

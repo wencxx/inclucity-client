@@ -1,25 +1,8 @@
 <template>
-    <div class="container md:w-2/3 lg:w-2/5 p-10 font-poppins flex flex-col items-center gap-y-14 mx-auto">
+    <div class="container md:w-2/3 lg:w-2/5 p-10 font-poppins flex flex-col items-center justify-center gap-y-14 mx-auto">
         <div v-if="!applicant || applicant && applicant.status === 'expired'" class="w-full">
             <h1 class="text-center font-medium uppercase text-xl">You haven’t applied yet</h1>
         </div>
-        <div v-if="applicant && applicant.status !== 'expired'" class="flex items-center justify-between w-full">
-            <div class="flex flex-col items-center">
-                <Icon icon="clarity:form-line"  class="text-5xl text-custom-primary"/>
-                <p class="text-sm">Filled out form</p>
-            </div>
-            <Icon icon="ph:arrow-right"  class="text-5xl text-custom-primary"/>
-            <div class="flex flex-col items-center">
-                <Icon icon="uim:process"  class="text-5xl text-custom-primary"/>
-                <p class="text-sm">Processed</p>
-            </div>
-            <Icon icon="ph:arrow-right"  class="text-5xl text-custom-primary"/>
-            <div class="flex flex-col items-center">
-                <Icon icon="bitcoin-icons:verify-filled" class="text-6xl text-custom-primary" />
-                <p class="text-sm">Verified</p>
-            </div>
-        </div>
-
         <div v-if="applicant && applicant.status !== 'expired'" class="border w-full flex flex-col gap-y-3 p-5 rounded-xl shadow">
             <h1 class="text-2xl font-semibold capitalize text-center mb-5">Application Status</h1>
             <div class="flex justify-between items-center">

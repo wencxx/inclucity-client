@@ -17,6 +17,9 @@ import StatusView from '../views/StatusView.vue'
 import SuccessfulView from '../components/Successful.vue'
 import HotlinesView from '../views/HotlinesView.vue'
 import RequirementsView from '../views/Requirements.vue'
+import GuidelinesView from '../views/Guidelines.vue'
+import IdReqView from '../views/IdReq.vue'
+import FlowView from '../views/ProccessFlow.vue'
 import BenefitsView from '../views/BenefitsView.vue'
 import FaqsView from '../views/FaqsView.vue'
 import TutorialView from '../views/Tutorial.vue'
@@ -165,6 +168,30 @@ const routes = [
         path: '/requirements-example',
         name: 'requirements',
         component: RequirementsView,
+        meta: {
+            requiresAuth: true
+        }
+    },
+    {
+        path: '/guidelines',
+        name: 'guidelines',
+        component: GuidelinesView,
+        meta: {
+            requiresAuth: true
+        }
+    },
+    {
+        path: '/id-requirements',
+        name: 'IdReq',
+        component: IdReqView,
+        meta: {
+            requiresAuth: true
+        }
+    },
+    {
+        path: '/process-flow',
+        name: 'flow',
+        component: FlowView,
         meta: {
             requiresAuth: true
         }
