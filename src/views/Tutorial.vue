@@ -4,7 +4,7 @@
             <router-link :to="{ name: 'home' }" class="self-start">
                 <Icon icon="material-symbols-light:arrow-back" class="text-4xl text-gray-500" />
             </router-link>
-            <video src="../../Vid.mov" controls autoplay muted playsinline class="h-[80%] aspect-video mx-auto mt-10"></video>
+            <video src="../../tutorial.mp4" controls autoplay muted playsinline class="h-[80%] aspect-video mx-auto mt-10"></video>
         </div>
     </div>
 </template>

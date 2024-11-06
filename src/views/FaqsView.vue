@@ -246,7 +246,7 @@
                 <!-- Accordion Item 12 -->
                 <div class="border px-2  border-custom-primary rounded">
                     <button @click="toggleAccordion(12)" class="w-full flex justify-between items-center py-2 text-black">
-                        <span class="text-custom-primary font-medium">Are those with a psychosocial or learning disability entitled to PWD benefits?</span>
+                        <span class="text-custom-primary font-medium text-start">Are those with a psychosocial or learning disability entitled to PWD benefits?</span>
                         <span class="text-black">
                             <Icon id="icon-12" icon="ri:arrow-down-s-line" class="text-xl duration-300" />
                         </span>
