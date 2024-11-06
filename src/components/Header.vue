@@ -1,5 +1,5 @@
 <template>
-    <header class="border-b-2 h-[10dvh] bg-custom-primary text-white border-gray-300 flex items-center justify-between pr-10 lg:pl-10 lg:pr-20">
+    <header class="border-b-2 h-[10dvh] bg-custom-primary text-white border-gray-300 flex items-center justify-between pr-6 lg:pl-10 lg:pr-20">
         <router-link :to="{ name: 'home' }" class="h-full"><img src="../assets/logo.png" alt="logo" class="h-full"></router-link>
         <div class="flex items-center gap-x-2">
             <router-link :to="{ name: 'notifications' }" class="relative">
