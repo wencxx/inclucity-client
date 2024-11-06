@@ -224,6 +224,7 @@
                     </div>
                 </div>
             </div>
+            <img src="../assets/pwdss-removebg-preview.png" class="w-full">
         </div>
     </div>
 </template>

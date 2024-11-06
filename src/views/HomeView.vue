@@ -1,5 +1,5 @@
 <template>
-    <section class="h-[90dvh] overflow-auto font-poppins p-10 md:px-16 lg:px-32">
+    <section class="h-[90dvh] overflow-auto font-poppins p-10 pb-0 overflow-x-hidden md:px-16 lg:px-32">
         <h1 class="font-semibold font-manrope uppercase text-2xl lg:text-3xl w-full mx-auto">News</h1>
         <!-- skeleton loading -->
         <div v-if="loadingNews" class="mt-2 lg:mt-5 flex flex-col gap-y-5 w-full mx-auto">
@@ -31,7 +31,7 @@
                 </div>
                 <div>
                     <p class="capitalize font-medium text-md">{{ n.postTitle }}</p>
-                    <p class="text-gray-500 text-md mt-3 text-justify">{{ n.postDescription }}</p>
+                    <p class="text-gray-500 text-md mt-3 text-justify whitespace-pre-line">{{ n.postDescription }}</p>
                     <div v-if="n.postUrl.length > 1" class="flex flex-col mb-3">
                         <router-link :to="url" target="_blank" class="text-blue-500 underline" v-for="url in n.postUrl" :key="url">{{ url }}</router-link>
                     </div>
@@ -68,10 +68,12 @@
                 <Icon icon="mdi:keyboard-arrow-right" />
             </button>
         </div>
+        <Footer class="mt-20 -ml-10 md:-ml-16 lg:-ml-32 w-screen"/>
     </section>
 </template>
 
 <script setup>
+import Footer from '../components/footer.vue'
 import axios from "axios";
 import { onMounted, ref } from "vue";
 import moment from 'moment'
