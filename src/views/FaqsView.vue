@@ -176,7 +176,7 @@
                 <!-- Accordion Item 7 -->
                 <div class="border px-2  border-custom-primary rounded">
                     <button @click="toggleAccordion(7)" class="w-full flex justify-between items-center py-2 text-black">
-                        <span class="text-custom-primary font-medium">Do I still need to go to the Municipal/City Social Welfare Development Office if I apply for my PWD ID Online?</span>
+                        <span class="text-custom-primary font-medium text-start">Do I still need to go to the Municipal/City Social Welfare Development Office if I apply for my PWD ID Online?</span>
                         <span class="text-black">
                             <Icon id="icon-7" icon="ri:arrow-down-s-line" class="text-xl duration-300" />
                         </span>
@@ -204,7 +204,7 @@
                 <!-- Accordion Item 9 -->
                 <div class="border px-2  border-custom-primary rounded">
                     <button @click="toggleAccordion(9)" class="w-full flex justify-between items-center py-2 text-black">
-                        <span class="text-custom-primary font-medium">What if the PWD is bedridden and can’t go to the Municipal/City Social Welfare Development Office?</span>
+                        <span class="text-custom-primary font-medium text-start">What if the PWD is bedridden and can’t go to the Municipal/City Social Welfare Development Office?</span>
                         <span class="text-black">
                             <Icon id="icon-9" icon="ri:arrow-down-s-line" class="text-xl duration-300" />
                         </span>
