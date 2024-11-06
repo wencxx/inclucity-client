@@ -20,15 +20,15 @@
             </p>
             <div class="flex flex-col lg:grid lg:place-content-center lg:grid-cols-2 lg:w-2/4 items-center gap-x-5 gap-y-5">
                 <div class="flex flex-col gap-y-1 w-3/4 md:w-2/5 lg:w-full">
-                    <label class="font-semibold text-lg">First Name</label>
+                    <label class="font-semibold text-lg">First Name <span class="text-red-500 text-sm">*</span></label>
                     <input type="text" placeholder="Firstname" class="pl-3 border border-gray-500 h-10 rounded-md capitalize" v-model="firstName" required>
                 </div>
                 <div class="flex flex-col gap-y-1 w-3/4 md:w-2/5 lg:w-full">
-                    <label class="font-semibold text-lg">Middle Name</label>
+                    <label class="font-semibold text-lg">Middle Name <span class="text-xs text-gray-400 font-light">(optional)</span></label>
                     <input type="text" placeholder="Middlename" class="pl-3 border border-gray-500 h-10 rounded-md capitalize" v-model="middleName">
                 </div>
                 <div class="flex flex-col gap-y-1 w-3/4 md:w-2/5 lg:w-full">
-                    <label class="font-semibold text-lg">Last Name</label>
+                    <label class="font-semibold text-lg">Last Name <span class="text-red-500 text-sm">*</span></label>
                     <input type="text" placeholder="Lastname" class="pl-3 border border-gray-500 h-10 rounded-md capitalize" v-model="lastName" required>
                 </div>
                 <div class="flex flex-col gap-y-1 w-3/4 md:w-2/5 lg:w-full">
