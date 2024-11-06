@@ -37,7 +37,7 @@
                     <input type="text" placeholder="Enter first name" class="h-10 border pl-2 rounded capitalize" v-model="firstName">
                 </div>
                 <div class="flex flex-col gap-y-1">
-                    <label class="font-semibold">Middle Name *</label>
+                    <label class="font-semibold">Middle Name</label>
                     <input type="text" placeholder="Enter middle name" class="h-10 border pl-2 rounded capitalize" v-model="middleName">
                 </div>
                 <div class="flex flex-col gap-y-1">
@@ -518,7 +518,6 @@ const next = () => {
         const pageData = [
             lastName.value,
             firstName.value,
-            middleName.value,
             dateOfBirth.value,
         ]
 
