@@ -18,7 +18,7 @@
                 <Icon icon="material-symbols-light:warning-outline" class="text-2xl" />
                 <span class="mt-1">Something went wrong</span>
             </p>
-            <form @submit.prevent="register()" class="flex flex-col lg:grid lg:place-content-center lg:grid-cols-2 lg:w-2/4 items-center gap-x-5 gap-y-5">
+            <div class="flex flex-col lg:grid lg:place-content-center lg:grid-cols-2 lg:w-2/4 items-center gap-x-5 gap-y-5">
                 <div class="flex flex-col gap-y-1 w-3/4 md:w-2/5 lg:w-full">
                     <label class="font-semibold text-lg">First Name</label>
                     <input type="text" placeholder="Firstname" class="pl-3 border border-gray-500 h-10 rounded-md capitalize" v-model="firstName" required>
@@ -487,15 +487,26 @@
                         <option>Other</option>
                     </select>
                 </div>
-                <p class="col-span-2">When Registering, you agreethat we may use your provided data for the registration and to send you notifications on our products and services. You can unsubscribe from notifications at anytime in your settings.</p>
-                <button v-if="registering" class="bg-custom-primary w-3/4 md:w-2/5 lg:w-3/5 text-white py-2 rounded-xl uppercase mt-5 hover:bg-red-900 lg:col-span-2 place-self-center animate-pulse" disabled>Registering...</button>
-                <button v-else class="bg-custom-primary w-3/4 md:w-2/5 lg:w-3/5 text-white py-2 rounded-xl uppercase mt-5 hover:bg-red-900 lg:col-span-2 place-self-center">Sign Up</button>
-            </form>
+                <button class="bg-custom-primary w-3/4 md:w-2/5 lg:w-3/5 text-white py-2 rounded-xl uppercase mt-5 hover:bg-red-900 lg:col-span-2 place-self-center" @click="showPrivacy = true">Sign Up</button>
+            </div>
             <div class="flex justify-center mt-10 gap-y-4 font-poppins font-semibold">
                 <p>
                     You have an account?
                     <router-link :to="{ name: 'login' }" class="underline hover:text-custom-primary">Log in</router-link>
                 </p>
+            </div>
+
+            <div v-if="showPrivacy" class="absolute top-0 left-0 bg-black/55 w-screen h-screen flex items-center justify-center">
+                <div class="bg-white w-1/4 rounded-xl p-5 text-justify space-y-5 flex flex-col items-center">
+                    <Icon icon="mdi:warning" class="text-6xl text-orange-500" />
+                    <h1 class="font-semibold text-lg">Privacy and Terms</h1>
+                    <p class="col-span-2 w-4/5">When Registering, you agree that we may use your provided data for the registration and to send you notifications on our products and services. You can unsubscribe from notifications at anytime in your settings.</p>
+                    <div class="flex justify-end gap-x-3 w-4/5">
+                        <button class="border border-green-500 text-green-500 w-1/4 py-1 rounded" @click="showPrivacy = false">Cancel</button>
+                        <button class="bg-green-500 text-white w-1/4 py-1 rounded" @click="register()" v-if="registering">Redirecting</button>
+                        <button class="bg-green-500 text-white w-1/4 py-1 rounded" @click="register()" v-else>Agree</button>
+                    </div>
+                </div>
             </div>
         </div>
     </section>
@@ -539,6 +550,8 @@ const invalidNumber = ref(false)
 
 const registering = ref(false)
 const errorRegistering = ref(false)
+
+const showPrivacy = ref(false)
 
 const register = async () => {
     invalidNumber.value = false

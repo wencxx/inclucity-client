@@ -12,7 +12,7 @@
                 </p>
             </div>
         </div>
-        <div class="bg-yellow-700 h-fit p-10 px-20 space-y-10"> 
+        <div class="bg-yellow-700 h-fit p-10 px-20 space-y-10 mt-10"> 
             <h1 class="text-center text-2xl text-white">Key Features and Functionalities</h1>
             <div class="grid lg:grid-cols-4 gap-10">
                 <div>
@@ -66,10 +66,10 @@
             </div>
         </div>
         <div class="min-h-[90dvh] grid lg:grid-cols-4 content-center gap-y-10 mt-10">
-            <div class="flex items-center justify-center h-full col-span-2">
+            <div class="flex items-center justify-center h-full lg:col-span-2">
                 <h1 class="text-4xl text-center w-3/5">Administrative Communication and User Engagement</h1>
             </div>
-            <div class="flex flex-col h-1/2 w-3/4 justify-start items-center gap-y-5 lg:gap-y-5">
+            <div class="flex flex-col mx-auto h-1/2 w-3/4 justify-start items-center gap-y-5 lg:gap-y-5">
                 <div class="bg-custom-primary text-white px-4 py-1 rounded-full">
                     <h1 class="font-bold text-3xl">1</h1>
                 </div>
@@ -78,7 +78,7 @@
                     IncluCity equips the CSWDO CAD Office with tools to communicate directly with users, enabling announcements, application updates, reminders for ID expiration, and service notifications.
                 </p>
             </div>
-            <div class="flex flex-col h-1/2 w-3/4 justify-start items-center gap-y-5 lg:gap-y-5">
+            <div class="flex flex-col mx-auto h-1/2 w-3/4 justify-start items-center gap-y-5 lg:gap-y-5">
                 <div class="bg-custom-primary text-white px-4 py-1 rounded-full">
                     <h1 class="font-bold text-3xl">2</h1>
                 </div>
