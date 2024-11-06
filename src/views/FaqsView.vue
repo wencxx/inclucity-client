@@ -11,7 +11,7 @@
                     <button @click="toggleAccordion(1)" class="w-full flex justify-between items-center py-2 text-black">
                         <span class="text-custom-primary font-medium">What is a PWD ID?</span>
                         <span class="text-black">
-                            <Icon id="icon-1" icon="ri:arrow-down-s-line" class="text-xl duration-300" />
+                            <Icon id="icon-1" icon="ri:arrow-down-s-line" class="text-xl duration-300 text-custom-primary" />
                         </span>
                     </button>
                     <div id="content-1" class="max-h-0 overflow-hidden transition-all duration-300 ease-in-out">
@@ -29,7 +29,7 @@
                     <button @click="toggleAccordion(2)" class="w-full flex justify-between items-center py-2 text-black">
                         <span class="text-custom-primary font-medium">How Long is the Validity of the PWD ID Card</span>
                         <span class="text-black">
-                            <Icon id="icon-2" icon="ri:arrow-down-s-line" class="text-xl duration-300" />
+                            <Icon id="icon-2" icon="ri:arrow-down-s-line" class="text-xl duration-300 text-custom-primary" />
                         </span>
                     </button>
                     <div id="content-2" class="max-h-0 overflow-hidden transition-all duration-300 ease-in-out">
@@ -43,7 +43,7 @@
                     <button @click="toggleAccordion(3)" class="w-full flex justify-between items-center py-2 text-black">
                         <span class="text-custom-primary font-medium" >Who Can Get a PWD ID?</span>
                         <span class="text-black">
-                            <Icon id="icon-3" icon="ri:arrow-down-s-line" class="text-xl duration-300" />
+                            <Icon id="icon-3" icon="ri:arrow-down-s-line" class="text-xl duration-300 text-custom-primary" />
                         </span>
                     </button>
                     <div id="content-3" class="max-h-0 overflow-hidden transition-all duration-300 ease-in-out">
@@ -68,7 +68,7 @@
                     <button @click="toggleAccordion(4)" class="w-full flex justify-between items-center py-2 text-black">
                         <span class="text-custom-primary font-medium">How to Get a PWD ID?</span>
                         <span class="text-black">
-                            <Icon id="icon-4" icon="ri:arrow-down-s-line" class="text-xl duration-300" />
+                            <Icon id="icon-4" icon="ri:arrow-down-s-line" class="text-xl duration-300 text-custom-primary" />
                         </span>
                     </button>
                     <div id="content-4" class="max-h-0 overflow-hidden transition-all duration-300 ease-in-out">
@@ -150,7 +150,7 @@
                     <button @click="toggleAccordion(5)" class="w-full flex justify-between items-center py-2 text-black">
                         <span class="text-custom-primary font-medium">Is a PWD ID considered a valid ID?</span>
                         <span class="text-black">
-                            <Icon id="icon-5" icon="ri:arrow-down-s-line" class="text-xl duration-300" />
+                            <Icon id="icon-5" icon="ri:arrow-down-s-line" class="text-xl duration-300 text-custom-primary" />
                         </span>
                     </button>
                     <div id="content-5" class="max-h-0 overflow-hidden transition-all duration-300 ease-in-out">
@@ -164,7 +164,7 @@
                     <button @click="toggleAccordion(6)" class="w-full flex justify-between items-center py-2 text-black">
                         <span class="text-custom-primary font-medium text-start">Do persons with disabilities have PhilHealth coverage?</span>
                         <span class="text-black">
-                            <Icon id="icon-6" icon="ri:arrow-down-s-line" class="text-xl duration-300" />
+                            <Icon id="icon-6" icon="ri:arrow-down-s-line" class="text-xl duration-300 text-custom-primary" />
                         </span>
                     </button>
                     <div id="content-6" class="max-h-0 overflow-hidden transition-all duration-300 ease-in-out">
@@ -178,7 +178,7 @@
                     <button @click="toggleAccordion(7)" class="w-full flex justify-between items-center py-2 text-black">
                         <span class="text-custom-primary font-medium text-start">Do I still need to go to the Municipal/City Social Welfare Development Office if I apply for my PWD ID Online?</span>
                         <span class="text-black">
-                            <Icon id="icon-7" icon="ri:arrow-down-s-line" class="text-xl duration-300" />
+                            <Icon id="icon-7" icon="ri:arrow-down-s-line" class="text-xl duration-300 text-custom-primary" />
                         </span>
                     </button>
                     <div id="content-7" class="max-h-0 overflow-hidden transition-all duration-300 ease-in-out">
@@ -192,7 +192,7 @@
                     <button @click="toggleAccordion(8)" class="w-full flex justify-between items-center py-2 text-black">
                         <span class="text-custom-primary font-medium">How do I verify the status of my PWD ID card?</span>
                         <span class="text-black">
-                            <Icon id="icon-8" icon="ri:arrow-down-s-line" class="text-xl duration-300" />
+                            <Icon id="icon-8" icon="ri:arrow-down-s-line" class="text-xl duration-300 text-custom-primary" />
                         </span>
                     </button>
                     <div id="content-8" class="max-h-0 overflow-hidden transition-all duration-300 ease-in-out">
@@ -206,7 +206,7 @@
                     <button @click="toggleAccordion(9)" class="w-full flex justify-between items-center py-2 text-black">
                         <span class="text-custom-primary font-medium text-start">What if the PWD is bedridden and can’t go to the Municipal/City Social Welfare Development Office?</span>
                         <span class="text-black">
-                            <Icon id="icon-9" icon="ri:arrow-down-s-line" class="text-xl duration-300" />
+                            <Icon id="icon-9" icon="ri:arrow-down-s-line" class="text-xl duration-300 text-custom-primary" />
                         </span>
                     </button>
                     <div id="content-9" class="max-h-0 overflow-hidden transition-all duration-300 ease-in-out">
@@ -220,7 +220,7 @@
                     <button @click="toggleAccordion(10)" class="w-full flex justify-between items-center py-2 text-black">
                         <span class="text-custom-primary font-medium text-start">I lost my PWD ID. What should I do?</span>
                         <span class="text-black">
-                            <Icon id="icon-10" icon="ri:arrow-down-s-line" class="text-xl duration-300" />
+                            <Icon id="icon-10" icon="ri:arrow-down-s-line" class="text-xl duration-300 text-custom-primary" />
                         </span>
                     </button>
                     <div id="content-10" class="max-h-0 overflow-hidden transition-all duration-300 ease-in-out">
@@ -234,7 +234,7 @@
                     <button @click="toggleAccordion(11)" class="w-full flex justify-between items-center py-2 text-black">
                         <span class="text-custom-primary font-medium text-start">Where do I report a fake PWD ID?</span>
                         <span class="text-black">
-                            <Icon id="icon-11" icon="ri:arrow-down-s-line" class="text-xl duration-300" />
+                            <Icon id="icon-11" icon="ri:arrow-down-s-line" class="text-xl duration-300 text-custom-primary" />
                         </span>
                     </button>
                     <div id="content-11" class="max-h-0 overflow-hidden transition-all duration-300 ease-in-out">
@@ -248,7 +248,7 @@
                     <button @click="toggleAccordion(12)" class="w-full flex justify-between items-center py-2 text-black">
                         <span class="text-custom-primary font-medium text-start">Are those with a psychosocial or learning disability entitled to PWD benefits?</span>
                         <span class="text-black">
-                            <Icon id="icon-12" icon="ri:arrow-down-s-line" class="text-xl duration-300" />
+                            <Icon id="icon-12" icon="ri:arrow-down-s-line" class="text-xl duration-300 text-custom-primary" />
                         </span>
                     </button>
                     <div id="content-12" class="max-h-0 overflow-hidden transition-all duration-300 ease-in-out">
@@ -265,7 +265,7 @@
                     <button @click="toggleAccordion(13)" class="w-full flex justify-between items-center py-2 text-black">
                         <span class="text-custom-primary font-medium text-start">Are PWDs exempted from Expanded Number Coding?</span>
                         <span class="text-black">
-                            <Icon id="icon-13" icon="ri:arrow-down-s-line" class="text-xl duration-300" />
+                            <Icon id="icon-13" icon="ri:arrow-down-s-line" class="text-xl duration-300 text-custom-primary" />
                         </span>
                     </button>
                     <div id="content-13" class="max-h-0 overflow-hidden transition-all duration-300 ease-in-out">
@@ -279,7 +279,7 @@
                     <button @click="toggleAccordion(14)" class="w-full flex justify-between items-center py-2 text-black">
                         <span class="text-custom-primary font-medium text-start">Are online purchases eligible for the PWD discount?</span>
                         <span class="text-black">
-                            <Icon id="icon-14" icon="ri:arrow-down-s-line" class="text-xl duration-300" />
+                            <Icon id="icon-14" icon="ri:arrow-down-s-line" class="text-xl duration-300 text-custom-primary" />
                         </span>
                     </button>
                     <div id="content-14" class="max-h-0 overflow-hidden transition-all duration-300 ease-in-out">

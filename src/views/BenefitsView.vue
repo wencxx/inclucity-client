@@ -11,7 +11,7 @@
                     <button @click="toggleAccordion(1)" class="w-full flex justify-between items-center py-2 text-black">
                         <span class="text-custom-primary font-medium">Discount and Tax exemption</span>
                         <span class="text-black">
-                            <Icon id="icon-1" icon="ri:arrow-down-s-line" class="text-xl duration-300" />
+                            <Icon id="icon-1" icon="ri:arrow-down-s-line" class="text-xl duration-300 text-custom-primary" />
                         </span>
                     </button>
                     <div id="content-1" class="max-h-0 overflow-hidden transition-all duration-300 ease-in-out">
@@ -36,7 +36,7 @@
                     <button @click="toggleAccordion(2)" class="w-full flex justify-between items-center py-2 text-black">
                         <span class="text-custom-primary font-medium">Special Discount</span>
                         <span class="text-black">
-                            <Icon id="icon-2" icon="ri:arrow-down-s-line" class="text-xl duration-300" />
+                            <Icon id="icon-2" icon="ri:arrow-down-s-line" class="text-xl duration-300 text-custom-primary" />
                         </span>
                     </button>
                     <div id="content-2" class="max-h-0 overflow-hidden transition-all duration-300 ease-in-out">
@@ -73,7 +73,7 @@
                     <button @click="toggleAccordion(3)" class="w-full flex justify-between items-center py-2 text-black">
                         <span class="text-custom-primary font-medium">Mandatory Coverages</span>
                         <span class="text-black">
-                            <Icon id="icon-3" icon="ri:arrow-down-s-line" class="text-xl duration-300" />
+                            <Icon id="icon-3" icon="ri:arrow-down-s-line" class="text-xl duration-300 text-custom-primary" />
                         </span>
                     </button>
                     <div id="content-3" class="max-h-0 overflow-hidden transition-all duration-300 ease-in-out">
@@ -93,7 +93,7 @@
                     <button @click="toggleAccordion(4)" class="w-full flex justify-between items-center py-2 text-black">
                         <span class="text-custom-primary font-medium">Tax Benefits</span>
                         <span class="text-black">
-                            <Icon id="icon-4" icon="ri:arrow-down-s-line" class="text-xl duration-300" />
+                            <Icon id="icon-4" icon="ri:arrow-down-s-line" class="text-xl duration-300 text-custom-primary" />
                         </span>
                     </button>
                     <div id="content-4" class="max-h-0 overflow-hidden transition-all duration-300 ease-in-out">
@@ -110,7 +110,7 @@
                     <button @click="toggleAccordion(5)" class="w-full flex justify-between items-center py-2 text-black">
                         <span class="text-custom-primary font-medium">Educational Assistance</span>
                         <span class="text-black">
-                            <Icon id="icon-5" icon="ri:arrow-down-s-line" class="text-xl duration-300" />
+                            <Icon id="icon-5" icon="ri:arrow-down-s-line" class="text-xl duration-300 text-custom-primary" />
                         </span>
                     </button>
                     <div id="content-5" class="max-h-0 overflow-hidden transition-all duration-300 ease-in-out">
@@ -126,7 +126,7 @@
                     <button @click="toggleAccordion(6)" class="w-full flex justify-between items-center py-2 text-black">
                         <span class="text-custom-primary font-medium">Employment Assistance</span>
                         <span class="text-black">
-                            <Icon id="icon-6" icon="ri:arrow-down-s-line" class="text-xl duration-300" />
+                            <Icon id="icon-6" icon="ri:arrow-down-s-line" class="text-xl duration-300 text-custom-primary" />
                         </span>
                     </button>
                     <div id="content-6" class="max-h-0 overflow-hidden transition-all duration-300 ease-in-out">
@@ -142,7 +142,7 @@
                     <button @click="toggleAccordion(7)" class="w-full flex justify-between items-center py-2 text-black">
                         <span class="text-custom-primary font-medium">Express Lanes for PWDs</span>
                         <span class="text-black">
-                            <Icon id="icon-7" icon="ri:arrow-down-s-line" class="text-xl duration-300" />
+                            <Icon id="icon-7" icon="ri:arrow-down-s-line" class="text-xl duration-300 text-custom-primary" />
                         </span>
                     </button>
                     <div id="content-7" class="max-h-0 overflow-hidden transition-all duration-300 ease-in-out">
@@ -158,7 +158,7 @@
                     <button @click="toggleAccordion(8)" class="w-full flex justify-between items-center py-2 text-black">
                         <span class="text-custom-primary font-medium">Priority Privileges</span>
                         <span class="text-black">
-                            <Icon id="icon-8" icon="ri:arrow-down-s-line" class="text-xl duration-300" />
+                            <Icon id="icon-8" icon="ri:arrow-down-s-line" class="text-xl duration-300 text-custom-primary" />
                         </span>
                     </button>
                     <div id="content-8" class="max-h-0 overflow-hidden transition-all duration-300 ease-in-out">
@@ -174,7 +174,7 @@
                     <button @click="toggleAccordion(9)" class="w-full flex justify-between items-center py-2 text-black">
                         <span class="text-custom-primary font-medium">City-Specific PWD ID Benefits</span>
                         <span class="text-black">
-                            <Icon id="icon-9" icon="ri:arrow-down-s-line" class="text-xl duration-300" />
+                            <Icon id="icon-9" icon="ri:arrow-down-s-line" class="text-xl duration-300 text-custom-primary" />
                         </span>
                     </button>
                     <div id="content-9" class="max-h-0 overflow-hidden transition-all duration-300 ease-in-out">
@@ -192,7 +192,7 @@
                     <button @click="toggleAccordion(10)" class="w-full flex justify-between items-center py-2 text-black">
                         <span class="text-custom-primary font-medium">Utility Discounts</span>
                         <span class="text-black">
-                            <Icon id="icon-10" icon="ri:arrow-down-s-line" class="text-xl duration-300" />
+                            <Icon id="icon-10" icon="ri:arrow-down-s-line" class="text-xl duration-300 text-custom-primary" />
                         </span>
                     </button>
                     <div id="content-10" class="max-h-0 overflow-hidden transition-all duration-300 ease-in-out">
