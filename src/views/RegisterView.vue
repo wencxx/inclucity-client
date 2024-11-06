@@ -497,7 +497,7 @@
             </div>
 
             <div v-if="showPrivacy" class="absolute top-0 left-0 bg-black/55 w-screen h-screen flex items-center justify-center">
-                <div class="bg-white w-1/4 rounded-xl p-5 text-justify space-y-5 flex flex-col items-center">
+                <div class="bg-white w-4/5 md:w-3/5 xl:w-1/4 rounded-xl p-5 text-justify space-y-5 flex flex-col items-center">
                     <Icon icon="mdi:warning" class="text-6xl text-orange-500" />
                     <h1 class="font-semibold text-lg">Privacy and Terms</h1>
                     <p class="col-span-2 w-4/5">When Registering, you agree that we may use your provided data for the registration and to send you notifications on our products and services. You can unsubscribe from notifications at anytime in your settings.</p>

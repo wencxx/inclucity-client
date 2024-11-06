@@ -10,10 +10,8 @@
                 <div class="border px-2  border-custom-primary rounded">
                     <button @click="toggleAccordion(1)" class="w-full flex justify-between items-center py-2 text-black">
                         <span class="text-custom-primary font-medium">What is a PWD ID?</span>
-                        <span id="icon-1" class="text-black transition-transform duration-300">
-                        <svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 16 16" fill="currentColor" class="w-4 h-4">
-                            <path d="M8.75 3.75a.75.75 0 0 0-1.5 0v3.5h-3.5a.75.75 0 0 0 0 1.5h3.5v3.5a.75.75 0 0 0 1.5 0v-3.5h3.5a.75.75 0 0 0 0-1.5h-3.5v-3.5Z" />
-                        </svg>
+                        <span class="text-black">
+                            <Icon id="icon-1" icon="ri:arrow-down-s-line" class="text-xl duration-300" />
                         </span>
                     </button>
                     <div id="content-1" class="max-h-0 overflow-hidden transition-all duration-300 ease-in-out">
@@ -30,10 +28,8 @@
                 <div class="border px-2  border-custom-primary rounded">
                     <button @click="toggleAccordion(2)" class="w-full flex justify-between items-center py-2 text-black">
                         <span class="text-custom-primary font-medium">How Long is the Validity of the PWD ID Card</span>
-                        <span id="icon-2" class="text-black transition-transform duration-300">
-                        <svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 16 16" fill="currentColor" class="w-4 h-4">
-                            <path d="M8.75 3.75a.75.75 0 0 0-1.5 0v3.5h-3.5a.75.75 0 0 0 0 1.5h3.5v3.5a.75.75 0 0 0 1.5 0v-3.5h3.5a.75.75 0 0 0 0-1.5h-3.5v-3.5Z" />
-                        </svg>
+                        <span class="text-black">
+                            <Icon id="icon-2" icon="ri:arrow-down-s-line" class="text-xl duration-300" />
                         </span>
                     </button>
                     <div id="content-2" class="max-h-0 overflow-hidden transition-all duration-300 ease-in-out">
@@ -46,10 +42,8 @@
                 <div class="border px-2  border-custom-primary rounded">
                     <button @click="toggleAccordion(3)" class="w-full flex justify-between items-center py-2 text-black">
                         <span class="text-custom-primary font-medium" >Who Can Get a PWD ID?</span>
-                        <span id="icon-3" class="text-black transition-transform duration-300">
-                        <svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 16 16" fill="currentColor" class="w-4 h-4">
-                            <path d="M8.75 3.75a.75.75 0 0 0-1.5 0v3.5h-3.5a.75.75 0 0 0 0 1.5h3.5v3.5a.75.75 0 0 0 1.5 0v-3.5h3.5a.75.75 0 0 0 0-1.5h-3.5v-3.5Z" />
-                        </svg>
+                        <span class="text-black">
+                            <Icon id="icon-3" icon="ri:arrow-down-s-line" class="text-xl duration-300" />
                         </span>
                     </button>
                     <div id="content-3" class="max-h-0 overflow-hidden transition-all duration-300 ease-in-out">
@@ -73,10 +67,8 @@
                 <div class="border px-2  border-custom-primary rounded">
                     <button @click="toggleAccordion(4)" class="w-full flex justify-between items-center py-2 text-black">
                         <span class="text-custom-primary font-medium">How to Get a PWD ID?</span>
-                        <span id="icon-4" class="text-black transition-transform duration-300">
-                        <svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 16 16" fill="currentColor" class="w-4 h-4">
-                            <path d="M8.75 3.75a.75.75 0 0 0-1.5 0v3.5h-3.5a.75.75 0 0 0 0 1.5h3.5v3.5a.75.75 0 0 0 1.5 0v-3.5h3.5a.75.75 0 0 0 0-1.5h-3.5v-3.5Z" />
-                        </svg>
+                        <span class="text-black">
+                            <Icon id="icon-4" icon="ri:arrow-down-s-line" class="text-xl duration-300" />
                         </span>
                     </button>
                     <div id="content-4" class="max-h-0 overflow-hidden transition-all duration-300 ease-in-out">
@@ -157,10 +149,8 @@
                 <div class="border px-2  border-custom-primary rounded">
                     <button @click="toggleAccordion(5)" class="w-full flex justify-between items-center py-2 text-black">
                         <span class="text-custom-primary font-medium">Is a PWD ID considered a valid ID?</span>
-                        <span id="icon-5" class="text-black transition-transform duration-300">
-                        <svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 16 16" fill="currentColor" class="w-4 h-4">
-                            <path d="M8.75 3.75a.75.75 0 0 0-1.5 0v3.5h-3.5a.75.75 0 0 0 0 1.5h3.5v3.5a.75.75 0 0 0 1.5 0v-3.5h3.5a.75.75 0 0 0 0-1.5h-3.5v-3.5Z" />
-                        </svg>
+                        <span class="text-black">
+                            <Icon id="icon-5" icon="ri:arrow-down-s-line" class="text-xl duration-300" />
                         </span>
                     </button>
                     <div id="content-5" class="max-h-0 overflow-hidden transition-all duration-300 ease-in-out">
@@ -173,10 +163,8 @@
                 <div class="border px-2  border-custom-primary rounded">
                     <button @click="toggleAccordion(6)" class="w-full flex justify-between items-center py-2 text-black">
                         <span class="text-custom-primary font-medium">Do persons with disabilities have PhilHealth coverage?</span>
-                        <span id="icon-6" class="text-black transition-transform duration-300">
-                        <svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 16 16" fill="currentColor" class="w-4 h-4">
-                            <path d="M8.75 3.75a.75.75 0 0 0-1.5 0v3.5h-3.5a.75.75 0 0 0 0 1.5h3.5v3.5a.75.75 0 0 0 1.5 0v-3.5h3.5a.75.75 0 0 0 0-1.5h-3.5v-3.5Z" />
-                        </svg>
+                        <span class="text-black">
+                            <Icon id="icon-6" icon="ri:arrow-down-s-line" class="text-xl duration-300" />
                         </span>
                     </button>
                     <div id="content-6" class="max-h-0 overflow-hidden transition-all duration-300 ease-in-out">
@@ -189,10 +177,8 @@
                 <div class="border px-2  border-custom-primary rounded">
                     <button @click="toggleAccordion(7)" class="w-full flex justify-between items-center py-2 text-black">
                         <span class="text-custom-primary font-medium">Do I still need to go to the Municipal/City Social Welfare Development Office if I apply for my PWD ID Online?</span>
-                        <span id="icon-7" class="text-black transition-transform duration-300">
-                        <svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 16 16" fill="currentColor" class="w-4 h-4">
-                            <path d="M8.75 3.75a.75.75 0 0 0-1.5 0v3.5h-3.5a.75.75 0 0 0 0 1.5h3.5v3.5a.75.75 0 0 0 1.5 0v-3.5h3.5a.75.75 0 0 0 0-1.5h-3.5v-3.5Z" />
-                        </svg>
+                        <span class="text-black">
+                            <Icon id="icon-7" icon="ri:arrow-down-s-line" class="text-xl duration-300" />
                         </span>
                     </button>
                     <div id="content-7" class="max-h-0 overflow-hidden transition-all duration-300 ease-in-out">
@@ -205,10 +191,8 @@
                 <div class="border px-2  border-custom-primary rounded">
                     <button @click="toggleAccordion(8)" class="w-full flex justify-between items-center py-2 text-black">
                         <span class="text-custom-primary font-medium">How do I verify the status of my PWD ID card?</span>
-                        <span id="icon-8" class="text-black transition-transform duration-300">
-                        <svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 16 16" fill="currentColor" class="w-4 h-4">
-                            <path d="M8.75 3.75a.75.75 0 0 0-1.5 0v3.5h-3.5a.75.75 0 0 0 0 1.5h3.5v3.5a.75.75 0 0 0 1.5 0v-3.5h3.5a.75.75 0 0 0 0-1.5h-3.5v-3.5Z" />
-                        </svg>
+                        <span class="text-black">
+                            <Icon id="icon-8" icon="ri:arrow-down-s-line" class="text-xl duration-300" />
                         </span>
                     </button>
                     <div id="content-8" class="max-h-0 overflow-hidden transition-all duration-300 ease-in-out">
@@ -221,10 +205,8 @@
                 <div class="border px-2  border-custom-primary rounded">
                     <button @click="toggleAccordion(9)" class="w-full flex justify-between items-center py-2 text-black">
                         <span class="text-custom-primary font-medium">What if the PWD is bedridden and can’t go to the Municipal/City Social Welfare Development Office?</span>
-                        <span id="icon-9" class="text-black transition-transform duration-300">
-                        <svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 16 16" fill="currentColor" class="w-4 h-4">
-                            <path d="M8.75 3.75a.75.75 0 0 0-1.5 0v3.5h-3.5a.75.75 0 0 0 0 1.5h3.5v3.5a.75.75 0 0 0 1.5 0v-3.5h3.5a.75.75 0 0 0 0-1.5h-3.5v-3.5Z" />
-                        </svg>
+                        <span class="text-black">
+                            <Icon id="icon-9" icon="ri:arrow-down-s-line" class="text-xl duration-300" />
                         </span>
                     </button>
                     <div id="content-9" class="max-h-0 overflow-hidden transition-all duration-300 ease-in-out">
@@ -237,10 +219,8 @@
                 <div class="border px-2  border-custom-primary rounded">
                     <button @click="toggleAccordion(10)" class="w-full flex justify-between items-center py-2 text-black">
                         <span class="text-custom-primary font-medium">I lost my PWD ID. What should I do?</span>
-                        <span id="icon-10" class="text-black transition-transform duration-300">
-                        <svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 16 16" fill="currentColor" class="w-4 h-4">
-                            <path d="M8.75 3.75a.75.75 0 0 0-1.5 0v3.5h-3.5a.75.75 0 0 0 0 1.5h3.5v3.5a.75.75 0 0 0 1.5 0v-3.5h3.5a.75.75 0 0 0 0-1.5h-3.5v-3.5Z" />
-                        </svg>
+                        <span class="text-black">
+                            <Icon id="icon-10" icon="ri:arrow-down-s-line" class="text-xl duration-300" />
                         </span>
                     </button>
                     <div id="content-10" class="max-h-0 overflow-hidden transition-all duration-300 ease-in-out">
@@ -253,10 +233,8 @@
                 <div class="border px-2  border-custom-primary rounded">
                     <button @click="toggleAccordion(11)" class="w-full flex justify-between items-center py-2 text-black">
                         <span class="text-custom-primary font-medium">Where do I report a fake PWD ID?</span>
-                        <span id="icon-11" class="text-black transition-transform duration-300">
-                        <svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 16 16" fill="currentColor" class="w-4 h-4">
-                            <path d="M8.75 3.75a.75.75 0 0 0-1.5 0v3.5h-3.5a.75.75 0 0 0 0 1.5h3.5v3.5a.75.75 0 0 0 1.5 0v-3.5h3.5a.75.75 0 0 0 0-1.5h-3.5v-3.5Z" />
-                        </svg>
+                        <span class="text-black">
+                            <Icon id="icon-11" icon="ri:arrow-down-s-line" class="text-xl duration-300" />
                         </span>
                     </button>
                     <div id="content-11" class="max-h-0 overflow-hidden transition-all duration-300 ease-in-out">
@@ -269,10 +247,8 @@
                 <div class="border px-2  border-custom-primary rounded">
                     <button @click="toggleAccordion(12)" class="w-full flex justify-between items-center py-2 text-black">
                         <span class="text-custom-primary font-medium">Are those with a psychosocial or learning disability entitled to PWD benefits?</span>
-                        <span id="icon-12" class="text-black transition-transform duration-300">
-                        <svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 16 16" fill="currentColor" class="w-4 h-4">
-                            <path d="M8.75 3.75a.75.75 0 0 0-1.5 0v3.5h-3.5a.75.75 0 0 0 0 1.5h3.5v3.5a.75.75 0 0 0 1.5 0v-3.5h3.5a.75.75 0 0 0 0-1.5h-3.5v-3.5Z" />
-                        </svg>
+                        <span class="text-black">
+                            <Icon id="icon-12" icon="ri:arrow-down-s-line" class="text-xl duration-300" />
                         </span>
                     </button>
                     <div id="content-12" class="max-h-0 overflow-hidden transition-all duration-300 ease-in-out">
@@ -288,10 +264,8 @@
                 <div class="border px-2  border-custom-primary rounded">
                     <button @click="toggleAccordion(13)" class="w-full flex justify-between items-center py-2 text-black">
                         <span class="text-custom-primary font-medium">Are PWDs exempted from Expanded Number Coding?</span>
-                        <span id="icon-13" class="text-black transition-transform duration-300">
-                        <svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 16 16" fill="currentColor" class="w-4 h-4">
-                            <path d="M8.75 3.75a.75.75 0 0 0-1.5 0v3.5h-3.5a.75.75 0 0 0 0 1.5h3.5v3.5a.75.75 0 0 0 1.5 0v-3.5h3.5a.75.75 0 0 0 0-1.5h-3.5v-3.5Z" />
-                        </svg>
+                        <span class="text-black">
+                            <Icon id="icon-13" icon="ri:arrow-down-s-line" class="text-xl duration-300" />
                         </span>
                     </button>
                     <div id="content-13" class="max-h-0 overflow-hidden transition-all duration-300 ease-in-out">
@@ -304,10 +278,8 @@
                 <div class="border px-2  border-custom-primary rounded">
                     <button @click="toggleAccordion(14)" class="w-full flex justify-between items-center py-2 text-black">
                         <span class="text-custom-primary font-medium">Are online purchases eligible for the PWD discount?</span>
-                        <span id="icon-14" class="text-black transition-transform duration-300">
-                        <svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 16 16" fill="currentColor" class="w-4 h-4">
-                            <path d="M8.75 3.75a.75.75 0 0 0-1.5 0v3.5h-3.5a.75.75 0 0 0 0 1.5h3.5v3.5a.75.75 0 0 0 1.5 0v-3.5h3.5a.75.75 0 0 0 0-1.5h-3.5v-3.5Z" />
-                        </svg>
+                        <span class="text-black">
+                            <Icon id="icon-14" icon="ri:arrow-down-s-line" class="text-xl duration-300" />
                         </span>
                     </button>
                     <div id="content-14" class="max-h-0 overflow-hidden transition-all duration-300 ease-in-out">
@@ -337,29 +309,15 @@ function toggleAccordion(index) {
     const content = document.getElementById(`content-${index}`);
     const icon = document.getElementById(`icon-${index}`);
  
-    // SVG for Minus icon
-    const minusSVG = `
-      <svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 16 16" fill="currentColor" class="w-4 h-4">
-        <path d="M3.75 7.25a.75.75 0 0 0 0 1.5h8.5a.75.75 0 0 0 0-1.5h-8.5Z" />
-      </svg>
-    `;
- 
-    // SVG for Plus icon
-    const plusSVG = `
-      <svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 16 16" fill="currentColor" class="w-4 h-4">
-        <path d="M8.75 3.75a.75.75 0 0 0-1.5 0v3.5h-3.5a.75.75 0 0 0 0 1.5h3.5v3.5a.75.75 0 0 0 1.5 0v-3.5h3.5a.75.75 0 0 0 0-1.5h-3.5v-3.5Z" />
-      </svg>
-    `;
- 
     // Toggle the content's max-height for smooth opening and closing
     if (content.style.maxHeight && content.style.maxHeight !== '0px') {
-      content.style.maxHeight = '0';
-      icon.innerHTML = plusSVG;
+        content.style.maxHeight = '0';
+        icon.classList.remove('rotate-180');
     } else {
-      content.style.maxHeight = content.scrollHeight + 'px';
-      icon.innerHTML = minusSVG;
+        content.style.maxHeight = content.scrollHeight + 'px';
+        icon.classList.add('rotate-180');
     }
-  }
+}
 </script>
 
 <style scoped>

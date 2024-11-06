@@ -10,10 +10,8 @@
                 <div class="border px-2  border-custom-primary rounded">
                     <button @click="toggleAccordion(1)" class="w-full flex justify-between items-center py-2 text-black">
                         <span class="text-custom-primary font-medium">Discount and Tax exemption</span>
-                        <span id="icon-1" class="text-black transition-transform duration-300">
-                        <svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 16 16" fill="currentColor" class="w-4 h-4">
-                            <path d="M8.75 3.75a.75.75 0 0 0-1.5 0v3.5h-3.5a.75.75 0 0 0 0 1.5h3.5v3.5a.75.75 0 0 0 1.5 0v-3.5h3.5a.75.75 0 0 0 0-1.5h-3.5v-3.5Z" />
-                        </svg>
+                        <span class="text-black">
+                            <Icon id="icon-1" icon="ri:arrow-down-s-line" class="text-xl duration-300" />
                         </span>
                     </button>
                     <div id="content-1" class="max-h-0 overflow-hidden transition-all duration-300 ease-in-out">
@@ -37,10 +35,8 @@
                 <div class="border px-2  border-custom-primary rounded">
                     <button @click="toggleAccordion(2)" class="w-full flex justify-between items-center py-2 text-black">
                         <span class="text-custom-primary font-medium">Special Discount</span>
-                        <span id="icon-2" class="text-black transition-transform duration-300">
-                        <svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 16 16" fill="currentColor" class="w-4 h-4">
-                            <path d="M8.75 3.75a.75.75 0 0 0-1.5 0v3.5h-3.5a.75.75 0 0 0 0 1.5h3.5v3.5a.75.75 0 0 0 1.5 0v-3.5h3.5a.75.75 0 0 0 0-1.5h-3.5v-3.5Z" />
-                        </svg>
+                        <span class="text-black">
+                            <Icon id="icon-2" icon="ri:arrow-down-s-line" class="text-xl duration-300" />
                         </span>
                     </button>
                     <div id="content-2" class="max-h-0 overflow-hidden transition-all duration-300 ease-in-out">
@@ -76,10 +72,8 @@
                 <div class="border px-2  border-custom-primary rounded">
                     <button @click="toggleAccordion(3)" class="w-full flex justify-between items-center py-2 text-black">
                         <span class="text-custom-primary font-medium">Mandatory Coverages</span>
-                        <span id="icon-3" class="text-black transition-transform duration-300">
-                        <svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 16 16" fill="currentColor" class="w-4 h-4">
-                            <path d="M8.75 3.75a.75.75 0 0 0-1.5 0v3.5h-3.5a.75.75 0 0 0 0 1.5h3.5v3.5a.75.75 0 0 0 1.5 0v-3.5h3.5a.75.75 0 0 0 0-1.5h-3.5v-3.5Z" />
-                        </svg>
+                        <span class="text-black">
+                            <Icon id="icon-3" icon="ri:arrow-down-s-line" class="text-xl duration-300" />
                         </span>
                     </button>
                     <div id="content-3" class="max-h-0 overflow-hidden transition-all duration-300 ease-in-out">
@@ -98,10 +92,8 @@
                 <div class="border px-2  border-custom-primary rounded">
                     <button @click="toggleAccordion(4)" class="w-full flex justify-between items-center py-2 text-black">
                         <span class="text-custom-primary font-medium">Tax Benefits</span>
-                        <span id="icon-4" class="text-black transition-transform duration-300">
-                        <svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 16 16" fill="currentColor" class="w-4 h-4">
-                            <path d="M8.75 3.75a.75.75 0 0 0-1.5 0v3.5h-3.5a.75.75 0 0 0 0 1.5h3.5v3.5a.75.75 0 0 0 1.5 0v-3.5h3.5a.75.75 0 0 0 0-1.5h-3.5v-3.5Z" />
-                        </svg>
+                        <span class="text-black">
+                            <Icon id="icon-4" icon="ri:arrow-down-s-line" class="text-xl duration-300" />
                         </span>
                     </button>
                     <div id="content-4" class="max-h-0 overflow-hidden transition-all duration-300 ease-in-out">
@@ -117,10 +109,8 @@
                 <div class="border px-2  border-custom-primary rounded">
                     <button @click="toggleAccordion(5)" class="w-full flex justify-between items-center py-2 text-black">
                         <span class="text-custom-primary font-medium">Educational Assistance</span>
-                        <span id="icon-5" class="text-black transition-transform duration-300">
-                        <svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 16 16" fill="currentColor" class="w-4 h-4">
-                            <path d="M8.75 3.75a.75.75 0 0 0-1.5 0v3.5h-3.5a.75.75 0 0 0 0 1.5h3.5v3.5a.75.75 0 0 0 1.5 0v-3.5h3.5a.75.75 0 0 0 0-1.5h-3.5v-3.5Z" />
-                        </svg>
+                        <span class="text-black">
+                            <Icon id="icon-5" icon="ri:arrow-down-s-line" class="text-xl duration-300" />
                         </span>
                     </button>
                     <div id="content-5" class="max-h-0 overflow-hidden transition-all duration-300 ease-in-out">
@@ -135,10 +125,8 @@
                 <div class="border px-2  border-custom-primary rounded">
                     <button @click="toggleAccordion(6)" class="w-full flex justify-between items-center py-2 text-black">
                         <span class="text-custom-primary font-medium">Employment Assistance</span>
-                        <span id="icon-6" class="text-black transition-transform duration-300">
-                        <svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 16 16" fill="currentColor" class="w-4 h-4">
-                            <path d="M8.75 3.75a.75.75 0 0 0-1.5 0v3.5h-3.5a.75.75 0 0 0 0 1.5h3.5v3.5a.75.75 0 0 0 1.5 0v-3.5h3.5a.75.75 0 0 0 0-1.5h-3.5v-3.5Z" />
-                        </svg>
+                        <span class="text-black">
+                            <Icon id="icon-6" icon="ri:arrow-down-s-line" class="text-xl duration-300" />
                         </span>
                     </button>
                     <div id="content-6" class="max-h-0 overflow-hidden transition-all duration-300 ease-in-out">
@@ -153,10 +141,8 @@
                 <div class="border px-2  border-custom-primary rounded">
                     <button @click="toggleAccordion(7)" class="w-full flex justify-between items-center py-2 text-black">
                         <span class="text-custom-primary font-medium">Express Lanes for PWDs</span>
-                        <span id="icon-7" class="text-black transition-transform duration-300">
-                        <svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 16 16" fill="currentColor" class="w-4 h-4">
-                            <path d="M8.75 3.75a.75.75 0 0 0-1.5 0v3.5h-3.5a.75.75 0 0 0 0 1.5h3.5v3.5a.75.75 0 0 0 1.5 0v-3.5h3.5a.75.75 0 0 0 0-1.5h-3.5v-3.5Z" />
-                        </svg>
+                        <span class="text-black">
+                            <Icon id="icon-7" icon="ri:arrow-down-s-line" class="text-xl duration-300" />
                         </span>
                     </button>
                     <div id="content-7" class="max-h-0 overflow-hidden transition-all duration-300 ease-in-out">
@@ -171,10 +157,8 @@
                 <div class="border px-2  border-custom-primary rounded">
                     <button @click="toggleAccordion(8)" class="w-full flex justify-between items-center py-2 text-black">
                         <span class="text-custom-primary font-medium">Priority Privileges</span>
-                        <span id="icon-8" class="text-black transition-transform duration-300">
-                        <svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 16 16" fill="currentColor" class="w-4 h-4">
-                            <path d="M8.75 3.75a.75.75 0 0 0-1.5 0v3.5h-3.5a.75.75 0 0 0 0 1.5h3.5v3.5a.75.75 0 0 0 1.5 0v-3.5h3.5a.75.75 0 0 0 0-1.5h-3.5v-3.5Z" />
-                        </svg>
+                        <span class="text-black">
+                            <Icon id="icon-8" icon="ri:arrow-down-s-line" class="text-xl duration-300" />
                         </span>
                     </button>
                     <div id="content-8" class="max-h-0 overflow-hidden transition-all duration-300 ease-in-out">
@@ -189,10 +173,8 @@
                 <div class="border px-2  border-custom-primary rounded">
                     <button @click="toggleAccordion(9)" class="w-full flex justify-between items-center py-2 text-black">
                         <span class="text-custom-primary font-medium">City-Specific PWD ID Benefits</span>
-                        <span id="icon-9" class="text-black transition-transform duration-300">
-                        <svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 16 16" fill="currentColor" class="w-4 h-4">
-                            <path d="M8.75 3.75a.75.75 0 0 0-1.5 0v3.5h-3.5a.75.75 0 0 0 0 1.5h3.5v3.5a.75.75 0 0 0 1.5 0v-3.5h3.5a.75.75 0 0 0 0-1.5h-3.5v-3.5Z" />
-                        </svg>
+                        <span class="text-black">
+                            <Icon id="icon-9" icon="ri:arrow-down-s-line" class="text-xl duration-300" />
                         </span>
                     </button>
                     <div id="content-9" class="max-h-0 overflow-hidden transition-all duration-300 ease-in-out">
@@ -209,10 +191,8 @@
                 <div class="border px-2  border-custom-primary rounded">
                     <button @click="toggleAccordion(10)" class="w-full flex justify-between items-center py-2 text-black">
                         <span class="text-custom-primary font-medium">Utility Discounts</span>
-                        <span id="icon-10" class="text-black transition-transform duration-300">
-                        <svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 16 16" fill="currentColor" class="w-4 h-4">
-                            <path d="M8.75 3.75a.75.75 0 0 0-1.5 0v3.5h-3.5a.75.75 0 0 0 0 1.5h3.5v3.5a.75.75 0 0 0 1.5 0v-3.5h3.5a.75.75 0 0 0 0-1.5h-3.5v-3.5Z" />
-                        </svg>
+                        <span class="text-black">
+                            <Icon id="icon-10" icon="ri:arrow-down-s-line" class="text-xl duration-300" />
                         </span>
                     </button>
                     <div id="content-10" class="max-h-0 overflow-hidden transition-all duration-300 ease-in-out">
@@ -239,29 +219,15 @@ function toggleAccordion(index) {
     const content = document.getElementById(`content-${index}`);
     const icon = document.getElementById(`icon-${index}`);
  
-    // SVG for Minus icon
-    const minusSVG = `
-      <svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 16 16" fill="currentColor" class="w-4 h-4">
-        <path d="M3.75 7.25a.75.75 0 0 0 0 1.5h8.5a.75.75 0 0 0 0-1.5h-8.5Z" />
-      </svg>
-    `;
- 
-    // SVG for Plus icon
-    const plusSVG = `
-      <svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 16 16" fill="currentColor" class="w-4 h-4">
-        <path d="M8.75 3.75a.75.75 0 0 0-1.5 0v3.5h-3.5a.75.75 0 0 0 0 1.5h3.5v3.5a.75.75 0 0 0 1.5 0v-3.5h3.5a.75.75 0 0 0 0-1.5h-3.5v-3.5Z" />
-      </svg>
-    `;
- 
     // Toggle the content's max-height for smooth opening and closing
     if (content.style.maxHeight && content.style.maxHeight !== '0px') {
-      content.style.maxHeight = '0';
-      icon.innerHTML = plusSVG;
+        content.style.maxHeight = '0';
+        icon.classList.remove('rotate-180');
     } else {
-      content.style.maxHeight = content.scrollHeight + 'px';
-      icon.innerHTML = minusSVG;
+        content.style.maxHeight = content.scrollHeight + 'px';
+        icon.classList.add('rotate-180');
     }
-  }
+}
 </script>
 
 <style scoped>
