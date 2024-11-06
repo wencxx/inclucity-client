@@ -295,6 +295,7 @@ https://digido.ph/articles/pwd-id#How_Long_is_the_Validity_of_the_PWD_ID_Card
                     </div>
                 </div>
             </div>
+            <img src="../assets/pwd_bg2-removebg-preview.png" class="w-full">
         </div>
     </div>
 </template>
