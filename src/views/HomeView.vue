@@ -56,7 +56,7 @@
         </div>
 
         <!-- images -->
-        <div v-if="showImageModal" @click.self="showImageModal = false" class="absolute top-0 left-0 w-screen h-screen bg-black/25 flex items-center justify-center z-[1000]">
+        <div v-if="showImageModal" @click.self="showImageModal = false" class="absolute top-0 left-0 w-screen h-screen bg-black/65 flex items-center justify-center z-[1000]">
             <div class="absolute top-3 right-3 bg-gray-500/55 rounded-full p-2 cursor-pointer" @click="showImageModal = false">
                 <Icon icon="mdi:close" class="text-white text-lg" />
             </div>

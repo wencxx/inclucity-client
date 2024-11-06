@@ -32,7 +32,7 @@
                     <input type="text" placeholder="Lastname" class="pl-3 border border-gray-500 h-10 rounded-md capitalize" v-model="lastName" required>
                 </div>
                 <div class="flex flex-col gap-y-1 w-3/4 md:w-2/5 lg:w-full">
-                    <label class="font-semibold text-lg">Email</label>
+                    <label class="font-semibold text-lg">Email <span class="text-red-500 text-sm">*</span></label>
                     <input type="text" placeholder="Email" class="pl-3 border border-gray-500 h-10 rounded-md" v-model="email" required>
                 </div>
                 <div class="flex flex-col gap-y-1 w-3/4 md:w-2/5 lg:w-full">
@@ -43,11 +43,11 @@
                     </div>
                 </div>
                 <div class="flex flex-col gap-y-1 w-3/4 md:w-2/5 lg:w-full">
-                    <label class="font-semibold text-lg">Contact Number</label>
+                    <label class="font-semibold text-lg">Contact Number <span class="text-red-500 text-sm">*</span></label>
                     <input type="number" placeholder="639XXXXXXXXX" class="pl-3 border border-gray-500 h-10 rounded-md" v-model="contactNumber" required>
                 </div>
                 <div class="flex flex-col gap-y-1 w-3/4 md:w-2/5 lg:w-full">
-                    <label class="font-semibold text-lg">Address</label>
+                    <label class="font-semibold text-lg">Address <span class="text-red-500 text-sm">*</span></label>
                     <input type="text" placeholder="Address" class="pl-3 border border-gray-500 h-10 rounded-md" v-model="address" required>
                      <!-- <select id="cityBarangay" class="pl-3 border border-gray-500 h-10 rounded-md" v-model="address" required>
                         <option value="">Select Barangay</option>
@@ -475,11 +475,11 @@
                     </select> -->
                 </div>
                 <div class="flex flex-col gap-y-1 w-3/4 md:w-2/5 lg:w-full">
-                    <label class="font-semibold text-lg">Birthdate</label>
+                    <label class="font-semibold text-lg">Birthdate <span class="text-red-500 text-sm">*</span></label>
                     <input type="date" placeholder="Age" class="pl-3 border border-gray-500 h-10 rounded-md" v-model="age" required>
                 </div>
                 <div class="flex flex-col gap-y-1 w-3/4 md:w-2/5 lg:w-full">
-                    <label class="font-semibold text-lg">Gender</label>
+                    <label class="font-semibold text-lg">Gender <span class="text-red-500 text-sm">*</span></label>
                     <select class="pl-3 border border-gray-500 h-10 rounded-md" v-model="gender" required>
                         <option disabled>Select Gender</option>
                         <option>Male</option>

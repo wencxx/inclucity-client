@@ -162,7 +162,7 @@
                 <!-- Accordion Item 6 -->
                 <div class="border px-2  border-custom-primary rounded">
                     <button @click="toggleAccordion(6)" class="w-full flex justify-between items-center py-2 text-black">
-                        <span class="text-custom-primary font-medium">Do persons with disabilities have PhilHealth coverage?</span>
+                        <span class="text-custom-primary font-medium text-start">Do persons with disabilities have PhilHealth coverage?</span>
                         <span class="text-black">
                             <Icon id="icon-6" icon="ri:arrow-down-s-line" class="text-xl duration-300" />
                         </span>
@@ -218,7 +218,7 @@
                 <!-- Accordion Item 10 -->
                 <div class="border px-2  border-custom-primary rounded">
                     <button @click="toggleAccordion(10)" class="w-full flex justify-between items-center py-2 text-black">
-                        <span class="text-custom-primary font-medium">I lost my PWD ID. What should I do?</span>
+                        <span class="text-custom-primary font-medium text-start">I lost my PWD ID. What should I do?</span>
                         <span class="text-black">
                             <Icon id="icon-10" icon="ri:arrow-down-s-line" class="text-xl duration-300" />
                         </span>
@@ -232,7 +232,7 @@
                 <!-- Accordion Item 11 -->
                 <div class="border px-2  border-custom-primary rounded">
                     <button @click="toggleAccordion(11)" class="w-full flex justify-between items-center py-2 text-black">
-                        <span class="text-custom-primary font-medium">Where do I report a fake PWD ID?</span>
+                        <span class="text-custom-primary font-medium text-start">Where do I report a fake PWD ID?</span>
                         <span class="text-black">
                             <Icon id="icon-11" icon="ri:arrow-down-s-line" class="text-xl duration-300" />
                         </span>
@@ -263,7 +263,7 @@
                 <!-- Accordion Item 13 -->
                 <div class="border px-2  border-custom-primary rounded">
                     <button @click="toggleAccordion(13)" class="w-full flex justify-between items-center py-2 text-black">
-                        <span class="text-custom-primary font-medium">Are PWDs exempted from Expanded Number Coding?</span>
+                        <span class="text-custom-primary font-medium text-start">Are PWDs exempted from Expanded Number Coding?</span>
                         <span class="text-black">
                             <Icon id="icon-13" icon="ri:arrow-down-s-line" class="text-xl duration-300" />
                         </span>
@@ -277,7 +277,7 @@
                 <!-- Accordion Item 14 -->
                 <div class="border px-2  border-custom-primary rounded">
                     <button @click="toggleAccordion(14)" class="w-full flex justify-between items-center py-2 text-black">
-                        <span class="text-custom-primary font-medium">Are online purchases eligible for the PWD discount?</span>
+                        <span class="text-custom-primary font-medium text-start">Are online purchases eligible for the PWD discount?</span>
                         <span class="text-black">
                             <Icon id="icon-14" icon="ri:arrow-down-s-line" class="text-xl duration-300" />
                         </span>
