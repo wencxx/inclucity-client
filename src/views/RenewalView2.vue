@@ -21,6 +21,9 @@
             </div>
             <button class="bg-custom-primary rounded-md w-1/3 lg:w-1/5 py-2 text-white mx-auto" @click="next()">Continue</button>
         </div>
+        <div v-if="hasEmptyFields" class="w-full lg:w-1/2 lg:mx-auto flex flex-col gap-y-5 font-manrope">
+            <p class="bg-red-500 text-white pl-2 rounded py-1">Fill out all required fields</p>
+        </div>
         <div class="w-full lg:w-1/2 lg:mx-auto flex flex-col gap-y-5 font-manrope" v-if="currentPage == 2">
             <p v-if="noOldId" class="text-white bg-red-500 pl-2  rounded py-1 font-semibold">Upload your old PWD ID first to proceed</p>
             <h1 class="text-black dark:!text-white font-semibold text-xl uppercase">Upload old PWD ID</h1>
@@ -586,8 +589,18 @@ const noOldId = ref(false)
 //     noOldId.value = false
 //     router.push({ query : { page: currentPage.value + 1 }})
 // }
+
+const hasEmptyFields = ref(false)
+
 const next = () => {
     if(currentPage.value === 2){
+        if (!oldID.value) {
+            hasEmptyFields.value = true
+            return;
+        }
+        hasEmptyFields.value = false
+        router.push({ query : { page: currentPage.value + 1 }})
+    }else if(currentPage.value === 3){
         const pageData = [
             lastName.value,
             firstName.value,
@@ -600,7 +613,7 @@ const next = () => {
         }
         hasEmptyFields.value = false
         router.push({ query : { page: currentPage.value + 1 }})
-    }else if(currentPage.value === 3){
+    }else if(currentPage.value === 4){
         const pageData = [
             typeOfDisability.value,
             causeOfDisability.value,
@@ -614,14 +627,14 @@ const next = () => {
         }
         hasEmptyFields.value = false
         router.push({ query : { page: currentPage.value + 1 }})
-    }else if(currentPage.value === 4){
+    }else if(currentPage.value === 5){
         if (!educationalAttainment.value || !mobileNo.value) {
             hasEmptyFields.value = true
             return;
         }
         hasEmptyFields.value = false
         router.push({ query : { page: currentPage.value + 1 }})
-    }else if(currentPage.value === 5){
+    }else if(currentPage.value === 6){
         const pageData = [
             categoryOfEmployment.value,
             typeOfEmployment.value,
@@ -640,7 +653,7 @@ const next = () => {
 
         hasEmptyFields.value = false
         router.push({ query : { page: currentPage.value + 1 }})
-    }else if(currentPage.value === 6){
+    }else if(currentPage.value === 7){
         if (!occupation.value && !otherOccupation.value) {
             hasEmptyFields.value = true
             return;
@@ -648,7 +661,7 @@ const next = () => {
 
         hasEmptyFields.value = false
         router.push({ query : { page: currentPage.value + 1 }})
-    }else if(currentPage.value === 9){
+    }else if(currentPage.value === 10){
         const pageData = [
             physicianByLname.value,
             physicianByFname.value,
@@ -676,7 +689,7 @@ const next = () => {
 const prev = () => {
     // setDataToLocalStorage()
     if(currentPage.value > 1){
-        if(currentPage.value === 7 && statusOfEmployment.value === 'unemployed'){
+        if(currentPage.value === 6 && statusOfEmployment.value === 'unemployed'){
             router.push({ query: { page: currentPage.value - 2 } })
             hasEmptyFields.value = false
         }else{
