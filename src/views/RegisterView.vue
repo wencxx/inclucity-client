@@ -36,7 +36,7 @@
                     <input type="text" placeholder="Email" class="pl-3 border border-gray-500 h-10 rounded-md" v-model="email" required>
                 </div>
                 <div class="flex flex-col gap-y-1 w-3/4 md:w-2/5 lg:w-full">
-                    <label class="font-semibold text-lg">Password</label>
+                    <label class="font-semibold text-lg">Password <span class="text-red-500 text-sm">*</span></label>
                     <div class="w-full border border-gray-500 flex items-center rounded-md overflow-hidden group focus-within:outline outline-black outline-1">
                         <input :type="passwordType" placeholder="Password" class="pl-3 w-full h-10 focus:outline-none" v-model="password" required>
                         <Icon :icon="passwordIconType" class="text-2xl mr-2 bg-white" @click="toggleShowPassword()" />
