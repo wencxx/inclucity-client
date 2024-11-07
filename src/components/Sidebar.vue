@@ -61,7 +61,7 @@
             </router-link>
             <router-link :to="{ name: 'map' }" class="flex items-center gap-x-2 text-xl hover:bg-white/[0.20] p-10 py-2">
                 <Icon icon="tabler:map-2" class="text-3xl" />
-                <span>Maps</span>
+                <span>Map Directory</span>
             </router-link>
             <!-- <router-link :to="{ name: 'login' }" class="flex items-center gap-x-2 text-xl hover:bg-white/[0.20] p-10 py-2">
                 <Icon icon="carbon:settings" class="text-3xl" />
