@@ -24,7 +24,7 @@
                 <Icon icon="carbon:home" class="text-3xl" />
                 <span>Home</span>
             </router-link>
-            <div @click="toggleApplication = !toggleApplication" class="flex items-center cursor-pointer gap-x-2 text-xl hover:bg-white/[0.20] p-10 py-2">
+            <div v-if="isResident()" @click="toggleApplication = !toggleApplication" class="flex items-center cursor-pointer gap-x-2 text-xl hover:bg-white/[0.20] p-10 py-2">
                 <Icon icon="mdi:form-outline" class="text-3xl" />
                 <span>PWD ID Application</span>
                 <Icon icon="ri:arrow-down-s-line" class="text-3xl ml-auto duration-300" :class="{ 'rotate-180': toggleApplication }" />
@@ -109,6 +109,14 @@ const authStore = useAuthStore()
 const applicationStore = useApplicationStore()
 const router = useRouter()
 const route = useRoute()
+
+const isResident = () => {
+    if(currentUser.value.municipality.toLowerCase() === 'malolos'){
+        return true
+    }else{
+        return false
+    }
+}
 
 const currentUser = computed(() => authStore.user)
 const application = computed(() => applicationStore.application)

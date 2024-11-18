@@ -50,7 +50,7 @@
             </div>
             <div class="text-center">
                 <p class="font-semibold">Current Address</p>
-                <p class="text-custom-secondary dark:!text-white font-medium">{{ user?.address }}</p>
+                <p class="text-custom-secondary dark:!text-white font-medium capitalize">{{ user?.address + ', ' + user?.municipality }}</p>
             </div>
         </div>
         <div class="flex flex-col gap-y-5 mt-10 items-center w-4/5 md:w-3/5 mx-auto mb-5">
@@ -83,12 +83,16 @@
                         <input type="number" placeholder="639XXXXXXXXX" class="pl-3 border border-gray-500 h-8 rounded-md" v-model="contactNumber">
                     </div>
                     <div class="flex flex-col gap-y-1 w-3/4 md:w-2/5 lg:w-full">
-                        <label class="font-semibold text-md">Address</label>
+                        <label class="font-semibold text-md">Barangay</label>
                         <input type="text" placeholder="Address" class="pl-3 border border-gray-500 h-8 rounded-md" v-model="address">
                     </div>
                     <div class="flex flex-col gap-y-1 w-3/4 md:w-2/5 lg:w-full">
-                        <label class="font-semibold text-md">Age</label>
-                        <input type="number" placeholder="Age" class="pl-3 border border-gray-500 h-8 rounded-md" v-model="age">
+                        <label class="font-semibold text-md">Municipality</label>
+                        <input type="text" placeholder="Address" class="pl-3 border border-gray-500 h-8 rounded-md" v-model="municipality">
+                    </div>
+                    <div class="flex flex-col gap-y-1 w-3/4 md:w-2/5 lg:w-full">
+                        <label class="font-semibold text-md">Birthday</label>
+                        <input type="date" class="pl-3 border border-gray-500 h-8 rounded-md" v-model="age">
                     </div>
                     <button class="bg-custom-primary w-3/4 md:w-2/5 lg:w-3/5 text-white py-2 rounded-xl uppercase mt-5 hover:bg-red-900 lg:col-span-2 place-self-center">Update</button>
                 </form>
@@ -176,6 +180,7 @@ const email = ref('')
 const password = ref('')
 const contactNumber = ref('')
 const address = ref('')
+const municipality = ref('')
 const age = ref('')
 
 watch(user, (newUser) => {
@@ -184,7 +189,8 @@ watch(user, (newUser) => {
         email.value = newUser.email || ''
         contactNumber.value = newUser.contactNumber || ''
         address.value = newUser.address || ''
-        age.value = newUser.age || ''
+        municipality.value = newUser.municipality || ''
+        age.value = newUser?.age || ''
     }
 }, { immediate: true })
 
@@ -199,6 +205,7 @@ const update = async () => {
         password: password.value,
         contactNumber: contactNumber.value,
         address: address.value,
+        municipality: municipality.value,
         age: age.value,
     }
     
