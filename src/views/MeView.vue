@@ -1,5 +1,5 @@
 <template>
-    <section class="h-[90dvh] font-poppins overflow-y-scroll overflow-x-hidden">
+    <div class="h-[90dvh] font-poppins overflow-y-scroll overflow-x-hidden md:w-2/3 xl:w-full px-10 lg:px-0 flex flex-col items-center gap-y-5 mx-auto">
         <div class="bg-custom-primary dark:bg-neutral-700 h-1/5 lg:h-1/3 md:w-3/5 mx-auto relative">
             <div v-if="!user || updating" class="absolute left-1/2 -translate-x-1/2 top-5 flex flex-row gap-2">
                 <div class="w-3 aspect-square rounded-full bg-white animate-bounce"></div>
@@ -109,7 +109,7 @@
                 </div>
             </div>
         </div>
-    </section>
+    </div>
 </template>
 
 <script setup>

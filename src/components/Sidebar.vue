@@ -8,7 +8,7 @@
                 <Icon icon="ion:person-circle-outline" class="text-3xl" />
                 <span>Profile</span>
             </router-link> -->
-            <router-link :to="{ name: 'profile' }" class="border rounded-xl p-3 border-black w-4/5 mx-auto mb-5 flex  items-center gap-x-2 lg:hidden">
+            <router-link :to="{ name: 'profile' }" class="border rounded-xl p-3 border-black w-4/5 mx-auto mb-5 flex  items-center gap-x-2">
                 <div v-if="currentUser?.profile" class="w-12 aspect-square flex items-center justify-center rounded-full border border-black">
                     <img :src="currentUser?.profile" alt="profile pic" class="w-full h-full">
                 </div>

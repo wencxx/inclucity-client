@@ -1,7 +1,7 @@
 <template>
-    <section class="h-[90dvh] p-10">
+    <div class="md:w-2/3 xl:w-full px-10 lg:px-0 font-poppins flex flex-col items-center gap-y-5 mx-auto py-10">
         <!-- profile -->
-        <div v-if="user" class="flex items-center justify-between gap-x-5 font-poppins md:w-3/6 xl:w-2/6 md:mx-auto">
+        <div v-if="user" class="flex items-center justify-between gap-x-5 font-poppins lg:w-3/5 md:mx-auto">
             <img v-if="user.profile" class="w-[5rem] md:w-24 aspect-square rounded-full" :src="user?.profile" alt="profilePic">
             <Icon v-else icon="bi:person-circle" class="text-[5rem] md:text-[10] lg:text-[4dvw]" />
             <div class="w-full">
@@ -15,7 +15,7 @@
             </router-link>
         </div>
         <!-- profile skeleton -->
-        <div v-else class="flex items-center gap-x-10 font-poppins md:w-2/6 md:mx-auto">
+        <div v-else class="flex items-center gap-x-10 font-poppins lg:w-3/5 md:mx-auto">
             <div class="w-1/6 aspect-square bg-gray-300 rounded-full animate-pulse"></div>
             <div class="w-full space-y-1">
                 <div class="w-full h-6 rounded bg-gray-300 animate-pulse"></div>
@@ -24,7 +24,7 @@
             <div class="w-1/12 aspect-square bg-gray-300 animate-pulse rounded"></div>
         </div>
         <!-- receipt -->
-        <div class="md:w-3/6 xl:w-2/6 md:mx-auto mt-10 flex flex-col gap-y-5">
+        <div class="lg:w-3/5 md:mx-auto mt-10 flex flex-col gap-y-5">
             <div class="flex items-center justify-between text-xl hover:bg-white/[0.20] p-10 py-2">
                 <label>Email Notifications</label>
                 <label
@@ -56,7 +56,7 @@
                 </label>
             </div>
         </div>
-    </section>
+    </div>
 </template>
 
 <script setup>
