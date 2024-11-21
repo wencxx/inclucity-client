@@ -7,18 +7,23 @@
                     <h1 class="text-5xl text-center text-custom-primary font-bold text-outline">Frequently Askeds Questions</h1>
                 </div>
             </div>
-            <div class="w-full p-5 flex flex-col gap-y-5 mt-5 px-20">
-                <h1 class="text-center font-semibold">Frequently Asks Questions (FAQs)</h1>
+            <div class="w-1/2 mx-auto rounded p-5 flex flex-col gap-y-5 mt-14 px-20 bg-white">
                 <!-- Accordion Item 1 -->
-                <div class="border px-2  border-custom-primary rounded">
+                <div class="border-b border-gray-500 px-2 pb-3">
                     <button @click="toggleAccordion(1)" class="w-full flex justify-between items-center py-2 text-black">
-                        <span class="text-custom-primary font-medium">What is a PWD ID?</span>
+                        <span class="text-custom-primary font-medium flex gap-x-2 items-center">
+                            <div class="bg-blue-500 px-3 py-1 text-white rounded-full">
+                                1
+                            </div>
+                            What is a PWD ID?
+                        </span>
                         <span class="text-black">
                             <Icon id="icon-1" icon="ri:arrow-down-s-line" class="text-xl duration-300 text-custom-primary" />
                         </span>
                     </button>
                     <div id="content-1" class="max-h-0 overflow-hidden transition-all duration-300 ease-in-out">
                         <div class="pb-5 text-sm text-black">
+                            <img src="../assets/PWD_ID_Card-e1578482221310.webp" alt="">
                             <span>
                                 The PWD ID is the standard identification card for persons with disability (PWDs) in the Philippines. It's issued by the Persons with Disability Affairs Office (PDAO) or the city/municipal Social Welfare and Development Office where the cardholder lives. Cardholders can use this card to avail of PWD discounts and other benefits as mandated by the law.
                                 <br><br>
@@ -28,9 +33,14 @@
                     </div>
                 </div>
                 <!-- Accordion Item 2 -->
-                <div class="border px-2  border-custom-primary rounded">
+                <div class="border-b border-gray-500 px-2 pb-3">
                     <button @click="toggleAccordion(2)" class="w-full flex justify-between items-center py-2 text-black">
-                        <span class="text-custom-primary font-medium">How Long is the Validity of the PWD ID Card</span>
+                        <span class="text-custom-primary font-medium flex gap-x-2 items-center">
+                            <div class="bg-blue-500 px-3 py-1 text-white rounded-full">
+                                2
+                            </div>
+                            How Long is the Validity of the PWD ID Card
+                        </span>
                         <span class="text-black">
                             <Icon id="icon-2" icon="ri:arrow-down-s-line" class="text-xl duration-300 text-custom-primary" />
                         </span>
@@ -42,16 +52,22 @@
                     </div>
                 </div>
                 <!-- Accordion Item 3 -->
-                <div class="border px-2  border-custom-primary rounded">
+                <div class="border-b border-gray-500 px-2 pb-3">
                     <button @click="toggleAccordion(3)" class="w-full flex justify-between items-center py-2 text-black">
-                        <span class="text-custom-primary font-medium" >Who Can Get a PWD ID?</span>
+                        <span class="text-custom-primary font-medium flex gap-x-2 items-center">
+                            <div class="bg-blue-500 px-3 py-1 text-white rounded-full">
+                                3
+                            </div>
+                            Who Can Get a PWD ID?
+                        </span>
                         <span class="text-black">
                             <Icon id="icon-3" icon="ri:arrow-down-s-line" class="text-xl duration-300 text-custom-primary" />
                         </span>
                     </button>
                     <div id="content-3" class="max-h-0 overflow-hidden transition-all duration-300 ease-in-out">
                         <div class="pb-5 text-sm text-black">
-                            <span class="font-bold">Who is considered a PWD? Any Filipino with a permanent disability can apply for a PWD ID. Republic Act 10754[2] defines persons with disability as those with "long-term physical, mental, intellectual, or sensory impairments" that interfere with their interactions in society.</span><br><br>
+                            <span>
+                                Who is considered a PWD? Any Filipino with a permanent disability can apply for a PWD ID. Republic Act 10754[2] defines persons with disability as those with "long-term physical, mental, intellectual, or sensory impairments" that interfere with their interactions in society.</span><br><br>
                             <span class="font-bold">PWD List of Disabilities in the Philippines.</span><br><br>
                             <span class="font-bold">The Department of Health (DOH) considers those with the following types of disabilities eligible for a PWD ID:</span><br><br>
                             <ul class="list-disc list-inside">
@@ -67,9 +83,14 @@
                     </div>
                 </div>
                 <!-- Accordion Item 4 -->
-                <div class="border px-2  border-custom-primary rounded">
+                <div class="border-b border-gray-500 px-2 pb-3">
                     <button @click="toggleAccordion(4)" class="w-full flex justify-between items-center py-2 text-black">
-                        <span class="text-custom-primary font-medium">How to Get a PWD ID?</span>
+                        <span class="text-custom-primary font-medium flex gap-x-2 items-center">
+                            <div class="bg-blue-500 px-3 py-1 text-white rounded-full">
+                                4
+                            </div>
+                            How to Get a PWD ID?
+                        </span>
                         <span class="text-black">
                             <Icon id="icon-4" icon="ri:arrow-down-s-line" class="text-xl duration-300 text-custom-primary" />
                         </span>
@@ -149,9 +170,14 @@
                     </div>
                 </div>
                 <!-- Accordion Item 5 -->
-                <div class="border px-2  border-custom-primary rounded">
+                <div class="border-b border-gray-500 px-2 pb-3">
                     <button @click="toggleAccordion(5)" class="w-full flex justify-between items-center py-2 text-black">
-                        <span class="text-custom-primary font-medium">Is a PWD ID considered a valid ID?</span>
+                        <span class="text-custom-primary font-medium flex gap-x-2 items-center">
+                            <div class="bg-blue-500 px-3 py-1 text-white rounded-full">
+                                5
+                            </div>
+                            Is a PWD ID considered a valid ID?
+                        </span>
                         <span class="text-black">
                             <Icon id="icon-5" icon="ri:arrow-down-s-line" class="text-xl duration-300 text-custom-primary" />
                         </span>
@@ -163,9 +189,14 @@
                     </div>
                 </div>
                 <!-- Accordion Item 6 -->
-                <div class="border px-2  border-custom-primary rounded">
+                <div class="border-b border-gray-500 px-2 pb-3">
                     <button @click="toggleAccordion(6)" class="w-full flex justify-between items-center py-2 text-black">
-                        <span class="text-custom-primary font-medium text-start">Do persons with disabilities have PhilHealth coverage?</span>
+                        <span class="text-custom-primary font-medium flex gap-x-2 items-center">
+                            <div class="bg-blue-500 px-3 py-1 text-white rounded-full">
+                                6
+                            </div>
+                            Do persons with disabilities have PhilHealth coverage?
+                        </span>
                         <span class="text-black">
                             <Icon id="icon-6" icon="ri:arrow-down-s-line" class="text-xl duration-300 text-custom-primary" />
                         </span>
@@ -177,9 +208,14 @@
                     </div>
                 </div>
                 <!-- Accordion Item 7 -->
-                <div class="border px-2  border-custom-primary rounded">
+                <div class="border-b border-gray-500 px-2 pb-3">
                     <button @click="toggleAccordion(7)" class="w-full flex justify-between items-center py-2 text-black">
-                        <span class="text-custom-primary font-medium text-start">Do I still need to go to the Municipal/City Social Welfare Development Office if I apply for my PWD ID Online?</span>
+                        <span class="text-custom-primary font-medium flex gap-x-2 !text-start">
+                            <div class="bg-blue-500 px-3 py-1 text-white rounded-full">
+                                7
+                            </div>
+                            Do I still need to go to the Municipal/City Social Welfare Development Office if I apply for my PWD ID Online?
+                        </span>
                         <span class="text-black">
                             <Icon id="icon-7" icon="ri:arrow-down-s-line" class="text-xl duration-300 text-custom-primary" />
                         </span>
@@ -191,9 +227,14 @@
                     </div>
                 </div>
                 <!-- Accordion Item 8 -->
-                <div class="border px-2  border-custom-primary rounded">
+                <div class="border-b border-gray-500 px-2 pb-3">
                     <button @click="toggleAccordion(8)" class="w-full flex justify-between items-center py-2 text-black">
-                        <span class="text-custom-primary font-medium">How do I verify the status of my PWD ID card?</span>
+                        <span class="text-custom-primary font-medium flex gap-x-2 items-center">
+                            <div class="bg-blue-500 px-3 py-1 text-white rounded-full">
+                                8
+                            </div>
+                            How do I verify the status of my PWD ID card?
+                        </span>
                         <span class="text-black">
                             <Icon id="icon-8" icon="ri:arrow-down-s-line" class="text-xl duration-300 text-custom-primary" />
                         </span>
@@ -205,9 +246,14 @@
                     </div>
                 </div>
                 <!-- Accordion Item 9 -->
-                <div class="border px-2  border-custom-primary rounded">
+                <div class="border-b border-gray-500 px-2 pb-3">
                     <button @click="toggleAccordion(9)" class="w-full flex justify-between items-center py-2 text-black">
-                        <span class="text-custom-primary font-medium text-start">What if the PWD is bedridden and can’t go to the Municipal/City Social Welfare Development Office?</span>
+                        <span class="text-custom-primary font-medium flex gap-x-2 items-center text-start">
+                            <div class="bg-blue-500 px-3 py-1 text-white rounded-full">
+                                9
+                            </div>
+                            What if the PWD is bedridden and can’t go to the Municipal/City Social Welfare Development Office?
+                        </span>
                         <span class="text-black">
                             <Icon id="icon-9" icon="ri:arrow-down-s-line" class="text-xl duration-300 text-custom-primary" />
                         </span>
@@ -219,9 +265,14 @@
                     </div>
                 </div>
                 <!-- Accordion Item 10 -->
-                <div class="border px-2  border-custom-primary rounded">
+                <div class="border-b border-gray-500 px-2 pb-3">
                     <button @click="toggleAccordion(10)" class="w-full flex justify-between items-center py-2 text-black">
-                        <span class="text-custom-primary font-medium text-start">I lost my PWD ID. What should I do?</span>
+                        <span class="text-custom-primary font-medium flex gap-x-2 items-center">
+                            <div class="bg-blue-500 px-3 py-1 text-white rounded-full">
+                                10
+                            </div>
+                            I lost my PWD ID. What should I do?
+                        </span>
                         <span class="text-black">
                             <Icon id="icon-10" icon="ri:arrow-down-s-line" class="text-xl duration-300 text-custom-primary" />
                         </span>
@@ -233,9 +284,14 @@
                     </div>
                 </div>
                 <!-- Accordion Item 11 -->
-                <div class="border px-2  border-custom-primary rounded">
+                <div class="border-b border-gray-500 px-2 pb-3">
                     <button @click="toggleAccordion(11)" class="w-full flex justify-between items-center py-2 text-black">
-                        <span class="text-custom-primary font-medium text-start">Where do I report a fake PWD ID?</span>
+                        <span class="text-custom-primary font-medium flex gap-x-2 items-center">
+                            <div class="bg-blue-500 px-3 py-1 text-white rounded-full">
+                                11
+                            </div>
+                            Where do I report a fake PWD ID?
+                        </span>
                         <span class="text-black">
                             <Icon id="icon-11" icon="ri:arrow-down-s-line" class="text-xl duration-300 text-custom-primary" />
                         </span>
@@ -247,9 +303,14 @@
                     </div>
                 </div>
                 <!-- Accordion Item 12 -->
-                <div class="border px-2  border-custom-primary rounded">
+                <div class="border-b border-gray-500 px-2 pb-3">
                     <button @click="toggleAccordion(12)" class="w-full flex justify-between items-center py-2 text-black">
-                        <span class="text-custom-primary font-medium text-start">Are those with a psychosocial or learning disability entitled to PWD benefits?</span>
+                        <span class="text-custom-primary font-medium flex gap-x-2 items-center text-start">
+                            <div class="bg-blue-500 px-3 py-1 text-white rounded-full">
+                                12
+                            </div>
+                            Are those with a psychosocial or learning disability entitled to PWD benefits?
+                        </span>
                         <span class="text-black">
                             <Icon id="icon-12" icon="ri:arrow-down-s-line" class="text-xl duration-300 text-custom-primary" />
                         </span>
@@ -264,9 +325,14 @@
                     </div>
                 </div>
                 <!-- Accordion Item 13 -->
-                <div class="border px-2  border-custom-primary rounded">
+                <div class="border-b border-gray-500 px-2 pb-3">
                     <button @click="toggleAccordion(13)" class="w-full flex justify-between items-center py-2 text-black">
-                        <span class="text-custom-primary font-medium text-start">Are PWDs exempted from Expanded Number Coding?</span>
+                        <span class="text-custom-primary font-medium flex gap-x-2 items-center">
+                            <div class="bg-blue-500 px-3 py-1 text-white rounded-full">
+                                12
+                            </div>
+                            Are PWDs exempted from Expanded Number Coding?
+                        </span>
                         <span class="text-black">
                             <Icon id="icon-13" icon="ri:arrow-down-s-line" class="text-xl duration-300 text-custom-primary" />
                         </span>
@@ -278,9 +344,14 @@
                     </div>
                 </div>
                 <!-- Accordion Item 14 -->
-                <div class="border px-2  border-custom-primary rounded">
+                <div class="border-b border-gray-500 px-2 pb-3">
                     <button @click="toggleAccordion(14)" class="w-full flex justify-between items-center py-2 text-black">
-                        <span class="text-custom-primary font-medium text-start">Are online purchases eligible for the PWD discount?</span>
+                        <span class="text-custom-primary font-medium flex gap-x-2 items-center">
+                            <div class="bg-blue-500 px-3 py-1 text-white rounded-full">
+                                13
+                            </div>
+                            Are online purchases eligible for the PWD discount?
+                        </span>
                         <span class="text-black">
                             <Icon id="icon-14" icon="ri:arrow-down-s-line" class="text-xl duration-300 text-custom-primary" />
                         </span>

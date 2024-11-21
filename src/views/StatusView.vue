@@ -1,5 +1,5 @@
 <template>
-    <div class="container md:w-2/3 lg:w-2/5 p-10 font-poppins flex flex-col items-center justify-center gap-y-14 mx-auto">
+    <div class="md:w-2/3 xl:w-full px-5 lg:px-32 font-poppins flex flex-col items-center justify-center gap-y-14 mx-auto">
         <div v-if="!applicant || applicant && applicant.status === 'expired'" class="w-full">
             <h1 class="text-center font-medium uppercase text-xl">You haven’t applied yet</h1>
         </div>
