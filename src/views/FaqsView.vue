@@ -1,10 +1,13 @@
 <template>
-    <div class="container md:w-2/3 xl:w-1/2 py-3 px-10 font-poppins flex flex-col items-center gap-y-5 mx-auto">
+    <div class="md:w-2/3 xl:w-full px-10 lg:px-0 font-poppins flex flex-col items-center gap-y-5 mx-auto">
         <div id="reqContainer" class="h-[86dvh] overflow-y-scroll overflow-x-hidden">
-            <router-link :to="{ name: 'home' }" class="self-start">
-                <Icon icon="material-symbols-light:arrow-back" class="text-4xl text-gray-500 !ml-4" />
-            </router-link>
-            <div class="w-full p-5 flex flex-col gap-y-5 mt-5">
+            <div class="relative">
+                <img src="../assets/faq.jpg" alt="faq" class="w-full aspect-video">
+                <div class="absolute top-1/2 left-1/2 -translate-x-1/2 -translate-y-1/2 w-3/4">
+                    <h1 class="text-5xl text-center text-custom-primary font-bold text-outline">Frequently Askeds Questions</h1>
+                </div>
+            </div>
+            <div class="w-full p-5 flex flex-col gap-y-5 mt-5 px-20">
                 <h1 class="text-center font-semibold">Frequently Asks Questions (FAQs)</h1>
                 <!-- Accordion Item 1 -->
                 <div class="border px-2  border-custom-primary rounded">
@@ -324,5 +327,8 @@ function toggleAccordion(index) {
 <style scoped>
 #reqContainer::-webkit-scrollbar {
     display: none;
+}
+.text-outline {
+  text-shadow: 1px 1px 2px white, -1px -1px 2px white, 1px -1px 2px white, -1px 1px 2px white;
 }
 </style>

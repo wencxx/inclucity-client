@@ -1,8 +1,11 @@
 <template>
     <section  class="dark:!bg-neutral-800 dark:!text-white relative" :class="{ 'h-screen bg-gray-100': isAuthenticated }">
         <Header :routePath="routePath" v-if="isAuthenticated" @toggleSidebar="isSidebarShowing = !isSidebarShowing" />
-        <Sidebar v-if="isSidebarShowing" />
-        <router-view />
+        <div class="lg:flex">
+          <Sidebar v-if="isSidebarShowing" class="lg:hidden" />
+          <Sidebar class="hidden lg:block lg:relative lg:w-[500px]" :class="{ '!hidden' :$route.name === 'successful' }" />
+          <router-view class="!lg:w-4/5 !xl:w-4/5" :class="{ '!w-full' :$route.name === 'successful' }" />
+        </div>
         <Tutorial v-if="firstLogin" @closeVideo="closeVid()" />
     </section>
 </template>
@@ -78,5 +81,8 @@ input[type=number]::-webkit-inner-spin-button {
 /* Firefox */
 input[type=number] {
   -moz-appearance: textfield;
+}
+body {
+  overflow: hidden;
 }
 </style>

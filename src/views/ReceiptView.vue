@@ -3,6 +3,7 @@
         <h1 class="text-xl font-semibold capitalize self-start">My receipt</h1>
         <div v-if="applicant && applicant.status === 'approved'" ref="captureDiv" class="bg-red-300 w-full p-5 space-y-4" >
             <p>Application #{{ convertApplicationNum(applicant.applicationNumber) }}</p>
+            <p>Control #{{ convertApplicationNum(applicant.controlNumber) }}</p>
             <p>{{ date.toLocaleDateString('en-US', { year: 'numeric', month: 'long', day: 'numeric', weekday: 'long' }) }}</p>
             <hr class="border-black">
             <p>Name of Applicant: {{ applicant.firstName }} {{ applicant.middleName }} {{ applicant.lastName }}</p>

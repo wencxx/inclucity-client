@@ -5,7 +5,7 @@
                 <Icon icon="material-symbols-light:arrow-back" class="text-4xl text-gray-500 ml-4" />
             </router-link>
             <div class="w-full p-5 flex flex-col gap-y-5 mt-5">
-                <h1 class="text-center font-semibold">Maps</h1>
+                <h1 class="text-center font-semibold">Maps Directory</h1>
                 <!-- Accordion Item 1 -->
                 <div class="border px-2  border-custom-primary rounded">
                     <button @click="toggleAccordion(1)" class="w-full flex justify-between items-center py-2 text-black">

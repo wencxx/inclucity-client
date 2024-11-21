@@ -3,7 +3,7 @@
         <!-- first step -->
         <div class="w-full flex flex-col gap-y-5" v-if="currentPage == 1">
             <h1 class="text-gray-500 dark:!text-white font-semibold">Now get ready to take the first step of application</h1>
-            <div class="w-full h-fit border shadow-inner p-3 space-y-5 text-black dark:text-white font-semibold">
+            <div class="w-full text-lg h-fit border shadow-inner p-3 space-y-5 text-black dark:text-white font-semibold">
                 <p>When applying for a PWD ID, providing accurate information is essential to receive the right support. Here's a brief guide:</p>
                 <ol class="space-y-1 lg:space-y-2">
                     <li>1. Read Instructions: Carefully review the guidelines.</li>
@@ -21,10 +21,10 @@
             </div>
             <button class="bg-custom-primary rounded-md w-1/3 lg:w-1/5 py-2 text-white mx-auto" @click="next()">Continue</button>
         </div>
-        <div v-if="hasEmptyFields" class="w-full lg:w-1/2 lg:mx-auto flex flex-col gap-y-5 font-manrope">
+        <div v-if="hasEmptyFields" class="w-full lg:w-1/2 lg:mx-auto flex flex-col gap-y-5 font-manrope text-lg">
             <p class="bg-red-500 text-white pl-2 rounded py-1">Fill out all required fields</p>
         </div>
-        <div class="w-full lg:w-1/2 lg:mx-auto flex flex-col gap-y-5 font-manrope" v-if="currentPage == 2">
+        <div class="w-full lg:w-1/2 lg:mx-auto flex flex-col gap-y-5 font-manrope text-lg" v-if="currentPage == 2">
             <p v-if="noOldId" class="text-white bg-red-500 pl-2  rounded py-1 font-semibold">Upload your old PWD ID first to proceed</p>
             <h1 class="text-black dark:!text-white font-semibold text-xl uppercase">Upload old PWD ID</h1>
             <div class="grid md:grid-cols-2 gap-x-10 gap-y-3">
@@ -35,7 +35,7 @@
             </div>
         </div>
         <!-- second step -->
-        <div v-if="currentPage == 3" class="w-full lg:w-1/2 lg:mx-auto flex flex-col gap-y-5 font-manrope">
+        <div v-if="currentPage == 3" class="w-full lg:w-1/2 lg:mx-auto flex flex-col gap-y-5 font-manrope text-lg">
             <h1 class="text-black dark:!text-white font-semibold text-xl uppercase">Personal Information</h1>
             <div class="grid md:grid-cols-2 gap-x-10 gap-y-3">
                 <div class="flex flex-col gap-y-1">
@@ -59,9 +59,9 @@
                     <input type="date" class="h-10 border pl-2 rounded dark:!text-black" v-model="dateOfBirth">
                 </div>
                 <div class="flex flex-col gap-y-1">
-                    <label class="font-semibold">Gender *</label>
+                    <label class="font-semibold">Sex *</label>
                     <select class="h-10 border dark:!text-black pl-2 rounded" v-model="gender">
-                        <option disabled>Select Gender</option>
+                        <option disabled>Select Sex</option>
                         <option>Male</option>
                         <option>Female</option>
                         <option>Others</option>
@@ -81,7 +81,7 @@
             </div>
         </div>
         <!-- third step -->
-        <div v-if="currentPage == 4" class="w-full lg:w-1/2 lg:mx-auto flex flex-col gap-y-5 font-manrope">
+        <div v-if="currentPage == 4" class="w-full lg:w-1/2 lg:mx-auto flex flex-col gap-y-5 font-manrope text-lg">
             <h1 class="text-black dark:!text-white font-semibold text-xl uppercase">Type and Cause of Disability</h1>
             <div class="grid md:grid-cols-2 gap-x-10 gap-y-5">
                 <div class="flex flex-col gap-y-2 w-full py-2">
@@ -166,7 +166,7 @@
             </div>
         </div>
         <!-- fourth step -->
-        <div v-if="currentPage == 5" class="w-full lg:w-1/2 lg:mx-auto flex flex-col gap-y-5 font-manrope">
+        <div v-if="currentPage == 5" class="w-full lg:w-1/2 lg:mx-auto flex flex-col gap-y-5 font-manrope text-lg">
             <h1 class="text-black dark:!text-white font-semibold text-xl uppercase">Contact Details</h1>
             <div class="grid md:grid-cols-2 gap-x-10 gap-y-5">
                 <div class="flex flex-col gap-y-1">
@@ -201,7 +201,7 @@
             </div>
         </div>
         <!-- fifth step -->
-        <div v-if="currentPage == 6" class="w-full lg:w-1/2 lg:mx-auto flex flex-col gap-y-5 font-manrope">
+        <div v-if="currentPage == 6" class="w-full lg:w-1/2 lg:mx-auto flex flex-col gap-y-5 font-manrope text-lg">
             <h1 class="text-black dark:!text-white font-semibold text-xl uppercase">Status of Employment</h1>
             <div class="grid md:grid-cols-2 gap-x-10 gap-y-5">
                 <div class="flex flex-col gap-y-2 w-full py-2">
@@ -234,7 +234,7 @@
             </div>
         </div>
         <!-- ninth step -->
-        <div v-if="currentPage == 7" class="w-full lg:w-1/2 lg:mx-auto flex flex-col gap-y-5 font-manrope">
+        <div v-if="currentPage == 7" class="w-full lg:w-1/2 lg:mx-auto flex flex-col gap-y-5 font-manrope text-lg">
             <h1 v-if="statusOfEmployment == 'employed' || statusOfEmployment == 'self-employed'" class="text-black font-semibold text-xl uppercase">Occupation</h1>
             <div v-if="statusOfEmployment == 'employed' || statusOfEmployment == 'self-employed'" class="grid md:grid-cols-2 gap-x-10 gap-y-5">
                 <div class="flex flex-col gap-y-2 w-full py-2">
@@ -280,7 +280,7 @@
             </div>
         </div>
         <!-- eleventh step -->
-        <div v-if="currentPage == 8" class="w-full lg:w-1/2 lg:mx-auto flex flex-col gap-y-5 font-manrope">
+        <div v-if="currentPage == 8" class="w-full lg:w-1/2 lg:mx-auto flex flex-col gap-y-5 font-manrope text-lg">
             <h1 class="text-black dark:!text-white font-semibold text-xl uppercase">ID Reference no.</h1>
             <div class="grid md:grid-cols-2 gap-x-10 gap-y-5">
                 <div class="flex flex-col gap-y-1">
@@ -306,7 +306,7 @@
             </div>
         </div>
         <!-- twelve step -->
-        <div v-if="currentPage == 9" class="w-full lg:w-1/2 lg:mx-auto flex flex-col gap-y-5 font-manrope">
+        <div v-if="currentPage == 9" class="w-full lg:w-1/2 lg:mx-auto flex flex-col gap-y-5 font-manrope text-lg">
             <h1 class="text-black dark:!text-white font-semibold text-xl uppercase">Family Background</h1>
             <div class="grid md:grid-cols-2 gap-x-10 gap-y-5">
                 <div class="flex flex-col gap-y-1">
@@ -330,7 +330,7 @@
             </div>
         </div>
         <!-- thirteenth step -->
-        <div v-if="currentPage == 10" class="w-full lg:w-1/2 lg:mx-auto flex flex-col gap-y-5 font-manrope">
+        <div v-if="currentPage == 10" class="w-full lg:w-1/2 lg:mx-auto flex flex-col gap-y-5 font-manrope text-lg">
             <h1 class="text-black dark:!text-white font-semibold text-xl uppercase">Accomplished By</h1>
             <div class="grid md:grid-cols-2 gap-x-10 gap-y-5">
                 <div class="flex flex-col gap-y-1">
@@ -353,7 +353,7 @@
             </div>
         </div>
         <!-- fourteenth step -->
-        <div v-if="currentPage == 11" class="w-full lg:w-1/2 lg:mx-auto flex flex-col gap-y-5 font-manrope">
+        <div v-if="currentPage == 11" class="w-full lg:w-1/2 lg:mx-auto flex flex-col gap-y-5 font-manrope text-lg">
             <div class="grid md:grid-cols-2 gap-x-10 gap-y-5">
                 <h1 v-if="alreadySubmitted" class="md:col-span-2 bg-red-500 text-white pl-3 py-1 rounded">Application already submitted</h1>
                 <h1 v-if="imageMissing" class="md:col-span-2 bg-red-500 text-white pl-3 py-1 rounded">Please upload required images</h1>

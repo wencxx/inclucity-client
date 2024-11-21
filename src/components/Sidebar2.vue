@@ -1,25 +1,6 @@
 <template>
     <div class="w-3/4 md:w-2/5 lg:w-1/4 xl:1/5 h-screen absolute top-0 left-0 flex flex-col z-[1000]">
-        <div class="h-[9.8dvh] bg-custom-primary dark:bg-neutral-900 lg:hidden">
-            <img src="../assets/logo.png" alt="logo" class="h-full">
-        </div>
-        <nav class="font-poppins h-[91dvh] flex flex-col gap-y-1 bg-gray-100 border-r-2 border-black/10 shadow pt-5 overflow-auto pb-5 !text-black">
-            <!-- <router-link :to="{ name: 'me' }" class="flex items-center gap-x-2 text-xl hover:bg-white/[0.20] p-10 py-2">
-                <Icon icon="ion:person-circle-outline" class="text-3xl" />
-                <span>Profile</span>
-            </router-link> -->
-            <router-link :to="{ name: 'profile' }" class="border rounded-xl p-3 border-black w-4/5 mx-auto mb-5 flex  items-center gap-x-2 lg:hidden">
-                <div v-if="currentUser?.profile" class="w-12 aspect-square flex items-center justify-center rounded-full border border-black">
-                    <img :src="currentUser?.profile" alt="profile pic" class="w-full h-full">
-                </div>
-                <div v-else class="w-12 aspect-square flex items-center justify-center rounded-full border border-black">
-                    <Icon icon="mdi:user" class="text-2xl" />
-                </div>
-                <div>
-                    <h1 class="font-medium">{{ currentUser?.name }}</h1>
-                    <h1 v-if="application?.typeOfDisability" class="font-medium">{{ application?.typeOfDisability }}</h1>
-                </div>
-            </router-link>
+        <nav class="font-poppins h-[91dvh] flex flex-col gap-y-1 bg-gray-100 border-r-2 border-black/10 shadow pt-5 overflow-auto !text-black">
             <router-link :to="{ name: 'home' }" class="flex items-center gap-x-2 text-xl hover:bg-white/[0.20] p-10 py-2">
                 <Icon icon="carbon:home" class="text-3xl" />
                 <span>Home</span>
@@ -111,7 +92,7 @@ const router = useRouter()
 const route = useRoute()
 
 const isResident = () => {
-    if(!currentUser.value?.municipality || currentUser.value?.municipality.toLowerCase() === 'malolos'){
+    if(currentUser.value?.municipality.toLowerCase() === 'malolos'){
         return true
     }else{
         return false

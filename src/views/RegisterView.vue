@@ -14,6 +14,10 @@
                 <Icon icon="material-symbols-light:warning-outline" class="text-2xl" />
                 <span class="mt-1">Invalid Contact Number</span>
             </p>
+            <p v-if="passNotMatch" class="text-start bg-red-500 pl-3 text-white py-1 rounded lg:w-2/4 flex items-center gap-x-2">
+                <Icon icon="material-symbols-light:warning-outline" class="text-2xl" />
+                <span class="mt-1">Password doesn't match</span>
+            </p>
             <p v-if="errorRegistering" class="text-start bg-red-500 pl-3 text-white py-1 rounded lg:w-2/4 flex items-center gap-x-2">
                 <Icon icon="material-symbols-light:warning-outline" class="text-2xl" />
                 <span class="mt-1">Something went wrong</span>
@@ -34,13 +38,6 @@
                 <div class="flex flex-col gap-y-1 w-3/4 md:w-2/5 lg:w-full">
                     <label class="font-semibold text-lg">Email <span class="text-red-500 text-sm">*</span></label>
                     <input type="text" placeholder="Email" class="pl-3 border border-gray-500 h-10 rounded-md" v-model="email" required>
-                </div>
-                <div class="flex flex-col gap-y-1 w-3/4 md:w-2/5 lg:w-full">
-                    <label class="font-semibold text-lg">Password <span class="text-red-500 text-sm">*</span></label>
-                    <div class="w-full border border-gray-500 flex items-center rounded-md overflow-hidden group focus-within:outline outline-black outline-1">
-                        <input :type="passwordType" placeholder="Password" class="pl-3 w-full h-10 focus:outline-none" v-model="password" required>
-                        <Icon :icon="passwordIconType" class="text-2xl mr-2 bg-white" @click="toggleShowPassword()" />
-                    </div>
                 </div>
                 <div class="flex flex-col gap-y-1 w-3/4 md:w-2/5 lg:w-full">
                     <label class="font-semibold text-lg">Contact Number <span class="text-red-500 text-sm">*</span></label>
@@ -67,7 +64,21 @@
                         <option>Other</option>
                     </select>
                 </div>
-                <button class="bg-custom-primary w-3/4 md:w-2/5 lg:w-3/5 text-white py-2 rounded-xl uppercase mt-5 hover:bg-red-900 lg:col-span-2 place-self-center" @click="showPrivacy = true">Sign Up</button>
+                <div class="flex flex-col gap-y-1 w-3/4 md:w-2/5 lg:w-full">
+                    <label class="font-semibold text-lg">Password <span class="text-red-500 text-sm">*</span></label>
+                    <div class="w-full border border-gray-500 flex items-center rounded-md overflow-hidden group focus-within:outline outline-black outline-1">
+                        <input :type="passwordType" placeholder="Password" class="pl-3 w-full h-10 focus:outline-none" v-model="password" required>
+                        <Icon :icon="passwordIconType" class="text-2xl mr-2 bg-white" @click="toggleShowPassword()" />
+                    </div>
+                </div>
+                <div class="flex flex-col gap-y-1 w-3/4 md:w-2/5 lg:w-full">
+                    <label class="font-semibold text-lg">Confirm Password <span class="text-red-500 text-sm">*</span></label>
+                    <div class="w-full border border-gray-500 flex items-center rounded-md overflow-hidden group focus-within:outline outline-black outline-1">
+                        <input :type="conPasswordType" placeholder="Password" class="pl-3 w-full h-10 focus:outline-none" v-model="conPassword" required>
+                        <Icon :icon="conPasswordIconType" class="text-2xl mr-2 bg-white" @click="toggleShowConfirmPassword()" />
+                    </div>
+                </div>
+                <button class="bg-custom-primary w-3/4 md:w-2/5 lg:w-3/5 text-white py-2 rounded-xl uppercase mt-5 hover:bg-red-900 lg:col-span-2 place-self-center" @click="showPrivacyModal">Sign Up</button>
             </div>
             <div class="flex justify-center mt-10 gap-y-4 font-poppins font-semibold">
                 <p>
@@ -115,11 +126,25 @@ const toggleShowPassword = () => {
     passwordIconType.value = 'mdi:eye-off-outline'
 }
 
+const conPasswordType= ref('password')
+const conPasswordIconType = ref('mdi:eye-off-outline')
+
+const toggleShowConfirmPassword = () => {
+    if(conPasswordType.value === 'password'){
+        conPasswordType.value = 'text'
+        conPasswordIconType.value = 'mdi:eye-outline'
+        return
+    }
+    conPasswordType.value = 'password'
+    conPasswordIconType.value = 'mdi:eye-off-outline'
+}
+
 const firstName = ref('')
 const middleName = ref('')
 const lastName = ref('')
 const email = ref('')
 const password = ref('')
+const conPassword = ref('')
 const contactNumber = ref('')
 const address = ref('')
 const municipality = ref('')
@@ -128,13 +153,14 @@ const gender = ref('Select Gender')
 
 const existingEmail = ref(false)
 const invalidNumber = ref(false)
+const passNotMatch = ref(false)
 
 const registering = ref(false)
 const errorRegistering = ref(false)
 
 const showPrivacy = ref(false)
 
-const register = async () => {
+const showPrivacyModal = () => {
     invalidNumber.value = false
     existingEmail.value = false
     if(!String(contactNumber.value).startsWith('639')){
@@ -142,6 +168,16 @@ const register = async () => {
         return invalidNumber.value = true
     }
 
+    if(password.value !== conPassword.value){
+        showPrivacy.value = false
+        return passNotMatch.value = true
+    }
+
+    showPrivacy.value = true
+}
+
+const register = async () => {
+    showPrivacy.value = false
     const userData = {
         name: `${firstName.value} ${middleName.value} ${lastName.value}`,
         email: email.value,

@@ -1,6 +1,6 @@
 <template>
-    <section class="h-[90dvh] overflow-auto font-poppins p-10 pb-0 overflow-x-hidden md:px-16 lg:px-32">
-        <h1 class="font-semibold font-manrope uppercase text-2xl lg:text-3xl w-full mx-auto">News</h1>
+    <div class="h-[90dvh] md:w-2/3 xl:w-full p-10 pb-0 font-poppins flex flex-col items-center gap-y-5 overflow-auto overflow-x-hidden mx-auto md:px-16 lg:px-32">
+        <h1 class="font-semibold font-manrope uppercase text-2xl lg:text-3xl w-full mx-auto text-custom-primary">News</h1>
         <!-- skeleton loading -->
         <div v-if="loadingNews" class="mt-2 lg:mt-5 flex flex-col gap-y-5 w-full mx-auto">
             <div class="flex flex-col gap-y-2 font-poppins bg-white p-3 rounded-md shadow cursor-default hover:shadow-md">
@@ -21,7 +21,7 @@
         </div>
         <!-- news -->
         <div v-if="!noNews" class="mt-2 lg:mt-5 flex flex-col gap-y-5 w-full mx-auto">
-            <div v-for="( n, index ) in news" :key="index" class="flex flex-col gap-y-2 font-poppins bg-white p-3 rounded-md shadow-xl cursor-default hover:shadow-md lg:px-[10dvw] xl:px-[20dvw]">
+            <div v-for="( n, index ) in news" :key="index" class="flex flex-col gap-y-2 font-poppins bg-white p-3 rounded-md shadow-xl cursor-default hover:shadow-md lg:px-[3dvw]">
                 <div class="flex items-center text-lg">
                     <img src="../assets/logo.png" alt="logot" class="w-20 -ml-5">
                     <div>
@@ -29,7 +29,7 @@
                         <p class="text-gray-600 italic text-xs">{{ changeDateFormat(n.datePosted) }}</p>
                     </div>
                 </div>
-                <div>
+                <div class="px-20 mt-5">
                     <p class="capitalize font-medium text-md">{{ n.postTitle }}</p>
                     <p class="text-gray-500 text-md mt-3 text-justify whitespace-pre-line">{{ n.postDescription }}</p>
                     <div v-if="n.postUrl.length > 1" class="flex flex-col mb-3">
@@ -69,7 +69,7 @@
             </button>
         </div>
         <Footer class="mt-20 -ml-10 md:-ml-16 lg:-ml-32 w-screen"/>
-    </section>
+    </div>
 </template>
 
 <script setup>
