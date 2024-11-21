@@ -1,11 +1,13 @@
 <template>
-    <div class="md:w-2/3 xl:w-full px-10 lg:px-0 font-poppins flex flex-col items-center gap-y-5 mx-auto">
-        <div id="reqContainer" class="h-[86dvh] overflow-y-scroll overflow-x-hidden">
-            <router-link :to="{ name: 'home' }" class="self-start">
-                <Icon icon="material-symbols-light:arrow-back" class="text-4xl text-gray-500 ml-4" />
-            </router-link>
-            <div class="w-full p-5 flex flex-col gap-y-5 mt-5">
-                <h1 class="text-center font-semibold">Maps Directory</h1>
+    <div class="md:w-2/3 xl:w-full font-poppins flex flex-col items-center gap-y-5 mx-auto">
+        <div id="reqContainer" class="h-[86dvh] w-full overflow-y-scroll overflow-x-hidden">
+            <div class="relative h-[20dvh] w-full">
+                <img src="../assets/maps.png" class="h-full w-full">
+                <div class="absolute top-1/2 left-1/2 -translate-x-1/2 -translate-y-1/2">
+                    <p class="text-white font-bold text-6xl tracking-wider text-center">DIRECTORY MAP</p>
+                </div>
+            </div>
+            <div class="w-full p-5 flex flex-col gap-y-5 mt-5 px-20">
                 <!-- Accordion Item 1 -->
                 <div class="border px-2  border-custom-primary rounded">
                     <button @click="toggleAccordion(1)" class="w-full flex justify-between items-center py-2 text-black">
