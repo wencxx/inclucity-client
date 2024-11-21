@@ -1,8 +1,8 @@
 <template>
     <div class="md:w-2/3 xl:w-full px-10 lg:px-0 font-poppins flex flex-col items-center gap-y-5 mx-auto">
         <div id="reqContainer" class="h-[86dvh] overflow-y-scroll overflow-x-hidden">
-            <div class="relative">
-                <img src="../assets/faq.jpg" alt="faq" class="w-full aspect-video">
+            <div class="relative h-[50dvh]">
+                <img src="../assets/faq.jpg" alt="faq" class="w-full h-full">
                 <div class="absolute top-1/2 left-1/2 -translate-x-1/2 -translate-y-1/2 w-3/4">
                     <h1 class="text-5xl text-center text-custom-primary font-bold text-outline">Frequently Askeds Questions</h1>
                 </div>

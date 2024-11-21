@@ -3,8 +3,8 @@
         <Header :routePath="routePath" v-if="isAuthenticated" @toggleSidebar="isSidebarShowing = !isSidebarShowing" />
         <div class="lg:flex">
           <Sidebar v-if="isSidebarShowing" class="lg:hidden" />
-          <Sidebar class="hidden lg:block lg:relative lg:w-[500px]" :class="{ '!hidden' :$route.name === 'successful' }" />
-          <router-view class="!lg:w-4/5 !xl:w-4/5" :class="{ '!w-full' :$route.name === 'successful' }" />
+          <Sidebar class="hidden lg:block lg:relative lg:w-3/12" :class="{ '!hidden' :$route.name === 'successful' }" />
+          <router-view class="!lg:w-9/12" :class="{ '!w-full' :$route.name === 'successful' }" />
         </div>
         <Tutorial v-if="firstLogin" @closeVideo="closeVid()" />
     </section>
