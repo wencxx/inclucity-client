@@ -1,6 +1,5 @@
 <template>
-    
-    <div class="h-[90dvh] overflow-auto font-poppins">
+    <div class="h-[90dvh] overflow-auto md:w-2/3 xl:w-full px-10 lg:px-0 font-poppins flex flex-col items-center gap-y-5 mx-auto">
         <div class="min-h-[90dvh] grid lg:grid-cols-2">
             <div class="flex items-center justify-center">
                 <img src="../assets/logo.png" alt="logo" class="w-full xl:w-3/4">
@@ -87,7 +86,7 @@
                 </p>
             </div>
         </div>
-        <div class="px-5 lg:px-20 mt-10">
+        <div class="w-11/12 px-10 mt-10">
             <div class="w-full bg-gray-200 h-fit rounded-xl shadow border border-gray-300 p-10 space-y-5">
                 <h1 class="font-semibold text-xl">Benefits of Inclucity</h1>
                 <ul class="list-disc list-inside space-y-2">
@@ -170,7 +169,7 @@
             <img src="../assets/IMG_2559-removebg-preview.png" class="absolute -bottom-20 left-0 w-full h-full object-cover">
             <div class="absolute -bottom-20 left-0 w-full h-full bg-white/55"></div>
         </div>
-        <Footer class="mt-20" />
+        <Footer class="mt-16 w-full" />
     </div>
 </template>
 
