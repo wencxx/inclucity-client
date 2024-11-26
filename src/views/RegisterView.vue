@@ -73,7 +73,7 @@
                         <option>Santa Maria (BU)</option>
                     </select>
                 </div>
-                <div v-if="municipality === 'Malolos'" class="flex flex-col gap-y-1 w-3/4 md:w-2/5 lg:w-full">
+                <div class="flex flex-col gap-y-1 w-3/4 md:w-2/5 lg:w-full">
                     <label class="font-semibold text-lg">Barangay <span class="text-red-500 text-sm">*</span></label>
                     <input type="text" placeholder="Address" class="pl-3 border border-gray-500 h-10 rounded-md" v-model="address" required>
                 </div>
