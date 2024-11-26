@@ -1,17 +1,17 @@
 <template>
-    <div class="h-[90dvh] overflow-auto md:w-2/3 xl:w-full px-10 lg:px-0 font-poppins flex flex-col items-center gap-y-5 mx-auto">
+    <div class="h-[90dvh] overflow-auto md:w-2/3 xl:w-full px-5 lg:px-0 font-poppins flex flex-col items-center gap-y-5 mx-auto">
         <div class="min-h-[90dvh] grid lg:grid-cols-2">
             <div class="flex items-center justify-center">
-                <img src="../assets/logo.png" alt="logo" class="w-full xl:w-3/4">
+                <img src="../assets/logo.png" alt="logo" class="w-full xl:lg:w-3/4">
             </div>
             <div class="flex flex-col justify-center items-center lg:items-start gap-y-5 lg:gap-y-10">
                 <h1 class="font-bold text-3xl">About Us</h1>
-                <p class="w-3/4 text-justify">IncluCity: A Management Information System for Persons with Disabilities in the City of Malolos, Bulacan
+                <p class="lg:w-3/4 text-justify">IncluCity: A Management Information System for Persons with Disabilities in the City of Malolos, Bulacan
                     IncluCity is a web-based management system developed to support the operations of the City Social Welfare and Development Office - Community Affairs Division (CSWDO CAD) in Malolos City. It serves as an inclusive online platform for Persons with Disabilities (PWDs) and citizens of Malolos, aiming to streamline the PWD ID application process, enhance data management, and improve communication between the CSWDO CAD Office and the public.
                 </p>
             </div>
         </div>
-        <div class="bg-yellow-700 h-fit p-10 px-20 space-y-10 mt-10"> 
+        <div class="bg-yellow-700 h-fit p-5 lg:px-20 space-y-10 mt-10"> 
             <h1 class="text-center text-2xl text-white">Key Features and Functionalities</h1>
             <div class="grid lg:grid-cols-4 gap-10">
                 <div>
@@ -19,7 +19,7 @@
                         <div class="border px-10 py-1 rounded-full">
                             <Icon icon="mage:star-moving" class="text-5xl text-custom-primary" />
                         </div>
-                        <h1 class="font-medium text-lg w-3/4 text-center">Accessible PWD ID Application Process</h1>
+                        <h1 class="font-medium text-lg lg:w-3/4 text-center">Accessible PWD ID Application Process</h1>
                         <p class="text-justify text-sm text-gray-700">
                             IncluCity provides an accessible platform for PWDs to apply for or renew IDs online, allowing digital submission of information and documents to reduce in-person visits.
                         </p>
@@ -31,7 +31,7 @@
                         <div class="border px-10 py-1 rounded-full">
                             <Icon icon="fluent:form-20-regular" class="text-5xl text-custom-primary" />
                         </div>
-                        <h1 class="font-medium text-lg w-3/4 text-center">Application Tracking and Updates</h1>
+                        <h1 class="font-medium text-lg lg:w-3/4 text-center">Application Tracking and Updates</h1>
                         <p class="text-justify text-sm text-gray-700">
                             The platform lets applicants track application status and receive timely notifications, improving transparency and service efficiency.
                         </p>
@@ -43,7 +43,7 @@
                         <div class="border px-10 py-1 rounded-full">
                             <Icon icon="fluent:form-sparkle-20-regular" class="text-5xl text-custom-primary" />
                         </div>
-                        <h1 class="font-medium text-lg w-3/4 text-center">Data Management and Organization</h1>
+                        <h1 class="font-medium text-lg lg:w-3/4 text-center">Data Management and Organization</h1>
                         <p class="text-justify text-sm text-gray-700">
                             IncluCity provides a secure database for the CSWDO CAD Office to store, manage, and organize PWD applicant data, centralizing records for easy access and updates.
                         </p>
@@ -55,7 +55,7 @@
                         <div class="border px-10 py-1 rounded-full">
                             <Icon icon="guidance:calendar" class="text-5xl text-custom-primary" />
                         </div>
-                        <h1 class="font-medium text-lg w-3/4 text-center">Streamlined Workflow for PWD ID Processing</h1>
+                        <h1 class="font-medium text-lg lg:w-3/4 text-center">Streamlined Workflow for PWD ID Processing</h1>
                         <p class="text-justify text-sm text-gray-700">
                             The system helps CSWDO CAD staff process applications, review information, and verify documents, speeding up approvals and ensuring data accuracy.
                         </p>
@@ -66,27 +66,27 @@
         </div>
         <div class="min-h-[90dvh] grid lg:grid-cols-4 content-center gap-y-10 mt-10">
             <div class="flex items-center justify-center h-full lg:col-span-2">
-                <h1 class="text-4xl text-center w-3/5">Administrative Communication and User Engagement</h1>
+                <h1 class="text-4xl text-center lg:w-3/5">Administrative Communication and User Engagement</h1>
             </div>
-            <div class="flex flex-col mx-auto h-1/2 w-3/4 justify-start items-center gap-y-5 lg:gap-y-5">
+            <div class="flex flex-col mx-auto h-1/2 lg:w-3/4 justify-start items-center gap-y-5 lg:gap-y-5">
                 <div class="bg-custom-primary text-white px-4 py-1 rounded-full">
                     <h1 class="font-bold text-3xl">1</h1>
                 </div>
                 <h1 class="font-semibold">Notifications Updates</h1>
-                <p class="w-3/4 text-justify">IncluCity: A Management Information System for Persons with Disabilities in the City of Malolos, Bulacan
+                <p class="lg:w-3/4 text-justify">IncluCity: A Management Information System for Persons with Disabilities in the City of Malolos, Bulacan
                     IncluCity equips the CSWDO CAD Office with tools to communicate directly with users, enabling announcements, application updates, reminders for ID expiration, and service notifications.
                 </p>
             </div>
-            <div class="flex flex-col mx-auto h-1/2 w-3/4 justify-start items-center gap-y-5 lg:gap-y-5">
+            <div class="flex flex-col mx-auto h-1/2 lg:w-3/4 justify-start items-center gap-y-5 lg:gap-y-5">
                 <div class="bg-custom-primary text-white px-4 py-1 rounded-full">
                     <h1 class="font-bold text-3xl">2</h1>
                 </div>
                 <h1 class="font-semibold">User-Friendly Interface for End Users:</h1>
-                <p class="w-3/4 text-justify">User-Friendly Interface: The platform ensures accessibility for all, offering a seamless experience for PWDs and Malolos citizens to navigate, apply for services, and track application status.
+                <p class="lg:w-3/4 text-justify">User-Friendly Interface: The platform ensures accessibility for all, offering a seamless experience for PWDs and Malolos citizens to navigate, apply for services, and track application status.
                 </p>
             </div>
         </div>
-        <div class="w-11/12 px-10 mt-10">
+        <div class="lg:w-11/12 lg:px-10 mt-10">
             <div class="w-full bg-gray-200 h-fit rounded-xl shadow border border-gray-300 p-10 space-y-5">
                 <h1 class="font-semibold text-xl">Benefits of Inclucity</h1>
                 <ul class="list-disc list-inside space-y-2">

@@ -1,5 +1,5 @@
 <template>
-    <div class="md:w-2/3 xl:w-full px-10 lg:px-0 font-poppins flex flex-col items-center gap-y-5 mx-auto">
+    <div class="md:w-2/3 xl:w-full font-poppins flex flex-col items-center gap-y-5 mx-auto">
         <div id="reqContainer" class="h-[86dvh] overflow-y-scroll overflow-x-hidden">
             <div class="relative h-[50dvh]">
                 <img src="../assets/faq.jpg" alt="faq" class="w-full h-full">
@@ -7,7 +7,7 @@
                     <h1 class="text-5xl text-center text-custom-primary font-bold text-outline">Frequently Askeds Questions</h1>
                 </div>
             </div>
-            <div class="w-1/2 mx-auto rounded p-5 flex flex-col gap-y-5 mt-14 px-20 bg-white">
+            <div class=" w-10/12 lg:w-1/2 mx-auto rounded p-5 flex flex-col gap-y-5 mt-14 lg:px-20 bg-white">
                 <!-- Accordion Item 1 -->
                 <div class="border-b border-gray-500 px-2 pb-3">
                     <button @click="toggleAccordion(1)" class="w-full flex justify-between items-center py-2 text-black">
@@ -210,7 +210,7 @@
                 <!-- Accordion Item 7 -->
                 <div class="border-b border-gray-500 px-2 pb-3">
                     <button @click="toggleAccordion(7)" class="w-full flex justify-between items-center py-2 text-black">
-                        <span class="text-custom-primary font-medium flex gap-x-2 !text-start">
+                        <span class="text-custom-primary font-medium flex gap-x-2 items-center">
                             <div class="bg-blue-500 px-3 py-1 text-white rounded-full">
                                 7
                             </div>

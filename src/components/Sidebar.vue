@@ -1,7 +1,7 @@
 <template>
     <div class="w-3/4 md:w-2/5 lg:w-1/4 xl:1/5 h-screen absolute top-0 left-0 flex flex-col z-[1000]">
-        <div class="h-[9.8dvh] bg-custom-primary dark:bg-neutral-900 lg:hidden">
-            <img src="../assets/logo.png" alt="logo" class="h-full">
+        <div class="h-[9.8dvh] bg-custom-primary dark:bg-neutral-900 lg:hidden flex items-center" :class="{ '!block': $route.name === 'about' }">
+            <img src="../assets/newLogo.png" alt="logo" class="h-3/4">
         </div>
         <nav class="font-poppins h-[91dvh] flex flex-col gap-y-1 bg-gray-100 border-r-2 border-black/10 shadow pt-5 overflow-auto pb-5 !text-black">
             <!-- <router-link :to="{ name: 'me' }" class="flex items-center gap-x-2 text-xl hover:bg-white/[0.20] p-10 py-2">

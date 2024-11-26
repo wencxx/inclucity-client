@@ -29,7 +29,7 @@
                         <p class="text-gray-600 italic text-xs">{{ changeDateFormat(n.datePosted) }}</p>
                     </div>
                 </div>
-                <div class="px-20 mt-5">
+                <div class="lg:px-20 mt-5">
                     <p class="capitalize font-medium text-md">{{ n.postTitle }}</p>
                     <p class="text-gray-500 text-md mt-3 text-justify whitespace-pre-line">{{ n.postDescription }}</p>
                     <div v-if="n.postUrl.length > 1" class="flex flex-col mb-3">
