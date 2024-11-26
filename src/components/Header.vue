@@ -12,7 +12,7 @@
                 <img v-if="user && user?.profile" :src="user?.profile" alt="user profile" class="w-7 aspect-square rounded-full">
                 <Icon v-else icon="ion:person-circle-outline" class="text-3xl lg:text-3xl text-white" />
             </router-link>
-            <Icon  :icon="menuIcon" class="text-4xl lg:text-4xl lg:hidden" :class="{ '!block': $route.name === 'about' }" @click="toggleSidebar" />
+            <Icon  :icon="menuIcon" class="text-4xl lg:text-4xl lg:hidden" :class="{ '!block': $route.name === 'about', '!block': $route.name === 'map' }" @click="toggleSidebar" />
         </div>
     </header>
 </template>

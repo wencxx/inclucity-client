@@ -15,7 +15,7 @@
             <h1 class="text-center text-2xl text-white">Key Features and Functionalities</h1>
             <div class="grid lg:grid-cols-4 gap-10">
                 <div>
-                    <div class="bg-white h-fit lg:h-[37dvh] w-full rounded-xl shadow flex flex-col items-center p-10 gap-y-5">
+                    <div class="bg-white h-fit lg:h-fit w-full rounded-xl shadow flex flex-col items-center p-10 gap-y-5">
                         <div class="border px-10 py-1 rounded-full">
                             <Icon icon="mage:star-moving" class="text-5xl text-custom-primary" />
                         </div>
@@ -27,7 +27,7 @@
                     <p class="text-center mt-2">Online Platform for PWDs</p>
                 </div>
                 <div>
-                    <div class="bg-white h-fit lg:h-[37dvh] w-full rounded-xl shadow flex flex-col items-center p-10 gap-y-5">
+                    <div class="bg-white h-fit lg:h-fit w-full rounded-xl shadow flex flex-col items-center p-10 gap-y-5">
                         <div class="border px-10 py-1 rounded-full">
                             <Icon icon="fluent:form-20-regular" class="text-5xl text-custom-primary" />
                         </div>
@@ -39,7 +39,7 @@
                     <p class="text-center mt-2">Online Platform for PWDs</p>
                 </div>
                 <div>
-                    <div class="bg-white h-fit lg:h-[37dvh] w-full rounded-xl shadow flex flex-col items-center p-10 gap-y-5">
+                    <div class="bg-white h-fit lg:h-fit w-full rounded-xl shadow flex flex-col items-center p-10 gap-y-5">
                         <div class="border px-10 py-1 rounded-full">
                             <Icon icon="fluent:form-sparkle-20-regular" class="text-5xl text-custom-primary" />
                         </div>
@@ -51,7 +51,7 @@
                     <p class="text-center mt-2">Web-Based Management Information System for CSWDO CAD Office</p>
                 </div>
                 <div>
-                    <div class="bg-white h-fit lg:h-[37dvh] w-full rounded-xl shadow flex flex-col items-center p-10 gap-y-5">
+                    <div class="bg-white h-fit lg:h-fit w-full rounded-xl shadow flex flex-col items-center p-10 gap-y-5">
                         <div class="border px-10 py-1 rounded-full">
                             <Icon icon="guidance:calendar" class="text-5xl text-custom-primary" />
                         </div>
@@ -129,7 +129,7 @@
                     <p class="font-light text-justify">To provide social protection and promote the rights and welfare of the poor, vulnerable and the disadvantaged individual, family, and community to contribute to poverty alleviation and empowerment through SWD policies, programs, projects and services implemented with or through LGU's, NGO's, PO's, GO's and other members of civil society</p>
                 </div>
             </div>
-            <div class="lg:mt-10 z-30">
+            <div class="z-30">
                 <h1 class="text-custom-primary font-semibold text-xl -mb-2 uppercase">Vision</h1>
                 <div class="bg-yellow-800 rounded-xl !h-full p-5 text-center space-y-4">
                     <h1 class="font-semibold">Local government unit</h1>
@@ -138,7 +138,7 @@
                     <p class="font-light text-justify">A society where the poor, vulnerable, and disadvantaged families and communities are empowered for an improved quality of life.</p>
                 </div>
             </div>
-            <div class="lg:mt-20 z-30">
+            <div class="z-30">
                 <h1 class="text-custom-primary font-semibold text-xl -mb-2 uppercase">Objectives</h1>
                 <div class="bg-yellow-800 rounded-xl !h-full p-5 text-center space-y-4">
                     <div class="bg-custom-primary w-fit mx-auto px-4 py-2 text-white rounded-full">
@@ -151,7 +151,7 @@
                     <p class="font-light text-justify">To empower disadvantaged and most vulnerable families to attain self-reliance and achieve self management capabilities.</p>
                 </div>
             </div>
-            <div class="lg:mt-32 z-30">
+            <div class="z-30">
                 <h1 class="text-custom-primary font-semibold text-xl -mb-2 uppercase">Core values</h1>
                 <div class="bg-yellow-800 rounded-xl !h-full p-5 text-start space-y-4">
                     <ul class="list-disc list-inside">
