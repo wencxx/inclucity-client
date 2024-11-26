@@ -44,12 +44,38 @@
                     <input type="number" placeholder="639XXXXXXXXX" class="pl-3 border border-gray-500 h-10 rounded-md" v-model="contactNumber" required>
                 </div>
                 <div class="flex flex-col gap-y-1 w-3/4 md:w-2/5 lg:w-full">
+                    <label class="font-semibold text-lg">Municipality <span class="text-red-500 text-sm">*</span></label>
+                    <select class="pl-3 border border-gray-500 h-10 rounded-md" v-model="municipality" required>
+                        <option disabled value="">Select Municipality</option>
+                        <option>Angat</option>
+                        <option>Balagtas</option>
+                        <option>Baliwag</option>
+                        <option>Bocaue</option>
+                        <option>Bulakan</option>
+                        <option>Bustos</option>
+                        <option>Calumpit</option>
+                        <option>Dona Remedios Trinidad</option>
+                        <option>Guiguinto (BU)</option>
+                        <option>Hagonoy (BU)</option>
+                        <option>Malolos</option>
+                        <option>Marilao</option>
+                        <option>Meycauayan</option>
+                        <option>Norzagaray</option>
+                        <option>Obando</option>
+                        <option>Pandi</option>
+                        <option>Paombong</option>
+                        <option>Plaridel (BU)</option>
+                        <option>Pulilan</option>
+                        <option>San Ildefonso (BU)</option>
+                        <option>San Jose Del Monte</option>
+                        <option>San Miguel (BU)</option>
+                        <option>San Rafael (BU)</option>
+                        <option>Santa Maria (BU)</option>
+                    </select>
+                </div>
+                <div v-if="municipality === 'Malolos'" class="flex flex-col gap-y-1 w-3/4 md:w-2/5 lg:w-full">
                     <label class="font-semibold text-lg">Barangay <span class="text-red-500 text-sm">*</span></label>
                     <input type="text" placeholder="Address" class="pl-3 border border-gray-500 h-10 rounded-md" v-model="address" required>
-                </div>
-                <div class="flex flex-col gap-y-1 w-3/4 md:w-2/5 lg:w-full">
-                    <label class="font-semibold text-lg">Municipality <span class="text-red-500 text-sm">*</span></label>
-                    <input type="text" placeholder="Municipality" class="pl-3 border border-gray-500 h-10 rounded-md" v-model="municipality" required>
                 </div>
                 <div class="flex flex-col gap-y-1 w-3/4 md:w-2/5 lg:w-full">
                     <label class="font-semibold text-lg">Birthdate <span class="text-red-500 text-sm">*</span></label>
