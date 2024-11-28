@@ -2,7 +2,7 @@
     <section  class="dark:!bg-neutral-800 dark:!text-white relative" :class="{ 'h-screen bg-gray-100': isAuthenticated }">
         <Header :routePath="routePath" v-if="isAuthenticated" @toggleSidebar="isSidebarShowing = !isSidebarShowing" />
         <div class="lg:flex">
-          <Sidebar v-if="isSidebarShowing" class="lg:hidden" :class="{ '!flex': $route.name === 'about', '!flex': $route.name === 'map' }" />
+          <Sidebar v-if="isSidebarShowing" class="lg:hidden" :class="{ '!flex': $route.name === 'about' || $route.name === 'map' }" />
           <Sidebar v-if="isAuthenticated && $route.name !== 'about' && $route.name !== 'map'" class="hidden lg:block lg:relative lg:w-3/12" :class="{ '!hidden': $route.name === 'successful' }" />
           <router-view class="!lg:w-9/12" :class="{ '!w-full': $route.name === 'successful', '!w-full': !isAuthenticated }" />
         </div>
