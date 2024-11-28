@@ -50,7 +50,7 @@
             </div>
             <div class="text-center">
                 <p class="font-semibold">Current Address</p>
-                <p class="text-custom-secondary dark:!text-white font-medium capitalize">{{ user?.address + ', ' + user?.municipality }}</p>
+                <p class="text-custom-secondary dark:!text-white font-medium capitalize">{{ user?.municipality }}</p>
             </div>
         </div>
         <div class="flex flex-col gap-y-5 mt-10 items-center w-4/5 md:w-3/5 mx-auto mb-5">
