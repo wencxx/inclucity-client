@@ -1,31 +1,31 @@
 <template>
     <section class="h-[90dvh] flex flex-col md:flex-row gap-x-5 gap-y-5 items-center justify-center relative md:w-2/3 xl:w-full">
         <div class="absolute inset-0 bg-white bg-opacity-30"></div>
-        <button v-if="applicant && applicant.status !== 'rejected' && applicant.status !== 'expired'" @click="isApplicant()" class="z-20 h-fit flex flex-col justify-center lg:justify-start lg:py-5 px-10 gap-y-5 bg-custom-primary/75 w-[80dvw] md:w-[20dvw] lg:w-[25dvw] xl:w-[15dvw] p-2 text-start text-white rounded-xl border hover:bg-gray-100 min-h-36 hover:border-custom-primary hover:text-custom-primary">
+        <button v-if="applicant && applicant.status !== 'rejected' && applicant.status !== 'expired'" @click="isApplicant()" class="z-20 h-fit flex flex-col py-5 justify-center lg:justify-start px-10 gap-y-5 bg-custom-primary/75 w-[80dvw] md:w-[20dvw] lg:w-[25dvw] xl:w-[15dvw] p-2 text-start text-white rounded-xl border hover:bg-gray-100 min-h-36 hover:border-custom-primary hover:text-custom-primary">
             <div class="space-y-5 border h-full p-5">
                 <h2 class="text-lg font-bold text-center">New Application</h2>
                 <p class="text-sm text-justify">For new PWD ID applicants can apply by filling out the online form on our website.</p>
             </div>
         </button>
-        <router-link v-else :to="{ name: 'newApplicant' }" class="z-20 h-fit flex flex-col justify-center lg:justify-start lg:py-5 px-10 gap-y-5 bg-custom-primary/75 w-[80dvw] md:w-[20dvw] lg:w-[25dvw] xl:w-[15dvw] p-2 text-start text-white rounded-xl border hover:bg-gray-100 min-h-36 hover:border-custom-primary hover:text-custom-primary">
+        <router-link v-else :to="{ name: 'newApplicant' }" class="z-20 h-fit flex flex-col py-5 justify-center lg:justify-start lg:py-5 px-10 gap-y-5 bg-custom-primary/75 w-[80dvw] md:w-[20dvw] lg:w-[25dvw] xl:w-[15dvw] p-2 text-start text-white rounded-xl border hover:bg-gray-100 min-h-36 hover:border-custom-primary hover:text-custom-primary">
             <div class="space-y-5 border h-full p-5">
                 <h2 class="text-lg font-bold text-center">New Applicant</h2>
                 <p class="text-sm text-justify">For new PWD ID applicants can apply by filling out the online form on our website.</p>
             </div>
         </router-link>
-        <button v-if="applicant && applicant.status !== 'expired'" @click="isNotExpired()" class="z-20 h-fit flex flex-col justify-center lg:justify-start lg:py-5 px-10 gap-y-5 bg-custom-primary/75 w-[80dvw] md:w-[20dvw] lg:w-[25dvw] xl:w-[15dvw] p-2 text-start text-white rounded-xl border hover:bg-gray-100 min-h-36 hover:border-custom-primary hover:text-custom-primary">
+        <button v-if="applicant && applicant.status !== 'expired'" @click="isNotExpired()" class="z-20 h-fit flex flex-col py-5 justify-center lg:justify-start lg:py-5 px-10 gap-y-5 bg-custom-primary/75 w-[80dvw] md:w-[20dvw] lg:w-[25dvw] xl:w-[15dvw] p-2 text-start text-white rounded-xl border hover:bg-gray-100 min-h-36 hover:border-custom-primary hover:text-custom-primary">
             <div class="space-y-5 border h-full p-5">
                 <h2 class="text-lg font-bold text-center">Renewal</h2>
                 <p class="text-sm text-justify">For PWD ID holders can renew their IDs by filling out the online renewal form on our website. </p>
             </div>
         </button>
-        <button v-if="!applicant" @click="notApplicant()" class="z-20 h-fit flex flex-col justify-center lg:justify-start lg:py-5 px-10 gap-y-5 bg-custom-primary/75 w-[80dvw] md:w-[20dvw] lg:w-[25dvw] xl:w-[15dvw] p-2 text-start text-white rounded-xl border hover:bg-gray-100 min-h-36 hover:border-custom-primary hover:text-custom-primary">
+        <button v-if="!applicant" @click="notApplicant()" class="z-20 h-fit flex flex-col py-5 justify-center lg:justify-start lg:py-5 px-10 gap-y-5 bg-custom-primary/75 w-[80dvw] md:w-[20dvw] lg:w-[25dvw] xl:w-[15dvw] p-2 text-start text-white rounded-xl border hover:bg-gray-100 min-h-36 hover:border-custom-primary hover:text-custom-primary">
             <div class="space-y-5 border h-full p-5">
                 <h2 class="text-lg font-bold text-center">Renewal</h2>
                 <p class="text-sm text-justify">For PWD ID holders can renew their IDs by filling out the online renewal form on our website. </p>
             </div>
         </button>
-        <router-link v-if="applicant && applicant.status === 'expired'" :to="{ name: 'renewal' }" class="z-20 h-fit flex flex-col justify-center lg:justify-start lg:py-5 px-10 gap-y-5 bg-custom-primary/75 w-[80dvw] md:w-[20dvw] lg:w-[25dvw] xl:w-[15dvw] p-2 text-start text-white rounded-xl border hover:bg-gray-100 min-h-36 hover:border-custom-primary hover:text-custom-primary">
+        <router-link v-if="applicant && applicant.status === 'expired'" :to="{ name: 'renewal' }" class="z-20 h-fit flex flex-col py-5 justify-center lg:justify-start lg:py-5 px-10 gap-y-5 bg-custom-primary/75 w-[80dvw] md:w-[20dvw] lg:w-[25dvw] xl:w-[15dvw] p-2 text-start text-white rounded-xl border hover:bg-gray-100 min-h-36 hover:border-custom-primary hover:text-custom-primary">
             <div class="space-y-5 border h-full p-5">
                 <h2 class="text-lg font-bold text-center">New Application</h2>
                 <p class="text-sm text-justify">For PWD ID holders can renew their IDs by filling out the online renewal form on our website. </p>

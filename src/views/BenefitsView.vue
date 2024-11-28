@@ -1,7 +1,7 @@
 <template>
     <div class="md:w-2/3 xl:w-full font-poppins flex flex-col items-center gap-y-5 mx-auto">
         <div id="reqContainer" class="h-[86dvh] w-full overflow-y-scroll overflow-x-hidden">
-            <div class="h-[50dvh]">
+            <div class="lg:h-[60dvh]">
                 <img src="../assets/benefits.png" alt="faq" class="w-full h-full">
             </div>
             <div class="w-full p-5 flex flex-col items-center gap-y-10 mt-36 lg:px-20">
@@ -12,6 +12,13 @@
                     <br>
                     <h1 class="text-2xl lg:text-4xl font-bold tracking-wide"> 20% Discount and Value Added Tax (VAT) Exemption</h1>
                     <p class="text-justify">The 20% discount and VAT exemption for Persons with Disabilities (PWDs) in the Philippines cover a wide range of essential goods and services. Below are the specific categories where these benefits apply:</p>
+                </div>
+                <div class="bg-white rounded-xl shadow-md lg:w-3/4 h-fit flex gap-x-10 p-5">
+                    <img src="../assets/foods.png" alt="dental" class="w-40 aspect-auto">
+                    <div class="flex flex-col justify-center gap-y-5">
+                        <h1 class="font-bold text-2xl">Food, Beverages, and Consumable Food Items</h1>
+                        <p class="font-medium">PWDs are entitled to a 20% discount and VAT exemption on the purchase of food, drinks, desserts, and other consumable food products when dining out in restaurants, cafes, and similar establishments. This applies whether the food is consumed on the premises or taken out.</p>
+                    </div>
                 </div>
                 <div class="bg-white rounded-xl shadow-md lg:w-3/4 h-fit flex gap-x-10 p-5">
                     <div class="flex flex-col justify-center gap-y-5">

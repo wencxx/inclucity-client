@@ -2,12 +2,12 @@
     <div class="md:w-2/3 xl:w-full font-poppins flex flex-col items-center gap-y-5 mx-auto">
         <div id="reqContainer" class="h-[86dvh] overflow-y-scroll overflow-x-hidden">
             <div class="relative h-[50dvh]">
-                <img src="../assets/faq.jpg" alt="faq" class="w-full h-full">
+                <img src="../assets/faq.jpg" alt="faq" class="w-full h-full object-cover opacity-75">
                 <div class="absolute top-1/2 left-1/2 -translate-x-1/2 -translate-y-1/2 w-3/4">
                     <h1 class="text-5xl text-center text-custom-primary font-bold text-outline">Frequently Askeds Questions</h1>
                 </div>
             </div>
-            <div class=" w-10/12 lg:w-1/2 mx-auto rounded p-5 flex flex-col gap-y-5 mt-14 lg:px-20 bg-white">
+            <div class="w-10/12 lg:w-3/4 mx-auto rounded p-5 flex flex-col gap-y-5 mt-14 lg:px-20 bg-white">
                 <!-- Accordion Item 1 -->
                 <div class="border-b border-gray-500 px-2 pb-3">
                     <button @click="toggleAccordion(1)" class="w-full flex justify-between items-center py-2 text-black">
@@ -15,7 +15,7 @@
                             <div class="bg-blue-500 px-3 py-1 text-white rounded-full">
                                 1
                             </div>
-                            What is a PWD ID?
+                            <span class="text-lg">What is a PWD ID?</span>
                         </span>
                         <span class="text-black">
                             <Icon id="icon-1" icon="ri:arrow-down-s-line" class="text-xl duration-300 text-custom-primary" />
@@ -24,7 +24,7 @@
                     <div id="content-1" class="max-h-0 overflow-hidden transition-all duration-300 ease-in-out">
                         <div class="pb-5 text-sm text-black">
                             <img src="../assets/PWD_ID_Card-e1578482221310.webp" alt="">
-                            <span>
+                            <span class="text-lg">
                                 The PWD ID is the standard identification card for persons with disability (PWDs) in the Philippines. It's issued by the Persons with Disability Affairs Office (PDAO) or the city/municipal Social Welfare and Development Office where the cardholder lives. Cardholders can use this card to avail of PWD discounts and other benefits as mandated by the law.
                                 <br><br>
                                 The PWD ID is free of charge when issued for the first time. There's a minimal fee for PWD ID renewal due to expiration, damage, or loss of card.
@@ -39,7 +39,7 @@
                             <div class="bg-blue-500 px-3 py-1 text-white rounded-full">
                                 2
                             </div>
-                            How Long is the Validity of the PWD ID Card
+                            <span class="text-lg">How Long is the Validity of the PWD ID Card</span>
                         </span>
                         <span class="text-black">
                             <Icon id="icon-2" icon="ri:arrow-down-s-line" class="text-xl duration-300 text-custom-primary" />
@@ -47,7 +47,7 @@
                     </button>
                     <div id="content-2" class="max-h-0 overflow-hidden transition-all duration-300 ease-in-out">
                         <div class="pb-5 text-sm text-black">
-                            <span>Based on the guidelines under the National Council on Disability Affairs, PWDs are required to renew their PWD IDs every five years.</span>
+                            <span class="text-lg">Based on the guidelines under the National Council on Disability Affairs, PWDs are required to renew their PWD IDs every five years.</span>
                         </div>
                     </div>
                 </div>
@@ -58,7 +58,7 @@
                             <div class="bg-blue-500 px-3 py-1 text-white rounded-full">
                                 3
                             </div>
-                            Who Can Get a PWD ID?
+                            <span class="text-lg">Who Can Get a PWD ID?</span>
                         </span>
                         <span class="text-black">
                             <Icon id="icon-3" icon="ri:arrow-down-s-line" class="text-xl duration-300 text-custom-primary" />
@@ -66,7 +66,7 @@
                     </button>
                     <div id="content-3" class="max-h-0 overflow-hidden transition-all duration-300 ease-in-out">
                         <div class="pb-5 text-sm text-black">
-                            <span>
+                            <span class="text-lg">
                                 Who is considered a PWD? Any Filipino with a permanent disability can apply for a PWD ID. Republic Act 10754[2] defines persons with disability as those with "long-term physical, mental, intellectual, or sensory impairments" that interfere with their interactions in society.</span><br><br>
                             <span class="font-bold">PWD List of Disabilities in the Philippines.</span><br><br>
                             <span class="font-bold">The Department of Health (DOH) considers those with the following types of disabilities eligible for a PWD ID:</span><br><br>
@@ -89,7 +89,7 @@
                             <div class="bg-blue-500 px-3 py-1 text-white rounded-full">
                                 4
                             </div>
-                            How to Get a PWD ID?
+                            <span class="text-lg">How to Get a PWD ID?</span>
                         </span>
                         <span class="text-black">
                             <Icon id="icon-4" icon="ri:arrow-down-s-line" class="text-xl duration-300 text-custom-primary" />
@@ -176,7 +176,7 @@
                             <div class="bg-blue-500 px-3 py-1 text-white rounded-full">
                                 5
                             </div>
-                            Is a PWD ID considered a valid ID?
+                            <span class="text-lg">Is a PWD ID considered a valid ID?</span>
                         </span>
                         <span class="text-black">
                             <Icon id="icon-5" icon="ri:arrow-down-s-line" class="text-xl duration-300 text-custom-primary" />
@@ -184,7 +184,7 @@
                     </button>
                     <div id="content-5" class="max-h-0 overflow-hidden transition-all duration-300 ease-in-out">
                         <div class="pb-5 text-sm text-black">
-                        <span>Yes, it’s accepted as a valid ID in most government and private transactions.</span>
+                        <span class="text-lg">Yes, it’s accepted as a valid ID in most government and private transactions.</span>
                         </div>
                     </div>
                 </div>
@@ -195,7 +195,7 @@
                             <div class="bg-blue-500 px-3 py-1 text-white rounded-full">
                                 6
                             </div>
-                            Do persons with disabilities have PhilHealth coverage?
+                            <span class="text-lg">Do persons with disabilities have PhilHealth coverage?</span>
                         </span>
                         <span class="text-black">
                             <Icon id="icon-6" icon="ri:arrow-down-s-line" class="text-xl duration-300 text-custom-primary" />
@@ -203,7 +203,7 @@
                     </button>
                     <div id="content-6" class="max-h-0 overflow-hidden transition-all duration-300 ease-in-out">
                         <div class="pb-5 text-sm text-black">
-                        <span>Yes, they have automatic and mandatory PhilHealth coverage. </span>
+                        <span class="text-lg">Yes, they have automatic and mandatory PhilHealth coverage. </span>
                         </div>
                     </div>
                 </div>
@@ -214,7 +214,7 @@
                             <div class="bg-blue-500 px-3 py-1 text-white rounded-full">
                                 7
                             </div>
-                            Do I still need to go to the Municipal/City Social Welfare Development Office if I apply for my PWD ID Online?
+                            <span class="text-lg">Do I still need to go to the Municipal/City Social Welfare Development Office if I apply for my PWD ID Online?</span>
                         </span>
                         <span class="text-black">
                             <Icon id="icon-7" icon="ri:arrow-down-s-line" class="text-xl duration-300 text-custom-primary" />
@@ -222,7 +222,7 @@
                     </button>
                     <div id="content-7" class="max-h-0 overflow-hidden transition-all duration-300 ease-in-out">
                         <div class="pb-5 text-sm text-black">
-                        <span>Yes. A successful PWD ID online application doesn’t mean you’ll be automatically issued a PWD ID. You still need to go to your Municipal or City Social Welfare Development Office to complete the process and receive the PWD ID.</span>
+                        <span class="text-lg">Yes. A successful PWD ID online application doesn’t mean you’ll be automatically issued a PWD ID. You still need to go to your Municipal or City Social Welfare Development Office to complete the process and receive the PWD ID.</span>
                         </div>
                     </div>
                 </div>
@@ -233,7 +233,7 @@
                             <div class="bg-blue-500 px-3 py-1 text-white rounded-full">
                                 8
                             </div>
-                            How do I verify the status of my PWD ID card?
+                            <span class="text-lg">How do I verify the status of my PWD ID card?</span>
                         </span>
                         <span class="text-black">
                             <Icon id="icon-8" icon="ri:arrow-down-s-line" class="text-xl duration-300 text-custom-primary" />
@@ -241,7 +241,7 @@
                     </button>
                     <div id="content-8" class="max-h-0 overflow-hidden transition-all duration-300 ease-in-out">
                         <div class="pb-5 text-sm text-black">
-                        <span>Go to the Department of Health's Philippine Registry for Persons with Disability at pwd.doh.gov.ph/home.php. Click ID Verification and enter your ID number to check the status of your PWD ID.</span>
+                        <span class="text-lg">Go to the Department of Health's Philippine Registry for Persons with Disability at pwd.doh.gov.ph/home.php. Click ID Verification and enter your ID number to check the status of your PWD ID.</span>
                         </div>
                     </div>
                 </div>
@@ -252,7 +252,7 @@
                             <div class="bg-blue-500 px-3 py-1 text-white rounded-full">
                                 9
                             </div>
-                            What if the PWD is bedridden and can’t go to the Municipal/City Social Welfare Development Office?
+                            <span class="text-lg">What if the PWD is bedridden and can’t go to the Municipal/City Social Welfare Development Office?</span>
                         </span>
                         <span class="text-black">
                             <Icon id="icon-9" icon="ri:arrow-down-s-line" class="text-xl duration-300 text-custom-primary" />
@@ -260,7 +260,7 @@
                     </button>
                     <div id="content-9" class="max-h-0 overflow-hidden transition-all duration-300 ease-in-out">
                         <div class="pb-5 text-sm text-black">
-                            <span>Their designated guardian can go instead. Just present an authorization letter and other documentary requirements on behalf of the PWD.</span>
+                            <span class="text-lg">Their designated guardian can go instead. Just present an authorization letter and other documentary requirements on behalf of the PWD.</span>
                         </div>
                     </div>
                 </div>
@@ -271,7 +271,7 @@
                             <div class="bg-blue-500 px-3 py-1 text-white rounded-full">
                                 10
                             </div>
-                            I lost my PWD ID. What should I do?
+                            <span class="text-lg">I lost my PWD ID. What should I do?</span>
                         </span>
                         <span class="text-black">
                             <Icon id="icon-10" icon="ri:arrow-down-s-line" class="text-xl duration-300 text-custom-primary" />
@@ -279,7 +279,7 @@
                     </button>
                     <div id="content-10" class="max-h-0 overflow-hidden transition-all duration-300 ease-in-out">
                         <div class="pb-5 text-sm text-black">
-                            <span>Get a notarized Affidavit of Loss and present this at your PDAO with your purchase booklet and a valid ID.</span>
+                            <span class="text-lg">Get a notarized Affidavit of Loss and present this at your PDAO with your purchase booklet and a valid ID.</span>
                         </div>
                     </div>
                 </div>
@@ -290,7 +290,7 @@
                             <div class="bg-blue-500 px-3 py-1 text-white rounded-full">
                                 11
                             </div>
-                            Where do I report a fake PWD ID?
+                            <span class="text-lg">Where do I report a fake PWD ID?</span>
                         </span>
                         <span class="text-black">
                             <Icon id="icon-11" icon="ri:arrow-down-s-line" class="text-xl duration-300 text-custom-primary" />
@@ -298,7 +298,7 @@
                     </button>
                     <div id="content-11" class="max-h-0 overflow-hidden transition-all duration-300 ease-in-out">
                         <div class="pb-5 text-sm text-black">
-                            <span>The Social Welfare Department requests the public to report any incidents involving the sale of fake PWD IDs to the NCDA (through council@ncda.gov.ph), PDAO, or any law enforcement agency.</span>
+                            <span class="text-lg">The Social Welfare Department requests the public to report any incidents involving the sale of fake PWD IDs to the NCDA (through council@ncda.gov.ph), PDAO, or any law enforcement agency.</span>
                         </div>
                     </div>
                 </div>
@@ -309,7 +309,7 @@
                             <div class="bg-blue-500 px-3 py-1 text-white rounded-full">
                                 12
                             </div>
-                            Are those with a psychosocial or learning disability entitled to PWD benefits?
+                            <span class="text-lg">Are those with a psychosocial or learning disability entitled to PWD benefits?</span>
                         </span>
                         <span class="text-black">
                             <Icon id="icon-12" icon="ri:arrow-down-s-line" class="text-xl duration-300 text-custom-primary" />
@@ -317,10 +317,10 @@
                     </button>
                     <div id="content-12" class="max-h-0 overflow-hidden transition-all duration-300 ease-in-out">
                         <div class="pb-5 text-sm text-black">
-                            <span>Yes. PWDs with disabilities other than physical ones can get a PWD ID and enjoy the privileges that come with it.</span><br><br>
-                            <span>Take the case of an owner of a restaurant in Makati who posted her experience with a customer who presented a PWD ID card.[6] She mentioned that the customer looked “pretty able-bodied.” She added that she felt it was too easy to get a PWD card and that it was being abused.</span><br><br>
-                            <span>In the now-deleted post, the restaurant owner attached a photo of the PWD card, which stated that the ID bearer has a “psychosocial disability.” The post blew up when netizens shared their thoughts about disabilities, which aren't always visibly seen or noticed. The restaurant owner has since issued an apology for her unfair judgment.</span><br><br>
-                            <span>If you’re someone with psychosocial, learning, mental, or intellectual disabilities and an establishment doesn’t honor your PWD ID, report the incident to the NCDA via email.</span>
+                            <span class="text-lg">Yes. PWDs with disabilities other than physical ones can get a PWD ID and enjoy the privileges that come with it.</span><br><br>
+                            <span class="text-lg">Take the case of an owner of a restaurant in Makati who posted her experience with a customer who presented a PWD ID card.[6] She mentioned that the customer looked “pretty able-bodied.” She added that she felt it was too easy to get a PWD card and that it was being abused.</span><br><br>
+                            <span class="text-lg">In the now-deleted post, the restaurant owner attached a photo of the PWD card, which stated that the ID bearer has a “psychosocial disability.” The post blew up when netizens shared their thoughts about disabilities, which aren't always visibly seen or noticed. The restaurant owner has since issued an apology for her unfair judgment.</span><br><br>
+                            <span class="text-lg">If you’re someone with psychosocial, learning, mental, or intellectual disabilities and an establishment doesn’t honor your PWD ID, report the incident to the NCDA via email.</span>
                         </div>
                     </div>
                 </div>
@@ -331,7 +331,7 @@
                             <div class="bg-blue-500 px-3 py-1 text-white rounded-full">
                                 12
                             </div>
-                            Are PWDs exempted from Expanded Number Coding?
+                            <span class="text-lg">Are PWDs exempted from Expanded Number Coding?</span>
                         </span>
                         <span class="text-black">
                             <Icon id="icon-13" icon="ri:arrow-down-s-line" class="text-xl duration-300 text-custom-primary" />
@@ -339,7 +339,7 @@
                     </button>
                     <div id="content-13" class="max-h-0 overflow-hidden transition-all duration-300 ease-in-out">
                         <div class="pb-5 text-sm text-black">
-                            <span>According to the MMDA, senior citizens and persons with disabilities are no longer exempted. Instead, PWDs and senior citizens can use the window hours of 10:01 a.m. until before 5 p.m. to travel. </span>
+                            <span class="text-lg">According to the MMDA, senior citizens and persons with disabilities are no longer exempted. Instead, PWDs and senior citizens can use the window hours of 10:01 a.m. until before 5 p.m. to travel. </span>
                         </div>
                     </div>
                 </div>
@@ -350,7 +350,7 @@
                             <div class="bg-blue-500 px-3 py-1 text-white rounded-full">
                                 13
                             </div>
-                            Are online purchases eligible for the PWD discount?
+                            <span class="text-lg">Are online purchases eligible for the PWD discount?</span>
                         </span>
                         <span class="text-black">
                             <Icon id="icon-14" icon="ri:arrow-down-s-line" class="text-xl duration-300 text-custom-primary" />
@@ -358,8 +358,8 @@
                     </button>
                     <div id="content-14" class="max-h-0 overflow-hidden transition-all duration-300 ease-in-out">
                         <div class="pb-5 text-sm text-black">
-                            <span>Yes. Under the Joint Memorandum No. 1 Series of 2002, PWDs can avail of the 20% discount on their purchases of essential goods and commodities through online platforms.</span><br><br>
-                            <span>Reference:</span><br>
+                            <span class="text-lg">Yes. Under the Joint Memorandum No. 1 Series of 2002, PWDs can avail of the 20% discount on their purchases of essential goods and commodities through online platforms.</span><br><br>
+                            <span class="text-lg">Reference:</span><br>
                             <a class="text-blue-500" href="https://www.moneymax.ph/government-services/articles/pwd-id-application
 https://digido.ph/articles/pwd-id#How_Long_is_the_Validity_of_the_PWD_ID_Card
 ">https://www.moneymax.ph/government-services/articles/pwd-id-application
@@ -400,6 +400,15 @@ function toggleAccordion(index) {
     display: none;
 }
 .text-outline {
-  text-shadow: 1px 1px 2px white, -1px -1px 2px white, 1px -1px 2px white, -1px 1px 2px white;
+  text-shadow: 
+    2px 2px 0 white, 
+    -2px -2px 0 white, 
+    2px -2px 0 white, 
+    -2px 2px 0 white, 
+    2px 0 0 white, 
+    -2px 0 0 white, 
+    0 2px 0 white, 
+    0 -2px 0 white;
 }
+
 </style>

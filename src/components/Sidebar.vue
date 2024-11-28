@@ -61,7 +61,7 @@
             </router-link>
             <router-link :to="{ name: 'map' }" class="flex items-center gap-x-2 text-xl hover:bg-white/[0.20] p-10 py-2">
                 <Icon icon="tabler:map-2" class="text-3xl" />
-                <span>Map Directory</span>
+                <span>Directory Map</span>
             </router-link>
             <!-- <router-link :to="{ name: 'login' }" class="flex items-center gap-x-2 text-xl hover:bg-white/[0.20] p-10 py-2">
                 <Icon icon="carbon:settings" class="text-3xl" />
@@ -181,7 +181,7 @@ const logout = () => {
 
 <style scoped>
 .router-link-active {
-    background-color: rgba(255, 255, 255, .2);
+    background-color: lightgray;
 }
 .overflow-auto::-webkit-scrollbar {
     display: none;
