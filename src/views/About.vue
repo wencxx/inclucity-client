@@ -99,10 +99,10 @@
                 </ul>
             </div>
         </div>
-        <div class="px-5 lg:px-20 mt-10 overflow-hidden">
+        <div class="px-5 lg:px-20 mt-10">
             <img src="../assets/Final Banner.jpeg" alt="banner" class="w-full rounded-xl">
         </div>
-        <div class="px-5 lg:px-20 mt-5 overflow-hidden space-y-5">
+        <div class="px-5 lg:px-20 mt-5 space-y-5">
             <p class="text-justify">IncluCity was born out of the collective vision and determination of a group of fourth-year Bachelor of Science in Information Technology students, specializing in Service Management. The project began in February 2024, with a mission to serve the Municipality of Malolos, Bulacan, and to bring meaningful change to the lives of Persons with Disabilities (PWDs) through a web-based platform aimed at supporting the City Social Welfare and Development Office (CSWDO). This system wasn’t just a course requirement—it was a heartfelt commitment to create a better, more inclusive community for everyone.
             </p>
             <div class="lg:flex gap-x-20">
