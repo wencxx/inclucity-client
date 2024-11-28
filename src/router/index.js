@@ -8,6 +8,7 @@ import HomeView from '../views/HomeView.vue'
 import NewsDetailsView from '../views/NewsDetailsView.vue'
 import ApplicatonView from '../views/ApplicationView.vue'
 import NewApplicantView from '../views/NewApplicantView.vue'
+import ResubmitView from '../views/Resubmit.vue'
 import RenewalView from '../views/RenewalView2.vue'
 import NotificationsView from '../views/NotificationsView.vue'
 import NotificationsDetailsView from '../views/NotificationsDetailsView.vue'
@@ -118,6 +119,14 @@ const routes = [
         path: '/application',
         name: 'application',
         component: ApplicatonView,
+        meta: {
+            requiresAuth: true
+        }
+    },
+    {
+        path: '/resubmit',
+        name: 'resubmit',
+        component: ResubmitView,
         meta: {
             requiresAuth: true
         }
