@@ -3,6 +3,9 @@
         <div v-if="hasEmptyFields" class="w-full lg:w-1/2 lg:mx-auto flex flex-col gap-y-5 font-manrope text-lg">
             <p class="bg-red-500 text-white pl-2 rounded py-1">Fill out all required fields</p>
         </div>
+        <div v-if="alreadySubmitted" class="w-full lg:w-1/2 lg:mx-auto flex flex-col gap-y-5 font-manrope text-lg mb-10">
+            <p class="bg-red-500 text-white pl-2 rounded py-1">Failed to update application</p>
+        </div>
         <!-- second step -->
         <div v-if="$route.query.reason === 'Invalid Forms'">
             <div v-if="currentPage == 1" class="w-full lg:w-1/2 lg:mx-auto flex flex-col gap-y-5 font-manrope text-lg">
@@ -349,7 +352,7 @@
             </div>
         </div>
         <!-- fourteenth step -->
-        <div v-if="reason !== 'Invalid Forms'" class="w-full lg:w-1/2 lg:mx-auto flex flex-col gap-y-5 font-manrope text-lg">
+        <div v-if="$route.query.reason !== 'Invalid Forms'" class="w-full lg:w-1/2 lg:mx-auto flex flex-col gap-y-5 font-manrope text-lg">
             <div class="space-y-5 flex flex-col items-center">
                 <div v-if="$route.query.reason === 'Invalid 1x1 Picture'" class="flex flex-col gap-y-1 w-fit">
                     <label class="font-semibold">Upload 1x1 photo *</label>
@@ -363,9 +366,12 @@
                     <label class="font-semibold">Upload Barangay Certificate *</label>
                     <input type="file" class="h-10 rounded" accept=".jpg, .jpeg, .png" @change="handleImageUpload('barangayCert', $event)">
                 </div>
-                <button @click="sendApplication()" class="flex items-center justify-center gap-x-2 bg-custom-primary text-white text-xl w-1/2 py-1 pr-1 rounded-md">
+                <button v-if="!loadingSubmitting" @click="sendApplication()" class="flex items-center justify-center gap-x-2 bg-custom-primary text-white text-xl w-1/2 py-1 pr-1 rounded-md">
                     <span>Submit</span>
                     <Icon icon="bi:send-arrow-up" class="text-xl" />
+                </button>
+                <button v-if="loadingSubmitting" class="flex items-center justify-center gap-x-2 bg-custom-primary text-white text-xl w-1/2 py-1 pr-1 rounded-md animate-pulse" disabled>
+                    <span>Loading...</span>
                 </button>
             </div>
         </div>
@@ -374,9 +380,9 @@
 
 <script setup>
 import axios from "axios";
-import { onMounted, onUnmounted, ref, watch } from "vue";
+import { computed, onMounted, onUnmounted, ref, watch } from "vue";
 import { useRoute, useRouter } from 'vue-router'
-import { useApplicationStore } from '../store'
+import { useApplicationStore, useAuthStore } from '../store'
 const serverUrl = import.meta.env.VITE_SERVER_URL
 
 const disabilities = ref([])
@@ -394,6 +400,8 @@ const getDisabilities = async () => {
 }
 
 const appStore = useApplicationStore()
+const authStore = useAuthStore()
+const currentUser = computed(() => authStore.user)
 
 const route = useRoute()
 const router = useRouter()
@@ -775,83 +783,91 @@ const loadingSubmitting = ref(false)
 const sendApplication = async () => {
     const applicationData = new FormData()
 
-    applicationData.append('firstName', firstName.value);
-    applicationData.append('middleName', middleName.value);
-    applicationData.append('lastName', lastName.value);
-    applicationData.append('suffix', suffix.value);
-    applicationData.append('dateOfBirth', dateOfBirth.value);
-    applicationData.append('gender', gender.value);
-    applicationData.append('civilStatus', civilStatus.value);
-    applicationData.append('typeOfDisability', typeOfDisability.value);
-    if(causeOfDisability.value === 'Others'){
-        applicationData.append('causeOfDisability','');
-        applicationData.append('otherCauseOfDisability', otherCauseOfDisability.value);
-    }else{
-        applicationData.append('causeOfDisability', causeOfDisability.value);
-        applicationData.append('otherCauseOfDisability', otherCauseOfDisability.value);
+    if(route.query.reason === 'Invalid Barangay Certificate'){
+        applicationData.append('barangayCert', barangayCert.value);
+        applicationData.append('reason', 'Invalid Barangay Certificate');
+    }else if(route.query.reason === 'Invalid Medical Certificate'){
+        applicationData.append('medicalCert', medicalCert.value);
+        applicationData.append('reason', 'Invalid Medical Certificate');
+    }else if(route.query.reason === 'Invalid 1x1 Picture'){
+        applicationData.append('photo1x1', photo1x1.value);
+        applicationData.append('reason', 'Invalid 1x1 Picture');
+    }else if(route.query.reason === 'Invalid Forms'){
+        applicationData.append('firstName', firstName.value);
+        applicationData.append('middleName', middleName.value);
+        applicationData.append('lastName', lastName.value);
+        applicationData.append('suffix', suffix.value);
+        applicationData.append('dateOfBirth', dateOfBirth.value);
+        applicationData.append('gender', gender.value);
+        applicationData.append('civilStatus', civilStatus.value);
+        applicationData.append('typeOfDisability', typeOfDisability.value);
+        if(causeOfDisability.value === 'Others'){
+            applicationData.append('causeOfDisability','');
+            applicationData.append('otherCauseOfDisability', otherCauseOfDisability.value);
+        }else{
+            applicationData.append('causeOfDisability', causeOfDisability.value);
+            applicationData.append('otherCauseOfDisability', otherCauseOfDisability.value);
+        }
+        applicationData.append('houseNoAndStreet', houseNoAndStreet.value);
+        applicationData.append('barangay', barangay.value);
+        applicationData.append('municipalityCity', 'Malolos');
+        applicationData.append('province', 'Bulacan');
+        applicationData.append('region', 'Central Luzon (Region 3)');
+        applicationData.append('landlineNo', landlineNo.value);
+        applicationData.append('mobileNo', mobileNo.value);
+        applicationData.append('emailAddress', emailAddress.value);
+        applicationData.append('educationalAttainment', educationalAttainment.value);
+        applicationData.append('statusOfEmployment', statusOfEmployment.value);
+        applicationData.append('categoryOfEmployment', categoryOfEmployment.value);
+        applicationData.append('typeOfEmployment', typeOfEmployment.value);
+        applicationData.append('occupation', occupation.value);
+        applicationData.append('otherOccupation', otherOccupation.value);
+        applicationData.append('organizationAffiliated', organizationAffiliated.value);
+        applicationData.append('contactInformation', contactInformation.value);
+        applicationData.append('officeAddress', officeAddress.value);
+        applicationData.append('telNo', telNo.value);
+        applicationData.append('sssNo', sssNo.value);
+        applicationData.append('gsisNo', gsisNo.value);
+        applicationData.append('pagibigNo', pagibigNo.value);
+        applicationData.append('psnNo', psnNo.value);
+        applicationData.append('philhealthNo', philhealthNo.value);
+        applicationData.append('fathersLname', fathersLname.value);
+        applicationData.append('fathersFname', fathersFname.value);
+        applicationData.append('fathersMname', fathersMname.value);
+        applicationData.append('mothersLname', mothersLname.value);
+        applicationData.append('mothersFname', mothersFname.value);
+        applicationData.append('mothersMname', mothersMname.value);
+        applicationData.append('guardiansLname', guardiansLname.value);
+        applicationData.append('guardiansFname', guardiansFname.value);
+        applicationData.append('guardiansMname', guardiansMname.value);
+        applicationData.append('accomplishedBy', accomplishedBy.value);
+        applicationData.append('accomplishedByLname', accomplishedByLname.value);
+        applicationData.append('accomplishedByFname', accomplishedByFname.value);
+        applicationData.append('accomplishedByMname', accomplishedByMname.value);
+        applicationData.append('physicianByLname', physicianByLname.value);
+        applicationData.append('physicianByFname', physicianByFname.value);
+        applicationData.append('physicianByMname', physicianByMname.value);
+        applicationData.append('reason', 'Invalid Forms');
     }
-    applicationData.append('houseNoAndStreet', houseNoAndStreet.value);
-    applicationData.append('barangay', barangay.value);
-    applicationData.append('municipalityCity', 'Malolos');
-    applicationData.append('province', 'Bulacan');
-    applicationData.append('region', 'Central Luzon (Region 3)');
-    applicationData.append('landlineNo', landlineNo.value);
-    applicationData.append('mobileNo', mobileNo.value);
-    applicationData.append('emailAddress', emailAddress.value);
-    applicationData.append('educationalAttainment', educationalAttainment.value);
-    applicationData.append('statusOfEmployment', statusOfEmployment.value);
-    applicationData.append('categoryOfEmployment', categoryOfEmployment.value);
-    applicationData.append('typeOfEmployment', typeOfEmployment.value);
-    applicationData.append('occupation', occupation.value);
-    applicationData.append('otherOccupation', otherOccupation.value);
-    applicationData.append('organizationAffiliated', organizationAffiliated.value);
-    applicationData.append('contactInformation', contactInformation.value);
-    applicationData.append('officeAddress', officeAddress.value);
-    applicationData.append('telNo', telNo.value);
-    applicationData.append('sssNo', sssNo.value);
-    applicationData.append('gsisNo', gsisNo.value);
-    applicationData.append('pagibigNo', pagibigNo.value);
-    applicationData.append('psnNo', psnNo.value);
-    applicationData.append('philhealthNo', philhealthNo.value);
-    applicationData.append('fathersLname', fathersLname.value);
-    applicationData.append('fathersFname', fathersFname.value);
-    applicationData.append('fathersMname', fathersMname.value);
-    applicationData.append('mothersLname', mothersLname.value);
-    applicationData.append('mothersFname', mothersFname.value);
-    applicationData.append('mothersMname', mothersMname.value);
-    applicationData.append('guardiansLname', guardiansLname.value);
-    applicationData.append('guardiansFname', guardiansFname.value);
-    applicationData.append('guardiansMname', guardiansMname.value);
-    applicationData.append('accomplishedBy', accomplishedBy.value);
-    applicationData.append('accomplishedByLname', accomplishedByLname.value);
-    applicationData.append('accomplishedByFname', accomplishedByFname.value);
-    applicationData.append('accomplishedByMname', accomplishedByMname.value);
-    applicationData.append('physicianByLname', physicianByLname.value);
-    applicationData.append('physicianByFname', physicianByFname.value);
-    applicationData.append('physicianByMname', physicianByMname.value);
-    applicationData.append('photo1x1', photo1x1.value);
-    applicationData.append('medicalCert', medicalCert.value);
-    applicationData.append('barangayCert', barangayCert.value);
-    applicationData.append('typeOfApplicant', 'new');
 
     try {
         loadingSubmitting.value = true
-        const res = await axios.post(`${serverUrl}/send-application`, applicationData, {
+        const res = await axios.patch(`${serverUrl}/resubmit-application`, applicationData, {
             headers:{
                 "Authorization": `Bearer ${localStorage.getItem('token')}`,
                 "Content-Type": 'multipart/form-data'
             }
         }) 
 
-        if(res.data === 'already submitted') return alreadySubmitted.value = true
+        if(res.data === 'Failed to update application.') return alreadySubmitted.value = true
 
-        if(res.data.status === 'created'){
+        if(res.data.status === 'Updated Successfully'){
             removeDataFromLocalStorage()
             appStore.getApplication()  
             router.push({
                 path: '/successful',
                 query: {
-                    t: 'new-applicant',
+                    t: 'resubmit-applicant',
                     applicationNo: res.data.applicantNumber
                 }
             })
