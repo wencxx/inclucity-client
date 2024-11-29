@@ -861,7 +861,7 @@ const sendApplication = async () => {
 
         if(res.data === 'Failed to update application.') return alreadySubmitted.value = true
 
-        if(res.data.status === 'Updated Successfully'){
+        if(res.data === 'Updated Successfully'){
             removeDataFromLocalStorage()
             appStore.getApplication()  
             router.push({

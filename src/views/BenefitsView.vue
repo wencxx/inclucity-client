@@ -4,7 +4,7 @@
             <div class="lg:h-[60dvh]">
                 <img src="../assets/benefits.png" alt="faq" class="w-full h-full">
             </div>
-            <div class="w-full p-5 flex flex-col items-center gap-y-10 mt-36 lg:px-20">
+            <div class="w-full p-5 flex flex-col items-center gap-y-10 mt-36 lg:px-10 xl:px-20">
                 <div class="lg:w-3/4">
                     <p class="font-medium tracking-wide lg:text-lg">BENEFITS OF PWD ID CARD HOLDER</p>
                     <h1 class="text-2xl lg:text-4xl font-bold tracking-wide">PWD Benefits in the Philippines 2024</h1>
@@ -137,6 +137,7 @@
                 <hr class="lg:w-3/4 border-2">
                 <div class="lg:w-3/4">
                     <h1 class="text-2xl lg:text-4xl text-center font-bold tracking-wide">Additional Benefits</h1>
+                    <img src="../assets/35.png" alt="">
                     <br><br>
                     <h1 class="lg:text-lg font-bold">Tax Benefits</h1>
                     <p>Income Tax Deduction: Parents or guardians of PWDs can claim an additional tax deduction for each dependent PWD under their care. This tax benefit aims to reduce the financial burden on families supporting PWDs by lowering their taxable income. Exemption from Documentary Stamp Tax: PWDs are exempt from paying documentary stamp tax on transactions related to loans, remittances, and other financial documents. This exemption reduces the cost of financial transactions for PWDs.</p>
@@ -149,6 +150,7 @@
                     <br>
                     <h1 class="lg:text-lg font-bold">Express Lanes for PWDs</h1>
                     <p>Just like senior citizens, PWDs have a special lane in public establishments such as groceries and banks. Within this, PWDs do not have to wait in long lines just to make a purchase or make payments.</p>
+                    <img src="../assets/36.png" alt="">
                     <br>
                     <h1 class="lg:text-lg font-bold">Priority privileges</h1>
                     <p>PWDs have priority access and privileges in public establishments, facilities, and services, such as priority lanes in banks, government offices, and establishments.</p>
