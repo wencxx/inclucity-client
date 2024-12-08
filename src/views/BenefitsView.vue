@@ -13,64 +13,68 @@
                     <h1 class="text-2xl lg:text-4xl font-bold tracking-wide"> 20% Discount and Value Added Tax (VAT) Exemption</h1>
                     <p class="text-justify">The 20% discount and VAT exemption for Persons with Disabilities (PWDs) in the Philippines cover a wide range of essential goods and services. Below are the specific categories where these benefits apply:</p>
                 </div>
-                <div class="bg-white rounded-xl shadow-md lg:w-3/4 h-fit flex gap-x-10 p-5">
-                    <img src="../assets/foods.png" alt="dental" class="w-40 aspect-auto hidden lg:block">
+                <div class="bg-white rounded-xl shadow-md lg:w-3/4 h-fit flex flex-col lg:flex-row gap-x-10 p-5">
+                    <img src="../assets/foods.png" alt="dental" class="w-40 aspect-auto mx-auto">
                     <div class="flex flex-col justify-center gap-y-5">
                         <h1 class="font-bold text-2xl">Food, Beverages, and Consumable Food Items</h1>
                         <p class="font-medium">PWDs are entitled to a 20% discount and VAT exemption on the purchase of food, drinks, desserts, and other consumable food products when dining out in restaurants, cafes, and similar establishments. This applies whether the food is consumed on the premises or taken out.</p>
                     </div>
                 </div>
-                <div class="bg-white rounded-xl shadow-md lg:w-3/4 h-fit flex gap-x-10 p-5">
+                <div class="bg-white rounded-xl shadow-md lg:w-3/4 h-fit flex flex-col lg:flex-row gap-x-10 p-5">
+                    <img src="../assets/meds.png" alt="medecine" class="w-40 aspect-auto mx-auto block lg:hidden">
                     <div class="flex flex-col justify-center gap-y-5">
                         <h1 class="font-bold text-2xl">Medicines and Medical Supplies</h1>
                         <p class="font-medium">The discount and tax exemption extend to prescription medicines and medical supplies deemed necessary by the Department of Health (DOH). This includes items such as prescription drugs, medical devices, and other health-related products essential for the well-being of PWDs.</p>
                     </div>
-                    <img src="../assets/meds.png" alt="medecine" class="w-40 aspect-auto hidden lg:block">
+                    <img src="../assets/meds.png" alt="medecine" class="w-40 aspect-auto mx-auto hidden lg:block">
                 </div>
-                <div class="bg-white rounded-xl shadow-md lg:w-3/4 h-fit flex gap-x-10 p-5">
-                    <img src="../assets/tooth.png" alt="dental" class="w-40 aspect-auto hidden lg:block">
+                <div class="bg-white rounded-xl shadow-md lg:w-3/4 h-fit flex flex-col lg:flex-row gap-x-10 p-5">
+                    <img src="../assets/tooth.png" alt="dental" class="w-40 aspect-auto mx-auto">
                     <div class="flex flex-col justify-center gap-y-5">
                         <h1 class="font-bold text-2xl">Medical and Dental Services</h1>
                         <p class="font-medium">PWDs receive a 20% discount and VAT exemption on medical and dental services. This includes professional fees of doctors, diagnostic services, and laboratory tests provided in private medical facilities. The aim is to reduce healthcare costs and ensure better access to medical care for PWDs.</p>
                     </div>
                 </div>
-                <div class="bg-white rounded-xl shadow-md lg:w-3/4 h-fit flex gap-x-10 p-5">
+                <div class="bg-white rounded-xl shadow-md lg:w-3/4 h-fit flex flex-col lg:flex-row gap-x-10 p-5">
+                    <img src="../assets/discount.png" alt="discount" class="w-40 aspect-auto mx-auto block lg:hidden">
                     <div class="flex flex-col justify-center gap-y-5">
                         <h1 class="font-bold text-2xl">Professional Fees of Attending Physicians</h1>
                         <p class="font-medium">Professional fees charged by attending physicians in private medical institutions are also subject to the 20% discount and VAT exemption. This includes consultations, treatment, and any other medical services rendered by licensed professionals.</p>
                     </div>
-                    <img src="../assets/discount.png" alt="discount" class="w-40 aspect-auto hidden lg:block">
+                    <img src="../assets/discount.png" alt="discount" class="w-40 aspect-auto mx-auto hidden lg:block">
                 </div>
-                <div class="bg-white rounded-xl shadow-md lg:w-3/4 h-fit flex gap-x-10 p-5">
-                    <img src="../assets/ticket.png" alt="ticket" class="w-40 aspect-auto hidden lg:block">
+                <div class="bg-white rounded-xl shadow-md lg:w-3/4 h-fit flex flex-col lg:flex-row gap-x-10 p-5">
+                    <img src="../assets/ticket.png" alt="ticket" class="w-40 aspect-auto mx-auto">
                     <div class="flex flex-col justify-center gap-y-5">
                         <h1 class="font-bold text-2xl">Domestic Air and Sea Travel</h1>
                         <p class="font-medium">The benefit covers domestic air and sea travel, where PWDs can avail of the 20% discount and VAT exemption on airfare and sea travel fares. This ensures that PWDs can travel within the country at a reduced cost, making it more affordable to visit different regions for leisure, work, or medical purposes.</p>
                     </div>
                 </div>
-                <div class="bg-white rounded-xl shadow-md lg:w-3/4 h-fit flex gap-x-10 p-5">
+                <div class="bg-white rounded-xl shadow-md lg:w-3/4 h-fit flex flex-col lg:flex-row gap-x-10 p-5">
+                    <img src="../assets/jeep.png" alt="jeep" class="w-40 aspect-auto mx-auto block lg:hidden">
                     <div class="flex flex-col justify-center gap-y-5">
                         <h1 class="font-bold text-2xl">Land Transportation Fares</h1>
                         <p class="font-medium">PWDs enjoy a 20% discount and VAT exemption on land transportation fares, including jeepneys, buses, taxis, trains, and ride-hailing services such as TNVS (Transport Network Vehicle Services) and other carpooling services. This benefit supports PWDs in their daily commute and travel needs.</p>
                     </div>
-                    <img src="../assets/jeep.png" alt="jeep" class="w-40 aspect-auto hidden lg:block">
+                    <img src="../assets/jeep.png" alt="jeep" class="w-40 aspect-auto mx-auto hidden lg:block">
                 </div>
-                <div class="bg-white rounded-xl shadow-md lg:w-3/4 h-fit flex gap-x-10 p-5">
-                    <img src="../assets/hotel.png" alt="ticket" class="w-40 aspect-auto hidden lg:block">
+                <div class="bg-white rounded-xl shadow-md lg:w-3/4 h-fit flex flex-col lg:flex-row gap-x-10 p-5">
+                    <img src="../assets/hotel.png" alt="ticket" class="w-40 aspect-auto mx-auto">
                     <div class="flex flex-col justify-center gap-y-5">
                         <h1 class="font-bold text-2xl">Services in Hotels, Restaurants, and Recreational Centers</h1>
                         <p class="font-medium">The discount and exemption apply to accommodations in hotels, dining services in restaurants, and services at recreational centers. This includes room rates, meals, and other related services, allowing PWDs to access leisure activities and travel accommodations more affordably.</p>
                     </div>
                 </div>
-                <div class="bg-white rounded-xl shadow-md lg:w-3/4 h-fit flex gap-x-10 p-5">
+                <div class="bg-white rounded-xl shadow-md lg:w-3/4 h-fit flex flex-col lg:flex-row gap-x-10 p-5">
+                    <img src="../assets/store.png" alt="jeep" class="w-40 aspect-auto mx-auto block lg:hidden">
                     <div class="flex flex-col justify-center gap-y-5">
                         <h1 class="font-bold text-2xl">Admission Fees to Theaters, Cinemas, and Concert Halls</h1>
                         <p class="font-medium">PWDs receive a 20% discount and VAT exemption on admission fees to theaters, cinemas, concert halls, and similar entertainment venues. This benefit promotes cultural participation and provides PWDs with opportunities to enjoy various forms of entertainment at a lower cost.</p>
                     </div>
-                    <img src="../assets/store.png" alt="jeep" class="w-40 aspect-auto hidden lg:block">
+                    <img src="../assets/store.png" alt="jeep" class="w-40 aspect-auto mx-auto hidden lg:block">
                 </div>
-                <div class="bg-white rounded-xl shadow-md lg:w-3/4 h-fit flex gap-x-10 p-5">
-                    <img src="../assets/funeral.png" alt="ticket" class="w-40 aspect-auto hidden lg:block">
+                <div class="bg-white rounded-xl shadow-md lg:w-3/4 h-fit flex flex-col lg:flex-row gap-x-10 p-5">
+                    <img src="../assets/funeral.png" alt="ticket" class="w-40 aspect-auto mx-auto">
                     <div class="flex flex-col justify-center gap-y-5">
                         <h1 class="font-bold text-2xl">Funeral and Burial Services</h1>
                         <p class="font-medium">In the unfortunate event of the death of a PWD, the discount and VAT exemption also apply to funeral and burial services. This includes costs associated with funeral arrangements, burial, and other related services, providing some financial relief to the family during a difficult time.
@@ -85,7 +89,7 @@
                     <br>
                     <p class="text-justify">In order to qualify for the 5% discount, the total purchase of basic and prime commodities should not exceed ₱1,300 per week. This means that PWDs can avail of the discount on their purchases as long as the cumulative amount spent on eligible goods within a week does not surpass ₱1,300.</p>
                 </div>
-                <div class="bg-white rounded-xl shadow-md lg:w-3/4 h-fit flex justify-between gap-x-10 p-5">
+                <div class="bg-white rounded-xl shadow-md lg:w-3/4 h-fit flex flex-col lg:flex-row justify-between gap-x-10 p-5">
                     <div class="flex flex-col justify-center gap-y-5">
                         <h1 class="font-bold text-2xl">Basic Necessities:</h1>
                         <ul class="font-medium list-disc list-inside">
@@ -98,10 +102,10 @@
                             <li>Fresh and dried root crops</li>
                         </ul>
                     </div>
-                    <img src="../assets/cart.png" alt="jeep" class="w-40 aspect-auto hidden lg:block">
+                    <img src="../assets/cart.png" alt="jeep" class="w-40 aspect-auto mx-auto">
                 </div>
-                <div class="bg-white rounded-xl shadow-md lg:w-3/4 h-fit flex justify-between gap-x-10 p-5">
-                    <img src="../assets/cart2.png" alt="jeep" class="w-40 aspect-auto hidden lg:block">
+                <div class="bg-white rounded-xl shadow-md lg:w-3/4 h-fit flex flex-col lg:flex-row justify-between gap-x-10 p-5">
+                    <img src="../assets/cart2.png" alt="jeep" class="w-40 aspect-auto mx-auto">
                     <div class="flex flex-col justify-center gap-y-5">
                         <h1 class="font-bold text-2xl">Prime Commodities:</h1>
                         <ul class="font-medium list-disc list-inside">
