@@ -116,7 +116,7 @@
         <hr class="border-gray-500 border">
         <h1 class="text-center my-5 font-semibold text-xl">In partnership with the CSWDO-CAD Office of the Municipality of Malolos, Bulacan</h1>
         <div class="mt-10 px-5 lg:px-20">
-            <img src="../assets/e8cea15d-1429-4e33-9827-57a7bd1f9ad1.jpg" alt="banner2" class="rounded-xl">'
+            <img src="../assets/CSWDO.png" alt="banner2" class="rounded-xl">'
             <p>The City Social Welfare and Development Office - Community Affairs Division (CSWDO-CAD) of the Municipality of Malolos, Bulacan, focuses on enhancing the quality of life for vulnerable and marginalized groups within the community. This includes providing essential social welfare services, support, and empowerment programs for individuals such as children, senior citizens, women, families, and Persons with Disabilities (PWDs). The office is committed to promoting inclusivity, social protection, and community development, often through partnerships with local organizations, government agencies, and stakeholders.</p>
         </div>
         <div class="mt-10 px-5 lg:px-20 grid lg:grid-cols-4 gap-10 items-stretch relative">
