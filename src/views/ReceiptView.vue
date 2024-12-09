@@ -6,7 +6,7 @@
             </div>
             <div  v-if="applicant && applicant.status === 'approved'" ref="captureDiv" class="py-5 bg-custom-primary w-4/5 h-fit mt-20 rounded-2xl mx-auto">
                 <div class="bg-white w-full h-full rounded-xl p-10 space-y-5 relative">
-                    <button class="bg-gray-500 w-fit py-2 px-3 text-white self-center rounded-md absolute top-5 right-5" @click="saveReceipt()">
+                    <button class="bg-gray-500 w-fit py-2 px-3 text-white self-center rounded-md absolute top-5 right-5 downloadButton" @click="saveReceipt()">
                         <Icon icon="mdi:download" class="text-xl" />
                     </button> 
                     <div class="flex justify-center gap-x-10">
@@ -33,6 +33,7 @@
                             <p class="w-full flex justify-between"><span>ID Application Status:</span> <span>{{ applicant.status }}</span></p>
                             <p class="w-full flex justify-between"><span>Date:</span> <span>{{ dateApplied.toLocaleDateString('en-US', { year: 'numeric', month: 'long', day: 'numeric' }) }}</span></p>
                             <p class="w-full flex justify-between"><span>Time:</span> <span>{{ dateApplied.toLocaleDateString('en-US', { hour: '2-digit', minute: '2-digit' }).split(', ')[1] }}</span></p>
+                            <p class="w-full flex justify-between"><span>Accepted By:</span> <span>{{ applicant?.acceptedBy }}</span></p>
                         </div>
                         <div class="p-5">
                             <p class="w-full flex justify-between"><span class="font-bold">Receipt No.:</span> <span>{{ convertApplicationNum(applicant.applicationNumber + 1) }}</span></p>
@@ -103,19 +104,23 @@ const convertApplicationNum = (num) => {
 const captureDiv = ref(null);
 const saved = ref(false)
 
-const saveReceipt = async () => {
-  if (captureDiv.value) {
-    const canvas = await html2canvas(captureDiv.value);
+ const saveReceipt = async () => {
+      if (captureDiv.value) {
+        const button = document.querySelector('.downloadButton');
 
-    const image = canvas.toDataURL('image/png');
-
-    const link = document.createElement('a');
-    link.href = image;
-    link.download = 'receipt.png';
-    link.click();
-    saved.value = true
-  }
-};
+        button.style.visibility = 'hidden';
+        try {
+          const canvas = await html2canvas(captureDiv.value)
+          const image = canvas.toDataURL('image/png')
+          const link = document.createElement('a')
+          link.href = image
+          link.download = 'receipt.png'
+          link.click()
+        } finally {
+            button.style.visibility = 'visible';
+        }
+      }
+    };
 </script>
 
 <style scoped>
