@@ -82,9 +82,9 @@
                     <input type="date" placeholder="Age" class="pl-3 border border-gray-500 h-10 rounded-md" v-model="age" required>
                 </div>
                 <div class="flex flex-col gap-y-1 w-3/4 md:w-2/5 lg:w-full">
-                    <label class="font-semibold text-lg">Gender <span class="text-red-500 text-sm">*</span></label>
+                    <label class="font-semibold text-lg">Sex <span class="text-red-500 text-sm">*</span></label>
                     <select class="pl-3 border border-gray-500 h-10 rounded-md" v-model="gender" required>
-                        <option disabled>Select Gender</option>
+                        <option disabled>Select Sex</option>
                         <option>Male</option>
                         <option>Female</option>
                         <option>Other</option>

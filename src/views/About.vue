@@ -123,8 +123,6 @@
             <div class="z-30">
                 <h1 class="text-custom-primary font-semibold text-xl -mb-2 uppercase">Mission</h1>
                 <div class="bg-yellow-800 rounded-xl !h-full p-5 text-center space-y-4">
-                    <h1 class="font-semibold">Local government unit</h1>
-                    <p class="font-light">A City of resilient citizenry enjoying a comfortable life.</p>
                     <h1 class="font-semibold">CITY SOCIAL WELFARE AND DEVELOPMENT OFFICE</h1>
                     <p class="font-light text-justify">To provide social protection and promote the rights and welfare of the poor, vulnerable and the disadvantaged individual, family, and community to contribute to poverty alleviation and empowerment through SWD policies, programs, projects and services implemented with or through LGU's, NGO's, PO's, GO's and other members of civil society</p>
                 </div>
@@ -132,8 +130,6 @@
             <div class="z-30">
                 <h1 class="text-custom-primary font-semibold text-xl -mb-2 uppercase">Vision</h1>
                 <div class="bg-yellow-800 rounded-xl !h-full p-5 text-center space-y-4">
-                    <h1 class="font-semibold">Local government unit</h1>
-                    <p class="font-light">To uplift the living condition of the people in the City of Malolos. A City of resilient citizenry enjoying a comfortable life.</p>
                     <h1 class="font-semibold">CITY SOCIAL WELFARE AND DEVELOPMENT OFFICE</h1>
                     <p class="font-light text-justify">A society where the poor, vulnerable, and disadvantaged families and communities are empowered for an improved quality of life.</p>
                 </div>
