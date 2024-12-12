@@ -68,7 +68,7 @@
             <div class="flex items-center justify-center h-full lg:col-span-2">
                 <h1 class="text-4xl text-center lg:w-3/5 border-b-2 pb-2 border-black">Administrative Communication and User Engagement</h1>
             </div>
-            <div class="flex flex-col mx-auto h-1/2 lg:w-3/4 justify-start items-center gap-y-5 lg:gap-y-5">
+            <div class="flex flex-col mx-auto h-full lg:w-3/4 justify-start items-center gap-y-5 lg:gap-y-5 bg-gray-300 rounded-lg py-3">
                 <div class="bg-custom-primary text-white px-4 py-1 rounded-full">
                     <h1 class="font-bold text-3xl">1</h1>
                 </div>
@@ -77,7 +77,7 @@
                     IncluCity equips the CSWDO CAD Office with tools to communicate directly with users, enabling announcements, application updates, reminders for ID expiration, and service notifications.
                 </p>
             </div>
-            <div class="flex flex-col mx-auto h-1/2 lg:w-3/4 justify-start items-center gap-y-5 lg:gap-y-5">
+            <div class="flex flex-col mx-auto h-full lg:w-3/4 justify-start items-center gap-y-5 lg:gap-y-5 bg-gray-300 rounded-lg py-3">
                 <div class="bg-custom-primary text-white px-4 py-1 rounded-full">
                     <h1 class="font-bold text-3xl">2</h1>
                 </div>

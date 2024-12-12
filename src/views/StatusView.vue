@@ -9,25 +9,25 @@
                 <h1 class="font-medium text-xl">Information Details</h1>
                 <p v-if="applicant && applicant.reasonForRejection != 'Invalid Forms' && applicant.status !== 'pending'" class="text-green-700">Approved</p>
                 <p v-else-if="applicant &&  applicant.status === 'pending'" class="text-blue-500">Pending</p>
-                <p v-else class="text-custom-primary">Rejected</p>
+                <p v-else class="text-custom-primary">Declined</p>
             </div>
             <div class="flex justify-between items-center">
                 <h1 class="font-medium text-xl">1x1 Picture</h1>
                 <p v-if="applicant && applicant.reasonForRejection != 'Invalid 1x1 Picture' && applicant.status !== 'pending'" class="text-green-700">Approved</p>
                 <p v-else-if="applicant &&  applicant.status === 'pending'" class="text-blue-500">Pending</p>
-                <p v-else class="text-custom-primary">Rejected</p>
+                <p v-else class="text-custom-primary">Declined</p>
             </div>
             <div class="flex justify-between items-center">
                 <h1 class="font-medium text-xl">Medical Certificate</h1>
                 <p v-if="applicant && applicant.reasonForRejection != 'Invalid Medical Certificate' && applicant.status !== 'pending'" class="text-green-700">Approved</p>
                 <p v-else-if="applicant &&  applicant.status === 'pending'" class="text-blue-500">Pending</p>
-                <p v-else class="text-custom-primary">Rejected</p>
+                <p v-else class="text-custom-primary">Declined</p>
             </div>
             <div class="flex justify-between items-center">
                 <h1 class="font-medium text-xl">Barangay Certificate</h1>
                 <p v-if="applicant && applicant.reasonForRejection != 'Invalid Barangay Certificate' && applicant.status !== 'pending'" class="text-green-700">Approved</p>
                 <p v-else-if="applicant &&  applicant.status === 'pending'" class="text-blue-500">Pending</p>
-                <p v-else class="text-custom-primary">Rejected</p>
+                <p v-else class="text-custom-primary">Declined</p>
             </div>
             <router-link :to="{ name: 'resubmit', query: { reason: applicant.reasonForRejection } }" v-if="applicant && applicant.status === 'rejected'" class="bg-custom-primary w-1/3 mx-auto text-white rounded-md py-2 mt-5 text-center">Resubmit</router-link>
         </div>
