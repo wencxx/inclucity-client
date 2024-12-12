@@ -1,39 +1,38 @@
 <template>
     <section class="h-[90dvh] w-screen overflow-auto font-manrope p-10 md:px-16 lg:px-32">
-        <div v-if="hasEmptyFields" class="w-full lg:w-1/2 lg:mx-auto flex flex-col gap-y-5 font-manrope text-lg">
+        <div v-if="hasEmptyFields" class="w-full lg:w-2/3 lg:mx-auto flex flex-col gap-y-5 font-manrope text-lg">
             <p class="bg-red-500 text-white pl-2 rounded py-1">Fill out all required fields</p>
         </div>
-        <div v-if="alreadySubmitted" class="w-full lg:w-1/2 lg:mx-auto flex flex-col gap-y-5 font-manrope text-lg mb-10">
+        <div v-if="alreadySubmitted" class="w-full lg:w-2/3 lg:mx-auto flex flex-col gap-y-5 font-manrope text-lg mb-10">
             <p class="bg-red-500 text-white pl-2 rounded py-1">Failed to update application</p>
         </div>
         <!-- second step -->
-        <div v-if="$route.query.reason === 'Invalid Forms'">
-            <div v-if="currentPage == 1" class="w-full lg:w-1/2 lg:mx-auto flex flex-col gap-y-5 font-manrope text-lg">
+            <div v-if="currentPage == 1" class="w-full lg:w-2/3 lg:mx-auto flex flex-col gap-y-5 font-manrope text-lg">
                 <h1 class="text-black dark:!text-white font-semibold text-xl uppercase">Personal Information</h1>
                 <div class="grid md:grid-cols-2 gap-x-10 gap-y-3">
                     <div class="flex flex-col gap-y-1">
                         <label class="font-semibold">Last Name *</label>
-                        <input type="text" placeholder="Enter last name" class="h-10 border pl-2 rounded capitalize" v-model="lastName">
+                        <input type="text" placeholder="Enter last name" :disabled="$route.query.reason !== 'Invalid Forms'" :class="{ 'text-gray-500': $route.query.reason !== 'Invalid Forms' }" class="h-10 border pl-2 rounded capitalize" v-model="lastName">
                     </div>
                     <div class="flex flex-col gap-y-1">
                         <label class="font-semibold">First Name *</label>
-                        <input type="text" placeholder="Enter first name" class="h-10 border pl-2 rounded capitalize" v-model="firstName">
+                        <input type="text" placeholder="Enter first name" :disabled="$route.query.reason !== 'Invalid Forms'" :class="{ 'text-gray-500': $route.query.reason !== 'Invalid Forms' }" class="h-10 border pl-2 rounded capitalize" v-model="firstName">
                     </div>
                     <div class="flex flex-col gap-y-1">
                         <label class="font-semibold">Middle Name</label>
-                        <input type="text" placeholder="Enter middle name" class="h-10 border pl-2 rounded capitalize" v-model="middleName">
+                        <input type="text" placeholder="Enter middle name" :disabled="$route.query.reason !== 'Invalid Forms'" :class="{ 'text-gray-500': $route.query.reason !== 'Invalid Forms' }" class="h-10 border pl-2 rounded capitalize" v-model="middleName">
                     </div>
                     <div class="flex flex-col gap-y-1">
                         <label class="font-semibold">Suffix</label>
-                        <input type="text" placeholder="Enter suffix" class="h-10 border pl-2 rounded" v-model="suffix">
+                        <input type="text" placeholder="Enter suffix" :disabled="$route.query.reason !== 'Invalid Forms'" :class="{ 'text-gray-500': $route.query.reason !== 'Invalid Forms' }" class="h-10 border pl-2 rounded" v-model="suffix">
                     </div>
                     <div class="flex flex-col gap-y-1">
                         <label class="font-semibold">Date of Birth *</label>
-                        <input type="date" class="h-10 border pl-2 rounded dark:!text-black" v-model="dateOfBirth">
+                        <input type="date" :disabled="$route.query.reason !== 'Invalid Forms'" :class="{ 'text-gray-500': $route.query.reason !== 'Invalid Forms' }" class="h-10 border pl-2 rounded dark:!text-black" v-model="dateOfBirth">
                     </div>
                     <div class="flex flex-col gap-y-1">
                         <label class="font-semibold">Sex *</label>
-                        <select class="h-10 border dark:!text-black pl-2 rounded" v-model="gender">
+                        <select :disabled="$route.query.reason !== 'Invalid Forms'" :class="{ 'text-gray-500': $route.query.reason !== 'Invalid Forms' }" class="h-10 border dark:!text-black pl-2 rounded" v-model="gender">
                             <option disabled>Select Sex</option>
                             <option>Male</option>
                             <option>Female</option>
@@ -42,7 +41,7 @@
                     </div>
                     <div class="flex flex-col gap-y-1">
                         <label class="font-semibold">Civil Status *</label>
-                        <select class="h-10 border dark:!text-black pl-2 rounded" v-model="civilStatus">
+                        <select :disabled="$route.query.reason !== 'Invalid Forms'" :class="{ 'text-gray-500': $route.query.reason !== 'Invalid Forms' }" class="h-10 border dark:!text-black pl-2 rounded" v-model="civilStatus">
                             <option disabled>Select Civil Status</option>
                             <option>Single</option>
                             <option>Married</option>
@@ -54,12 +53,12 @@
                 </div>
             </div>
             <!-- third step -->
-            <div v-if="currentPage == 2" class="w-full lg:w-1/2 lg:mx-auto flex flex-col gap-y-5 font-manrope text-lg">
+            <div v-if="currentPage == 2" class="w-full lg:w-2/3 lg:mx-auto flex flex-col gap-y-5 font-manrope text-lg">
                 <h1 class="text-black dark:!text-white font-semibold text-xl uppercase">Type and Cause of Disability</h1>
                 <div class="grid md:grid-cols-2 gap-x-10 gap-y-5">
                     <div class="flex flex-col gap-y-2 py-2">
                         <label class="font-semibold">Select type of disability*</label>
-                        <select class="h-10 border dark:!text-black pl-2 rounded" v-model="typeOfDisability">
+                        <select :disabled="$route.query.reason !== 'Invalid Forms'" :class="{ 'text-gray-500': $route.query.reason !== 'Invalid Forms' }" class="h-10 border dark:!text-black pl-2 rounded" v-model="typeOfDisability">
                             <!-- <option :value="typeOfDisability" disabled>Select type of disability</option> -->
                             <option v-for="(disability, index) in disabilities" :key="index">{{ disability.disability }}</option>
                         </select>
@@ -67,7 +66,7 @@
                     <div></div>
                     <div class="flex flex-col gap-y-2 w-full py-2">
                         <label class="font-semibold">Select Cause of Disability *</label>
-                        <select class="h-10 border dark:!text-black pl-2 rounded" v-model="causeOfDisability" @change="changeCausedOfDisability('select')">
+                        <select :disabled="$route.query.reason !== 'Invalid Forms'" :class="{ 'text-gray-500': $route.query.reason !== 'Invalid Forms' }" class="h-10 border dark:!text-black pl-2 rounded" v-model="causeOfDisability" @change="changeCausedOfDisability('select')">
                             <!-- <option value="" disabled>Select cause of disability</option> -->
                             <option class="font-semibold" disabled>*Congential/Inborn</option>
                             <option>Autism</option>
@@ -83,18 +82,18 @@
                     </div>
                     <div class="flex flex-col gap-y-2 py-2">
                         <label class="font-semibold">Other cause of disability</label>
-                        <input type="text" class="h-10 border pl-2 rounded" @input="changeCausedOfDisability('input')" v-model="otherCauseOfDisability">
+                        <input type="text" :disabled="$route.query.reason !== 'Invalid Forms'" :class="{ 'text-gray-500': $route.query.reason !== 'Invalid Forms' }" class="h-10 border pl-2 rounded" @input="changeCausedOfDisability('input')" v-model="otherCauseOfDisability">
                     </div>
                 </div>
                 <h1 class="text-black dark:!text-white font-semibold text-xl uppercase">Residence Address</h1>
                 <div class="grid md:grid-cols-2 gap-x-10 gap-y-5">
                     <div class="flex flex-col gap-y-1">
                         <label class="font-semibold">House no.(optional) and Street *</label>
-                        <input type="text" placeholder="Enter house no. and street" class="h-10 border pl-2 rounded" v-model="houseNoAndStreet">
+                        <input type="text" placeholder="Enter house no. and street" :disabled="$route.query.reason !== 'Invalid Forms'" :class="{ 'text-gray-500': $route.query.reason !== 'Invalid Forms' }" class="h-10 border pl-2 rounded" v-model="houseNoAndStreet">
                     </div>
                     <div class="flex flex-col gap-y-1">
                         <label class="font-semibold">Select Barangay *</label>
-                        <select class="h-10 border dark:!text-black pl-2 rounded" v-model="barangay">
+                        <select :disabled="$route.query.reason !== 'Invalid Forms'" :class="{ 'text-gray-500': $route.query.reason !== 'Invalid Forms' }" class="h-10 border dark:!text-black pl-2 rounded" v-model="barangay">
                             <option value="" disabled>Select Barangay</option>
                             <option value="Anilao">Anilao</option>
                             <option value="Atlag">Atlag</option>
@@ -140,27 +139,27 @@
                 </div>
             </div>
             <!-- fourth step -->
-            <div v-if="currentPage == 3" class="w-full lg:w-1/2 lg:mx-auto flex flex-col gap-y-5 font-manrope text-lg">
+            <div v-if="currentPage == 3" class="w-full lg:w-2/3 lg:mx-auto flex flex-col gap-y-5 font-manrope text-lg">
                 <h1 class="text-black dark:!text-white font-semibold text-xl uppercase">Contact Details</h1>
                 <div class="grid md:grid-cols-2 gap-x-10 gap-y-5">
                     <div class="flex flex-col gap-y-1">
                         <label class="font-semibold">Landline No. (optional)</label>
-                        <input type="number" placeholder="044-XXXXXX" class="h-10 border pl-2 rounded" v-model="landlineNo">
+                        <input type="number" placeholder="044-XXXXXX" :disabled="$route.query.reason !== 'Invalid Forms'" :class="{ 'text-gray-500': $route.query.reason !== 'Invalid Forms' }" class="h-10 border pl-2 rounded" v-model="landlineNo">
                     </div>
                     <div class="flex flex-col gap-y-1">
                         <label class="font-semibold">Mobile No. *</label>
-                        <input type="number" placeholder="639-XXX-XXX" class="h-10 border pl-2 rounded" v-model="mobileNo">
+                        <input type="number" placeholder="639-XXX-XXX" :disabled="$route.query.reason !== 'Invalid Forms'" :class="{ 'text-gray-500': $route.query.reason !== 'Invalid Forms' }" class="h-10 border pl-2 rounded" v-model="mobileNo">
                     </div>
                     <div class="flex flex-col gap-y-1">
                         <label class="font-semibold">Email Address (optional)</label>
-                        <input type="email" placeholder="xxxxxxxx@gmail.com" class="h-10 border pl-2 rounded" v-model="emailAddress">
+                        <input type="email" placeholder="xxxxxxxx@gmail.com" :disabled="$route.query.reason !== 'Invalid Forms'" :class="{ 'text-gray-500': $route.query.reason !== 'Invalid Forms' }" class="h-10 border pl-2 rounded" v-model="emailAddress">
                     </div>
                 </div>
                 <h1 class="text-black dark:!text-white font-semibold text-xl uppercase">Educational Attainment</h1>
                 <div class="grid md:grid-cols-2 gap-x-10 gap-y-5">
                     <div class="flex flex-col gap-y-2 w-full py-2">
                         <label class="font-semibold">Select Educational Attainment *</label>
-                        <select class="h-10 border dark:!text-black pl-2 rounded" v-model="educationalAttainment">
+                        <select :disabled="$route.query.reason !== 'Invalid Forms'" :class="{ 'text-gray-500': $route.query.reason !== 'Invalid Forms' }" class="h-10 border dark:!text-black pl-2 rounded" v-model="educationalAttainment">
                             <option value="" disabled>Select educational attainment</option>
                             <option>None</option>
                             <option>Kindergarten</option>
@@ -175,12 +174,12 @@
                 </div>
             </div>
             <!-- fifth step -->
-            <div v-if="currentPage == 4" class="w-full lg:w-1/2 lg:mx-auto flex flex-col gap-y-5 font-manrope text-lg">
+            <div v-if="currentPage == 4" class="w-full lg:w-2/3 lg:mx-auto flex flex-col gap-y-5 font-manrope text-lg">
                 <h1 class="text-black dark:!text-white font-semibold text-xl uppercase">Status of Employment</h1>
                 <div class="grid md:grid-cols-2 gap-x-10 gap-y-5">
                     <div class="flex flex-col gap-y-2 w-full py-2">
                         <label class="font-semibold">Select Status of Employment *</label>
-                        <select class="h-10 border dark:!text-black pl-2 rounded" v-model="statusOfEmployment">
+                        <select :disabled="$route.query.reason !== 'Invalid Forms'" :class="{ 'text-gray-500': $route.query.reason !== 'Invalid Forms' }" class="h-10 border dark:!text-black pl-2 rounded" v-model="statusOfEmployment">
                             <option value="" disabled>Select status of employment</option>
                             <option value="employed">Employed</option>
                             <option value="unemployed">Unemployed</option>
@@ -189,7 +188,7 @@
                     </div>
                     <div class="flex flex-col gap-y-2 w-full py-2" v-if="statusOfEmployment == 'employed' || statusOfEmployment == 'self-employed'">
                         <label class="font-semibold">a. Category of Employment *</label>
-                        <select class="h-10 border dark:!text-black pl-2 rounded" v-model="categoryOfEmployment">
+                        <select :disabled="$route.query.reason !== 'Invalid Forms'" :class="{ 'text-gray-500': $route.query.reason !== 'Invalid Forms' }" class="h-10 border dark:!text-black pl-2 rounded" v-model="categoryOfEmployment">
                             <option value="" disabled>Select category of employment</option>
                             <option value="government">Government</option>
                             <option value="private">Private</option>
@@ -197,7 +196,7 @@
                     </div>
                     <div class="flex flex-col gap-y-2 w-full py-2" v-if="statusOfEmployment == 'employed' || statusOfEmployment == 'self-employed'">
                         <label class="font-semibold">b. Type of Employment *</label>
-                        <select class="h-10 border dark:!text-black pl-2 rounded" v-model="typeOfEmployment">
+                        <select :disabled="$route.query.reason !== 'Invalid Forms'" :class="{ 'text-gray-500': $route.query.reason !== 'Invalid Forms' }" class="h-10 border dark:!text-black pl-2 rounded" v-model="typeOfEmployment">
                             <option value="" disabled>Select type of employment</option>
                             <option value="permanent/regular">Permanent/Regular</option>
                             <option value="seasonal">Seasonal</option>
@@ -208,12 +207,12 @@
                 </div>
             </div>
             <!-- ninth step -->
-            <div v-if="currentPage == 5" class="w-full lg:w-1/2 lg:mx-auto flex flex-col gap-y-5 font-manrope text-lg">
+            <div v-if="currentPage == 5" class="w-full lg:w-2/3 lg:mx-auto flex flex-col gap-y-5 font-manrope text-lg">
                 <h1 v-if="statusOfEmployment == 'employed' || statusOfEmployment == 'self-employed'" class="text-black font-semibold text-xl uppercase">Occupation</h1>
                 <div v-if="statusOfEmployment == 'employed' || statusOfEmployment == 'self-employed'" class="grid md:grid-cols-2 gap-x-10 gap-y-5">
                     <div class="flex flex-col gap-y-2 w-full py-2">
                         <label class="font-semibold">Select Occupation *</label>
-                        <select class="h-10 border dark:!text-black pl-2 rounded" v-model="occupation" @change="changeOccupation('select')">
+                        <select :disabled="$route.query.reason !== 'Invalid Forms'" :class="{ 'text-gray-500': $route.query.reason !== 'Invalid Forms' }" class="h-10 border dark:!text-black pl-2 rounded" v-model="occupation" @change="changeOccupation('select')">
                             <option :value="occupation" disabled>Select occupation</option>
                             <option>Managers</option>
                             <option>Professionals</option>
@@ -230,151 +229,143 @@
                     </div>
                     <div class="flex flex-col gap-y-2 w-4/5 py-2 px-5">
                         <label class="font-semibold">Others</label>
-                        <input type="text" placeholder="Please specify" v-model="otherOccupation" class="h-10 border pl-2 rounded" @input="changeOccupation('input')">
+                        <input type="text" placeholder="Please specify" v-model="otherOccupation" :disabled="$route.query.reason !== 'Invalid Forms'" :class="{ 'text-gray-500': $route.query.reason !== 'Invalid Forms' }" class="h-10 border pl-2 rounded" @input="changeOccupation('input')">
                     </div>
                 </div>
                 <h1 class="text-black dark:!text-white font-semibold text-xl uppercase">Organization Information</h1>
                 <div class="grid md:grid-cols-2 gap-x-10 gap-y-5">
                     <div class="flex flex-col gap-y-1">
                         <label class="font-semibold">Organization Affiliated (optional)</label>
-                        <input type="number" placeholder="044-XXXXXX" class="h-10 border pl-2 rounded" v-model="organizationAffiliated">
+                        <input type="number" placeholder="044-XXXXXX" :disabled="$route.query.reason !== 'Invalid Forms'" :class="{ 'text-gray-500': $route.query.reason !== 'Invalid Forms' }" class="h-10 border pl-2 rounded" v-model="organizationAffiliated">
                     </div>
                     <div class="flex flex-col gap-y-1">
                         <label class="font-semibold">Contact Information (optional)</label>
-                        <input type="number" placeholder="639-XXX-XXX-XXX" class="h-10 border pl-2 rounded" v-model="contactInformation">
+                        <input type="number" placeholder="639-XXX-XXX-XXX" :disabled="$route.query.reason !== 'Invalid Forms'" :class="{ 'text-gray-500': $route.query.reason !== 'Invalid Forms' }" class="h-10 border pl-2 rounded" v-model="contactInformation">
                     </div>
                     <div class="flex flex-col gap-y-1">
                         <label class="font-semibold">Office Address (optional)</label>
-                        <input type="text" placeholder="Enter address" class="h-10 border pl-2 rounded" v-model="officeAddress">
+                        <input type="text" placeholder="Enter address" :disabled="$route.query.reason !== 'Invalid Forms'" :class="{ 'text-gray-500': $route.query.reason !== 'Invalid Forms' }" class="h-10 border pl-2 rounded" v-model="officeAddress">
                     </div>
                     <div class="flex flex-col gap-y-1">
                         <label class="font-semibold">Tel. No. (optional)</label>
-                        <input type="number" placeholder="XXXX-XXXX" class="h-10 border pl-2 rounded" v-model="telNo">
+                        <input type="number" placeholder="XXXX-XXXX" :disabled="$route.query.reason !== 'Invalid Forms'" :class="{ 'text-gray-500': $route.query.reason !== 'Invalid Forms' }" class="h-10 border pl-2 rounded" v-model="telNo">
                     </div>
                 </div>
             </div>
             <!-- eleventh step -->
-            <div v-if="currentPage == 6" class="w-full lg:w-1/2 lg:mx-auto flex flex-col gap-y-5 font-manrope text-lg">
+            <div v-if="currentPage == 6" class="w-full lg:w-2/3 lg:mx-auto flex flex-col gap-y-5 font-manrope text-lg">
                 <h1 class="text-black dark:!text-white font-semibold text-xl uppercase">ID Reference no.</h1>
                 <div class="grid md:grid-cols-2 gap-x-10 gap-y-5">
                     <div class="flex flex-col gap-y-1">
                         <label class="font-semibold">SSS No. (optional)</label>
-                        <input type="number" placeholder="XXXXXXXX" class="h-10 border pl-2 rounded" v-model="sssNo">
+                        <input type="number" placeholder="XXXXXXXX" :disabled="$route.query.reason !== 'Invalid Forms'" :class="{ 'text-gray-500': $route.query.reason !== 'Invalid Forms' }" class="h-10 border pl-2 rounded" v-model="sssNo">
                     </div>
                     <div class="flex flex-col gap-y-1">
                         <label class="font-semibold">GSIS No. (optional)</label>
-                        <input type="number" placeholder="XXXXXXXX" class="h-10 border pl-2 rounded" v-model="gsisNo">
+                        <input type="number" placeholder="XXXXXXXX" :disabled="$route.query.reason !== 'Invalid Forms'" :class="{ 'text-gray-500': $route.query.reason !== 'Invalid Forms' }" class="h-10 border pl-2 rounded" v-model="gsisNo">
                     </div>
                     <div class="flex flex-col gap-y-1">
                         <label class="font-semibold">PAG-IBIG No. (optional)</label>
-                        <input type="number" placeholder="XXXXXXXX" class="h-10 border pl-2 rounded" v-model="pagibigNo">
+                        <input type="number" placeholder="XXXXXXXX" :disabled="$route.query.reason !== 'Invalid Forms'" :class="{ 'text-gray-500': $route.query.reason !== 'Invalid Forms' }" class="h-10 border pl-2 rounded" v-model="pagibigNo">
                     </div>
                     <div class="flex flex-col gap-y-1">
                         <label class="font-semibold">PSN No. (optional)</label>
-                        <input type="number" placeholder="XXXXXXXX" class="h-10 border pl-2 rounded" v-model="psnNo">
+                        <input type="number" placeholder="XXXXXXXX" :disabled="$route.query.reason !== 'Invalid Forms'" :class="{ 'text-gray-500': $route.query.reason !== 'Invalid Forms' }" class="h-10 border pl-2 rounded" v-model="psnNo">
                     </div>
                     <div class="flex flex-col gap-y-1">
                         <label class="font-semibold">PhilHealth No. (optional)</label>
-                        <input type="number" placeholder="XXXXXXXX" class="h-10 border pl-2 rounded" v-model="philhealthNo">
+                        <input type="number" placeholder="XXXXXXXX" :disabled="$route.query.reason !== 'Invalid Forms'" :class="{ 'text-gray-500': $route.query.reason !== 'Invalid Forms' }" class="h-10 border pl-2 rounded" v-model="philhealthNo">
                     </div>
                 </div>
             </div>
             <!-- twelve step -->
-            <div v-if="currentPage == 7" class="w-full lg:w-1/2 lg:mx-auto flex flex-col gap-y-5 font-manrope text-lg">
+            <div v-if="currentPage == 7" class="w-full lg:w-2/3 lg:mx-auto flex flex-col gap-y-5 font-manrope text-lg">
                 <h1 class="text-black dark:!text-white font-semibold text-xl uppercase">Family Background</h1>
                 <div class="grid md:grid-cols-2 gap-x-10 gap-y-5">
                     <div class="flex flex-col gap-y-1">
                         <label class="font-semibold">Father's Name (optional)</label>
-                        <input type="text" placeholder="Last name" class="h-10 border pl-2 rounded capitalize" v-model="fathersLname">
-                        <input type="text" placeholder="First name" class="h-10 border pl-2 rounded capitalize" v-model="fathersFname">
-                        <input type="text" placeholder="Middle name" class="h-10 border pl-2 rounded capitalize" v-model="fathersMname">
+                        <input type="text" placeholder="Last name" :disabled="$route.query.reason !== 'Invalid Forms'" :class="{ 'text-gray-500': $route.query.reason !== 'Invalid Forms' }" class="h-10 border pl-2 rounded capitalize" v-model="fathersLname">
+                        <input type="text" placeholder="First name" :disabled="$route.query.reason !== 'Invalid Forms'" :class="{ 'text-gray-500': $route.query.reason !== 'Invalid Forms' }" class="h-10 border pl-2 rounded capitalize" v-model="fathersFname">
+                        <input type="text" placeholder="Middle name" :disabled="$route.query.reason !== 'Invalid Forms'" :class="{ 'text-gray-500': $route.query.reason !== 'Invalid Forms' }" class="h-10 border pl-2 rounded capitalize" v-model="fathersMname">
                     </div>
                     <div class="flex flex-col gap-y-1">
                         <label class="font-semibold">Mother's Name (optional)</label>
-                        <input type="text" placeholder="Last name" class="h-10 border pl-2 rounded capitalize" v-model="mothersLname">
-                        <input type="text" placeholder="First name" class="h-10 border pl-2 rounded capitalize" v-model="mothersFname">
-                        <input type="text" placeholder="Middle name" class="h-10 border pl-2 rounded capitalize" v-model="mothersMname">
+                        <input type="text" placeholder="Last name" :disabled="$route.query.reason !== 'Invalid Forms'" :class="{ 'text-gray-500': $route.query.reason !== 'Invalid Forms' }" class="h-10 border pl-2 rounded capitalize" v-model="mothersLname">
+                        <input type="text" placeholder="First name" :disabled="$route.query.reason !== 'Invalid Forms'" :class="{ 'text-gray-500': $route.query.reason !== 'Invalid Forms' }" class="h-10 border pl-2 rounded capitalize" v-model="mothersFname">
+                        <input type="text" placeholder="Middle name" :disabled="$route.query.reason !== 'Invalid Forms'" :class="{ 'text-gray-500': $route.query.reason !== 'Invalid Forms' }" class="h-10 border pl-2 rounded capitalize" v-model="mothersMname">
                     </div>
                     <div class="flex flex-col gap-y-1">
                         <label class="font-semibold">Guardian's Name (optional)</label>
-                        <input type="text" placeholder="Last name" class="h-10 border pl-2 rounded capitalize" v-model="guardiansLname">
-                        <input type="text" placeholder="First name" class="h-10 border pl-2 rounded capitalize" v-model="guardiansFname">
-                        <input type="text" placeholder="Middle name" class="h-10 border pl-2 rounded capitalize" v-model="guardiansMname">
+                        <input type="text" placeholder="Last name" :disabled="$route.query.reason !== 'Invalid Forms'" :class="{ 'text-gray-500': $route.query.reason !== 'Invalid Forms' }" class="h-10 border pl-2 rounded capitalize" v-model="guardiansLname">
+                        <input type="text" placeholder="First name" :disabled="$route.query.reason !== 'Invalid Forms'" :class="{ 'text-gray-500': $route.query.reason !== 'Invalid Forms' }" class="h-10 border pl-2 rounded capitalize" v-model="guardiansFname">
+                        <input type="text" placeholder="Middle name" :disabled="$route.query.reason !== 'Invalid Forms'" :class="{ 'text-gray-500': $route.query.reason !== 'Invalid Forms' }" class="h-10 border pl-2 rounded capitalize" v-model="guardiansMname">
                     </div>
                 </div>
             </div>
             <!-- thirteenth step -->
-            <div v-if="currentPage == 8" class="w-full lg:w-1/2 lg:mx-auto flex flex-col gap-y-5 font-manrope text-lg">
+            <div v-if="currentPage == 8" class="w-full lg:w-2/3 lg:mx-auto flex flex-col gap-y-5 font-manrope text-lg">
                 <h1 class="text-black dark:!text-white font-semibold text-xl uppercase">Accomplished By</h1>
                 <div class="grid md:grid-cols-2 gap-x-10 gap-y-5">
                     <div class="flex flex-col gap-y-1">
-                        <select class="h-10 border dark:!text-black pl-2 rounded" v-model="accomplishedBy" @change="changeAccomplisedBy()">
+                        <select :disabled="$route.query.reason !== 'Invalid Forms'" :class="{ 'text-gray-500': $route.query.reason !== 'Invalid Forms' }" class="h-10 border dark:!text-black pl-2 rounded" v-model="accomplishedBy" @change="changeAccomplisedBy()">
                             <option disabled selected value="">Accomplished By (optional)</option>
                             <option>Applicant</option>
                             <option>Guardian</option>
                             <option>Representative</option>
                         </select>
-                        <input type="text" placeholder="Last name" class="h-10 border pl-2 rounded capitalize" v-model="accomplishedByLname">
-                        <input type="text" placeholder="First name" class="h-10 border pl-2 rounded capitalize" v-model="accomplishedByFname">
-                        <input type="text" placeholder="Middle name" class="h-10 border pl-2 rounded capitalize" v-model="accomplishedByMname">
+                        <input type="text" placeholder="Last name" :disabled="$route.query.reason !== 'Invalid Forms'" :class="{ 'text-gray-500': $route.query.reason !== 'Invalid Forms' }" class="h-10 border pl-2 rounded capitalize" v-model="accomplishedByLname">
+                        <input type="text" placeholder="First name" :disabled="$route.query.reason !== 'Invalid Forms'" :class="{ 'text-gray-500': $route.query.reason !== 'Invalid Forms' }" class="h-10 border pl-2 rounded capitalize" v-model="accomplishedByFname">
+                        <input type="text" placeholder="Middle name" :disabled="$route.query.reason !== 'Invalid Forms'" :class="{ 'text-gray-500': $route.query.reason !== 'Invalid Forms' }" class="h-10 border pl-2 rounded capitalize" v-model="accomplishedByMname">
                     </div>
                     <div class="flex flex-col gap-y-1">
                         <label class="font-semibold">Certifying Physician *</label>
-                        <input type="text" placeholder="Last name" class="h-10 border pl-2 rounded capitalize" v-model="physicianByLname">
-                        <input type="text" placeholder="First name" class="h-10 border pl-2 rounded capitalize" v-model="physicianByFname">
-                        <input type="text" placeholder="Middle name" class="h-10 border pl-2 rounded capitalize" v-model="physicianByMname">
+                        <input type="text" placeholder="Last name" :disabled="$route.query.reason !== 'Invalid Forms'" :class="{ 'text-gray-500': $route.query.reason !== 'Invalid Forms' }" class="h-10 border pl-2 rounded capitalize" v-model="physicianByLname">
+                        <input type="text" placeholder="First name" :disabled="$route.query.reason !== 'Invalid Forms'" :class="{ 'text-gray-500': $route.query.reason !== 'Invalid Forms' }" class="h-10 border pl-2 rounded capitalize" v-model="physicianByFname">
+                        <input type="text" placeholder="Middle name" :disabled="$route.query.reason !== 'Invalid Forms'" :class="{ 'text-gray-500': $route.query.reason !== 'Invalid Forms' }" class="h-10 border pl-2 rounded capitalize" v-model="physicianByMname">
+                    </div>
+                </div>
+            </div>
+            <!-- fourteenth step -->
+            <div v-if="currentPage == 9" class="w-full lg:w-2/3 lg:mx-auto flex flex-col gap-y-5 font-manrope text-lg">
+                <div class="grid grid-cols-2 gap-4 items-center">
+                    <div class="flex flex-col gap-y-1 w-fit">
+                        <label class="font-semibold">Upload 1x1 photo *</label>
+                        <input type="file" class="h-10 rounded" :disabled="$route.query.reason !== 'Invalid 1x1 Picture'" accept=".jpg, .jpeg, .png" @change="handleImageUpload('1x1photo', $event)">
+                    </div>
+                    <div class="flex flex-col gap-y-1 w-fit">
+                        <label class="font-semibold">Upload Medical Certificate *</label>
+                        <input type="file" class="h-10 rounded" :disabled="$route.query.reason !== 'Invalid Medical Certificate'" accept=".jpg, .jpeg, .png" @change="handleImageUpload('medicalCert', $event)">
+                    </div>
+                    <div class="flex flex-col gap-y-1 w-fit">
+                        <label class="font-semibold">Upload Barangay Certificate *</label>
+                        <input type="file" class="h-10 rounded" :disabled="$route.query.reason !== 'Invalid Barangay Certificate'" accept=".jpg, .jpeg, .png" @change="handleImageUpload('barangayCert', $event)">
                     </div>
                 </div>
             </div>
             <!-- control buttons -->
-            <div v-if="currentPage >= 1 && currentPage < 9" class="flex gap-x-10 mt-8 justify-center lg:w-1/2 lg:mx-auto lg:px-0">
+            <div v-if="currentPage >= 1 && currentPage < 10" class="flex gap-x-10 mt-8 justify-center lg:w-2/3 lg:mx-auto lg:px-0">
                 <button @click="prev()" class="flex items-center justify-center gap-x-2 bg-custom-primary text-white text-xl w-1/2 py-1 pr-1 rounded-md">
                     <Icon icon="ri:arrow-left-s-line" class="text-2xl" />
                     <span>Back</span>
                 </button>
-                <button v-if="currentPage == '8' && !loadingSubmitting" @click="sendApplication()" class="flex items-center justify-center gap-x-2 bg-custom-primary text-white text-xl w-1/2 py-1 pr-1 rounded-md">
+                <button v-if="currentPage == '9' && !loadingSubmitting" @click="sendApplication()" class="flex items-center justify-center gap-x-2 bg-custom-primary text-white text-xl w-1/2 py-1 pr-1 rounded-md">
                     <span>Submit</span>
                     <Icon icon="bi:send-arrow-up" class="text-xl" />
                 </button>
                 <button v-if="loadingSubmitting" @click="sendApplication()" class="flex items-center justify-center gap-x-2 bg-custom-primary text-white text-xl w-1/2 py-1 pr-1 rounded-md animate-pulse" disabled>
                     <span>Loading...</span>
                 </button>
-                <button  v-if="currentPage != '8'" @click="next()" class="flex items-center justify-center gap-x-2 bg-custom-primary text-white text-xl w-1/2 py-1 pr-1 rounded-md">
+                <button  v-if="currentPage != '9'" @click="next()" class="flex items-center justify-center gap-x-2 bg-custom-primary text-white text-xl w-1/2 py-1 pr-1 rounded-md">
                     <span>Next</span>
                     <Icon icon="ri:arrow-right-s-line" class="text-2xl" />
                 </button>
             </div>
-            <div v-if="currentPage > 8" class="flex flex-col gap-y-10 mt-8 items-center lg:w-1/2 lg:mx-auto lg:px-0">
+            <div v-if="currentPage > 9" class="flex flex-col gap-y-10 mt-8 items-center lg:w-2/3 lg:mx-auto lg:px-0">
                 <h1 class="text-3xl font-poppins">Opss nothings here</h1>
                 <button @click="prev()" class="flex items-center justify-center gap-x-2 bg-custom-primary text-white text-xl w-1/2 py-1 pr-1 rounded-md">
                     <span>Go Back</span>
                 </button>
             </div>
-        </div>
-        <!-- fourteenth step -->
-        <div v-if="$route.query.reason !== 'Invalid Forms'" class="w-full lg:w-1/2 lg:mx-auto flex flex-col gap-y-5 font-manrope text-lg">
-            <div class="space-y-5 flex flex-col items-center">
-                <div v-if="$route.query.reason === 'Invalid 1x1 Picture'" class="flex flex-col gap-y-1 w-fit">
-                    <label class="font-semibold">Upload 1x1 photo *</label>
-                    <input type="file" class="h-10 rounded" accept=".jpg, .jpeg, .png" @change="handleImageUpload('1x1photo', $event)">
-                </div>
-                <div v-if="$route.query.reason === 'Invalid Medical Certificate'" class="flex flex-col gap-y-1 w-fit">
-                    <label class="font-semibold">Upload Medical Certificate *</label>
-                    <input type="file" class="h-10 rounded" accept=".jpg, .jpeg, .png" @change="handleImageUpload('medicalCert', $event)">
-                </div>
-                <div v-if="$route.query.reason === 'Invalid Barangay Certificate'" class="flex flex-col gap-y-1 w-fit">
-                    <label class="font-semibold">Upload Barangay Certificate *</label>
-                    <input type="file" class="h-10 rounded" accept=".jpg, .jpeg, .png" @change="handleImageUpload('barangayCert', $event)">
-                </div>
-                <button v-if="!loadingSubmitting" @click="sendApplication()" class="flex items-center justify-center gap-x-2 bg-custom-primary text-white text-xl w-1/2 py-1 pr-1 rounded-md">
-                    <span>Submit</span>
-                    <Icon icon="bi:send-arrow-up" class="text-xl" />
-                </button>
-                <button v-if="loadingSubmitting" class="flex items-center justify-center gap-x-2 bg-custom-primary text-white text-xl w-1/2 py-1 pr-1 rounded-md animate-pulse" disabled>
-                    <span>Loading...</span>
-                </button>
-            </div>
-        </div>
     </section>
 </template>
 
@@ -405,6 +396,68 @@ const currentUser = computed(() => authStore.user)
 
 const route = useRoute()
 const router = useRouter()
+
+// get application
+const getUserApplication = async () => {
+    try {
+        const res = await axios.get(`${serverUrl}/get-user-application`, {
+            headers: {
+                Authorization: `Bearer ${localStorage.getItem('token')}`
+            }
+        })
+
+        if(res.data){
+            lastName.value = res.data.lastName
+            firstName.value = res.data.firstName
+            middleName.value = res.data.middleName
+            suffix.value = res.data.suffix
+            dateOfBirth.value = res.data.dateOfBirth
+            gender.value = res.data.gender
+            civilStatus.value = res.data.civilStatus
+            typeOfDisability.value = res.data.typeOfDisability
+            causeOfDisability.value = res.data.causeOfDisability
+            houseNoAndStreet.value = res.data.houseNoAndStreet
+            barangay.value = res.data.barangay
+            landlineNo.value = res.data.landlineNo
+            mobileNo.value = res.data.mobileNo
+            emailAddress.value = res.data.emailAddress
+            educationalAttainment.value = res.data.educationalAttainment
+            statusOfEmployment.value = res.data.statusOfEmployment
+            categoryOfEmployment.value = res.data.categoryOfEmployment
+            typeOfEmployment.value = res.data.typeOfEmployment
+            occupation.value = res.data.occupation
+            otherOccupation.value = res.data.otherOccupation
+            organizationAffiliated.value = res.data.organizationAffiliated
+            contactInformation.value = res.data.contactInformation
+            officeAddress.value = res.data.officeAddress
+            telNo.value = res.data.telNo
+            sssNo.value = res.data.sssNo
+            gsisNo.value = res.data.gsisNo
+            pagibigNo.value = res.data.pagibigNo
+            psnNo.value = res.data.psnNo
+            philhealthNo.value = res.data.philhealthNo
+            fathersLname.value = res.data.fathersLname
+            fathersFname.value = res.data.fathersFname
+            fathersMname.value = res.data.fathersMname
+            mothersLname.value = res.data.mothersLname
+            mothersFname.value = res.data.mothersFname
+            mothersMname.value = res.data.mothersMname
+            guardiansLname.value = res.data.guardiansLname
+            guardiansFname.value = res.data.guardiansFname
+            guardiansMname.value = res.data.guardiansMname
+            accomplishedBy.value = res.data.accomplishedBy
+            accomplishedByLname.value = res.data.accomplishedByLname
+            accomplishedByFname.value = res.data.accomplishedByFname
+            accomplishedByMname.value = res.data.accomplishedByMname
+            physicianByLname.value = res.data.physicianByLname
+            physicianByFname.value = res.data.physicianByFname
+            physicianByMname.value = res.data.physicianByMname
+        }
+        console.log(res.data)
+    } catch (error) {
+        console.log(error)
+    }
+}
 
 // personal information
 const lastName = ref('')
@@ -496,6 +549,7 @@ const currentPage = ref(parseInt(route.query.page) || 1)
 onMounted(() => {
     getDataFromLocalStorage()
     getDisabilities()
+    getUserApplication()
 })
 
 watch(() => route.query.page, (newPage) => {
@@ -547,7 +601,7 @@ const next = () => {
 
         if(statusOfEmployment.value === 'unemployed'){
             hasEmptyFields.value = false
-            router.push({ query : { page: currentPage.value + 2 }})
+            router.push({ query : { reason: route.query.reason, page: currentPage.value + 2 }})
             return
         }
 
@@ -566,7 +620,7 @@ const next = () => {
 
         hasEmptyFields.value = false
         router.push({ query : { reason: route.query.reason, page: currentPage.value + 1 }})
-    }else if(currentPage.value === 9){
+    }else if(currentPage.value === 8){
         const pageData = [
             physicianByLname.value,
             physicianByFname.value,

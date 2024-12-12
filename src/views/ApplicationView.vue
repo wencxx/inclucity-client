@@ -1,44 +1,46 @@
 <template>
     <section class="h-[90dvh] flex flex-col md:flex-row gap-x-5 gap-y-5 items-center justify-center relative md:w-2/3 xl:w-full">
         <div class="absolute inset-0 bg-white bg-opacity-30"></div>
-        <button v-if="applicant && applicant.status !== 'rejected' && applicant.status !== 'expired'" @click="isApplicant()" class="z-20 h-fit lg:h-96 flex flex-col py-10 justify-center lg:justify-start px-10 gap-y-5 bg-custom-primary/75 shadow-2xl w-[80dvw] md:w-[20dvw] lg:w-[25dvw] xl:w-[20dvw] p-2 text-start text-white rounded-xl border hover:bg-gray-100 min-h-36 hover:border-custom-primary hover:text-custom-primary">
-            <div class="space-y-5 border h-full p-5">
-                <h2 class="text-2xl font-bold text-center">New Application</h2>
-                <Icon icon="mdi:account-credit-card-outline" class="text-6xl mx-auto" />
-                <p class="text-sm text-justify">For new PWD ID applicants can apply by filling out the online form on our website.  After filling out, you will wait for your application to be approved and if your application is rejected you will need to resubmit the mistaken inputs.</p>
-            </div>
-        </button>
-        <router-link v-else :to="{ name: 'newApplicant' }" class="z-20 h-fit lg:h-96 flex flex-col py-10 justify-center lg:justify-start lg:py-10 px-10 gap-y-5 bg-custom-primary/75 shadow-2xl w-[80dvw] md:w-[20dvw] lg:w-[25dvw] xl:w-[20dvw] p-2 text-start text-white rounded-xl border hover:bg-gray-100 min-h-36 hover:border-custom-primary hover:text-custom-primary">
-            <div class="space-y-5 border h-full p-5">
-                <h2 class="text-2xl font-bold text-center">New Applicant</h2>
-                <Icon icon="mdi:account-credit-card-outline" class="text-6xl mx-auto" />
-                <p class="text-sm text-justify">For new PWD ID applicants can apply by filling out the online form on our website.  After filling out, you will wait for your application to be approved and if your application is rejected you will need to resubmit the mistaken inputs.</p>
-            </div>
-        </router-link>
-        <button v-if="applicant && applicant.status !== 'expired'" @click="isNotExpired()" class="z-20 h-fit lg:h-96 flex flex-col py-10 justify-center lg:justify-start lg:py-10 px-10 gap-y-5 bg-custom-primary/75 shadow-2xl w-[80dvw] md:w-[20dvw] lg:w-[25dvw] xl:w-[20dvw] p-2 text-start text-white rounded-xl border hover:bg-gray-100 min-h-36 hover:border-custom-primary hover:text-custom-primary">
-            <div class="space-y-5 border h-full p-5">
-                <h2 class="text-2xl font-bold text-center">Renewal</h2>
-                <Icon icon="mdi:account-credit-card" class="text-6xl mx-auto" />
-                <p class="text-sm text-justify">For PWD ID holders can renew their IDs by filling out the online renewal form on our website. Your PWD ID only lasts five years. If you want your PWD ID to be active again you will need to renew your PWD ID here on our website or through walk-in to the Malolos City Hall.</p>
-            </div>
-        </button>
-        <button v-if="!applicant" @click="notApplicant()" class="z-20 h-fit lg:h-96 flex flex-col py-10 justify-center lg:justify-start lg:py-10 px-10 gap-y-5 bg-custom-primary/75 shadow-2xl w-[80dvw] md:w-[20dvw] lg:w-[25dvw] xl:w-[20dvw] p-2 text-start text-white rounded-xl border hover:bg-gray-100 min-h-36 hover:border-custom-primary hover:text-custom-primary">
-            <div class="space-y-5 border h-full p-5">
-                <h2 class="text-2xl font-bold text-center">Renewal</h2>
-                <Icon icon="mdi:account-credit-card" class="text-6xl mx-auto" />
-                <p class="text-sm text-justify">For PWD ID holders can renew their IDs by filling out the online renewal form on our website. Your PWD ID only lasts five years. If you want your PWD ID to be active again you will need to renew your PWD ID here on our website or through walk-in to the Malolos City Hall.</p>
-            </div>
-        </button>
-        <router-link v-if="applicant && applicant.status === 'expired'" :to="{ name: 'renewal' }" class="z-20 h-fit lg:h-96 flex flex-col py-10 justify-center lg:justify-start lg:py-10 px-10 gap-y-5 bg-custom-primary/75 shadow-2xl w-[80dvw] md:w-[20dvw] lg:w-[25dvw] xl:w-[20dvw] p-2 text-start text-white rounded-xl border hover:bg-gray-100 min-h-36 hover:border-custom-primary hover:text-custom-primary">
-            <div class="space-y-5 border h-full p-5">
-                <h2 class="text-2xl font-bold text-center">New Application</h2>
-                <Icon icon="mdi:account-credit-card-outline" class="text-6xl mx-auto" />
-                <p class="text-sm text-justify">For new PWD ID applicants can apply by filling out the online form on our website.  After filling out, you will wait for your application to be approved and if your application is rejected you will need to resubmit the mistaken inputs.</p>
-            </div>
-        </router-link>
+        <div class="grid lg:grid-cols-2 h-fit gap-4">
+            <button v-if="applicant && applicant.status !== 'rejected' && applicant.status !== 'expired'" @click="isApplicant()" class="z-20 h-full flex flex-col py-10 justify-center lg:justify-start px-10 gap-y-5 bg-custom-primary/75 shadow-2xl w-[80dvw] md:w-[20dvw] lg:w-[25dvw] xl:w-[20dvw] p-2 text-start text-white rounded-xl border hover:bg-gray-100 min-h-36 hover:border-custom-primary hover:text-custom-primary">
+                <div class="space-y-5 border h-full p-5">
+                    <h2 class="text-2xl font-bold text-center">New Application</h2>
+                    <Icon icon="mdi:account-credit-card-outline" class="text-6xl mx-auto" />
+                    <p class="text-sm text-justify">For new PWD ID applicants can apply by filling out the online form on our website.  After filling out, you will wait for your application to be approved and if your application is rejected you will need to resubmit the mistaken inputs.</p>
+                </div>
+            </button>
+            <router-link v-else :to="{ name: 'newApplicant' }" class="z-20 h-full flex flex-col py-10 justify-center lg:justify-start lg:py-10 px-10 gap-y-5 bg-custom-primary/75 shadow-2xl w-[80dvw] md:w-[20dvw] lg:w-[25dvw] xl:w-[20dvw] p-2 text-start text-white rounded-xl border hover:bg-gray-100 min-h-36 hover:border-custom-primary hover:text-custom-primary">
+                <div class="space-y-5 border h-full p-5">
+                    <h2 class="text-2xl font-bold text-center">New Applicant</h2>
+                    <Icon icon="mdi:account-credit-card-outline" class="text-6xl mx-auto" />
+                    <p class="text-sm text-justify">For new PWD ID applicants can apply by filling out the online form on our website.  After filling out, you will wait for your application to be approved and if your application is rejected you will need to resubmit the mistaken inputs.</p>
+                </div>
+            </router-link>
+            <button v-if="applicant && applicant.status !== 'expired'" @click="isNotExpired()" class="z-20 h-full flex flex-col py-10 justify-center lg:justify-start lg:py-10 px-10 gap-y-5 bg-custom-primary/75 shadow-2xl w-[80dvw] md:w-[20dvw] lg:w-[25dvw] xl:w-[20dvw] p-2 text-start text-white rounded-xl border hover:bg-gray-100 min-h-36 hover:border-custom-primary hover:text-custom-primary">
+                <div class="space-y-5 border h-full p-5">
+                    <h2 class="text-2xl font-bold text-center">Renewal</h2>
+                    <Icon icon="mdi:account-credit-card" class="text-6xl mx-auto" />
+                    <p class="text-sm text-justify">For PWD ID holders can renew their IDs by filling out the online renewal form on our website. Your PWD ID only lasts five years. If you want your PWD ID to be active again you will need to renew your PWD ID here on our website or through walk-in to the Malolos City Hall.</p>
+                </div>
+            </button>
+            <button v-if="!applicant" @click="notApplicant()" class="z-20 h-full flex flex-col py-10 justify-center lg:justify-start lg:py-10 px-10 gap-y-5 bg-custom-primary/75 shadow-2xl w-[80dvw] md:w-[20dvw] lg:w-[25dvw] xl:w-[20dvw] p-2 text-start text-white rounded-xl border hover:bg-gray-100 min-h-36 hover:border-custom-primary hover:text-custom-primary">
+                <div class="space-y-5 border h-full p-5">
+                    <h2 class="text-2xl font-bold text-center">Renewal</h2>
+                    <Icon icon="mdi:account-credit-card" class="text-6xl mx-auto" />
+                    <p class="text-sm text-justify">For PWD ID holders can renew their IDs by filling out the online renewal form on our website. Your PWD ID only lasts five years. If you want your PWD ID to be active again you will need to renew your PWD ID here on our website or through walk-in to the Malolos City Hall.</p>
+                </div>
+            </button>
+            <router-link v-if="applicant && applicant.status === 'expired'" :to="{ name: 'renewal' }" class="z-20 h-full flex flex-col py-10 justify-center lg:justify-start lg:py-10 px-10 gap-y-5 bg-custom-primary/75 shadow-2xl w-[80dvw] md:w-[20dvw] lg:w-[25dvw] xl:w-[20dvw] p-2 text-start text-white rounded-xl border hover:bg-gray-100 min-h-36 hover:border-custom-primary hover:text-custom-primary">
+                <div class="space-y-5 border h-full p-5">
+                    <h2 class="text-2xl font-bold text-center">New Application</h2>
+                    <Icon icon="mdi:account-credit-card-outline" class="text-6xl mx-auto" />
+                    <p class="text-sm text-justify">For new PWD ID applicants can apply by filling out the online form on our website.  After filling out, you will wait for your application to be approved and if your application is rejected you will need to resubmit the mistaken inputs.</p>
+                </div>
+            </router-link>
+        </div>
         <!-- modal -->
         <div v-if="modal" @click.self="isApplicant()" class="z-20 h-screen w-screen fixed top-0 flex items-center justify-center">
-            <div class="z-20 bg-white w-3/4 md:w-2/4 lg:w-1/4 h-fit pb-7 overflow-hidden rounded-md shadow flex flex-col items-center gap-y-14 font-manrope font-semibold">
+            <div class="z-20 bg-white w-3/4 md:w-2/4 lg:w-1/4 h-fit h- pb-7 overflow-hidden rounded-md shadow flex flex-col items-center gap-y-14 font-manrope font-semibold">
                 <div class="z-20 bg-yellow-400 w-full py-2 flex justify-center items-center gap-x-3">
                     <Icon icon="material-symbols-light:warning-outline" class="z-20 text-xl md:text-3xl text-white" />
                     <h1 class="z-20 text-md md:text-xl text-center capitalize text-white">Already applied for application.</h1>
@@ -53,7 +55,7 @@
             </div>
         </div>
         <div v-if="notExpired" @click.self="isNotExpired()" class="z-20 h-screen w-screen fixed top-0 flex items-center justify-center">
-            <div class="z-20 bg-white w-3/4 md:w-2/4 lg:w-1/4 h-fit pb-7 overflow-hidden rounded-md shadow flex flex-col items-center gap-y-14 font-manrope font-semibold">
+            <div class="z-20 bg-white w-3/4 md:w-2/4 lg:w-1/4 h-fit h- pb-7 overflow-hidden rounded-md shadow flex flex-col items-center gap-y-14 font-manrope font-semibold">
                 <div class="z-20 bg-yellow-400 w-full py-2 flex justify-center items-center gap-x-3">
                     <Icon icon="material-symbols-light:warning-outline" class="z-20 text-xl md:text-3xl text-white" />
                     <h1 class="z-20 text-md md:text-xl text-center capitalize text-white">PWD ID not expired.</h1>
@@ -69,7 +71,7 @@
         </div>
 
         <div v-if="notApplicantyo" @click.self="notApplicant()" class="z-20 h-screen w-screen fixed top-0 flex items-center justify-center">
-            <div class="z-20 bg-white w-3/4 md:w-2/4 lg:w-1/4 h-fit pb-7 overflow-hidden rounded-md shadow flex flex-col items-center gap-y-14 font-manrope font-semibold">
+            <div class="z-20 bg-white w-3/4 md:w-2/4 lg:w-1/4 h-fit h- pb-7 overflow-hidden rounded-md shadow flex flex-col items-center gap-y-14 font-manrope font-semibold">
                 <div class="z-20 bg-custom-primary w-full py-2 flex justify-center items-center gap-x-3">
                     <Icon icon="material-symbols-light:warning-outline" class="z-20 text-xl md:text-3xl text-white" />
                     <h1 class="z-20 text-md md:text-xl text-center capitalize text-white">Ineligible for renewal</h1>
