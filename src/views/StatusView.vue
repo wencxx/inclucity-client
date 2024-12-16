@@ -7,25 +7,25 @@
             <h1 class="text-2xl font-semibold capitalize text-center mb-5">Application Status</h1>
             <div class="flex justify-between items-center">
                 <h1 class="font-medium text-xl">Information Details</h1>
-                <p v-if="applicant && applicant.reasonForRejection != 'Invalid Forms' && applicant.status !== 'pending'" class="text-green-700">Approved</p>
+                <p v-if="applicant && applicant.reasonForRejection != 'Invalid Forms' && applicant.status !== 'pending'" class="text-green-700">Accepted</p>
                 <p v-else-if="applicant &&  applicant.status === 'pending'" class="text-blue-500">Pending</p>
                 <p v-else class="text-custom-primary">Declined</p>
             </div>
             <div class="flex justify-between items-center">
                 <h1 class="font-medium text-xl">1x1 Picture</h1>
-                <p v-if="applicant && applicant.reasonForRejection != 'Invalid 1x1 Picture' && applicant.status !== 'pending'" class="text-green-700">Approved</p>
+                <p v-if="applicant && applicant.reasonForRejection != 'Invalid 1x1 Picture' && applicant.status !== 'pending'" class="text-green-700">Accepted</p>
                 <p v-else-if="applicant &&  applicant.status === 'pending'" class="text-blue-500">Pending</p>
                 <p v-else class="text-custom-primary">Declined</p>
             </div>
             <div class="flex justify-between items-center">
                 <h1 class="font-medium text-xl">Medical Certificate</h1>
-                <p v-if="applicant && applicant.reasonForRejection != 'Invalid Medical Certificate' && applicant.status !== 'pending'" class="text-green-700">Approved</p>
+                <p v-if="applicant && applicant.reasonForRejection != 'Invalid Medical Certificate' && applicant.status !== 'pending'" class="text-green-700">Accepted</p>
                 <p v-else-if="applicant &&  applicant.status === 'pending'" class="text-blue-500">Pending</p>
                 <p v-else class="text-custom-primary">Declined</p>
             </div>
             <div class="flex justify-between items-center">
                 <h1 class="font-medium text-xl">Barangay Certificate</h1>
-                <p v-if="applicant && applicant.reasonForRejection != 'Invalid Barangay Certificate' && applicant.status !== 'pending'" class="text-green-700">Approved</p>
+                <p v-if="applicant && applicant.reasonForRejection != 'Invalid Barangay Certificate' && applicant.status !== 'pending'" class="text-green-700">Accepted</p>
                 <p v-else-if="applicant &&  applicant.status === 'pending'" class="text-blue-500">Pending</p>
                 <p v-else class="text-custom-primary">Declined</p>
             </div>
