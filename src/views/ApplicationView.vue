@@ -1,5 +1,5 @@
 <template>
-    <section class="h-[90dvh] flex flex-col md:flex-row gap-x-5 gap-y-5 items-center justify-center relative md:w-2/3 xl:w-full">
+    <section class="h-[90dvh] flex flex-col md:flex-row gap-x-5 gap-y-5 items-center justify-center relative md:w-2/3 xl:w-full overflow-y-scroll">
         <div class="absolute inset-0 bg-white bg-opacity-30"></div>
         <div class="grid lg:grid-cols-2 h-fit gap-4">
             <button v-if="applicant && applicant.status !== 'rejected' && applicant.status !== 'expired'" @click="isApplicant()" class="z-20 h-full flex flex-col py-10 justify-center lg:justify-start px-10 gap-y-5 bg-custom-primary/75 shadow-2xl w-[80dvw] md:w-[20dvw] lg:w-[25dvw] xl:w-[20dvw] p-2 text-start text-white rounded-xl border hover:bg-gray-100 min-h-36 hover:border-custom-primary hover:text-custom-primary">
